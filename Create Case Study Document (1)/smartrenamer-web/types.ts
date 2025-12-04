@@ -1,4 +1,4 @@
-export interface FileRecord {
+﻿export interface FileRecord {
   id: string;
   file: File;
   originalName: string;
@@ -25,6 +25,8 @@ export interface AppSettings {
   apiKey: string;
 }
 
+export const EMBEDDED_GEMINI_API_KEY = 'AIzaSyBtDYx08bA6GPGYp_RpEwSM-_ePeyd-T28';
+
 export const DEFAULT_SETTINGS: AppSettings = {
   autoProcess: true,
   skipNormalNames: false,
@@ -33,5 +35,5 @@ export const DEFAULT_SETTINGS: AppSettings = {
   casing: 'lowercase',
   customInstructions: '',
   folders: ['Downloads', 'Pictures/Screenshots'],
-  apiKey: ''
+  apiKey: EMBEDDED_GEMINI_API_KEY
 };

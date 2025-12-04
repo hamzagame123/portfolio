@@ -1,11 +1,11 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react';
+﻿import React, { useState, useCallback, useRef, useEffect } from 'react';
 import {
   Settings, Folder, FileText, Eye, Check, Play, RotateCcw,
   RotateCw, Trash, Search, UploadCloud, Download, X,
   Loader2, FileIcon, Image as ImageIcon, CheckSquare, Square
 } from 'lucide-react';
 import SettingsModal from './components/SettingsModal';
-import { FileRecord, AppSettings, DEFAULT_SETTINGS } from './types';
+import { FileRecord, AppSettings, DEFAULT_SETTINGS, EMBEDDED_GEMINI_API_KEY } from './types';
 import { generateFileName } from './services/geminiService';
 
 const App: React.FC = () => {
@@ -13,7 +13,11 @@ const App: React.FC = () => {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [settings, setSettings] = useState<AppSettings>(() => {
     const saved = localStorage.getItem('smartrenamer_settings');
-    return saved ? JSON.parse(saved) : DEFAULT_SETTINGS;
+    const initial = saved ? JSON.parse(saved) : { ...DEFAULT_SETTINGS };
+    if (!initial.apiKey) {
+      initial.apiKey = EMBEDDED_GEMINI_API_KEY;
+    }
+    return initial;
   });
 
   useEffect(() => {

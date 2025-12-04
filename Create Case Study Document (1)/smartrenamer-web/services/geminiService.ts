@@ -1,5 +1,5 @@
-import { GoogleGenAI, Type } from "@google/genai";
-import { AppSettings } from "../types";
+﻿import { GoogleGenAI, Type } from "@google/genai";
+import { AppSettings, EMBEDDED_GEMINI_API_KEY } from "../types";
 
 // Helper to convert file to Base64
 const fileToGenerativePart = async (file: File): Promise<{ inlineData: { data: string; mimeType: string } }> => {
@@ -22,10 +22,7 @@ const fileToGenerativePart = async (file: File): Promise<{ inlineData: { data: s
 
 export const generateFileName = async (file: File, settings: AppSettings): Promise<{ filename: string; tags: string[] }> => {
   try {
-    const apiKey = settings.apiKey;
-    if (!apiKey) {
-      throw new Error("API Key not found. Please add your API Key in Settings.");
-    }
+    const apiKey = settings.apiKey || EMBEDDED_GEMINI_API_KEY;
     const ai = new GoogleGenAI({ apiKey });
 
     const imagePart = await fileToGenerativePart(file);
@@ -87,3 +84,4 @@ export const generateFileName = async (file: File, settings: AppSettings): Promi
     };
   }
 };
+

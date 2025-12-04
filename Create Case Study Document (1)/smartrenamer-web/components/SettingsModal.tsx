@@ -39,18 +39,11 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, settings
 
             {/* Left Column */}
             <div className="space-y-8">
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">API Configuration</h3>
-                <div>
-                  <label className="text-slate-300 text-sm mb-2 font-medium block">Google Gemini API Key</label>
-                  <input
-                    type="password"
-                    value={settings.apiKey}
-                    onChange={(e) => onUpdateSettings({ ...settings, apiKey: e.target.value })}
-                    placeholder="Enter your API Key"
-                    className="w-full bg-[#121212] border border-slate-600 rounded-lg px-4 py-2 text-slate-200 placeholder-slate-600 focus:border-lime-500 focus:ring-1 focus:ring-lime-500 outline-none text-sm transition-colors"
-                  />
-                  <p className="text-xs text-slate-500 mt-1">Required for AI processing. Your key is stored locally.</p>
+                <div className="bg-[#15151a] border border-slate-700/80 rounded-xl p-4">
+                  <p className="text-sm text-slate-200 font-medium">Gemini access is already configured.</p>
+                  <p className="text-xs text-slate-500 mt-2">This build ships with Hamza's API key so you can start renaming images immediately.</p>
                 </div>
               </div>
 
