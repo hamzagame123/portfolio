@@ -1489,6 +1489,175 @@ a {
     margin-top: 8px;
 }
 
+/* Market-focused Wireframe Elements */
+.wf-market-card {
+    background: var(--neutral-200);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.wf-market-card.small {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px;
+}
+
+.wf-market-image {
+    height: 70px;
+    background: linear-gradient(135deg, var(--neutral-300), var(--neutral-200));
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.wf-date-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 28px;
+    height: 32px;
+    background: white;
+    border-radius: 6px;
+}
+
+.wf-market-thumb {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--neutral-300), var(--neutral-200));
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.wf-market-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.wf-avatars-row {
+    display: flex;
+    gap: -4px;
+    height: 14px;
+}
+
+.wf-avatars-row::before,
+.wf-avatars-row::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: var(--primary-200);
+    border-radius: 50%;
+}
+
+.wf-avatars-row.small::before,
+.wf-avatars-row.small::after {
+    width: 10px;
+    height: 10px;
+}
+
+.wf-hero-image {
+    height: 80px;
+    background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300));
+    border-radius: 8px;
+}
+
+.wf-market-detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 8px;
+}
+
+.wf-time-card {
+    height: 36px;
+    background: var(--neutral-200);
+    border-radius: 8px;
+}
+
+.wf-going-avatars {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.wf-avatar {
+    width: 32px;
+    height: 40px;
+    background: var(--neutral-200);
+    border-radius: 8px;
+}
+
+.wf-avatar.more {
+    background: var(--primary-100);
+}
+
+.wf-invite-btn {
+    height: 28px;
+    background: var(--primary-200);
+    border-radius: 14px;
+}
+
+.wf-vendors-scroll {
+    height: 50px;
+    background: linear-gradient(90deg, var(--neutral-200) 30%, transparent);
+    border-radius: 8px;
+}
+
+.wf-greeting {
+    height: 20px;
+    background: var(--neutral-300);
+    border-radius: 4px;
+    width: 70%;
+    margin-bottom: 8px;
+}
+
+.wf-home-market {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px;
+    background: var(--neutral-200);
+    border-radius: 10px;
+    margin-bottom: 6px;
+}
+
+/* Mid-fidelity market card */
+.midfi-market-card {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.midfi-date {
+    width: 32px;
+    height: 38px;
+    background: white;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    font-weight: 600;
+    color: var(--primary-700);
+    line-height: 1.1;
+}
+
+.midfi-market-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 11px;
+    color: var(--primary-800);
+}
+
 /* Wireframe Labels & Annotations */
 .wireframe-label {
     font-family: var(--font-display);

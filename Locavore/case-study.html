@@ -34,7 +34,7 @@
             <span class="title-accent">Farmers Market & Local Food Community</span>
         </h1>
         <p class="hero-subtitle animate-on-scroll">
-            Designing a mobile app that connects conscious consumers with local farmers markets, tracks market schedules, and builds community through social features—letting you discover who's going, invite friends, and never miss a market again.
+            Designing a mobile app that connects conscious consumers with local farmers markets, tracks market schedules, and builds community through social features. Discover who's going, invite friends, and never miss a market again.
         </p>
         
         <div class="hero-meta animate-on-scroll">
@@ -77,7 +77,7 @@
             <div class="brief-grid">
                 <div class="brief-main animate-on-scroll">
                     <h2>Design a mobile app centered around farmers markets that builds community and makes local food accessible</h2>
-                    <p>Create an app that helps users discover and track farmers markets in their city, see which friends are attending, coordinate meetups, and connect with local farmers and vendors—turning market day into a community event.</p>
+                    <p>Create an app that helps users discover and track farmers markets in their city, see which friends are attending, coordinate meetups, and connect with local farmers and vendors, turning market day into a community event.</p>
                 </div>
                 <div class="brief-details">
                     <div class="brief-card animate-on-scroll" style="--delay: 0.1s">
@@ -310,11 +310,103 @@
                 <div class="wireframe-group animate-on-scroll">
                     <div class="wireframe-header">
                         <span class="wireframe-badge lofi">Low-Fidelity</span>
-                        <h3>Initial Structure Exploration</h3>
-                        <p>Quick sketches to establish information hierarchy and user flow</p>
+                        <h3>Core Screen Architecture</h3>
+                        <p>Mapping out the market discovery and social coordination flow</p>
                     </div>
                     <div class="wireframe-grid">
-                        <!-- Wireframe 1: Home Screen -->
+                        <!-- Wireframe 1: Markets List -->
+                        <div class="wireframe-card">
+                            <div class="wireframe-phone lofi">
+                                <div class="wf-notch"></div>
+                                <div class="wf-content">
+                                    <div class="wf-header">
+                                        <div class="wf-circle small"></div>
+                                        <div class="wf-line short"></div>
+                                    </div>
+                                    <div class="wf-section-title"></div>
+                                    <div class="wf-banner"></div>
+                                    <div class="wf-section-title"></div>
+                                    <!-- Market Card with Date Badge -->
+                                    <div class="wf-market-card">
+                                        <div class="wf-market-image">
+                                            <div class="wf-date-badge"></div>
+                                        </div>
+                                        <div class="wf-market-info">
+                                            <div class="wf-line medium"></div>
+                                            <div class="wf-line short"></div>
+                                            <div class="wf-avatars-row"></div>
+                                        </div>
+                                    </div>
+                                    <div class="wf-market-card small">
+                                        <div class="wf-market-thumb"></div>
+                                        <div class="wf-market-info">
+                                            <div class="wf-line medium"></div>
+                                            <div class="wf-line short"></div>
+                                        </div>
+                                    </div>
+                                    <div class="wf-market-card small">
+                                        <div class="wf-market-thumb"></div>
+                                        <div class="wf-market-info">
+                                            <div class="wf-line medium"></div>
+                                            <div class="wf-line short"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wf-nav">
+                                    <div class="wf-nav-item"></div>
+                                    <div class="wf-nav-item active"></div>
+                                    <div class="wf-nav-item"></div>
+                                    <div class="wf-nav-item"></div>
+                                    <div class="wf-nav-item"></div>
+                                </div>
+                            </div>
+                            <div class="wireframe-label">Markets List</div>
+                            <div class="wireframe-annotation">
+                                <span class="annotation-number">1</span>
+                                <span>Date badges + social counts</span>
+                            </div>
+                        </div>
+
+                        <!-- Wireframe 2: Market Detail with Who's Going -->
+                        <div class="wireframe-card">
+                            <div class="wireframe-phone lofi">
+                                <div class="wf-notch"></div>
+                                <div class="wf-content">
+                                    <div class="wf-back-header">
+                                        <div class="wf-back-arrow"></div>
+                                        <div class="wf-circle small"></div>
+                                    </div>
+                                    <div class="wf-hero-image"></div>
+                                    <div class="wf-market-detail-info">
+                                        <div class="wf-line long"></div>
+                                        <div class="wf-line medium"></div>
+                                        <div class="wf-time-card"></div>
+                                        <!-- Who's Going Section -->
+                                        <div class="wf-section-title"></div>
+                                        <div class="wf-going-avatars">
+                                            <div class="wf-avatar"></div>
+                                            <div class="wf-avatar"></div>
+                                            <div class="wf-avatar"></div>
+                                            <div class="wf-avatar more"></div>
+                                        </div>
+                                        <div class="wf-invite-btn"></div>
+                                        <div class="wf-section-title"></div>
+                                        <div class="wf-vendors-scroll"></div>
+                                    </div>
+                                </div>
+                                <div class="wf-footer-buttons">
+                                    <div class="wf-btn secondary"></div>
+                                    <div class="wf-btn primary"></div>
+                                </div>
+                            </div>
+                            <div class="wireframe-label">Market Detail</div>
+                            <div class="wireframe-annotation">
+                                <span class="annotation-number">2</span>
+                                <span>"Who's Going" is central</span>
+                            </div>
+                        </div>
+
+                        <!-- Wireframe 3: Home with Markets Preview -->
                         <div class="wireframe-card">
                             <div class="wireframe-phone lofi">
                                 <div class="wf-notch"></div>
@@ -324,8 +416,8 @@
                                         <div class="wf-line short"></div>
                                         <div class="wf-circle small"></div>
                                     </div>
+                                    <div class="wf-greeting"></div>
                                     <div class="wf-search"></div>
-                                    <div class="wf-banner"></div>
                                     <div class="wf-section-title"></div>
                                     <div class="wf-categories">
                                         <div class="wf-category"></div>
@@ -334,9 +426,20 @@
                                         <div class="wf-category"></div>
                                     </div>
                                     <div class="wf-section-title"></div>
-                                    <div class="wf-cards">
-                                        <div class="wf-card"></div>
-                                        <div class="wf-card"></div>
+                                    <!-- Nearby Markets Preview -->
+                                    <div class="wf-home-market">
+                                        <div class="wf-market-thumb"></div>
+                                        <div class="wf-market-info">
+                                            <div class="wf-line medium"></div>
+                                            <div class="wf-avatars-row small"></div>
+                                        </div>
+                                    </div>
+                                    <div class="wf-home-market">
+                                        <div class="wf-market-thumb"></div>
+                                        <div class="wf-market-info">
+                                            <div class="wf-line medium"></div>
+                                            <div class="wf-avatars-row small"></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="wf-nav">
@@ -349,84 +452,8 @@
                             </div>
                             <div class="wireframe-label">Home Screen</div>
                             <div class="wireframe-annotation">
-                                <span class="annotation-number">1</span>
-                                <span>Location-first discovery</span>
-                            </div>
-                        </div>
-
-                        <!-- Wireframe 2: Product Detail -->
-                        <div class="wireframe-card">
-                            <div class="wireframe-phone lofi">
-                                <div class="wf-notch"></div>
-                                <div class="wf-content">
-                                    <div class="wf-back-header">
-                                        <div class="wf-back-arrow"></div>
-                                        <div class="wf-circle small"></div>
-                                    </div>
-                                    <div class="wf-product-image"></div>
-                                    <div class="wf-product-info">
-                                        <div class="wf-line long"></div>
-                                        <div class="wf-line medium"></div>
-                                        <div class="wf-price-row">
-                                            <div class="wf-line short"></div>
-                                            <div class="wf-qty-selector"></div>
-                                        </div>
-                                        <div class="wf-info-cards">
-                                            <div class="wf-info-card"></div>
-                                            <div class="wf-info-card"></div>
-                                            <div class="wf-info-card"></div>
-                                        </div>
-                                        <div class="wf-line long"></div>
-                                        <div class="wf-line long"></div>
-                                    </div>
-                                </div>
-                                <div class="wf-footer-buttons">
-                                    <div class="wf-btn secondary"></div>
-                                    <div class="wf-btn primary"></div>
-                                </div>
-                            </div>
-                            <div class="wireframe-label">Product Detail</div>
-                            <div class="wireframe-annotation">
-                                <span class="annotation-number">2</span>
-                                <span>Trust signals prominent</span>
-                            </div>
-                        </div>
-
-                        <!-- Wireframe 3: Farmer Profile -->
-                        <div class="wireframe-card">
-                            <div class="wireframe-phone lofi">
-                                <div class="wf-notch"></div>
-                                <div class="wf-content">
-                                    <div class="wf-back-header">
-                                        <div class="wf-back-arrow"></div>
-                                        <div class="wf-circle small"></div>
-                                    </div>
-                                    <div class="wf-profile-hero"></div>
-                                    <div class="wf-avatar-overlay"></div>
-                                    <div class="wf-profile-info">
-                                        <div class="wf-line long centered"></div>
-                                        <div class="wf-line short centered"></div>
-                                        <div class="wf-stats-row">
-                                            <div class="wf-stat"></div>
-                                            <div class="wf-stat"></div>
-                                            <div class="wf-stat"></div>
-                                        </div>
-                                        <div class="wf-badges-row">
-                                            <div class="wf-badge"></div>
-                                            <div class="wf-badge"></div>
-                                            <div class="wf-badge"></div>
-                                        </div>
-                                        <div class="wf-action-buttons">
-                                            <div class="wf-btn primary"></div>
-                                            <div class="wf-btn secondary"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="wireframe-label">Farmer Profile</div>
-                            <div class="wireframe-annotation">
                                 <span class="annotation-number">3</span>
-                                <span>Human connection focus</span>
+                                <span>Markets + social integrated</span>
                             </div>
                         </div>
                     </div>
@@ -439,43 +466,43 @@
                         <div class="decision-card">
                             <div class="decision-before">
                                 <span class="decision-label">Initial Idea</span>
-                                <p>Product grid as primary view</p>
+                                <p>Simple market list with times</p>
                             </div>
                             <div class="decision-arrow">→</div>
                             <div class="decision-after">
                                 <span class="decision-label">Final Decision</span>
-                                <p>Farm cards first, then products</p>
+                                <p>Date badges + "X friends going"</p>
                             </div>
                             <div class="decision-reason">
-                                <strong>Why:</strong> Users wanted to know WHO they're buying from before WHAT they're buying
+                                <strong>Why:</strong> Social proof drives attendance. Seeing friends going creates FOMO and commitment
                             </div>
                         </div>
                         <div class="decision-card">
                             <div class="decision-before">
                                 <span class="decision-label">Initial Idea</span>
-                                <p>Separate sustainability page</p>
+                                <p>Market detail with vendor list only</p>
                             </div>
                             <div class="decision-arrow">→</div>
                             <div class="decision-after">
                                 <span class="decision-label">Final Decision</span>
-                                <p>Impact stats integrated throughout</p>
+                                <p>"Who's Going" section front and center</p>
                             </div>
                             <div class="decision-reason">
-                                <strong>Why:</strong> Eco-impact should be visible at every touchpoint, not hidden away
+                                <strong>Why:</strong> The social element is the differentiator. People go to markets for community, not just products
                             </div>
                         </div>
                         <div class="decision-card">
                             <div class="decision-before">
                                 <span class="decision-label">Initial Idea</span>
-                                <p>Text-based categories</p>
+                                <p>Separate "Markets" and "Social" tabs</p>
                             </div>
                             <div class="decision-arrow">→</div>
                             <div class="decision-after">
                                 <span class="decision-label">Final Decision</span>
-                                <p>Emoji + text category icons</p>
+                                <p>Social indicators integrated into market cards</p>
                             </div>
                             <div class="decision-reason">
-                                <strong>Why:</strong> Faster scanning, more approachable, universal understanding
+                                <strong>Why:</strong> Context matters. Show friends going right where users browse markets
                             </div>
                         </div>
                     </div>
@@ -484,7 +511,7 @@
                 <!-- Evolution Comparison -->
                 <div class="evolution-section animate-on-scroll">
                     <h3>Design Evolution</h3>
-                    <p class="evolution-subtitle">Watch the home screen transform from wireframe to final design</p>
+                    <p class="evolution-subtitle">Watch the markets screen transform from wireframe to final design</p>
                     <div class="evolution-comparison">
                         <div class="evolution-stage">
                             <div class="evolution-phone wireframe-style">
@@ -493,16 +520,17 @@
                                     <div class="wf-header">
                                         <div class="wf-circle small"></div>
                                         <div class="wf-line short"></div>
-                                        <div class="wf-circle small"></div>
                                     </div>
-                                    <div class="wf-search"></div>
-                                    <div class="wf-banner"></div>
                                     <div class="wf-section-title"></div>
-                                    <div class="wf-categories">
-                                        <div class="wf-category"></div>
-                                        <div class="wf-category"></div>
-                                        <div class="wf-category"></div>
-                                        <div class="wf-category"></div>
+                                    <div class="wf-banner"></div>
+                                    <div class="wf-market-card">
+                                        <div class="wf-market-image">
+                                            <div class="wf-date-badge"></div>
+                                        </div>
+                                        <div class="wf-market-info">
+                                            <div class="wf-line medium"></div>
+                                            <div class="wf-avatars-row"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -519,16 +547,15 @@
                                 <div class="midfi-content">
                                     <div class="midfi-header">
                                         <span>📍 Toronto</span>
-                                        <span>🔔</span>
                                     </div>
-                                    <div class="midfi-greeting">Good Morning! 👋</div>
-                                    <div class="midfi-search">🔍 Search farms...</div>
-                                    <div class="midfi-banner-styled">🎃 Fall Harvest</div>
-                                    <div class="midfi-categories">
-                                        <span>🥬</span>
-                                        <span>🍎</span>
-                                        <span>🥛</span>
-                                        <span>🥚</span>
+                                    <div class="midfi-greeting">Farmers Markets</div>
+                                    <div class="midfi-banner-styled">This Week: 5 Markets</div>
+                                    <div class="midfi-market-card">
+                                        <div class="midfi-date">SAT<br>7</div>
+                                        <div class="midfi-market-info">
+                                            <strong>St. Lawrence</strong>
+                                            <span style="font-size: 10px;">👥 Sarah & 2 others</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -541,7 +568,7 @@
                         </div>
                         <div class="evolution-stage final">
                             <div class="evolution-phone final-style">
-                                <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=200&h=400&fit=crop" alt="Final Design Preview" class="final-preview-img">
+                                <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=200&h=400&fit=crop" alt="Final Markets Screen" class="final-preview-img">
                                 <div class="final-overlay">
                                     <span>See in Prototype ↓</span>
                                 </div>
@@ -564,7 +591,7 @@
                 <div class="principle-card animate-on-scroll" style="--delay: 0.1s">
                     <div class="principle-icon">👥</div>
                     <h3>Community First</h3>
-                    <p>Farmers markets are social experiences—the app should amplify human connection.</p>
+                    <p>Farmers markets are social experiences, and the app should amplify human connection.</p>
                     <div class="principle-applications">
                         <h4>How this informed design:</h4>
                         <ul>
@@ -682,7 +709,7 @@
                 <h4>Journey Design Insights</h4>
                 <div class="insights-grid">
                     <div class="insight">
-                        <strong>Social Proof:</strong> Stage 2's "who's going" feature is crucial—seeing friends creates FOMO and drives attendance commitment.
+                        <strong>Social Proof:</strong> Stage 2's "who's going" feature is crucial. Seeing friends creates FOMO and drives attendance commitment.
                     </div>
                     <div class="insight">
                         <strong>Emotional Arc:</strong> The journey builds from curiosity to excitement to social connection, ending with community fulfillment.
@@ -958,7 +985,7 @@
                     <div class="challenge-body">
                         <div class="challenge-problem">
                             <h4>Challenge</h4>
-                            <p>Cities have dozens of farmers markets with different schedules, locations, and vendors—overwhelming to track</p>
+                            <p>Cities have dozens of farmers markets with different schedules, locations, and vendors, which can be overwhelming to track</p>
                         </div>
                         <div class="challenge-solution">
                             <h4>Design Solution</h4>
@@ -979,7 +1006,7 @@
                         </div>
                         <div class="challenge-solution">
                             <h4>Design Solution</h4>
-                            <p>Opt-in "I'm Going" model—you only appear if you actively mark attendance. Friends-only visibility options. No real-time location tracking</p>
+                            <p>Opt-in "I'm Going" model: you only appear if you actively mark attendance. Friends-only visibility options. No real-time location tracking</p>
                         </div>
                     </div>
                 </div>
@@ -992,7 +1019,7 @@
                     <div class="challenge-body">
                         <div class="challenge-problem">
                             <h4>Challenge</h4>
-                            <p>Users find a great vendor at one market but don't know where else they sell—vendors often appear at multiple markets</p>
+                            <p>Users find a great vendor at one market but don't know where else they sell. Vendors often appear at multiple markets</p>
                         </div>
                         <div class="challenge-solution">
                             <h4>Design Solution</h4>
@@ -1009,7 +1036,7 @@
                     <div class="challenge-body">
                         <div class="challenge-problem">
                             <h4>Challenge</h4>
-                            <p>Users browse markets but don't commit to going—high intent but low follow-through</p>
+                            <p>Users browse markets but don't commit to going, showing high intent but low follow-through</p>
                         </div>
                         <div class="challenge-solution">
                             <h4>Design Solution</h4>
