@@ -307,6 +307,55 @@
                         </div>
                     </section>
 
+                    <!-- Upcoming Markets Section -->
+                    <section class="home-markets-section">
+                        <div class="section-header">
+                            <h2>Nearby Markets</h2>
+                            <a href="#" class="see-all" onclick="event.preventDefault(); showScreen('markets')">See all</a>
+                        </div>
+                        <div class="home-market-card" onclick="showScreen('market-detail')">
+                            <div class="home-market-image">
+                                <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=120&h=80&fit=crop" alt="St. Lawrence Market">
+                                <div class="home-market-date">
+                                    <span class="day">SAT</span>
+                                    <span class="num">7</span>
+                                </div>
+                            </div>
+                            <div class="home-market-info">
+                                <h4>St. Lawrence Market</h4>
+                                <p class="home-market-time">Saturday, 5AM - 3PM</p>
+                                <div class="home-market-social">
+                                    <div class="mini-avatars">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=20&h=20&fit=crop" alt="">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=20&h=20&fit=crop" alt="">
+                                    </div>
+                                    <span>Sarah & Mike going</span>
+                                </div>
+                            </div>
+                            <span class="home-market-distance">1.2 km</span>
+                        </div>
+                        <div class="home-market-card" onclick="showScreen('market-detail')">
+                            <div class="home-market-image">
+                                <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=120&h=80&fit=crop" alt="Evergreen">
+                                <div class="home-market-date">
+                                    <span class="day">SUN</span>
+                                    <span class="num">8</span>
+                                </div>
+                            </div>
+                            <div class="home-market-info">
+                                <h4>Evergreen Brick Works</h4>
+                                <p class="home-market-time">Sunday, 8AM - 1PM</p>
+                                <div class="home-market-social">
+                                    <div class="mini-avatars">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=20&h=20&fit=crop" alt="">
+                                    </div>
+                                    <span>Emma going</span>
+                                </div>
+                            </div>
+                            <span class="home-market-distance">3.5 km</span>
+                        </div>
+                    </section>
+
                     <section class="impact-section">
                         <div class="impact-card">
                             <h3>Your Impact This Month</h3>
@@ -334,9 +383,9 @@
                         <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         <span>Home</span>
                     </button>
-                    <button class="nav-item" onclick="showScreen('search')">
-                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                        <span>Explore</span>
+                    <button class="nav-item" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
                     </button>
                     <button class="nav-item" onclick="showScreen('cart')">
                         <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
@@ -457,9 +506,9 @@
                         <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         <span>Home</span>
                     </button>
-                    <button class="nav-item active" onclick="showScreen('search')">
-                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                        <span>Explore</span>
+                    <button class="nav-item active" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
                     </button>
                     <button class="nav-item" onclick="showScreen('cart')">
                         <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
@@ -475,6 +524,383 @@
                         <span>Profile</span>
                     </button>
                 </nav>
+            </div>
+
+            <!-- Markets Screen -->
+            <div class="screen markets-screen" id="markets">
+                <div class="markets-header">
+                    <div class="header-location">
+                        <span class="location-icon-small">📍</span>
+                        <span class="location-text">Toronto, Ontario</span>
+                    </div>
+                    <h1>Farmers Markets</h1>
+                </div>
+
+                <div class="markets-content">
+                    <!-- This Week Banner -->
+                    <div class="markets-week-banner">
+                        <span class="week-label">This Week</span>
+                        <h3>5 Markets Near You</h3>
+                        <p>Find fresh produce & connect with your community</p>
+                    </div>
+
+                    <!-- Friends Going Section -->
+                    <section class="friends-going-section">
+                        <div class="section-header">
+                            <h2>Friends Going This Week</h2>
+                        </div>
+                        <div class="friends-going-scroll">
+                            <div class="friend-going-card" onclick="showScreen('market-detail')">
+                                <div class="friend-avatars">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="Sarah">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="Mike" class="overlap">
+                                    <span class="more-friends">+3</span>
+                                </div>
+                                <div class="friend-going-info">
+                                    <h4>St. Lawrence Market</h4>
+                                    <p>Sarah, Mike & 3 others going</p>
+                                    <span class="friend-going-time">Saturday, 8AM</span>
+                                </div>
+                            </div>
+                            <div class="friend-going-card">
+                                <div class="friend-avatars">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt="Emma">
+                                </div>
+                                <div class="friend-going-info">
+                                    <h4>Evergreen Brick Works</h4>
+                                    <p>Emma is going</p>
+                                    <span class="friend-going-time">Sunday, 10AM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Upcoming Markets -->
+                    <section class="upcoming-markets-section">
+                        <div class="section-header">
+                            <h2>Upcoming Markets</h2>
+                            <a href="#" class="see-all">See all</a>
+                        </div>
+                        
+                        <div class="market-card featured" onclick="showScreen('market-detail')">
+                            <div class="market-image">
+                                <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&h=200&fit=crop" alt="St. Lawrence Market">
+                                <div class="market-date-badge">
+                                    <span class="day">SAT</span>
+                                    <span class="date">7</span>
+                                </div>
+                                <div class="market-going-badge">
+                                    <span>👥 24 going</span>
+                                </div>
+                            </div>
+                            <div class="market-info">
+                                <div class="market-header-row">
+                                    <h3>St. Lawrence Market</h3>
+                                    <span class="market-distance">1.2 km</span>
+                                </div>
+                                <p class="market-address">93 Front St E, Toronto</p>
+                                <div class="market-meta">
+                                    <span class="market-time">🕐 5:00 AM - 3:00 PM</span>
+                                    <span class="market-vendors">🏪 120+ vendors</span>
+                                </div>
+                                <div class="market-friends-preview">
+                                    <div class="mini-avatars">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=24&h=24&fit=crop" alt="">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=24&h=24&fit=crop" alt="">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=24&h=24&fit=crop" alt="">
+                                    </div>
+                                    <span>Sarah & 2 friends going</span>
+                                </div>
+                                <button class="btn-going" onclick="event.stopPropagation(); toggleGoing(this)">
+                                    <span class="going-text">I'm Going</span>
+                                    <span class="check-icon">✓</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="market-card" onclick="showScreen('market-detail')">
+                            <div class="market-image small">
+                                <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=150&h=150&fit=crop" alt="Evergreen Brick Works">
+                                <div class="market-date-badge small">
+                                    <span class="day">SUN</span>
+                                    <span class="date">8</span>
+                                </div>
+                            </div>
+                            <div class="market-info">
+                                <h3>Evergreen Brick Works</h3>
+                                <p class="market-address">550 Bayview Ave</p>
+                                <div class="market-meta">
+                                    <span class="market-time">🕐 8AM - 1PM</span>
+                                    <span class="market-going-count">👥 18 going</span>
+                                </div>
+                                <button class="btn-going small" onclick="event.stopPropagation(); toggleGoing(this)">
+                                    <span class="going-text">Going?</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="market-card" onclick="showScreen('market-detail')">
+                            <div class="market-image small">
+                                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=150&h=150&fit=crop" alt="Wychwood Barns">
+                                <div class="market-date-badge small">
+                                    <span class="day">SAT</span>
+                                    <span class="date">7</span>
+                                </div>
+                            </div>
+                            <div class="market-info">
+                                <h3>Wychwood Barns Market</h3>
+                                <p class="market-address">601 Christie St</p>
+                                <div class="market-meta">
+                                    <span class="market-time">🕐 8AM - 12PM</span>
+                                    <span class="market-going-count">👥 12 going</span>
+                                </div>
+                                <button class="btn-going small" onclick="event.stopPropagation(); toggleGoing(this)">
+                                    <span class="going-text">Going?</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="market-card" onclick="showScreen('market-detail')">
+                            <div class="market-image small">
+                                <img src="https://images.unsplash.com/photo-1464454709131-ffd692591ee5?w=150&h=150&fit=crop" alt="Trinity Bellwoods">
+                                <div class="market-date-badge small">
+                                    <span class="day">TUE</span>
+                                    <span class="date">10</span>
+                                </div>
+                            </div>
+                            <div class="market-info">
+                                <h3>Trinity Bellwoods Market</h3>
+                                <p class="market-address">790 Queen St W</p>
+                                <div class="market-meta">
+                                    <span class="market-time">🕐 3PM - 7PM</span>
+                                    <span class="market-going-count">👥 8 going</span>
+                                </div>
+                                <button class="btn-going small" onclick="event.stopPropagation(); toggleGoing(this)">
+                                    <span class="going-text">Going?</span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Your Favorite Markets -->
+                    <section class="favorite-markets-section">
+                        <div class="section-header">
+                            <h2>Your Favorites</h2>
+                        </div>
+                        <div class="favorite-market-item">
+                            <span class="fav-icon">⭐</span>
+                            <div class="fav-info">
+                                <h4>Leslieville Farmers Market</h4>
+                                <p>Sundays, 9AM - 2PM</p>
+                            </div>
+                            <span class="fav-notify">🔔</span>
+                        </div>
+                        <div class="favorite-market-item">
+                            <span class="fav-icon">⭐</span>
+                            <div class="fav-info">
+                                <h4>Dufferin Grove Market</h4>
+                                <p>Thursdays, 3PM - 7PM</p>
+                            </div>
+                            <span class="fav-notify">🔔</span>
+                        </div>
+                    </section>
+                </div>
+
+                <nav class="bottom-nav">
+                    <button class="nav-item" onclick="showScreen('home')">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Home</span>
+                    </button>
+                    <button class="nav-item active" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('cart')">
+                        <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span>Cart</span>
+                        <span class="cart-badge">2</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('messages')">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span>Messages</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('profile')">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Profile</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Market Detail Screen -->
+            <div class="screen market-detail-screen" id="market-detail">
+                <div class="market-detail-header">
+                    <button class="back-btn light" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="share-btn light">
+                        <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    </button>
+                </div>
+
+                <div class="market-hero">
+                    <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&h=300&fit=crop" alt="St. Lawrence Market">
+                    <div class="market-hero-overlay">
+                        <div class="market-hero-badge">
+                            <span class="day">SATURDAY</span>
+                            <span class="date">December 7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="market-detail-content">
+                    <div class="market-title-section">
+                        <h1>St. Lawrence Market</h1>
+                        <p class="market-tagline">Toronto's Premier Farmers Market Since 1803</p>
+                        <div class="market-location-row">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>93 Front St E, Toronto • 1.2 km away</span>
+                        </div>
+                    </div>
+
+                    <div class="market-time-card">
+                        <div class="time-info">
+                            <span class="time-icon">🕐</span>
+                            <div>
+                                <h4>Saturday Market</h4>
+                                <p>5:00 AM - 3:00 PM</p>
+                            </div>
+                        </div>
+                        <button class="btn-reminder">
+                            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                            Remind Me
+                        </button>
+                    </div>
+
+                    <!-- Who's Going Section -->
+                    <div class="whos-going-section">
+                        <div class="section-header">
+                            <h3>Who's Going</h3>
+                            <span class="going-count">24 people</span>
+                        </div>
+                        <div class="going-avatars-large">
+                            <div class="going-person">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop" alt="Sarah">
+                                <span class="going-name">Sarah</span>
+                                <span class="friend-badge">Friend</span>
+                            </div>
+                            <div class="going-person">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop" alt="Mike">
+                                <span class="going-name">Mike</span>
+                                <span class="friend-badge">Friend</span>
+                            </div>
+                            <div class="going-person">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop" alt="Emma">
+                                <span class="going-name">Emma</span>
+                                <span class="friend-badge">Friend</span>
+                            </div>
+                            <div class="going-person more">
+                                <span class="more-count">+21</span>
+                                <span class="going-name">Others</span>
+                            </div>
+                        </div>
+                        <button class="btn-invite">
+                            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                            Invite Friends
+                        </button>
+                    </div>
+
+                    <!-- Featured Vendors -->
+                    <section class="featured-vendors-section">
+                        <div class="section-header">
+                            <h3>Featured Vendors</h3>
+                            <span class="vendor-count">120+ vendors</span>
+                        </div>
+                        <div class="vendors-scroll">
+                            <div class="vendor-card" onclick="showScreen('farmer-profile')">
+                                <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=100&h=100&fit=crop" alt="Green Acres">
+                                <h4>Green Acres Farm</h4>
+                                <p>Organic Vegetables</p>
+                                <span class="vendor-badge">⭐ 4.9</span>
+                            </div>
+                            <div class="vendor-card">
+                                <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=100&h=100&fit=crop" alt="Sunny Vale">
+                                <h4>Sunny Vale</h4>
+                                <p>Dairy & Eggs</p>
+                                <span class="vendor-badge">⭐ 4.7</span>
+                            </div>
+                            <div class="vendor-card">
+                                <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=100&h=100&fit=crop" alt="Heritage">
+                                <h4>Heritage Honey</h4>
+                                <p>Honey & Preserves</p>
+                                <span class="vendor-badge">⭐ 4.8</span>
+                            </div>
+                            <div class="vendor-card">
+                                <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=100&h=100&fit=crop" alt="Bakery">
+                                <h4>Artisan Bakery</h4>
+                                <p>Fresh Bread</p>
+                                <span class="vendor-badge">⭐ 4.9</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- What to Expect -->
+                    <section class="what-to-expect">
+                        <h3>What to Expect</h3>
+                        <div class="expect-grid">
+                            <div class="expect-item">
+                                <span class="expect-icon">🥬</span>
+                                <span>Fresh Produce</span>
+                            </div>
+                            <div class="expect-item">
+                                <span class="expect-icon">🧀</span>
+                                <span>Artisan Cheese</span>
+                            </div>
+                            <div class="expect-item">
+                                <span class="expect-icon">🥖</span>
+                                <span>Fresh Baked</span>
+                            </div>
+                            <div class="expect-item">
+                                <span class="expect-icon">🌸</span>
+                                <span>Fresh Flowers</span>
+                            </div>
+                            <div class="expect-item">
+                                <span class="expect-icon">🥩</span>
+                                <span>Local Meats</span>
+                            </div>
+                            <div class="expect-item">
+                                <span class="expect-icon">☕</span>
+                                <span>Coffee & Food</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Market Tips -->
+                    <section class="market-tips">
+                        <h3>Tips for Your Visit</h3>
+                        <div class="tip-item">
+                            <span class="tip-icon">🌅</span>
+                            <p><strong>Arrive Early:</strong> Best selection is before 9AM</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">💰</span>
+                            <p><strong>Bring Cash:</strong> Some vendors don't accept cards</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🛍️</span>
+                            <p><strong>Bring Bags:</strong> Help reduce plastic waste</p>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="market-detail-footer">
+                    <button class="btn-secondary" onclick="openMaps()">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Directions
+                    </button>
+                    <button class="btn-primary going-btn" onclick="toggleGoingDetail(this)">
+                        I'm Going! 🎉
+                    </button>
+                </div>
             </div>
 
             <!-- Product Detail Screen -->
@@ -822,9 +1248,9 @@
                         <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         <span>Home</span>
                     </button>
-                    <button class="nav-item" onclick="showScreen('search')">
-                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                        <span>Explore</span>
+                    <button class="nav-item" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
                     </button>
                     <button class="nav-item active" onclick="showScreen('cart')">
                         <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
@@ -887,9 +1313,9 @@
                         <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         <span>Home</span>
                     </button>
-                    <button class="nav-item" onclick="showScreen('search')">
-                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                        <span>Explore</span>
+                    <button class="nav-item" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
                     </button>
                     <button class="nav-item" onclick="showScreen('cart')">
                         <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
@@ -1050,9 +1476,9 @@
                         <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         <span>Home</span>
                     </button>
-                    <button class="nav-item" onclick="showScreen('search')">
-                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                        <span>Explore</span>
+                    <button class="nav-item" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
                     </button>
                     <button class="nav-item" onclick="showScreen('cart')">
                         <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>

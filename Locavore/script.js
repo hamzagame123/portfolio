@@ -54,7 +54,8 @@ function updateBottomNav(screenId) {
     const navItems = document.querySelectorAll('.nav-item');
     const navMap = {
         'home': 0,
-        'search': 1,
+        'markets': 1,
+        'market-detail': 1,
         'cart': 2,
         'messages': 3,
         'chat': 3,
@@ -484,10 +485,60 @@ document.addEventListener('touchend', () => {
     pulling = false;
 });
 
+// Toggle Going status on market cards
+function toggleGoing(btn) {
+    btn.classList.toggle('active');
+    
+    if (btn.classList.contains('active')) {
+        const goingText = btn.querySelector('.going-text');
+        if (goingText) {
+            goingText.textContent = 'Going!';
+        }
+        showToast("You're going! 🎉");
+        
+        // Update the going count on the card
+        const card = btn.closest('.market-card');
+        if (card) {
+            const countEl = card.querySelector('.market-going-count, .market-going-badge span');
+            if (countEl) {
+                const currentCount = parseInt(countEl.textContent.match(/\d+/)[0]) || 0;
+                countEl.textContent = `👥 ${currentCount + 1} going`;
+            }
+        }
+    } else {
+        const goingText = btn.querySelector('.going-text');
+        if (goingText) {
+            goingText.textContent = 'I\'m Going';
+        }
+    }
+}
+
+// Toggle Going on market detail page
+function toggleGoingDetail(btn) {
+    btn.classList.toggle('active');
+    
+    if (btn.classList.contains('active')) {
+        btn.textContent = "I'm Going! ✓";
+        btn.style.background = 'var(--success)';
+        showToast("You're going! 🎉 Friends notified.");
+    } else {
+        btn.textContent = "I'm Going! 🎉";
+        btn.style.background = '';
+    }
+}
+
+// Open maps for directions
+function openMaps() {
+    showToast('Opening Maps... 🗺️');
+    // In a real app, this would open the device's maps app
+}
+
 // Console welcome message
 console.log(`
 🌿 Locavore - Sustainable Local Food Marketplace
    Eat Local. Live Sustainable.
+   
+   Featuring: Farmers Markets Discovery & Social Features!
    
    App initialized successfully!
 `);
