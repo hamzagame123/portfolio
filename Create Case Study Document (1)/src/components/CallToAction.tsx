@@ -1,4 +1,4 @@
-import { ExternalLink, Sparkles, Zap } from 'lucide-react';
+﻿import { ExternalLink, Sparkles, Zap } from 'lucide-react';
 
 export function CallToAction() {
   return (
@@ -84,11 +84,6 @@ export function CallToAction() {
           <span>Launch Web App</span>
           <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
         </a>
-        
-        {/* Note */}
-        <p className="mt-8 text-sm" style={{ color: '#64748b' }}>
-          Requires a Gemini API key. Your key is stored locally and never sent to any server.
-        </p>
       </div>
       
       {/* Add keyframes for pulse animation */}
@@ -101,4 +96,8 @@ export function CallToAction() {
     </section>
   );
 }
+
+
+
+
 
