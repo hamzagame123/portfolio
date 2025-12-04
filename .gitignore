@@ -21,3 +21,4 @@ Thumbs.db
 *.log
 .env
 .env.*
+!Create Case Study Document (1)/smartrenamer-web/dist/
