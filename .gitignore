@@ -1,0 +1,23 @@
+﻿# Dependencies
+**/node_modules/
+**/.pnp
+**/.pnp.js
+
+# Build outputs
+**/dist/
+**/.next/
+**/out/
+**/.nuxt/
+
+# Tooling caches
+**/.turbo/
+**/.parcel-cache/
+**/.eslintcache
+**/.stylelintcache
+
+# OS / Editor cruft
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*

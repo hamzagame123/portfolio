@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Interaction Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0a0a0a',
+                        accent: '#d4ff00', // Acid Green for high contrast
+                        secondary: '#1f1f1f'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Cursor Styles */
+        body {
+            cursor: none;
+            /* Hide default cursor */
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #d4ff00;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        /* Hover states for interactive elements */
+        body.hovering .cursor-outline {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(212, 255, 0, 0.1);
+            border-color: #d4ff00;
+            mix-blend-mode: difference;
+        }
+
+        /* Scroll Reveal Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Project Card Hover Effects */
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
+        .project-card:hover .arrow-icon {
+            transform: translate(4px, -4px);
+            color: #d4ff00;
+        }
+
+        /* Utility for hiding scrollbar but allowing scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Mobile check */
+        @media (hover: none) {
+
+            .cursor-dot,
+            .cursor-outline {
+                display: none;
+            }
+
+            body {
+                cursor: auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased selection:bg-accent selection:text-dark">
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 px-6 py-6 flex justify-between items-center mix-blend-difference text-white">
+        <a href="#" class="text-2xl font-display font-bold tracking-tighter hover-target">
+            UX<span class="text-accent">.</span>
+        </a>
+
+        <div class="hidden md:flex space-x-12 font-medium text-sm uppercase tracking-widest">
+            <a href="#work" class="hover-target hover:text-accent transition-colors">Work</a>
+            <a href="#about" class="hover-target hover:text-accent transition-colors">Philosophy</a>
+            <a href="#contact" class="hover-target hover:text-accent transition-colors">Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-2xl hover-target" id="mobile-menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-dark z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 text-2xl font-display">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-white text-3xl">
+            <i class="fa-solid fa-times"></i>
+        </button>
+        <a href="#work" class="mobile-link">Work</a>
+        <a href="#about" class="mobile-link">Philosophy</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col justify-center px-6 md:px-20 relative overflow-hidden">
+        <!-- Background Decorative Elements -->
+        <div class="absolute top-1/4 right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-10 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-4xl z-10">
+            <h4 class="text-accent font-medium tracking-widest mb-4 reveal uppercase text-sm">Interaction Designer</h4>
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-none mb-8 reveal"
+                style="transition-delay: 100ms;">
+                Making digital <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">feel
+                    physical.</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-xl mb-12 leading-relaxed reveal"
+                style="transition-delay: 200ms;">
+                I craft intuitive user experiences and delightful micro-interactions that bridge the gap between human
+                intent and digital response.
+            </p>
+
+            <div class="reveal" style="transition-delay: 300ms;">
+                <a href="#work" class="hover-target inline-flex items-center gap-4 group">
+                    <span
+                        class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-dark transition-all duration-300">
+                        <i class="fa-solid fa-arrow-down animate-bounce"></i>
+                    </span>
+                    <span class="uppercase tracking-widest text-sm">View Projects</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="work" class="py-32 px-6 md:px-20">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
+            <h2 class="text-5xl md:text-7xl font-display font-bold">Selected<br>Works</h2>
+            <p class="text-gray-500 mt-4 md:mt-0 text-right">2023 — Present</p>
+        </div>
+
+        <div class="space-y-32">
+
+            <!-- Project 1 -->
+            <a href="Locavore/case-study.html" target="_blank" rel="noopener noreferrer"
+                class="block group project-card reveal cursor-pointer hover-target" title="View Locavore Case Study">
+                <div class="w-full h-[500px] md:h-[600px] bg-secondary rounded-lg overflow-hidden relative mb-8">
+                    <!-- Placeholder for Project Image -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-green-900 to-gray-900 project-img transition-transform duration-700 ease-out">
+                    </div>
+
+                    <!-- Decorative Abstract Shape -->
+                    <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                        <svg width="300" height="300" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#d4ff00"
+                                d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,79.6,-46.9C87.4,-34.7,90.1,-20.4,85.8,-8.2C81.5,4,70.2,14.1,60.7,24.3C51.2,34.5,43.5,44.8,33.9,53.1C24.3,61.4,12.8,67.7,0.5,66.8C-11.8,66,-23.5,57.9,-34.6,50C-45.7,42.1,-56.1,34.3,-65.6,24.1C-75.1,13.9,-83.7,1.3,-81.2,-10C-78.7,-21.3,-65.1,-31.4,-53.5,-39.8C-41.9,-48.2,-32.3,-55,-21.6,-64.2C-10.9,-73.4,-1.3,-85,13.4,-85C28.1,-85,42.2,-73.4,44.7,-76.4Z"
+                                transform="translate(100 100)" />
+                        </svg>
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+                        <div class="flex justify-between items-end">
+                            <div class="bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                                <span class="text-sm uppercase tracking-wider">Sustainability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-start border-t border-gray-800 pt-6">
+                    <div>
+                        <h3
+                            class="text-3xl md:text-4xl font-display font-bold mb-2 group-hover:text-accent transition-colors">
+                            Locavore</h3>
+                        <p class="text-gray-400 max-w-md">Connecting communities with local food sources to promote
+                            sustainable living.</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-2xl arrow-icon transition-transform duration-300"></i>
+                </div>
+            </a>
+
+            <!-- Project 2 -->
+            <a href="Create%20Case%20Study%20Document%20(1)/build/" target="_blank" rel="noopener noreferrer"
+                class="block group project-card reveal cursor-pointer hover-target"
+                title="View Smart Image Renamer Case Study">
+                <div class="w-full h-[500px] md:h-[600px] bg-secondary rounded-lg overflow-hidden relative mb-8">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-indigo-900 to-gray-900 project-img transition-transform duration-700 ease-out">
+                    </div>
+
+                    <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                        <div class="w-64 h-64 border-2 border-white/20 rounded-full animate-spin-slow border-dashed">
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+                        <div class="flex justify-between items-end">
+                            <div class="bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                                <span class="text-sm uppercase tracking-wider">AI Tool</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-start border-t border-gray-800 pt-6">
+                    <div>
+                        <h3
+                            class="text-3xl md:text-4xl font-display font-bold mb-2 group-hover:text-accent transition-colors">
+                            Smart Image Renamer</h3>
+                        <p class="text-gray-400 max-w-md">AI-powered image renaming tool for efficient asset management
+                            and organization.</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-2xl arrow-icon transition-transform duration-300"></i>
+                </div>
+            </a>
+
+            <!-- Project 3 -->
+            <div class="group project-card reveal cursor-pointer hover-target">
+                <div class="w-full h-[500px] md:h-[600px] bg-secondary rounded-lg overflow-hidden relative mb-8">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-emerald-900 to-gray-900 project-img transition-transform duration-700 ease-out">
+                    </div>
+
+                    <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="w-4 h-4 bg-white rounded-sm animate-pulse"></div>
+                            <div class="w-4 h-4 bg-white rounded-sm animate-pulse delay-75"></div>
+                            <div class="w-4 h-4 bg-white rounded-sm animate-pulse delay-150"></div>
+                            <div class="w-4 h-4 bg-white rounded-sm animate-pulse delay-200"></div>
+                            <div class="w-4 h-4 bg-white rounded-sm animate-pulse delay-300"></div>
+                            <div class="w-4 h-4 bg-white rounded-sm animate-pulse delay-500"></div>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+                        <div class="flex justify-between items-end">
+                            <div class="bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                                <span class="text-sm uppercase tracking-wider">SaaS Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-start border-t border-gray-800 pt-6">
+                    <div>
+                        <h3
+                            class="text-3xl md:text-4xl font-display font-bold mb-2 group-hover:text-accent transition-colors">
+                            Project Three Name</h3>
+                        <p class="text-gray-400 max-w-md">Complex data simplified into an interactive analytics
+                            dashboard for enterprise users.</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-2xl arrow-icon transition-transform duration-300"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Philosophy / About -->
+    <section id="about" class="py-24 bg-secondary/30 border-y border-white/5">
+        <div class="container mx-auto px-6 md:px-20">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-6xl font-display font-bold mb-8 leading-tight">
+                        Design isn't just <br> how it looks, but <br> <span class="text-accent">how it works.</span>
+                    </h2>
+                </div>
+                <div class="space-y-6 text-lg text-gray-300 reveal" style="transition-delay: 200ms;">
+                    <p>
+                        As an interaction designer, I obsess over the milliseconds. The slight bounce of a button, the
+                        easing curve of a modal, the feedback loop of a form submission.
+                    </p>
+                    <p>
+                        I use tools like Figma, Protopie, and Webflow to build high-fidelity prototypes that feel real
+                        before a single line of production code is written. My goal is to reduce cognitive load while
+                        maximizing delight.
+                    </p>
+                    <div class="pt-8">
+                        <ul class="grid grid-cols-2 gap-4 text-sm font-medium text-gray-400 uppercase tracking-widest">
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full"></span>User
+                                Research</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="w-2 h-2 bg-accent rounded-full"></span>Prototyping</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="w-2 h-2 bg-accent rounded-full"></span>Motion Design</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="w-2 h-2 bg-accent rounded-full"></span>Design Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <section id="contact" class="py-32 px-6 md:px-20 text-center relative overflow-hidden">
+        <div class="reveal relative z-10">
+            <p class="text-accent uppercase tracking-widest mb-6 font-medium">What's Next?</p>
+            <h2
+                class="text-5xl md:text-8xl font-display font-bold mb-12 hover-target cursor-pointer transition-colors hover:text-gray-300">
+                Let's work <br>together.
+            </h2>
+            <a href="mailto:hello@example.com"
+                class="hover-target inline-block bg-white text-dark px-8 py-4 rounded-full text-lg font-bold hover:bg-accent transition-colors duration-300">
+                Get in Touch
+            </a>
+        </div>
+
+        <footer
+            class="mt-32 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm border-t border-gray-800 pt-8">
+            <p>&copy; 2025 Interaction Designer. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors hover-target">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors hover-target">Dribbble</a>
+                <a href="#" class="hover:text-white transition-colors hover-target">Twitter</a>
+            </div>
+        </footer>
+    </section>
+
+    <script>
+        // Custom Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        const hoverTargets = document.querySelectorAll('.hover-target');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            // Dot follows instantly
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Outline follows with slight delay (using animate for smoother performance)
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // Hover effects for cursor
+        hoverTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                document.body.classList.add('hovering');
+            });
+            target.addEventListener('mouseleave', () => {
+                document.body.classList.remove('hovering');
+            });
+        });
+
+        // Scroll Reveal Logic
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+    </script>
+</body>
+
+</html>

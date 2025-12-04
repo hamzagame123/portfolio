@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locavore Case Study | Hamza Galbete</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="#" class="nav-logo">
+            <span class="logo-leaf">🌿</span>
+            <span>Hamza Galbete</span>
+        </a>
+        <div class="nav-links">
+            <a href="#overview">Overview</a>
+            <a href="#research">Research</a>
+            <a href="#design">Design</a>
+            <a href="#prototype">Prototype</a>
+            <a href="#learnings">Learnings</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="overview">
+        <div class="hero-badge animate-on-scroll">UX CASE STUDY</div>
+        <h1 class="hero-title animate-on-scroll">
+            <span class="title-line">Locavore</span>
+            <span class="title-accent">Sustainable Local Food Marketplace</span>
+        </h1>
+        <p class="hero-subtitle animate-on-scroll">
+            Designing a mobile marketplace that connects conscious consumers directly with local farmers, eliminating middlemen, reducing carbon footprints, and building community trust through thoughtful UX.
+        </p>
+        
+        <div class="hero-meta animate-on-scroll">
+            <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">UX/Product Designer</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Timeline</span>
+                <span class="meta-value">4 weeks (Solo project)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Deliverable</span>
+                <span class="meta-value">High-fidelity Prototype</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Focus</span>
+                <span class="meta-value">Trust, Sustainability, Community</span>
+            </div>
+        </div>
+
+        <div class="hero-tags animate-on-scroll">
+            <span class="tag">UX Design</span>
+            <span class="tag">Product Design</span>
+            <span class="tag">Mobile App</span>
+            <span class="tag">User Research</span>
+            <span class="tag">Prototyping</span>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </header>
+
+    <!-- Brief Section -->
+    <section class="section brief-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">THE BRIEF</div>
+            <div class="brief-grid">
+                <div class="brief-main animate-on-scroll">
+                    <h2>Design a mobile marketplace that empowers farmers and delights conscious consumers</h2>
+                    <p>Create an app that enables farmers to market and sell their produce directly to consumers, while helping buyers easily locate local products and purchase at fair prices, all while tracking their environmental impact.</p>
+                </div>
+                <div class="brief-details">
+                    <div class="brief-card animate-on-scroll" style="--delay: 0.1s">
+                        <div class="brief-card-icon">👥</div>
+                        <h3>Target Users</h3>
+                        <p>Local farmers, eco-conscious consumers, health-focused families</p>
+                    </div>
+                    <div class="brief-card animate-on-scroll" style="--delay: 0.2s">
+                        <div class="brief-card-icon">🎯</div>
+                        <h3>Core Challenge</h3>
+                        <p>Build trust between strangers while making sustainable choices effortless</p>
+                    </div>
+                    <div class="brief-card animate-on-scroll" style="--delay: 0.3s">
+                        <div class="brief-card-icon">🌍</div>
+                        <h3>Impact Goal</h3>
+                        <p>Reduce food miles, support local economy, promote seasonal eating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section problem-section">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-content">
+                    <div class="section-label animate-on-scroll">THE PROBLEM</div>
+                    <h2 class="animate-on-scroll">A broken food system hurts everyone</h2>
+                    <p class="problem-lead animate-on-scroll">The current agricultural supply chain creates a lose-lose situation: farmers struggle to find markets while consumers pay inflated prices for produce that's traveled thousands of miles.</p>
+                </div>
+                <div class="problem-quotes">
+                    <blockquote class="quote-card farmer-quote animate-on-scroll">
+                        <div class="quote-icon">🌾</div>
+                        <p>"It is difficult sourcing a market for my product most of the time. I highly rely on middlemen who exploit us and buy at really low prices."</p>
+                        <cite>Local Farmer, Interview</cite>
+                    </blockquote>
+                    <blockquote class="quote-card buyer-quote animate-on-scroll">
+                        <div class="quote-icon">🛒</div>
+                        <p>"I'm forced to rely on brokers to get products. They sell expensively and that affects my business as I'm forced to sell at higher prices."</p>
+                        <cite>Small Business Owner, Interview</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section stats-section" id="research">
+        <div class="container">
+            <div class="section-label animate-on-scroll">USER RESEARCH</div>
+            <h2 class="section-title animate-on-scroll">Understanding the Problem Space</h2>
+            <p class="section-subtitle animate-on-scroll">Research insights that shaped the design direction</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-suffix">%+</div>
+                    <p class="stat-label">of farmers now own smartphones and could benefit from digital marketplaces</p>
+                    <span class="stat-source">Market Research</span>
+                </div>
+                <div class="stat-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="stat-number" data-count="1500">0</div>
+                    <div class="stat-suffix">mi</div>
+                    <p class="stat-label">average distance food travels from farm to plate in traditional supply chains</p>
+                    <span class="stat-source">USDA Data</span>
+                </div>
+                <div class="stat-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="stat-number" data-count="30">0</div>
+                    <div class="stat-suffix">%</div>
+                    <p class="stat-label">of produce goes to waste due to lack of market access for small farmers</p>
+                    <span class="stat-source">FAO Report</span>
+                </div>
+                <div class="stat-card animate-on-scroll" style="--delay: 0.4s">
+                    <div class="stat-number" data-count="73">0</div>
+                    <div class="stat-suffix">%</div>
+                    <p class="stat-label">of consumers want to buy local but find it difficult to locate sources</p>
+                    <span class="stat-source">Consumer Survey</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Might We Section -->
+    <section class="section hmw-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">DESIGN CHALLENGE</div>
+            <h2 class="section-title animate-on-scroll">How Might We...</h2>
+            
+            <div class="hmw-grid">
+                <div class="hmw-card animate-on-scroll" style="--delay: 0.1s">
+                    <span class="hmw-number">01</span>
+                    <p>Enable farmers to directly reach customers without middlemen exploitation?</p>
+                </div>
+                <div class="hmw-card animate-on-scroll" style="--delay: 0.2s">
+                    <span class="hmw-number">02</span>
+                    <p>Help buyers locate farms and fresh produce closest to them?</p>
+                </div>
+                <div class="hmw-card animate-on-scroll" style="--delay: 0.3s">
+                    <span class="hmw-number">03</span>
+                    <p>Build trust between farmers and buyers who've never met?</p>
+                </div>
+                <div class="hmw-card animate-on-scroll" style="--delay: 0.4s">
+                    <span class="hmw-number">04</span>
+                    <p>Help farmers showcase products and price them fairly?</p>
+                </div>
+                <div class="hmw-card animate-on-scroll" style="--delay: 0.5s">
+                    <span class="hmw-number">05</span>
+                    <p>Make sustainable choices feel rewarding, not sacrificial?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Personas Section -->
+    <section class="section personas-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">USER PERSONAS</div>
+            <h2 class="section-title animate-on-scroll">Who We're Designing For</h2>
+            
+            <div class="personas-grid">
+                <div class="persona-card animate-on-scroll">
+                    <div class="persona-header farmer-persona">
+                        <div class="persona-avatar">👨‍🌾</div>
+                        <div class="persona-info">
+                            <h3>John Mwangi</h3>
+                            <span>Small-Scale Farmer, 45</span>
+                        </div>
+                    </div>
+                    <div class="persona-body">
+                        <div class="persona-quote">"I just want fair prices for my hard work without dealing with exploitative middlemen."</div>
+                        <div class="persona-section">
+                            <h4>Goals</h4>
+                            <ul>
+                                <li>Sell produce at fair market prices</li>
+                                <li>Build direct customer relationships</li>
+                                <li>Reduce post-harvest losses</li>
+                            </ul>
+                        </div>
+                        <div class="persona-section">
+                            <h4>Pain Points</h4>
+                            <ul>
+                                <li>Middlemen take large cuts</li>
+                                <li>No market price transparency</li>
+                                <li>Produce spoils while searching for buyers</li>
+                            </ul>
+                        </div>
+                        <div class="persona-tags">
+                            <span>Tech-curious</span>
+                            <span>Price-sensitive</span>
+                            <span>Time-limited</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="persona-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="persona-header buyer-persona">
+                        <div class="persona-avatar">👩‍💼</div>
+                        <div class="persona-info">
+                            <h3>Sarah Chen</h3>
+                            <span>Health-Conscious Parent, 34</span>
+                        </div>
+                    </div>
+                    <div class="persona-body">
+                        <div class="persona-quote">"I want my family to eat fresh, local food, but finding reliable sources is exhausting."</div>
+                        <div class="persona-section">
+                            <h4>Goals</h4>
+                            <ul>
+                                <li>Access fresh, organic produce</li>
+                                <li>Support local farmers</li>
+                                <li>Reduce family's carbon footprint</li>
+                            </ul>
+                        </div>
+                        <div class="persona-section">
+                            <h4>Pain Points</h4>
+                            <ul>
+                                <li>Hard to verify produce origins</li>
+                                <li>Inconsistent quality from brokers</li>
+                                <li>No relationship with food sources</li>
+                            </ul>
+                        </div>
+                        <div class="persona-tags">
+                            <span>Eco-conscious</span>
+                            <span>Quality-focused</span>
+                            <span>Busy schedule</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Principles Section -->
+    <section class="section principles-section" id="design">
+        <div class="container">
+            <div class="section-label animate-on-scroll">DESIGN PRINCIPLES</div>
+            <h2 class="section-title animate-on-scroll">Core Principles That Guided Every Decision</h2>
+            
+            <div class="principles-grid">
+                <div class="principle-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="principle-icon">🤝</div>
+                    <h3>Trust First</h3>
+                    <p>Every interaction must build confidence between strangers transacting online.</p>
+                    <div class="principle-applications">
+                        <h4>How this informed design:</h4>
+                        <ul>
+                            <li>Verified farmer badges</li>
+                            <li>Transparent ratings & reviews</li>
+                            <li>Direct messaging before purchase</li>
+                            <li>Farm profile with photos & story</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="principle-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="principle-icon">🌱</div>
+                    <h3>Sustainability Visible</h3>
+                    <p>Make environmental impact tangible and rewarding, not abstract.</p>
+                    <div class="principle-applications">
+                        <h4>How this informed design:</h4>
+                        <ul>
+                            <li>CO₂ saved per order</li>
+                            <li>Distance-based farm discovery</li>
+                            <li>Seasonal product highlights</li>
+                            <li>Impact dashboard in profile</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="principle-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="principle-icon">✨</div>
+                    <h3>Effortless Discovery</h3>
+                    <p>Finding local food should be easier than ordering from a supermarket chain.</p>
+                    <div class="principle-applications">
+                        <h4>How this informed design:</h4>
+                        <ul>
+                            <li>Location-based recommendations</li>
+                            <li>Category browsing with emojis</li>
+                            <li>Search with smart filters</li>
+                            <li>Seasonal highlights banner</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="principle-card animate-on-scroll" style="--delay: 0.4s">
+                    <div class="principle-icon">💚</div>
+                    <h3>Human Connection</h3>
+                    <p>Technology should bring people together, not create distance.</p>
+                    <div class="principle-applications">
+                        <h4>How this informed design:</h4>
+                        <ul>
+                            <li>Farmer stories & photos</li>
+                            <li>Direct chat functionality</li>
+                            <li>Pickup at farm option</li>
+                            <li>"Meet the Farmer" sections</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Journey Section -->
+    <section class="section journey-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">USER JOURNEY</div>
+            <h2 class="section-title animate-on-scroll">From Discovery to Delight</h2>
+            <p class="section-subtitle animate-on-scroll">A five-stage journey designed to build trust while minimizing friction</p>
+            
+            <div class="journey-timeline">
+                <div class="journey-step animate-on-scroll" style="--delay: 0.1s">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Discovery</h3>
+                        <p>User opens app and sees nearby farms and seasonal products based on location</p>
+                        <div class="step-emotion positive">😊 Curious</div>
+                    </div>
+                </div>
+                <div class="journey-connector"></div>
+                <div class="journey-step animate-on-scroll" style="--delay: 0.2s">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Exploration</h3>
+                        <p>Browse products, read farm stories, check verifications and reviews</p>
+                        <div class="step-emotion positive">🤔 Evaluating</div>
+                    </div>
+                </div>
+                <div class="journey-connector"></div>
+                <div class="journey-step animate-on-scroll" style="--delay: 0.3s">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Connection</h3>
+                        <p>Message farmer with questions, build confidence in the transaction</p>
+                        <div class="step-emotion positive">😌 Trusting</div>
+                    </div>
+                </div>
+                <div class="journey-connector"></div>
+                <div class="journey-step animate-on-scroll" style="--delay: 0.4s">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Transaction</h3>
+                        <p>Add to cart, choose pickup or delivery, complete purchase</p>
+                        <div class="step-emotion positive">😃 Confident</div>
+                    </div>
+                </div>
+                <div class="journey-connector"></div>
+                <div class="journey-step animate-on-scroll" style="--delay: 0.5s">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Fulfillment</h3>
+                        <p>Receive order, see impact metrics, feel good about sustainable choice</p>
+                        <div class="step-emotion positive">🥳 Delighted</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="journey-insights animate-on-scroll">
+                <h4>Journey Design Insights</h4>
+                <div class="insights-grid">
+                    <div class="insight">
+                        <strong>Trust Building:</strong> Stage 3's messaging feature is critical because users need to verify farmer authenticity before committing money.
+                    </div>
+                    <div class="insight">
+                        <strong>Emotional Arc:</strong> The journey maps from curiosity through evaluation to confident delight, with sustainability rewards at the end.
+                    </div>
+                    <div class="insight">
+                        <strong>Friction Points:</strong> We added "Verified" badges and ratings prominently to reduce hesitation at Stage 2.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="section before-after-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">TRANSFORMATION</div>
+            <h2 class="section-title animate-on-scroll">Before & After Locavore</h2>
+            <p class="section-subtitle animate-on-scroll">See how the app transforms the food buying experience</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card before animate-on-scroll">
+                    <div class="comparison-header">
+                        <span class="comparison-badge">Before</span>
+                        <h3>Traditional Food Shopping</h3>
+                    </div>
+                    <ul class="comparison-list">
+                        <li>
+                            <span class="icon">❌</span>
+                            <span>Unknown origin of produce</span>
+                        </li>
+                        <li>
+                            <span class="icon">❌</span>
+                            <span>Multiple middlemen = higher prices</span>
+                        </li>
+                        <li>
+                            <span class="icon">❌</span>
+                            <span>Produce travels 1500+ miles average</span>
+                        </li>
+                        <li>
+                            <span class="icon">❌</span>
+                            <span>No connection to food source</span>
+                        </li>
+                        <li>
+                            <span class="icon">❌</span>
+                            <span>Out-of-season imports year-round</span>
+                        </li>
+                        <li>
+                            <span class="icon">❌</span>
+                            <span>Farmers receive ~15% of retail price</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card after animate-on-scroll" style="--delay: 0.2s">
+                    <div class="comparison-header">
+                        <span class="comparison-badge">After</span>
+                        <h3>Shopping with Locavore</h3>
+                    </div>
+                    <ul class="comparison-list">
+                        <li>
+                            <span class="icon">✅</span>
+                            <span>Know exactly which farm grew your food</span>
+                        </li>
+                        <li>
+                            <span class="icon">✅</span>
+                            <span>Direct pricing = fair for everyone</span>
+                        </li>
+                        <li>
+                            <span class="icon">✅</span>
+                            <span>Average distance under 10 km</span>
+                        </li>
+                        <li>
+                            <span class="icon">✅</span>
+                            <span>Message and meet your farmer</span>
+                        </li>
+                        <li>
+                            <span class="icon">✅</span>
+                            <span>Seasonal highlights promote local eating</span>
+                        </li>
+                        <li>
+                            <span class="icon">✅</span>
+                            <span>Farmers keep 85%+ of sale price</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="section features-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">CORE FEATURES</div>
+            <h2 class="section-title animate-on-scroll">Essential Functionality</h2>
+            <p class="section-subtitle animate-on-scroll">Features designed to solve real user problems</p>
+
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="feature-icon">📍</div>
+                    <h3>Location-Based Discovery</h3>
+                    <p>Find farms and products nearest to you, sorted by distance for minimum food miles</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay: 0.15s">
+                    <div class="feature-icon">✓</div>
+                    <h3>Verified Farmers</h3>
+                    <p>Badge system confirms farm authenticity, building trust with new buyers</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="feature-icon">💬</div>
+                    <h3>Direct Messaging</h3>
+                    <p>Chat with farmers before buying: ask questions, request specifics, build relationships</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay: 0.25s">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Impact Tracking</h3>
+                    <p>See CO₂ saved, local farmers supported, and earn sustainability levels</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="feature-icon">📅</div>
+                    <h3>Seasonal Highlights</h3>
+                    <p>Discover what's fresh right now with seasonal banners and recommendations</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay: 0.35s">
+                    <div class="feature-icon">🚗</div>
+                    <h3>Flexible Fulfillment</h3>
+                    <p>Choose farm pickup (free) or home delivery, whatever works for your schedule</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Prototype Section -->
+    <section class="section prototype-section" id="prototype">
+        <div class="container">
+            <div class="section-label animate-on-scroll">INTERACTIVE PROTOTYPE</div>
+            <h2 class="section-title animate-on-scroll">Experience the App</h2>
+            <p class="section-subtitle animate-on-scroll">Fully functional prototype. Click through to explore the complete user flow</p>
+
+            <div class="prototype-container animate-on-scroll">
+                <div class="prototype-glow"></div>
+                <iframe src="index.html" class="prototype-frame" title="Locavore App Prototype"></iframe>
+                <div class="prototype-instructions">
+                    <div class="instruction">
+                        <span class="instruction-key">Wait</span>
+                        <span>for splash screen</span>
+                    </div>
+                    <div class="instruction">
+                        <span class="instruction-key">Skip</span>
+                        <span>onboarding to explore</span>
+                    </div>
+                    <div class="instruction">
+                        <span class="instruction-key">Tap</span>
+                        <span>products, farms, nav icons</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-guide animate-on-scroll">
+                <h3>Key Screens to Explore</h3>
+                <div class="screens-grid">
+                    <div class="screen-item">
+                        <span class="screen-number">01</span>
+                        <span class="screen-name">Home</span>
+                        <span class="screen-desc">Personalized discovery</span>
+                    </div>
+                    <div class="screen-item">
+                        <span class="screen-number">02</span>
+                        <span class="screen-name">Search</span>
+                        <span class="screen-desc">Filter & find</span>
+                    </div>
+                    <div class="screen-item">
+                        <span class="screen-number">03</span>
+                        <span class="screen-name">Product</span>
+                        <span class="screen-desc">Detail & farmer info</span>
+                    </div>
+                    <div class="screen-item">
+                        <span class="screen-number">04</span>
+                        <span class="screen-name">Cart</span>
+                        <span class="screen-desc">Checkout flow</span>
+                    </div>
+                    <div class="screen-item">
+                        <span class="screen-number">05</span>
+                        <span class="screen-name">Messages</span>
+                        <span class="screen-desc">Direct communication</span>
+                    </div>
+                    <div class="screen-item">
+                        <span class="screen-number">06</span>
+                        <span class="screen-name">Profile</span>
+                        <span class="screen-desc">Impact tracking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design System Section -->
+    <section class="section design-system-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">DESIGN SYSTEM</div>
+            <h2 class="section-title animate-on-scroll">Visual Language</h2>
+            <p class="section-subtitle animate-on-scroll">A cohesive system built around nature, trust, and warmth</p>
+
+            <div class="design-system-grid">
+                <div class="ds-card colors-card animate-on-scroll">
+                    <h3>Color Palette</h3>
+                    <p class="ds-description">Earthy greens evoke nature and sustainability, while warm accents add energy and approachability</p>
+                    <div class="color-swatches">
+                        <div class="swatch" style="--color: #4A7C59">
+                            <span class="swatch-name">Forest</span>
+                            <span class="swatch-hex">#4A7C59</span>
+                        </div>
+                        <div class="swatch" style="--color: #3D6B4A">
+                            <span class="swatch-name">Deep Green</span>
+                            <span class="swatch-hex">#3D6B4A</span>
+                        </div>
+                        <div class="swatch" style="--color: #c76f51">
+                            <span class="swatch-name">Terracotta</span>
+                            <span class="swatch-hex">#c76f51</span>
+                        </div>
+                        <div class="swatch" style="--color: #e6a756">
+                            <span class="swatch-name">Amber</span>
+                            <span class="swatch-hex">#e6a756</span>
+                        </div>
+                        <div class="swatch light" style="--color: #faf6f0">
+                            <span class="swatch-name">Cream</span>
+                            <span class="swatch-hex">#faf6f0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ds-card typography-card animate-on-scroll" style="--delay: 0.1s">
+                    <h3>Typography</h3>
+                    <p class="ds-description">Fraunces brings warmth and character to headings, while DM Sans ensures readability</p>
+                    <div class="type-samples">
+                        <div class="type-sample">
+                            <span class="type-name">Fraunces</span>
+                            <span class="type-preview fraunces">Display & Headings</span>
+                            <span class="type-use">Titles, section headers, emphasis</span>
+                        </div>
+                        <div class="type-sample">
+                            <span class="type-name">DM Sans</span>
+                            <span class="type-preview dm-sans">Body & Interface</span>
+                            <span class="type-use">Body text, UI elements, navigation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ds-card components-card animate-on-scroll" style="--delay: 0.2s">
+                    <h3>Key Components</h3>
+                    <div class="component-list">
+                        <div class="component-item">
+                            <span class="component-icon">🏷️</span>
+                            <span>Trust Badges</span>
+                        </div>
+                        <div class="component-item">
+                            <span class="component-icon">📊</span>
+                            <span>Impact Cards</span>
+                        </div>
+                        <div class="component-item">
+                            <span class="component-icon">🃏</span>
+                            <span>Product Cards</span>
+                        </div>
+                        <div class="component-item">
+                            <span class="component-icon">👤</span>
+                            <span>Farmer Profiles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Challenges Section -->
+    <section class="section challenges-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">DESIGN CHALLENGES</div>
+            <h2 class="section-title animate-on-scroll">UX Obstacles & Solutions</h2>
+            <p class="section-subtitle animate-on-scroll">Key design challenges and how I addressed them</p>
+
+            <div class="challenges-grid">
+                <div class="challenge-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="challenge-header">
+                        <span class="challenge-number">01</span>
+                        <h3>Building Trust Between Strangers</h3>
+                    </div>
+                    <div class="challenge-body">
+                        <div class="challenge-problem">
+                            <h4>Challenge</h4>
+                            <p>Users hesitate to buy food from unknown farmers; trust is earned slowly but lost instantly</p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4>Design Solution</h4>
+                            <p>Multi-layered trust signals: verified badges, star ratings, review counts, farm photos, "years farming" stat, and direct messaging before purchase</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="challenge-header">
+                        <span class="challenge-number">02</span>
+                        <h3>Making Sustainability Tangible</h3>
+                    </div>
+                    <div class="challenge-body">
+                        <div class="challenge-problem">
+                            <h4>Challenge</h4>
+                            <p>"Eco-friendly" feels abstract; users can't see or feel reduced carbon emissions</p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4>Design Solution</h4>
+                            <p>Quantified impact: "You saved 2.3kg CO₂" on checkout, cumulative stats in profile, gamified "Earth Guardian" levels with progress bars</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="challenge-header">
+                        <span class="challenge-number">03</span>
+                        <h3>Serving Two User Types</h3>
+                    </div>
+                    <div class="challenge-body">
+                        <div class="challenge-problem">
+                            <h4>Challenge</h4>
+                            <p>Farmers and buyers have fundamentally different needs, but both must use the same app</p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4>Design Solution</h4>
+                            <p>Buyer-focused MVP with farmer-friendly features: easy product upload (future), dashboard view, order management, and customer messaging</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-card animate-on-scroll" style="--delay: 0.4s">
+                    <div class="challenge-header">
+                        <span class="challenge-number">04</span>
+                        <h3>Information Density Balance</h3>
+                    </div>
+                    <div class="challenge-body">
+                        <div class="challenge-problem">
+                            <h4>Challenge</h4>
+                            <p>Users need rich product info (farm, distance, price, organic status) without overwhelming mobile screens</p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4>Design Solution</h4>
+                            <p>Progressive disclosure: cards show essentials, detail view reveals depth. Visual badges reduce text. Category emojis enable quick scanning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section results-section" id="learnings">
+        <div class="container">
+            <div class="section-label animate-on-scroll">RESULTS & LEARNINGS</div>
+            <h2 class="section-title animate-on-scroll">What I Accomplished & Learned</h2>
+
+            <div class="results-grid">
+                <div class="result-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="result-number">12</div>
+                    <div class="result-label">Screens Designed</div>
+                    <p>Complete user flow from onboarding to checkout success</p>
+                </div>
+                <div class="result-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="result-number">2</div>
+                    <div class="result-label">User Types Served</div>
+                    <p>Farmers and buyers with distinct but connected experiences</p>
+                </div>
+                <div class="result-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="result-number">5</div>
+                    <div class="result-label">Trust Mechanisms</div>
+                    <p>Badges, ratings, messaging, profiles, impact tracking</p>
+                </div>
+                <div class="result-card animate-on-scroll" style="--delay: 0.4s">
+                    <div class="result-number">1</div>
+                    <div class="result-label">Working Prototype</div>
+                    <p>Fully interactive HTML/CSS/JS simulation</p>
+                </div>
+            </div>
+
+            <div class="learnings-grid">
+                <div class="learning-card animate-on-scroll">
+                    <div class="learning-icon">💡</div>
+                    <h3>Trust Is the Product</h3>
+                    <p>In a marketplace connecting strangers, every design decision must answer: "Does this make users feel safe?" Verified badges, ratings, and messaging aren't just features; they're the foundation.</p>
+                </div>
+                <div class="learning-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="learning-icon">🎯</div>
+                    <h3>Quantify the Abstract</h3>
+                    <p>"Sustainable" means nothing until it's "2.3kg CO₂ saved." Turning eco-impact into numbers makes it real, shareable, and motivating. Gamification (Earth Guardian levels) adds emotional reward.</p>
+                </div>
+                <div class="learning-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="learning-icon">🎨</div>
+                    <h3>Design Signals Quality</h3>
+                    <p>Users judge reliability by aesthetics before functionality. The polished green theme and Fraunces typography signal "premium" and "trustworthy," which is critical for food purchases from strangers.</p>
+                </div>
+                <div class="learning-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="learning-icon">🔄</div>
+                    <h3>Two Users, One Vision</h3>
+                    <p>Designing for both farmers and buyers required understanding their opposing pain points, then finding features that solve both: direct messaging helps buyers trust AND helps farmers explain.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reflection Section -->
+    <section class="section reflection-section">
+        <div class="container">
+            <div class="reflection-content animate-on-scroll">
+                <div class="section-label">REFLECTION</div>
+                <h2>Personal Takeaways</h2>
+                <div class="reflection-text">
+                    <p>This project taught me that sustainable design isn't just about environmental impact. It's about creating systems that sustain trust, relationships, and communities. The Locavore movement isn't just about food miles; it's about reconnecting people with their food sources and each other.</p>
+                    <p>The most challenging aspect was designing for two fundamentally different user types with opposing needs. Farmers need efficient tools to list products and manage orders; buyers need confidence-building features and easy discovery. Finding the overlap (direct messaging, verified profiles, transparent pricing) was the key insight.</p>
+                    <p>If I were to start over, I would conduct more in-depth farmer interviews earlier in the process. While buyer needs are well-documented in market research, farmer pain points around technology adoption and digital literacy would benefit from more ethnographic research.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps Section -->
+    <section class="section next-steps-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">NEXT STEPS</div>
+            <h2 class="section-title animate-on-scroll">Future Design Iterations</h2>
+
+            <div class="next-steps-grid">
+                <div class="next-step-card animate-on-scroll" style="--delay: 0.1s">
+                    <span class="next-step-number">01</span>
+                    <h3>User Testing</h3>
+                    <p>Validate assumptions with real farmers and eco-conscious consumers to identify missed pain points</p>
+                </div>
+                <div class="next-step-card animate-on-scroll" style="--delay: 0.2s">
+                    <span class="next-step-number">02</span>
+                    <h3>Farmer Dashboard</h3>
+                    <p>Design dedicated interface for farmers to manage inventory, view analytics, and respond to orders</p>
+                </div>
+                <div class="next-step-card animate-on-scroll" style="--delay: 0.3s">
+                    <span class="next-step-number">03</span>
+                    <h3>Subscription Model</h3>
+                    <p>Weekly produce boxes with automatic farmer matching based on seasonal availability</p>
+                </div>
+                <div class="next-step-card animate-on-scroll" style="--delay: 0.4s">
+                    <span class="next-step-number">04</span>
+                    <h3>Community Features</h3>
+                    <p>Farm visit scheduling, cooking tips from farmers, seasonal recipe suggestions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-leaf">🌿</span>
+                    <span class="footer-name">Locavore Case Study</span>
+                </div>
+                <p class="footer-credit">Designed by Hamza Galbete</p>
+                <p class="footer-year">© 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="case-study.js"></script>
+</body>
+</html>
+

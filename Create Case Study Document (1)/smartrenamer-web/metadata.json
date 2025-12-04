@@ -1,0 +1,5 @@
+{
+  "name": "SmartRenamer Web Service",
+  "description": "An AI-powered file renaming service that analyzes image content to generate descriptive filenames and tags automatically using Gemini Flash.",
+  "requestFramePermissions": []
+}
