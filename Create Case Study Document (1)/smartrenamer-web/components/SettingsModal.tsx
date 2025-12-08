@@ -41,9 +41,42 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, settings
             <div className="space-y-8">
               <div className="space-y-3">
                 <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">API Configuration</h3>
-                <div className="bg-[#15151a] border border-slate-700/80 rounded-xl p-4">
-                  <p className="text-sm text-slate-200 font-medium">Gemini access is already configured.</p>
-                  <p className="text-xs text-slate-500 mt-2">This build ships with Hamza's API key so you can start renaming images immediately.</p>
+
+                {!settings.apiKey && (
+                  <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 mb-3">
+                    <div className="flex items-start gap-2">
+                      <Info className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
+                      <div>
+                        <p className="text-sm text-amber-200 font-medium mb-1">API Key Required</p>
+                        <p className="text-xs text-amber-300/80">You need a Gemini API key to use SmartRenamer.</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                <div className="space-y-2">
+                  <label className="text-sm text-slate-300 font-medium block">Gemini API Key</label>
+                  <input
+                    type="password"
+                    value={settings.apiKey}
+                    onChange={(e) => onUpdateSettings({ ...settings, apiKey: e.target.value })}
+                    placeholder="Enter your API key..."
+                    className="w-full bg-[#0f0f10] border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:border-lime-500 focus:ring-1 focus:ring-lime-500 outline-none transition-all placeholder-slate-600"
+                  />
+                  <div className="bg-[#15151a] border border-slate-700/80 rounded-lg p-3 space-y-2">
+                    <p className="text-xs text-slate-400">
+                      <strong className="text-slate-300">How to get an API key:</strong>
+                    </p>
+                    <ol className="text-xs text-slate-400 space-y-1 ml-4 list-decimal">
+                      <li>Visit <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer" className="text-lime-400 hover:text-lime-300 underline">Google AI Studio</a></li>
+                      <li>Sign in with your Google account</li>
+                      <li>Click "Get API Key" or "Create API Key"</li>
+                      <li>Copy the key and paste it above</li>
+                    </ol>
+                    <p className="text-xs text-slate-500 mt-2">
+                      Your API key is stored locally in your browser and never sent to any server except Google's Gemini API.
+                    </p>
+                  </div>
                 </div>
               </div>
 
