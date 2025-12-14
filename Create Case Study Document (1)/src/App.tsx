@@ -1,4 +1,4 @@
-import { ImageWithFallback } from './components/figma/ImageWithFallback';
+import { TopNav } from './components/TopNav';
 import { Hero } from './components/Hero';
 import { Overview } from './components/Overview';
 import { UserResearch } from './components/UserResearch';
@@ -19,24 +19,35 @@ import settingsScreenshot from 'figma:asset/7776b2e3d5c09fa5c797f97d8effe7a1e481
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-neutral-50">
-      <Hero />
-      <Overview />
-      <UserResearch />
-      <DesignPrinciples />
-      <UserJourney />
-      <BeforeAfter />
-      <Features />
-      <TechPivot />
-      <DesignJourney />
-      <WebApp />
-      <Challenges />
-      <Screenshots 
-        mainScreenshot={mainScreenshot}
-        settingsScreenshot={settingsScreenshot}
-      />
-      <Results />
-      <CallToAction />
+    <div className="min-h-screen bg-neutral-50" style={{ paddingTop: '64px' }}>
+      <TopNav />
+      <section id="overview">
+        <Hero />
+        <Overview />
+      </section>
+      <section id="research">
+        <UserResearch />
+      </section>
+      <section id="design">
+        <DesignPrinciples />
+        <UserJourney />
+        <BeforeAfter />
+        <TechPivot />
+        <DesignJourney />
+      </section>
+      <section id="features">
+        <Features />
+        <WebApp />
+        <Challenges />
+        <Screenshots
+          mainScreenshot={mainScreenshot}
+          settingsScreenshot={settingsScreenshot}
+        />
+      </section>
+      <section id="results">
+        <Results />
+        <CallToAction />
+      </section>
       <Footer />
     </div>
   );
