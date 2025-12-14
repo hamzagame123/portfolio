@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Sparkles } from 'lucide-react';
 
 const navLinks = [
   { label: 'Overview', href: '#overview', id: 'overview' },
@@ -52,34 +51,37 @@ export function TopNav() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '16px 32px',
+        padding: '20px 24px',
         background: 'rgba(15, 23, 42, 0.95)',
         backdropFilter: 'blur(20px)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
       }}
     >
-      {/* Logo - Left side */}
+      {/* Logo - Left side - matches landing page */}
       <a
-        href="#overview"
+        href="../../"
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '10px',
+          gap: '12px',
           textDecoration: 'none',
         }}
       >
         <div
           style={{
-            width: '32px',
-            height: '32px',
-            borderRadius: '8px',
-            background: 'linear-gradient(135deg, #a3e635 0%, #84cc16 100%)',
+            width: '40px',
+            height: '40px',
+            borderRadius: '50%',
+            background: 'linear-gradient(135deg, #84cc16 0%, #10b981 100%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            fontSize: '14px',
+            fontWeight: 700,
+            color: '#0c0c0c',
           }}
         >
-          <Sparkles style={{ width: '16px', height: '16px', color: '#0f172a' }} />
+          HG
         </div>
         <span
           style={{
@@ -97,7 +99,7 @@ export function TopNav() {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '32px',
+          gap: '40px',
         }}
       >
         {navLinks.map((link) => {
@@ -131,7 +133,7 @@ export function TopNav() {
                     right: 0,
                     bottom: 0,
                     height: '2px',
-                    background: '#a3e635',
+                    background: '#84cc16',
                     borderRadius: '2px',
                   }}
                 />
