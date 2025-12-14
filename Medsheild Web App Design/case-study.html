@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medsheild Case Study | Hamza Galbete</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="../" class="nav-logo">
+            <span class="logo-circle">HG</span>
+            <span>Hamza Galbete</span>
+        </a>
+        <div class="nav-links">
+            <a href="#overview">Overview</a>
+            <a href="#research">Research</a>
+            <a href="#wireframes">Wireframes</a>
+            <a href="#design">Design</a>
+            <a href="#prototype">Prototype</a>
+            <a href="#learnings">Learnings</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="overview">
+        <div class="hero-badge animate-on-scroll">UX CASE STUDY</div>
+        <h1 class="hero-title animate-on-scroll">
+            <span class="title-line">Medsheild</span>
+            <span class="title-accent">Chiropractic Clinic Management System</span>
+        </h1>
+        <p class="hero-subtitle animate-on-scroll">
+            Designing a modern, secure web application for chiropractic clinics to manage patient information and appointments efficiently. Built with a focus on trust, professionalism, and usability.
+        </p>
+        
+        <div class="hero-meta animate-on-scroll">
+            <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">UX/Product Designer</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Timeline</span>
+                <span class="meta-value">4 weeks (Solo project)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Deliverable</span>
+                <span class="meta-value">Functional Web App</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Focus</span>
+                <span class="meta-value">Patients, Appointments</span>
+            </div>
+        </div>
+
+        <div class="hero-tags animate-on-scroll">
+            <span class="tag">UX Design</span>
+            <span class="tag">Product Design</span>
+            <span class="tag">Web Application</span>
+            <span class="tag">Healthcare</span>
+            <span class="tag">Prototyping</span>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </header>
+
+    <!-- Brief Section -->
+    <section class="section brief-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">THE BRIEF</div>
+            <div class="brief-grid">
+                <div class="brief-main animate-on-scroll">
+                    <h2>Design a clinic management system that simplifies patient info and appointment scheduling</h2>
+                    <p>Create a web application that helps chiropractic clinics manage patient records efficiently, schedule appointments seamlessly, and provide a professional, trustworthy experience for clinic staff.</p>
+                </div>
+                <div class="brief-details">
+                    <div class="brief-card animate-on-scroll" style="--delay: 0.1s">
+                        <div class="brief-card-icon">👨‍⚕️</div>
+                        <h3>Target Users</h3>
+                        <p>Chiropractors, clinic staff, receptionists who use the system daily on desktop computers</p>
+                    </div>
+                    <div class="brief-card animate-on-scroll" style="--delay: 0.2s">
+                        <div class="brief-card-icon">🎯</div>
+                        <h3>Core Challenge</h3>
+                        <p>Create an intuitive interface that requires minimal training while handling complex medical data</p>
+                    </div>
+                    <div class="brief-card animate-on-scroll" style="--delay: 0.3s">
+                        <div class="brief-card-icon">🏥</div>
+                        <h3>Impact Goal</h3>
+                        <p>Reduce appointment booking time, improve patient data access, and enhance overall efficiency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section problem-section">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-content">
+                    <div class="section-label animate-on-scroll">THE PROBLEM</div>
+                    <h2 class="animate-on-scroll">Fragmented systems create inefficiency</h2>
+                    <p class="problem-lead animate-on-scroll">Chiropractic clinics struggle with outdated, complex systems that waste valuable time and create frustration for both staff and patients.</p>
+                </div>
+                <div class="problem-quotes">
+                    <blockquote class="quote-card chiropractor-quote animate-on-scroll">
+                        <div class="quote-icon">🩺</div>
+                        <p>"I spend more time navigating the software than I do with my patients. Finding patient history takes forever."</p>
+                        <cite>Chiropractor, 12 years experience</cite>
+                    </blockquote>
+                    <blockquote class="quote-card receptionist-quote animate-on-scroll">
+                        <div class="quote-icon">📋</div>
+                        <p>"Booking an appointment shouldn't take 7 minutes. Our old system makes everything more complicated than it needs to be."</p>
+                        <cite>Clinic Receptionist, Interview</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section stats-section" id="research">
+        <div class="container">
+            <div class="section-label animate-on-scroll">USER RESEARCH</div>
+            <h2 class="section-title animate-on-scroll">Understanding the Problem Space</h2>
+            <p class="section-subtitle animate-on-scroll">Research insights that shaped the design direction</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="stat-number">95%</div>
+                    <p class="stat-label">of tasks performed on desktop/laptop computers</p>
+                    <span class="stat-source">User Interviews</span>
+                </div>
+                <div class="stat-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="stat-number">5-7</div>
+                    <div class="stat-suffix">min</div>
+                    <p class="stat-label">average time to book an appointment with current systems</p>
+                    <span class="stat-source">Observation Study</span>
+                </div>
+                <div class="stat-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="stat-number">&lt;5</div>
+                    <div class="stat-suffix">sec</div>
+                    <p class="stat-label">target time to access patient history</p>
+                    <span class="stat-source">Project Goal</span>
+                </div>
+                <div class="stat-card animate-on-scroll" style="--delay: 0.4s">
+                    <div class="stat-number">90%</div>
+                    <p class="stat-label">target staff adoption rate within first month</p>
+                    <span class="stat-source">Success Metric</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Might We Section -->
+    <section class="section hmw-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">DESIGN CHALLENGE</div>
+            <h2 class="section-title animate-on-scroll">How Might We...</h2>
+            
+            <div class="hmw-grid">
+                <div class="hmw-card animate-on-scroll" style="--delay: 0.1s">
+                    <span class="hmw-number">01</span>
+                    <p>Streamline patient lookup to under 5 seconds?</p>
+                </div>
+                <div class="hmw-card animate-on-scroll" style="--delay: 0.2s">
+                    <span class="hmw-number">02</span>
+                    <p>Reduce appointment booking time from 7 minutes to under 2?</p>
+                </div>
+                <div class="hmw-card animate-on-scroll" style="--delay: 0.3s">
+                    <span class="hmw-number">03</span>
+                    <p>Create an interface that requires minimal training?</p>
+                </div>
+                <div class="hmw-card animate-on-scroll" style="--delay: 0.4s">
+                    <span class="hmw-number">04</span>
+                    <p>Build trust through a professional, medical-grade aesthetic?</p>
+                </div>
+                <div class="hmw-card animate-on-scroll" style="--delay: 0.5s">
+                    <span class="hmw-number">05</span>
+                    <p>Ensure data security while maintaining usability?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Personas Section -->
+    <section class="section personas-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">USER PERSONAS</div>
+            <h2 class="section-title animate-on-scroll">Who We're Designing For</h2>
+            
+            <div class="personas-grid">
+                <div class="persona-card animate-on-scroll">
+                    <div class="persona-header chiropractor-persona">
+                        <div class="persona-avatar">👨‍⚕️</div>
+                        <div class="persona-info">
+                            <h3>Dr. Michael Torres</h3>
+                            <span>Chiropractor, 45</span>
+                        </div>
+                    </div>
+                    <div class="persona-body">
+                        <div class="persona-quote">"I need to access patient history instantly during appointments without breaking the flow."</div>
+                        <div class="persona-section">
+                            <h4>Goals</h4>
+                            <ul>
+                                <li>Quick access to patient records</li>
+                                <li>At-a-glance scheduling overview</li>
+                                <li>Minimal time navigating software</li>
+                            </ul>
+                        </div>
+                        <div class="persona-section">
+                            <h4>Pain Points</h4>
+                            <ul>
+                                <li>Complex interfaces slow down workflow</li>
+                                <li>Too many clicks to find information</li>
+                                <li>Outdated systems with poor UX</li>
+                            </ul>
+                        </div>
+                        <div class="persona-tags">
+                            <span>Time-sensitive</span>
+                            <span>Desktop user</span>
+                            <span>Expert</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="persona-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="persona-header receptionist-persona">
+                        <div class="persona-avatar">👩‍💼</div>
+                        <div class="persona-info">
+                            <h3>Emily Rodriguez</h3>
+                            <span>Receptionist, 28</span>
+                        </div>
+                    </div>
+                    <div class="persona-body">
+                        <div class="persona-quote">"I handle dozens of calls a day. The system needs to be fast and foolproof."</div>
+                        <div class="persona-section">
+                            <h4>Goals</h4>
+                            <ul>
+                                <li>Fast appointment booking</li>
+                                <li>Easy patient search</li>
+                                <li>Clear schedule visibility</li>
+                            </ul>
+                        </div>
+                        <div class="persona-section">
+                            <h4>Pain Points</h4>
+                            <ul>
+                                <li>Manual booking processes</li>
+                                <li>Scattered patient information</li>
+                                <li>Scheduling conflicts</li>
+                            </ul>
+                        </div>
+                        <div class="persona-tags">
+                            <span>High-volume</span>
+                            <span>Efficiency-focused</span>
+                            <span>Multi-tasker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wireframes & Ideation Section -->
+    <section class="section wireframes-section" id="wireframes">
+        <div class="container">
+            <div class="section-label animate-on-scroll">IDEATION & WIREFRAMES</div>
+            <h2 class="section-title animate-on-scroll">From Sketches to Screens</h2>
+            <p class="section-subtitle animate-on-scroll">Exploring ideas through rapid iteration before committing to pixels</p>
+
+            <!-- Process Timeline -->
+            <div class="ideation-timeline animate-on-scroll">
+                <div class="timeline-step">
+                    <div class="timeline-icon">✏️</div>
+                    <h4>Sketch</h4>
+                    <p>Dashboard layouts</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step">
+                    <div class="timeline-icon">🔲</div>
+                    <h4>Wireframe</h4>
+                    <p>Information hierarchy</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step">
+                    <div class="timeline-icon">🎨</div>
+                    <h4>Visual Design</h4>
+                    <p>Brand-driven colors</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step active">
+                    <div class="timeline-icon">🚀</div>
+                    <h4>Prototype</h4>
+                    <p>Functional MVP</p>
+                </div>
+            </div>
+
+            <!-- Design Decisions -->
+            <div class="design-decisions animate-on-scroll">
+                <h3>Key Design Decisions</h3>
+                <div class="decisions-grid">
+                    <div class="decision-card">
+                        <h4>Desktop-First Approach</h4>
+                        <p>Research showed 95% of tasks happen on desktop. We prioritized the primary use case instead of forcing mobile-first.</p>
+                    </div>
+                    <div class="decision-card">
+                        <h4>Logo-Driven Design System</h4>
+                        <p>The Medsheild logo informed the entire color palette, creating instant brand cohesion with the primary blue (#0066CC).</p>
+                    </div>
+                    <div class="decision-card">
+                        <h4>Cards as Primary Container</h4>
+                        <p>All content uses consistent card patterns with subtle shadows, creating visual hierarchy without clutter.</p>
+                    </div>
+                    <div class="decision-card">
+                        <h4>Simplified Scope</h4>
+                        <p>Focused on patient info and appointments. Intentionally excluded billing and clinical notes to reduce complexity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design System Section -->
+    <section class="section design-system-section" id="design">
+        <div class="container">
+            <div class="section-label animate-on-scroll">DESIGN SYSTEM</div>
+            <h2 class="section-title animate-on-scroll">Visual Language</h2>
+            <p class="section-subtitle animate-on-scroll">A cohesive system built around trust, professionalism, and calm</p>
+
+            <div class="design-system-grid">
+                <div class="ds-card colors-card animate-on-scroll">
+                    <h3>Color Palette</h3>
+                    <p class="ds-description">Primary blue derived from logo creates trust and professionalism</p>
+                    <div class="color-swatches">
+                        <div class="swatch" style="--color: #0066CC">
+                            <span class="swatch-name">Primary</span>
+                            <span class="swatch-hex">#0066CC</span>
+                        </div>
+                        <div class="swatch light" style="--color: #f3f3f5">
+                            <span class="swatch-name">Background</span>
+                            <span class="swatch-hex">#f3f3f5</span>
+                        </div>
+                        <div class="swatch" style="--color: #d4183d">
+                            <span class="swatch-name">Destructive</span>
+                            <span class="swatch-hex">#d4183d</span>
+                        </div>
+                        <div class="swatch" style="--color: #22c55e">
+                            <span class="swatch-name">Success</span>
+                            <span class="swatch-hex">#22c55e</span>
+                        </div>
+                        <div class="swatch" style="--color: #717182">
+                            <span class="swatch-name">Muted</span>
+                            <span class="swatch-hex">#717182</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ds-card typography-card animate-on-scroll" style="--delay: 0.1s">
+                    <h3>Typography</h3>
+                    <p class="ds-description">System font stack for performance and familiarity across devices</p>
+                    <div class="type-samples">
+                        <div class="type-sample">
+                            <span class="type-name">Headings</span>
+                            <span class="type-preview outfit">Dashboard Overview</span>
+                            <span class="type-use">Page titles, section headers</span>
+                        </div>
+                        <div class="type-sample">
+                            <span class="type-name">Body</span>
+                            <span class="type-preview inter">Patient information and details</span>
+                            <span class="type-use">Body text, UI elements</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ds-card components-card animate-on-scroll" style="--delay: 0.2s">
+                    <h3>40+ UI Components</h3>
+                    <div class="component-list">
+                        <div class="component-item">
+                            <span class="component-icon">🃏</span>
+                            <span>Cards & Panels</span>
+                        </div>
+                        <div class="component-item">
+                            <span class="component-icon">📊</span>
+                            <span>Data Tables</span>
+                        </div>
+                        <div class="component-item">
+                            <span class="component-icon">📅</span>
+                            <span>Calendar Views</span>
+                        </div>
+                        <div class="component-item">
+                            <span class="component-icon">🏷️</span>
+                            <span>Status Badges</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="section features-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">CORE FEATURES</div>
+            <h2 class="section-title animate-on-scroll">Essential Functionality</h2>
+            <p class="section-subtitle animate-on-scroll">Features designed to solve real clinic workflow problems</p>
+
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dashboard</h3>
+                    <p>At-a-glance overview with today's appointments, recent patients, and weekly charts</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay: 0.15s">
+                    <div class="feature-icon">👥</div>
+                    <h3>Patient Management</h3>
+                    <p>Comprehensive patient records with search, filtering, and detailed profiles</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="feature-icon">📅</div>
+                    <h3>Appointment Scheduling</h3>
+                    <p>Visual calendar with time slots, status tracking, and chiropractor filtering</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay: 0.25s">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Secure Login</h3>
+                    <p>Protected authentication flow with session management and secure routing</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Settings</h3>
+                    <p>Clinic info, user preferences, team management, and security settings</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay: 0.35s">
+                    <div class="feature-icon">📈</div>
+                    <h3>Analytics</h3>
+                    <p>Weekly appointment trends, patient acquisition stats, and visual charts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Prototype Section -->
+    <section class="section prototype-section" id="prototype">
+        <div class="container">
+            <div class="section-label animate-on-scroll">INTERACTIVE PROTOTYPE</div>
+            <h2 class="section-title animate-on-scroll">Experience the App</h2>
+            <p class="section-subtitle animate-on-scroll">Fully functional prototype. Explore the complete patient and appointment management flow.</p>
+
+            <div class="prototype-container animate-on-scroll">
+                <div class="prototype-glow"></div>
+                <iframe src="./build/index.html" class="prototype-frame" title="Medsheild App Prototype"></iframe>
+            </div>
+
+            <div class="screen-guide animate-on-scroll">
+                <h3>Key Screens to Explore</h3>
+                <div class="screens-grid">
+                    <div class="screen-item">
+                        <span class="screen-number">01</span>
+                        <span class="screen-name">Dashboard</span>
+                        <span class="screen-desc">Daily overview</span>
+                    </div>
+                    <div class="screen-item">
+                        <span class="screen-number">02</span>
+                        <span class="screen-name">Patients</span>
+                        <span class="screen-desc">Search & filter</span>
+                    </div>
+                    <div class="screen-item">
+                        <span class="screen-number">03</span>
+                        <span class="screen-name">Patient Profile</span>
+                        <span class="screen-desc">Full details</span>
+                    </div>
+                    <div class="screen-item">
+                        <span class="screen-number">04</span>
+                        <span class="screen-name">Appointments</span>
+                        <span class="screen-desc">Calendar view</span>
+                    </div>
+                    <div class="screen-item">
+                        <span class="screen-number">05</span>
+                        <span class="screen-name">Schedule</span>
+                        <span class="screen-desc">Time slots</span>
+                    </div>
+                    <div class="screen-item">
+                        <span class="screen-number">06</span>
+                        <span class="screen-name">Settings</span>
+                        <span class="screen-desc">Preferences</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Challenges Section -->
+    <section class="section challenges-section">
+        <div class="container">
+            <div class="section-label animate-on-scroll">DESIGN CHALLENGES</div>
+            <h2 class="section-title animate-on-scroll">UX Obstacles & Solutions</h2>
+            <p class="section-subtitle animate-on-scroll">Key design challenges and how I addressed them</p>
+
+            <div class="challenges-grid">
+                <div class="challenge-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="challenge-header">
+                        <span class="challenge-number">01</span>
+                        <h3>Information Overload</h3>
+                    </div>
+                    <div class="challenge-body">
+                        <div class="challenge-problem">
+                            <h4>Challenge</h4>
+                            <p>Medical data is complex. Too much information on screen creates cognitive overload.</p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4>Design Solution</h4>
+                            <p>Cards with clear hierarchy, progressive disclosure, and generous whitespace. Dashboard shows only what's needed now.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="challenge-header">
+                        <span class="challenge-number">02</span>
+                        <h3>Scheduling Complexity</h3>
+                    </div>
+                    <div class="challenge-body">
+                        <div class="challenge-problem">
+                            <h4>Challenge</h4>
+                            <p>Multiple chiropractors, various appointment types, and time conflicts create booking complexity.</p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4>Design Solution</h4>
+                            <p>Visual time slot grid with color-coded status badges, chiropractor filters, and clear "available" indicators.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="challenge-header">
+                        <span class="challenge-number">03</span>
+                        <h3>Trust & Professionalism</h3>
+                    </div>
+                    <div class="challenge-body">
+                        <div class="challenge-problem">
+                            <h4>Challenge</h4>
+                            <p>Healthcare software needs to feel secure and professional without being cold or clinical.</p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4>Design Solution</h4>
+                            <p>Logo-derived blue palette, soft shadows, generous spacing. Modern SaaS aesthetic that builds trust.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section results-section" id="learnings">
+        <div class="container">
+            <div class="section-label animate-on-scroll">RESULTS & LEARNINGS</div>
+            <h2 class="section-title animate-on-scroll">What I Accomplished & Learned</h2>
+
+            <div class="results-grid">
+                <div class="result-card animate-on-scroll">
+                    <div class="result-number">40+</div>
+                    <div class="result-label">UI Components</div>
+                    <p class="result-desc">Complete design system with reusable components</p>
+                </div>
+                <div class="result-card animate-on-scroll">
+                    <div class="result-number">5</div>
+                    <div class="result-label">Core Features</div>
+                    <p class="result-desc">Dashboard, Patients, Appointments, Settings, Auth</p>
+                </div>
+                <div class="result-card animate-on-scroll">
+                    <div class="result-number">&lt;2s</div>
+                    <div class="result-label">Load Time</div>
+                    <p class="result-desc">Fast, performant user experience</p>
+                </div>
+                <div class="result-card animate-on-scroll">
+                    <div class="result-number">MVP</div>
+                    <div class="result-label">Complete</div>
+                    <p class="result-desc">Validated patterns ready for production</p>
+                </div>
+            </div>
+
+            <div class="learnings-section animate-on-scroll">
+                <h3>Key Learnings</h3>
+                <div class="learnings-grid">
+                    <div class="learning-card">
+                        <h4>Logo-Driven Design Works</h4>
+                        <p>Deriving colors from the existing logo created instant brand cohesion and gave the project strong visual identity from day one.</p>
+                    </div>
+                    <div class="learning-card">
+                        <h4>Desktop-First Can Be Valid</h4>
+                        <p>For B2B applications with known usage patterns, desktop-first is appropriate. Don't force mobile-first if it doesn't fit the use case.</p>
+                    </div>
+                    <div class="learning-card">
+                        <h4>Scope Discipline is Critical</h4>
+                        <p>Removing billing and clinical notes allowed focus on core functionality. Better to do less, well.</p>
+                    </div>
+                    <div class="learning-card">
+                        <h4>Mock Data Quality Matters</h4>
+                        <p>Realistic mock data made the app feel complete, improved testing, and helped identify edge cases early.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reflection animate-on-scroll">
+                <h3>Reflection</h3>
+                <p>This project taught me that <strong>professional aesthetics signal quality</strong>. In healthcare, trust is paramount, and the visual design directly impacts perceived reliability. The same functionality in a polished interface is perceived as more trustworthy than in basic UI.</p>
+                <p>If I were to start over, I would <strong>involve users even earlier</strong>. While I iterated based on research and design principles, formal usability testing with actual clinic staff would have validated decisions with real evidence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="../" class="footer-logo">
+                        <span class="logo-circle">HG</span>
+                        <span>Hamza Galbete</span>
+                    </a>
+                    <p>UX Designer crafting meaningful digital experiences</p>
+                </div>
+                <div class="footer-right">
+                    <a href="mailto:Hamzagalbete99@gmail.com">Hamzagalbete99@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Hamza Galbete. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="case-study.js"></script>
+</body>
+</html>
