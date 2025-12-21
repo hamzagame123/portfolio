@@ -1,4 +1,4 @@
-// Mock data for the Medsheild application
+// Mock data for the Medshield application
 
 export const mockPatients = [
   {

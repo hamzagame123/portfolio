@@ -1,11 +1,11 @@
-# Medsheild: Chiropractic Clinic Management System
+# Medshield: Chiropractic Clinic Management System
 ## Case Study
 
 ---
 
 ## Executive Summary
 
-**Medsheild** is a modern, secure web application designed for chiropractic clinics to manage patient information and appointments efficiently. Built with a focus on trust, professionalism, and usability, the application serves chiropractors, clinic staff, and receptionists who use the system daily on desktop and laptop computers.
+**Medshield** is a modern, secure web application designed for chiropractic clinics to manage patient information and appointments efficiently. Built with a focus on trust, professionalism, and usability, the application serves chiropractors, clinic staff, and receptionists who use the system daily on desktop and laptop computers.
 
 **Project Duration:** Multi-phase development  
 **Platform:** Web Application (React)  
@@ -286,7 +286,7 @@ URL-based state (React Router)
 ### Brand Identity
 
 **Logo Analysis:**
-The Medsheild logo informed the entire design system, establishing the primary color palette and brand personality.
+The Medshield logo informed the entire design system, establishing the primary color palette and brand personality.
 
 **Brand Attributes:**
 - Professional
@@ -942,7 +942,7 @@ After attempting mobile responsiveness changes, the application was restored to 
 
 ## Conclusion
 
-Medsheild represents a successful implementation of a focused, user-centered healthcare management application. By prioritizing the core needs of chiropractic clinics—patient management and appointment scheduling—and delivering them with a professional, trustworthy design, the application provides real value without overwhelming complexity.
+Medshield represents a successful implementation of a focused, user-centered healthcare management application. By prioritizing the core needs of chiropractic clinics—patient management and appointment scheduling—and delivering them with a professional, trustworthy design, the application provides real value without overwhelming complexity.
 
 ### Project Success Factors
 
@@ -968,9 +968,9 @@ Medsheild represents a successful implementation of a focused, user-centered hea
 
 ### Next Steps
 
-The immediate priority is completing mobile responsiveness to ensure the application works seamlessly across all devices. Following that, backend integration will transform Medsheild from a polished prototype into a production-ready SaaS product.
+The immediate priority is completing mobile responsiveness to ensure the application works seamlessly across all devices. Following that, backend integration will transform Medshield from a polished prototype into a production-ready SaaS product.
 
-With a solid foundation, thoughtful design system, and clear roadmap, Medsheild is positioned to become a valuable tool for chiropractic clinics seeking a modern, efficient, and trustworthy patient management solution.
+With a solid foundation, thoughtful design system, and clear roadmap, Medshield is positioned to become a valuable tool for chiropractic clinics seeking a modern, efficient, and trustworthy patient management solution.
 
 ---
 
@@ -1006,7 +1006,7 @@ With a solid foundation, thoughtful design system, and clear roadmap, Medsheild 
 
 ### Design Resources
 
-- Logo: Medsheild brand logo (blue medical shield)
+- Logo: Medshield brand logo (blue medical shield)
 - Color Palette: Derived from logo primary blue (#0066CC)
 - Typography: System font stack
 - Icons: Lucide React icon library
@@ -1020,4 +1020,4 @@ With a solid foundation, thoughtful design system, and clear roadmap, Medsheild 
 
 ---
 
-*This case study documents the design and development of Medsheild, a modern chiropractic clinic management system, from initial concept through MVP delivery and future roadmap planning.*
+*This case study documents the design and development of Medshield, a modern chiropractic clinic management system, from initial concept through MVP delivery and future roadmap planning.*

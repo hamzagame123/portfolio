@@ -25,8 +25,8 @@ export function Sidebar() {
     <aside className="w-64 bg-white border-r border-gray-200 flex flex-col">
       <div className="p-6 border-b border-gray-200">
         <div className="flex items-center gap-3">
-          <img src={logoImage} alt="Medsheild" className="h-8 w-8" />
-          <span className="text-gray-900">Medsheild</span>
+          <img src={logoImage} alt="Medshield" className="h-8 w-8" />
+          <span className="text-gray-900">Medshield</span>
         </div>
       </div>
       

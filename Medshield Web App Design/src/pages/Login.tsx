@@ -32,7 +32,7 @@ export function Login() {
               </div>
             </div>
           </div>
-          <h2 className="text-gray-900 mb-4">Welcome to Medsheild</h2>
+          <h2 className="text-gray-900 mb-4">Welcome to Medshield</h2>
           <p className="text-gray-600">
             Secure patient management and clinical documentation for modern chiropractic clinics.
           </p>
@@ -44,8 +44,8 @@ export function Login() {
         <div className="w-full max-w-md">
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-6">
-              <img src={logoImage} alt="Medsheild" className="h-10 w-10" />
-              <span className="text-gray-900">Medsheild</span>
+              <img src={logoImage} alt="Medshield" className="h-10 w-10" />
+              <span className="text-gray-900">Medshield</span>
             </div>
             <h1 className="text-gray-900 mb-2">Sign in to your account</h1>
             <p className="text-gray-600">Enter your credentials to access the clinic portal</p>
