@@ -1,6 +1,9 @@
 // Locavore Case Study - Interactive JavaScript
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Mark body as JS-ready so animations can work
+    document.body.classList.add('js-ready');
+    
     initScrollAnimations();
     initStatCounters();
     initNavHighlight();
