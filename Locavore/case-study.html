@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="case-study.css?v=7">
+    <link rel="stylesheet" href="case-study.css?v=8">
 </head>
 <body>
     <!-- Navigation -->
@@ -308,33 +308,118 @@
     <section class="section competitive-section">
         <div class="container">
             <div class="section-label animate-on-scroll">COMPETITIVE ANALYSIS</div>
-            <h2 class="section-title animate-on-scroll">Market Landscape</h2>
-            <p class="section-subtitle animate-on-scroll">Understanding what exists and where the opportunity lies</p>
+            <h2 class="section-title animate-on-scroll">What's Already Out There?</h2>
+            <p class="section-subtitle animate-on-scroll">I analyzed existing farmers market apps to identify gaps and opportunities</p>
 
+            <!-- Competitor App Cards -->
+            <div class="competitor-cards-grid animate-on-scroll">
+                <!-- Soko -->
+                <div class="competitor-app-card">
+                    <div class="competitor-app-header">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/59/22/48/59224842-b19c-7b9b-fde5-f5be52c3ba66/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp" alt="Soko App" class="competitor-app-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="competitor-app-icon-fallback" style="display:none;">🛒</div>
+                        <div class="competitor-app-info">
+                            <h4>Soko</h4>
+                            <span class="competitor-type">Market App</span>
+                        </div>
+                    </div>
+                    <p class="competitor-description">Pre-order produce, discover markets, make payments. The closest competitor with actual market features.</p>
+                    <div class="competitor-features">
+                        <span class="has-feature">✓ Market discovery</span>
+                        <span class="has-feature">✓ Pre-ordering</span>
+                        <span class="has-feature">✓ Payments</span>
+                        <span class="missing-feature">✗ Social features</span>
+                        <span class="missing-feature">✗ Who's going</span>
+                    </div>
+                </div>
+
+                <!-- Farmer's Market Locator -->
+                <div class="competitor-app-card">
+                    <div class="competitor-app-header">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/d4/92/d5/d492d58e-97d4-7c3c-3fca-e932bd21db78/AppIcon-0-1x_U007emarketing-0-10-0-85-220.png/230x0w.webp" alt="Farmers Market Locator" class="competitor-app-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="competitor-app-icon-fallback" style="display:none;">📍</div>
+                        <div class="competitor-app-info">
+                            <h4>FM Locator</h4>
+                            <span class="competitor-type">Directory App</span>
+                        </div>
+                    </div>
+                    <p class="competitor-description">Search 6,800+ US markets by state or city. Basic directory with addresses and hours.</p>
+                    <div class="competitor-features">
+                        <span class="has-feature">✓ Large database</span>
+                        <span class="has-feature">✓ Search by location</span>
+                        <span class="missing-feature">✗ Canada support</span>
+                        <span class="missing-feature">✗ Social features</span>
+                        <span class="missing-feature">✗ Vendor profiles</span>
+                    </div>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="competitor-app-card">
+                    <div class="competitor-app-header">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/88/af/da/88afda1b-5bb8-d45b-ea1c-8a5acac6edcd/logo_maps_ios_color-0-1x_U007emarketing-0-0-0-6-0-0-85-220-0.png/230x0w.webp" alt="Google Maps" class="competitor-app-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="competitor-app-icon-fallback" style="display:none;">🗺️</div>
+                        <div class="competitor-app-info">
+                            <h4>Google Maps</h4>
+                            <span class="competitor-type">General Maps</span>
+                        </div>
+                    </div>
+                    <p class="competitor-description">Generic "farmers market" search. No specialized features, inconsistent data, no schedules.</p>
+                    <div class="competitor-features">
+                        <span class="has-feature">✓ Location search</span>
+                        <span class="has-feature">✓ Directions</span>
+                        <span class="missing-feature">✗ Market schedules</span>
+                        <span class="missing-feature">✗ Vendor info</span>
+                        <span class="missing-feature">✗ Community</span>
+                    </div>
+                </div>
+
+                <!-- Sprouts -->
+                <div class="competitor-app-card">
+                    <div class="competitor-app-header">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e5/21/e1/e521e137-2073-a6bf-41e6-a5bbf68e0c7d/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/230x0w.webp" alt="Sprouts Farmers Market" class="competitor-app-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="competitor-app-icon-fallback" style="display:none;">🥬</div>
+                        <div class="competitor-app-info">
+                            <h4>Sprouts</h4>
+                            <span class="competitor-type">Grocery Chain</span>
+                        </div>
+                    </div>
+                    <p class="competitor-description">Despite the name, this is a grocery store chain app—not actual farmers markets. Misleading branding.</p>
+                    <div class="competitor-features">
+                        <span class="has-feature">✓ Coupons</span>
+                        <span class="has-feature">✓ Shopping lists</span>
+                        <span class="missing-feature">✗ Real markets</span>
+                        <span class="missing-feature">✗ Local farmers</span>
+                        <span class="missing-feature">✗ Community</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Comparison Table -->
+            <h3 class="comparison-title animate-on-scroll">Feature Comparison</h3>
             <div class="competitive-table animate-on-scroll">
                 <div class="competitive-row header">
                     <div class="competitive-cell feature">Feature</div>
                     <div class="competitive-cell">
                         <div class="competitor-logo">
                             <span>🌿</span>
-                            <span>Locavore (Ours)</span>
+                            <span>Locavore</span>
+                        </div>
+                    </div>
+                    <div class="competitive-cell">
+                        <div class="competitor-logo">
+                            <span>🛒</span>
+                            <span>Soko</span>
                         </div>
                     </div>
                     <div class="competitive-cell">
                         <div class="competitor-logo">
                             <span>📍</span>
-                            <span>LocalHarvest</span>
+                            <span>FM Locator</span>
                         </div>
                     </div>
                     <div class="competitive-cell">
                         <div class="competitor-logo">
-                            <span>🍎</span>
-                            <span>Farmstand</span>
-                        </div>
-                    </div>
-                    <div class="competitive-cell">
-                        <div class="competitor-logo">
-                            <span>📅</span>
+                            <span>🗺️</span>
                             <span>Google Maps</span>
                         </div>
                     </div>
@@ -343,18 +428,18 @@
                     <div class="competitive-cell feature">Market Discovery</div>
                     <div class="competitive-cell"><span class="check">✓</span></div>
                     <div class="competitive-cell"><span class="check">✓</span></div>
-                    <div class="competitive-cell"><span class="partial">◐</span></div>
                     <div class="competitive-cell"><span class="check">✓</span></div>
+                    <div class="competitive-cell"><span class="partial">◐</span></div>
                 </div>
-                <div class="competitive-row">
+                <div class="competitive-row highlight">
                     <div class="competitive-cell feature">Social "Who's Going"</div>
                     <div class="competitive-cell"><span class="check">✓</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                 </div>
-                <div class="competitive-row">
-                    <div class="competitive-cell feature">Friend Invites</div>
+                <div class="competitive-row highlight">
+                    <div class="competitive-cell feature">Friend Coordination</div>
                     <div class="competitive-cell"><span class="check">✓</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
@@ -364,10 +449,10 @@
                     <div class="competitive-cell feature">Vendor Profiles</div>
                     <div class="competitive-cell"><span class="check">✓</span></div>
                     <div class="competitive-cell"><span class="partial">◐</span></div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
+                    <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                 </div>
-                <div class="competitive-row">
+                <div class="competitive-row highlight">
                     <div class="competitive-cell feature">Cross-Market Vendor Tracking</div>
                     <div class="competitive-cell"><span class="check">✓</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
@@ -375,33 +460,34 @@
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                 </div>
                 <div class="competitive-row">
-                    <div class="competitive-cell feature">Market Reminders</div>
+                    <div class="competitive-cell feature">Schedule Reminders</div>
+                    <div class="competitive-cell"><span class="check">✓</span></div>
                     <div class="competitive-cell"><span class="check">✓</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
-                    <div class="competitive-cell"><span class="partial">◐</span></div>
                     <div class="competitive-cell"><span class="partial">◐</span></div>
                 </div>
                 <div class="competitive-row">
-                    <div class="competitive-cell feature">Community Features</div>
+                    <div class="competitive-cell feature">Canada Focus</div>
                     <div class="competitive-cell"><span class="check">✓</span></div>
-                    <div class="competitive-cell"><span class="partial">◐</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
+                    <div class="competitive-cell"><span class="check">✓</span></div>
                 </div>
             </div>
 
+            <!-- Key Insights -->
             <div class="competitive-insights">
                 <div class="competitive-insight animate-on-scroll">
                     <h4>🎯 The Gap</h4>
-                    <p>No existing solution combines market discovery with social coordination. Users currently juggle multiple apps—Google Maps for locations, group texts for planning, separate apps for reminders.</p>
+                    <p>No existing app treats farmers markets as <strong>social experiences</strong>. Users juggle Google Maps + group texts + calendar reminders separately.</p>
                 </div>
                 <div class="competitive-insight animate-on-scroll" style="--delay: 0.1s">
                     <h4>💡 Our Differentiator</h4>
-                    <p>Locavore is the only platform where you can see which friends are attending, invite others, and track vendors across markets—turning solo shopping into community events.</p>
+                    <p>Locavore is the only app with <strong>"Who's Going"</strong> social features—see friends attending, invite others, and track your favorite vendors across multiple markets.</p>
                 </div>
                 <div class="competitive-insight animate-on-scroll" style="--delay: 0.2s">
                     <h4>📈 Market Opportunity</h4>
-                    <p>With 20,000+ vendors and $1.2 billion in annual farmers market sales (Agriculture and Agri-Food Canada), even capturing 5% of engaged market-goers represents significant impact potential.</p>
+                    <p>With 20,000+ vendors and $1.2B in annual sales in Canada, even capturing 5% of engaged market-goers represents significant impact potential.</p>
                 </div>
             </div>
         </div>
