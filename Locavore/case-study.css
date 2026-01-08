@@ -3146,50 +3146,43 @@ a {
     color: var(--primary-800);
 }
 
-/* Sticky Notes Container */
-.sticky-notes-container {
-    position: relative;
-    height: calc(100% - 80px);
-    min-height: 220px;
+/* Sticky Notes Grid - Flexbox layout to prevent overlap */
+.sticky-notes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: var(--space-sm);
+    min-height: 200px;
+    align-content: flex-start;
 }
 
 /* Individual Sticky Note */
 .sticky-note {
-    position: absolute;
-    width: 110px;
-    height: 110px;
-    padding: var(--space-md);
-    border-radius: 3px;
+    width: calc(50% - 4px);
+    min-height: 80px;
+    padding: 10px 8px;
+    border-radius: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transform: translate(-50%, -50%) rotate(var(--rotation, 0deg));
-    left: var(--x, 50%);
-    top: var(--y, 50%);
-    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.08);
+    transform: rotate(var(--rotation, 0deg));
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.sticky-note:hover {
+    transform: rotate(0deg) scale(1.02);
+    z-index: 2;
 }
 
 .sticky-note p {
     font-family: 'Caveat', 'Comic Sans MS', cursive;
-    font-size: 16px;
-    line-height: 1.3;
+    font-size: 15px;
+    line-height: 1.25;
     color: #333;
     margin: 0;
     word-break: break-word;
-}
-
-/* Tape effect */
-.sticky-note .tape {
-    position: absolute;
-    top: -6px;
-    left: 50%;
-    transform: translateX(-50%) rotate(1deg);
-    width: 40px;
-    height: 14px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 2px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 /* Sticky Note Colors */
@@ -3332,13 +3325,13 @@ a {
         border-bottom: none !important;
     }
     
-    .sticky-notes-container {
-        min-height: 280px;
+    .sticky-notes-grid {
+        min-height: 200px;
     }
     
     .sticky-note {
-        width: 100px;
-        height: 100px;
+        width: calc(50% - 4px);
+        min-height: 70px;
     }
     
     .sticky-note p {
@@ -3358,17 +3351,18 @@ a {
     }
     
     .sticky-note {
-        width: 85px;
-        height: 85px;
-        padding: var(--space-sm);
+        width: calc(50% - 4px);
+        min-height: 60px;
+        padding: 8px 6px;
     }
     
     .sticky-note p {
         font-size: 12px;
     }
     
-    .sticky-notes-container {
-        min-height: 240px;
+    .sticky-notes-grid {
+        min-height: 180px;
+        gap: 6px;
     }
 }
 
