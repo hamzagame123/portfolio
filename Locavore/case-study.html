@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="case-study.css?v=4">
+    <link rel="stylesheet" href="case-study.css?v=5">
 </head>
 <body>
     <!-- Navigation -->
@@ -650,154 +650,407 @@
 
             <!-- Wireframe Showcase -->
             <div class="wireframe-showcase">
-                <!-- Lo-Fi Wireframes -->
+                <!-- Detailed Wireframes -->
                 <div class="wireframe-group animate-on-scroll">
                     <div class="wireframe-header">
-                        <span class="wireframe-badge lofi">Low-Fidelity</span>
+                        <span class="wireframe-badge lofi">Low-Fidelity Wireframes</span>
                         <h3>Core Screen Architecture</h3>
-                        <p>Mapping out the market discovery and social coordination flow</p>
+                        <p>Detailed wireframes showing structure, hierarchy, and key UI patterns</p>
                     </div>
-                    <div class="wireframe-grid">
-                        <!-- Wireframe 1: Markets List -->
-                        <div class="wireframe-card">
-                            <div class="wireframe-phone lofi">
-                                <div class="wf-notch"></div>
-                                <div class="wf-content">
-                                    <div class="wf-header">
-                                        <div class="wf-circle small"></div>
-                                        <div class="wf-line short"></div>
+                    <div class="wireframe-grid-large">
+                        <!-- Wireframe 1: Home Screen -->
+                        <div class="wireframe-card-large">
+                            <div class="wireframe-phone-large">
+                                <div class="wf-notch-large"></div>
+                                <div class="wf-screen-content">
+                                    <!-- Header -->
+                                    <div class="wf-row spaced">
+                                        <div class="wf-chip">📍 Toronto, ON ▾</div>
+                                        <div class="wf-icon-btn">🔔</div>
                                     </div>
-                                    <div class="wf-section-title"></div>
-                                    <div class="wf-banner"></div>
-                                    <div class="wf-section-title"></div>
-                                    <!-- Market Card with Date Badge -->
-                                    <div class="wf-market-card">
-                                        <div class="wf-market-image">
-                                            <div class="wf-date-badge"></div>
+                                    <!-- Greeting -->
+                                    <div class="wf-text-block">
+                                        <div class="wf-text large">Good Morning, Hamza 👋</div>
+                                        <div class="wf-text small muted">What fresh goodness today?</div>
+                                    </div>
+                                    <!-- Search -->
+                                    <div class="wf-search-bar">🔍 Search farms, products...</div>
+                                    <!-- Seasonal Banner -->
+                                    <div class="wf-banner-card">
+                                        <div class="wf-banner-text">
+                                            <span class="wf-tag">IN SEASON</span>
+                                            <div class="wf-text medium">Fall Harvest Festival</div>
                                         </div>
-                                        <div class="wf-market-info">
-                                            <div class="wf-line medium"></div>
-                                            <div class="wf-line short"></div>
-                                            <div class="wf-avatars-row"></div>
+                                        <div class="wf-banner-emoji">🎃🍂</div>
+                                    </div>
+                                    <!-- Categories -->
+                                    <div class="wf-text small bold">Categories</div>
+                                    <div class="wf-categories-row">
+                                        <div class="wf-cat-item"><span>🥬</span><small>Veggies</small></div>
+                                        <div class="wf-cat-item"><span>🍎</span><small>Fruits</small></div>
+                                        <div class="wf-cat-item"><span>🥛</span><small>Dairy</small></div>
+                                        <div class="wf-cat-item"><span>🥚</span><small>Eggs</small></div>
+                                    </div>
+                                    <!-- Nearby Farms -->
+                                    <div class="wf-row spaced">
+                                        <div class="wf-text small bold">Nearby Farms</div>
+                                        <div class="wf-text tiny link">See all</div>
+                                    </div>
+                                    <div class="wf-farms-scroll">
+                                        <div class="wf-farm-card">
+                                            <div class="wf-farm-img">✓</div>
+                                            <div class="wf-text tiny">Green Acres</div>
+                                            <div class="wf-text tiny muted">⭐ 4.9</div>
+                                        </div>
+                                        <div class="wf-farm-card">
+                                            <div class="wf-farm-img">🌿</div>
+                                            <div class="wf-text tiny">Sunny Vale</div>
+                                            <div class="wf-text tiny muted">⭐ 4.7</div>
                                         </div>
                                     </div>
-                                    <div class="wf-market-card small">
-                                        <div class="wf-market-thumb"></div>
-                                        <div class="wf-market-info">
-                                            <div class="wf-line medium"></div>
-                                            <div class="wf-line short"></div>
-                                        </div>
+                                    <!-- Fresh Today -->
+                                    <div class="wf-row spaced">
+                                        <div class="wf-text small bold">Fresh Today</div>
+                                        <div class="wf-text tiny link">See all</div>
                                     </div>
-                                    <div class="wf-market-card small">
-                                        <div class="wf-market-thumb"></div>
-                                        <div class="wf-market-info">
-                                            <div class="wf-line medium"></div>
-                                            <div class="wf-line short"></div>
+                                    <div class="wf-products-grid">
+                                        <div class="wf-product-card">
+                                            <div class="wf-product-img">🍅</div>
+                                            <div class="wf-text tiny">Tomatoes</div>
+                                            <div class="wf-text tiny bold">$4.99</div>
+                                        </div>
+                                        <div class="wf-product-card">
+                                            <div class="wf-product-img">🥚</div>
+                                            <div class="wf-text tiny">Eggs</div>
+                                            <div class="wf-text tiny bold">$6.50</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="wf-nav">
-                                    <div class="wf-nav-item"></div>
-                                    <div class="wf-nav-item active"></div>
-                                    <div class="wf-nav-item"></div>
-                                    <div class="wf-nav-item"></div>
-                                    <div class="wf-nav-item"></div>
-                                </div>
-                            </div>
-                            <div class="wireframe-label">Markets List</div>
-                            <div class="wireframe-annotation">
-                                <span class="annotation-number">1</span>
-                                <span>Date badges + social counts</span>
-                            </div>
-                        </div>
-
-                        <!-- Wireframe 2: Market Detail with Who's Going -->
-                        <div class="wireframe-card">
-                            <div class="wireframe-phone lofi">
-                                <div class="wf-notch"></div>
-                                <div class="wf-content">
-                                    <div class="wf-back-header">
-                                        <div class="wf-back-arrow"></div>
-                                        <div class="wf-circle small"></div>
-                                    </div>
-                                    <div class="wf-hero-image"></div>
-                                    <div class="wf-market-detail-info">
-                                        <div class="wf-line long"></div>
-                                        <div class="wf-line medium"></div>
-                                        <div class="wf-time-card"></div>
-                                        <!-- Who's Going Section -->
-                                        <div class="wf-section-title"></div>
-                                        <div class="wf-going-avatars">
-                                            <div class="wf-avatar"></div>
-                                            <div class="wf-avatar"></div>
-                                            <div class="wf-avatar"></div>
-                                            <div class="wf-avatar more"></div>
-                                        </div>
-                                        <div class="wf-invite-btn"></div>
-                                        <div class="wf-section-title"></div>
-                                        <div class="wf-vendors-scroll"></div>
-                                    </div>
-                                </div>
-                                <div class="wf-footer-buttons">
-                                    <div class="wf-btn secondary"></div>
-                                    <div class="wf-btn primary"></div>
+                                <!-- Nav -->
+                                <div class="wf-nav-bar">
+                                    <div class="wf-nav-item active">🏠</div>
+                                    <div class="wf-nav-item">🏪</div>
+                                    <div class="wf-nav-item">🛒</div>
+                                    <div class="wf-nav-item">💬</div>
+                                    <div class="wf-nav-item">👤</div>
                                 </div>
                             </div>
-                            <div class="wireframe-label">Market Detail</div>
-                            <div class="wireframe-annotation">
-                                <span class="annotation-number">2</span>
-                                <span>"Who's Going" is central</span>
+                            <div class="wireframe-label-large">Home Screen</div>
+                            <div class="wireframe-annotations">
+                                <div class="annotation-item"><span>1</span> Location + notification header</div>
+                                <div class="annotation-item"><span>2</span> Personalized greeting</div>
+                                <div class="annotation-item"><span>3</span> Seasonal promotional banner</div>
+                                <div class="annotation-item"><span>4</span> Category quick filters</div>
                             </div>
                         </div>
 
-                        <!-- Wireframe 3: Home with Markets Preview -->
-                        <div class="wireframe-card">
-                            <div class="wireframe-phone lofi">
-                                <div class="wf-notch"></div>
-                                <div class="wf-content">
-                                    <div class="wf-header">
-                                        <div class="wf-circle small"></div>
-                                        <div class="wf-line short"></div>
-                                        <div class="wf-circle small"></div>
+                        <!-- Wireframe 2: Markets Screen -->
+                        <div class="wireframe-card-large">
+                            <div class="wireframe-phone-large">
+                                <div class="wf-notch-large"></div>
+                                <div class="wf-screen-content">
+                                    <!-- Header -->
+                                    <div class="wf-chip">📍 Toronto, ON</div>
+                                    <div class="wf-text large bold">Farmers Markets</div>
+                                    <!-- This Week Banner -->
+                                    <div class="wf-banner-card green">
+                                        <span class="wf-tag light">THIS WEEK</span>
+                                        <div class="wf-text medium">5 Markets Near You</div>
+                                        <div class="wf-text tiny">Find fresh produce & connect</div>
                                     </div>
-                                    <div class="wf-greeting"></div>
-                                    <div class="wf-search"></div>
-                                    <div class="wf-section-title"></div>
-                                    <div class="wf-categories">
-                                        <div class="wf-category"></div>
-                                        <div class="wf-category"></div>
-                                        <div class="wf-category"></div>
-                                        <div class="wf-category"></div>
-                                    </div>
-                                    <div class="wf-section-title"></div>
-                                    <!-- Nearby Markets Preview -->
-                                    <div class="wf-home-market">
-                                        <div class="wf-market-thumb"></div>
-                                        <div class="wf-market-info">
-                                            <div class="wf-line medium"></div>
-                                            <div class="wf-avatars-row small"></div>
+                                    <!-- Friends Going -->
+                                    <div class="wf-text small bold">Friends Going This Week</div>
+                                    <div class="wf-friends-row">
+                                        <div class="wf-friend-card">
+                                            <div class="wf-avatar-stack">👤👤<span>+3</span></div>
+                                            <div class="wf-text tiny bold">St. Lawrence</div>
+                                            <div class="wf-text tiny muted">Saturday, 8AM</div>
+                                        </div>
+                                        <div class="wf-friend-card">
+                                            <div class="wf-avatar-stack">👤</div>
+                                            <div class="wf-text tiny bold">Evergreen</div>
+                                            <div class="wf-text tiny muted">Sunday, 10AM</div>
                                         </div>
                                     </div>
-                                    <div class="wf-home-market">
-                                        <div class="wf-market-thumb"></div>
-                                        <div class="wf-market-info">
-                                            <div class="wf-line medium"></div>
-                                            <div class="wf-avatars-row small"></div>
+                                    <!-- Upcoming Markets -->
+                                    <div class="wf-row spaced">
+                                        <div class="wf-text small bold">Upcoming Markets</div>
+                                        <div class="wf-text tiny link">See all</div>
+                                    </div>
+                                    <!-- Featured Market Card -->
+                                    <div class="wf-market-featured">
+                                        <div class="wf-market-img-large">
+                                            <div class="wf-date-badge-large">SAT<br><strong>7</strong></div>
+                                            <div class="wf-going-badge">👥 24 going</div>
                                         </div>
+                                        <div class="wf-market-details">
+                                            <div class="wf-text small bold">St. Lawrence Market</div>
+                                            <div class="wf-text tiny muted">93 Front St E • 1.2 km</div>
+                                            <div class="wf-text tiny">🕐 5AM-3PM • 🏪 120+ vendors</div>
+                                            <div class="wf-row">
+                                                <div class="wf-mini-avatars">👤👤👤</div>
+                                                <div class="wf-text tiny muted">Sarah & 2 friends going</div>
+                                            </div>
+                                            <div class="wf-btn-outline">I'm Going</div>
+                                        </div>
+                                    </div>
+                                    <!-- Market List Item -->
+                                    <div class="wf-market-list-item">
+                                        <div class="wf-market-thumb-small">
+                                            <div class="wf-date-mini">SUN<br>8</div>
+                                        </div>
+                                        <div class="wf-market-info-small">
+                                            <div class="wf-text tiny bold">Evergreen Brick Works</div>
+                                            <div class="wf-text tiny muted">8AM-1PM • 👥 18</div>
+                                        </div>
+                                        <div class="wf-btn-small">Going?</div>
                                     </div>
                                 </div>
-                                <div class="wf-nav">
-                                    <div class="wf-nav-item active"></div>
-                                    <div class="wf-nav-item"></div>
-                                    <div class="wf-nav-item"></div>
-                                    <div class="wf-nav-item"></div>
-                                    <div class="wf-nav-item"></div>
+                                <!-- Nav -->
+                                <div class="wf-nav-bar">
+                                    <div class="wf-nav-item">🏠</div>
+                                    <div class="wf-nav-item active">🏪</div>
+                                    <div class="wf-nav-item">🛒</div>
+                                    <div class="wf-nav-item">💬</div>
+                                    <div class="wf-nav-item">👤</div>
                                 </div>
                             </div>
-                            <div class="wireframe-label">Home Screen</div>
-                            <div class="wireframe-annotation">
-                                <span class="annotation-number">3</span>
-                                <span>Markets + social integrated</span>
+                            <div class="wireframe-label-large">Markets Screen</div>
+                            <div class="wireframe-annotations">
+                                <div class="annotation-item"><span>1</span> Social proof: friends going</div>
+                                <div class="annotation-item"><span>2</span> Date badges for quick scanning</div>
+                                <div class="annotation-item"><span>3</span> "X going" creates FOMO</div>
+                                <div class="annotation-item"><span>4</span> One-tap RSVP action</div>
+                            </div>
+                        </div>
+
+                        <!-- Wireframe 3: Product Detail -->
+                        <div class="wireframe-card-large">
+                            <div class="wireframe-phone-large">
+                                <div class="wf-notch-large"></div>
+                                <div class="wf-screen-content">
+                                    <!-- Header -->
+                                    <div class="wf-row spaced">
+                                        <div class="wf-back-btn">← Back</div>
+                                        <div class="wf-icon-btn">↗</div>
+                                    </div>
+                                    <!-- Product Image -->
+                                    <div class="wf-product-hero">
+                                        🍅
+                                        <div class="wf-hero-tags">
+                                            <span class="wf-tag green">🌿 Organic</span>
+                                            <span class="wf-tag orange">📅 Seasonal</span>
+                                        </div>
+                                    </div>
+                                    <!-- Title & Farm -->
+                                    <div class="wf-row spaced">
+                                        <div class="wf-text large bold">Heirloom Tomatoes</div>
+                                        <div class="wf-icon-btn">♡</div>
+                                    </div>
+                                    <div class="wf-farm-link">
+                                        <div class="wf-farm-avatar">🌾</div>
+                                        <div class="wf-text small">Green Acres Farm</div>
+                                        <div class="wf-text tiny green">✓</div>
+                                    </div>
+                                    <!-- Price & Qty -->
+                                    <div class="wf-row spaced">
+                                        <div>
+                                            <span class="wf-text large bold">$4.99</span>
+                                            <span class="wf-text tiny muted">per lb</span>
+                                        </div>
+                                        <div class="wf-qty-selector">
+                                            <span>−</span><span>1</span><span>+</span>
+                                        </div>
+                                    </div>
+                                    <!-- Info Cards -->
+                                    <div class="wf-info-cards-row">
+                                        <div class="wf-info-card-small">
+                                            <span>📍</span>
+                                            <div class="wf-text tiny muted">Distance</div>
+                                            <div class="wf-text tiny bold">2.4 km</div>
+                                        </div>
+                                        <div class="wf-info-card-small">
+                                            <span>⏱</span>
+                                            <div class="wf-text tiny muted">Harvested</div>
+                                            <div class="wf-text tiny bold">Today</div>
+                                        </div>
+                                        <div class="wf-info-card-small">
+                                            <span>⭐</span>
+                                            <div class="wf-text tiny muted">Rating</div>
+                                            <div class="wf-text tiny bold">4.9</div>
+                                        </div>
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="wf-text small bold">About This Product</div>
+                                    <div class="wf-text tiny muted">Our heirloom tomatoes are grown using traditional methods...</div>
+                                    <div class="wf-tags-row">
+                                        <span class="wf-chip-small">Non-GMO</span>
+                                        <span class="wf-chip-small">Hand-Picked</span>
+                                    </div>
+                                </div>
+                                <!-- Footer -->
+                                <div class="wf-footer-btns">
+                                    <div class="wf-btn-secondary">💬 Message</div>
+                                    <div class="wf-btn-primary">Add to Cart - $4.99</div>
+                                </div>
+                            </div>
+                            <div class="wireframe-label-large">Product Detail</div>
+                            <div class="wireframe-annotations">
+                                <div class="annotation-item"><span>1</span> Large image with trust badges</div>
+                                <div class="annotation-item"><span>2</span> Farm link builds trust</div>
+                                <div class="annotation-item"><span>3</span> Key info at a glance</div>
+                                <div class="annotation-item"><span>4</span> Sticky add-to-cart footer</div>
+                            </div>
+                        </div>
+
+                        <!-- Wireframe 4: Farm Profile -->
+                        <div class="wireframe-card-large">
+                            <div class="wireframe-phone-large">
+                                <div class="wf-notch-large"></div>
+                                <div class="wf-screen-content">
+                                    <!-- Cover Image -->
+                                    <div class="wf-cover-image">
+                                        <div class="wf-back-btn light">←</div>
+                                        <div class="wf-icon-btn light">⋯</div>
+                                        <div class="wf-avatar-overlay-large">👨‍🌾<span class="wf-verified">✓</span></div>
+                                    </div>
+                                    <!-- Farm Info -->
+                                    <div class="wf-text large bold center">Green Acres Farm</div>
+                                    <div class="wf-text tiny muted center">Family-owned organic farm since 1998</div>
+                                    <div class="wf-text tiny center">📍 2.4 km away • Toronto, ON</div>
+                                    <!-- Stats -->
+                                    <div class="wf-stats-row-large">
+                                        <div class="wf-stat-item">
+                                            <div class="wf-text medium bold">4.9</div>
+                                            <div class="wf-text tiny muted">Rating</div>
+                                        </div>
+                                        <div class="wf-stat-item">
+                                            <div class="wf-text medium bold">500+</div>
+                                            <div class="wf-text tiny muted">Orders</div>
+                                        </div>
+                                        <div class="wf-stat-item">
+                                            <div class="wf-text medium bold">25</div>
+                                            <div class="wf-text tiny muted">Years</div>
+                                        </div>
+                                    </div>
+                                    <!-- Badges -->
+                                    <div class="wf-badges-row-large">
+                                        <span class="wf-badge green">🌿 Certified Organic</span>
+                                        <span class="wf-badge">📍 Local</span>
+                                    </div>
+                                    <!-- Actions -->
+                                    <div class="wf-actions-row">
+                                        <div class="wf-btn-primary-small">💬 Message</div>
+                                        <div class="wf-btn-secondary-small">📞 Call</div>
+                                    </div>
+                                    <!-- About -->
+                                    <div class="wf-text small bold">About the Farm</div>
+                                    <div class="wf-text tiny muted">We're a third-generation family farm committed to sustainable...</div>
+                                    <!-- Products -->
+                                    <div class="wf-row spaced">
+                                        <div class="wf-text small bold">Products</div>
+                                        <div class="wf-text tiny muted">24 items</div>
+                                    </div>
+                                    <div class="wf-products-grid">
+                                        <div class="wf-product-card">
+                                            <div class="wf-product-img">🍅</div>
+                                            <div class="wf-text tiny">Tomatoes</div>
+                                            <div class="wf-text tiny bold">$4.99</div>
+                                        </div>
+                                        <div class="wf-product-card">
+                                            <div class="wf-product-img">🥬</div>
+                                            <div class="wf-text tiny">Lettuce</div>
+                                            <div class="wf-text tiny bold">$3.25</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wireframe-label-large">Farm Profile</div>
+                            <div class="wireframe-annotations">
+                                <div class="annotation-item"><span>1</span> Hero image + verified badge</div>
+                                <div class="annotation-item"><span>2</span> Trust metrics prominently displayed</div>
+                                <div class="annotation-item"><span>3</span> Direct communication options</div>
+                                <div class="annotation-item"><span>4</span> Products grid for browsing</div>
+                            </div>
+                        </div>
+
+                        <!-- Wireframe 5: Cart Screen -->
+                        <div class="wireframe-card-large">
+                            <div class="wireframe-phone-large">
+                                <div class="wf-notch-large"></div>
+                                <div class="wf-screen-content">
+                                    <!-- Header -->
+                                    <div class="wf-row spaced">
+                                        <div class="wf-back-btn">←</div>
+                                        <div class="wf-text medium bold">My Cart</div>
+                                        <div class="wf-text tiny muted">2 items</div>
+                                    </div>
+                                    <!-- Farm Group -->
+                                    <div class="wf-cart-group">
+                                        <div class="wf-farm-header-small">
+                                            <div class="wf-farm-avatar-tiny">🌾</div>
+                                            <div class="wf-text tiny bold">Green Acres Farm</div>
+                                        </div>
+                                        <!-- Cart Item -->
+                                        <div class="wf-cart-item">
+                                            <div class="wf-cart-img">🍅</div>
+                                            <div class="wf-cart-info">
+                                                <div class="wf-text tiny bold">Heirloom Tomatoes</div>
+                                                <div class="wf-text tiny muted">$4.99/lb</div>
+                                            </div>
+                                            <div class="wf-qty-mini">− 2 +</div>
+                                        </div>
+                                        <div class="wf-cart-item">
+                                            <div class="wf-cart-img">🥬</div>
+                                            <div class="wf-cart-info">
+                                                <div class="wf-text tiny bold">Butter Lettuce</div>
+                                                <div class="wf-text tiny muted">$3.25/head</div>
+                                            </div>
+                                            <div class="wf-qty-mini">− 1 +</div>
+                                        </div>
+                                    </div>
+                                    <!-- Delivery Options -->
+                                    <div class="wf-text small bold">Delivery Options</div>
+                                    <div class="wf-delivery-option active">
+                                        <div class="wf-radio active"></div>
+                                        <div class="wf-delivery-info">
+                                            <div class="wf-text tiny bold">Pickup at Farm</div>
+                                            <div class="wf-text tiny muted">Tomorrow, 9AM-5PM</div>
+                                        </div>
+                                        <div class="wf-text tiny green">Free</div>
+                                    </div>
+                                    <div class="wf-delivery-option">
+                                        <div class="wf-radio"></div>
+                                        <div class="wf-delivery-info">
+                                            <div class="wf-text tiny bold">Home Delivery</div>
+                                            <div class="wf-text tiny muted">Tomorrow, 2PM-6PM</div>
+                                        </div>
+                                        <div class="wf-text tiny">$5.99</div>
+                                    </div>
+                                    <!-- Summary -->
+                                    <div class="wf-summary-box">
+                                        <div class="wf-row spaced"><span class="wf-text tiny">Subtotal</span><span class="wf-text tiny">$13.23</span></div>
+                                        <div class="wf-row spaced"><span class="wf-text tiny">Delivery</span><span class="wf-text tiny green">Free</span></div>
+                                        <div class="wf-row spaced"><span class="wf-text tiny">Service Fee</span><span class="wf-text tiny">$0.99</span></div>
+                                        <div class="wf-divider"></div>
+                                        <div class="wf-row spaced"><span class="wf-text small bold">Total</span><span class="wf-text small bold">$14.22</span></div>
+                                    </div>
+                                    <!-- Eco Impact -->
+                                    <div class="wf-eco-banner">
+                                        🌱 This order saves 2.3kg CO₂
+                                    </div>
+                                </div>
+                                <!-- Footer -->
+                                <div class="wf-footer-single">
+                                    <div class="wf-btn-primary-full">Proceed to Checkout - $14.22</div>
+                                </div>
+                            </div>
+                            <div class="wireframe-label-large">Cart Screen</div>
+                            <div class="wireframe-annotations">
+                                <div class="annotation-item"><span>1</span> Items grouped by farm</div>
+                                <div class="annotation-item"><span>2</span> Clear delivery options</div>
+                                <div class="annotation-item"><span>3</span> Transparent pricing</div>
+                                <div class="annotation-item"><span>4</span> Eco-impact reinforcement</div>
                             </div>
                         </div>
                     </div>
