@@ -2862,14 +2862,180 @@ a {
     animation: pulse-slow 6s ease-in-out infinite;
 }
 
-.prototype-frame {
-    width: 420px;
-    height: 880px;
-    border: none;
-    border-radius: 55px;
-    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4);
+/* Prototype Link Card */
+.prototype-link-card {
+    display: block;
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-700), var(--primary-900));
+    border-radius: 24px;
+    padding: var(--space-2xl) var(--space-xl);
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 20px 60px rgba(74, 124, 89, 0.3);
+    margin-bottom: var(--space-xl);
+}
+
+.prototype-link-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 30px 80px rgba(74, 124, 89, 0.4);
+}
+
+.prototype-link-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.prototype-link-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
     position: relative;
     z-index: 1;
+}
+
+.prototype-link-icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.prototype-link-icon .phone-icon {
+    font-size: 36px;
+}
+
+.pulse-ring {
+    position: absolute;
+    inset: -8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 28px;
+    animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+.prototype-link-text {
+    flex: 1;
+}
+
+.prototype-link-text h3 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--space-xs);
+}
+
+.prototype-link-text p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+}
+
+.prototype-link-arrow {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    flex-shrink: 0;
+}
+
+.prototype-link-arrow svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+.prototype-link-card:hover .prototype-link-arrow {
+    transform: translate(4px, -4px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.prototype-link-screens {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.prototype-link-screens span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.prototype-features {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.prototype-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: white;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-sm);
+    font-weight: 500;
+    color: var(--primary-700);
+    font-size: 14px;
+}
+
+.prototype-feature .feature-icon {
+    font-size: 18px;
+}
+
+/* Responsive prototype link */
+@media (max-width: 768px) {
+    .prototype-link-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-lg);
+    }
+    
+    .prototype-link-text h3 {
+        font-size: 22px;
+    }
+    
+    .prototype-link-arrow {
+        display: none;
+    }
+    
+    .prototype-features {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .prototype-instructions {
