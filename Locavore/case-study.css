@@ -509,8 +509,20 @@ a {
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .stat-card {
@@ -751,8 +763,14 @@ a {
 
 .principles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .principle-card {
@@ -2358,9 +2376,21 @@ a {
 
 .results-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-lg);
     margin-bottom: var(--space-3xl);
+}
+
+@media (max-width: 900px) {
+    .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .result-card {
@@ -2400,8 +2430,14 @@ a {
 
 .learnings-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .learnings-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .learning-card {
@@ -2476,8 +2512,20 @@ a {
 
 .next-steps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+    .next-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .next-steps-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .next-step-card {
@@ -2703,8 +2751,14 @@ a {
 
 .competitive-insights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+    .competitive-insights {
+        grid-template-columns: 1fr;
+    }
 }
 
 .competitive-insight {
@@ -2868,8 +2922,14 @@ a {
 
 .sketches-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+    .sketches-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .sketch-card {
@@ -3208,8 +3268,14 @@ a {
 /* Insight Summary Cards Grid */
 .affinity-insights-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .affinity-insights-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Individual Insight Card */
@@ -3423,8 +3489,14 @@ a {
 
 .impact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .impact-card {
