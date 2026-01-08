@@ -3057,100 +3057,319 @@ a {
     background: white;
 }
 
-.affinity-visual {
-    background: var(--neutral-100);
+/* Affinity Board Container */
+.affinity-board {
+    background: #f8fafc;
     border-radius: 24px;
-    padding: var(--space-2xl);
+    overflow: hidden;
     margin-bottom: var(--space-2xl);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--neutral-200);
 }
 
-.affinity-placeholder {
-    height: 400px;
-    background: linear-gradient(135deg, var(--primary-50), var(--accent-cream));
-    border-radius: 16px;
+.affinity-board-header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: var(--space-lg);
-    border: 2px dashed var(--primary-300);
-    position: relative;
+    padding: var(--space-lg) var(--space-xl);
+    background: white;
+    border-bottom: 1px solid var(--neutral-100);
 }
 
-.affinity-sticky-grid {
+.board-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--neutral-400);
+}
+
+.board-meta {
+    font-size: 13px;
+    color: var(--neutral-500);
+}
+
+/* The 2x2 Grid Board */
+.affinity-board-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-md);
-    width: 80%;
-    max-width: 600px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    min-height: 700px;
 }
 
-.affinity-sticky {
-    aspect-ratio: 1;
-    border-radius: 4px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-    transform: rotate(var(--rotation, 0deg));
-    transition: var(--transition-fast);
+/* Individual Cluster */
+.affinity-cluster {
+    position: relative;
+    padding: var(--space-lg);
+    border: 1px dashed var(--neutral-200);
+    overflow: hidden;
 }
 
-.affinity-sticky:hover {
-    transform: rotate(0deg) scale(1.1);
-    z-index: 1;
+.affinity-cluster:nth-child(1) { border-right: 1px dashed var(--neutral-300); border-bottom: 1px dashed var(--neutral-300); }
+.affinity-cluster:nth-child(2) { border-bottom: 1px dashed var(--neutral-300); }
+.affinity-cluster:nth-child(3) { border-right: 1px dashed var(--neutral-300); }
+
+/* Background watermark label */
+.cluster-bg-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-size: clamp(48px, 8vw, 80px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: rgba(0, 0, 0, 0.03);
+    pointer-events: none;
+    white-space: nowrap;
 }
 
-.affinity-sticky.yellow { background: #fff9c4; }
-.affinity-sticky.pink { background: #f8bbd9; }
-.affinity-sticky.blue { background: #b3e5fc; }
-.affinity-sticky.green { background: #c8e6c9; }
+/* Cluster Header */
+.cluster-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    position: relative;
+    z-index: 10;
+}
 
-.affinity-label {
+.cluster-icon {
+    font-size: 20px;
+}
+
+.cluster-title {
+    font-family: var(--font-display);
     font-size: 16px;
     font-weight: 600;
-    color: var(--neutral-500);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    color: var(--primary-800);
 }
 
-.affinity-themes {
+/* Sticky Notes Container */
+.sticky-notes-container {
+    position: relative;
+    height: calc(100% - 80px);
+    min-height: 220px;
+}
+
+/* Individual Sticky Note */
+.sticky-note {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    padding: var(--space-md);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: translate(-50%, -50%) rotate(var(--rotation, 0deg));
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.sticky-note p {
+    font-family: 'Caveat', 'Comic Sans MS', cursive;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #333;
+    margin: 0;
+    word-break: break-word;
+}
+
+/* Tape effect */
+.sticky-note .tape {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(1deg);
+    width: 40px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Sticky Note Colors */
+.sticky-note.rose { background: #fecdd3; }
+.sticky-note.sky { background: #bae6fd; }
+.sticky-note.amber { background: #fef3c7; }
+.sticky-note.emerald { background: #bbf7d0; }
+
+/* Cluster Stat Badge */
+.cluster-stat {
+    position: absolute;
+    bottom: var(--space-md);
+    right: var(--space-md);
+    padding: var(--space-xs) var(--space-md);
+    background: white;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--neutral-600);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Insight Summary Cards Grid */
+.affinity-insights-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--space-lg);
 }
 
-.affinity-theme {
-    padding: var(--space-xl);
-    background: var(--primary-50);
+/* Individual Insight Card */
+.affinity-insight-card {
+    position: relative;
+    background: white;
     border-radius: 16px;
-    text-align: center;
+    padding: var(--space-xl);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--neutral-100);
+    display: flex;
+    flex-direction: column;
 }
 
-.theme-icon {
-    font-size: 40px;
+.insight-card-accent {
+    position: absolute;
+    top: 0;
+    left: var(--space-xl);
+    right: var(--space-xl);
+    height: 4px;
+    border-radius: 0 0 4px 4px;
+}
+
+.scheduling-card .insight-card-accent { background: #fecdd3; }
+.social-card .insight-card-accent { background: #bae6fd; }
+.discovery-card .insight-card-accent { background: #fef3c7; }
+.impact-card .insight-card-accent { background: #bbf7d0; }
+
+.insight-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
     margin-bottom: var(--space-md);
+    margin-top: var(--space-sm);
 }
 
-.affinity-theme h4 {
+.insight-icon-wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.insight-icon-wrap.scheduling-bg { background: rgba(254, 205, 211, 0.5); }
+.insight-icon-wrap.social-bg { background: rgba(186, 230, 253, 0.5); }
+.insight-icon-wrap.discovery-bg { background: rgba(254, 243, 199, 0.5); }
+.insight-icon-wrap.impact-bg { background: rgba(187, 247, 208, 0.5); }
+
+.insight-icon {
+    font-size: 18px;
+}
+
+.insight-card-header h4 {
     font-family: var(--font-display);
     font-size: 18px;
     font-weight: 600;
     color: var(--primary-800);
-    margin-bottom: var(--space-sm);
+    margin: 0;
 }
 
-.affinity-theme p {
+.insight-description {
     font-size: 14px;
     color: var(--neutral-600);
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: var(--space-lg);
 }
 
-.theme-count {
-    display: inline-block;
-    margin-top: var(--space-md);
+.insight-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--neutral-100);
+}
+
+.insight-source {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--neutral-400);
+}
+
+.insight-badge {
     padding: var(--space-xs) var(--space-md);
-    background: var(--primary-100);
-    color: var(--primary-700);
+    border-radius: 20px;
     font-size: 12px;
     font-weight: 600;
-    border-radius: 20px;
+}
+
+.insight-badge.scheduling-badge { background: rgba(254, 205, 211, 0.4); color: #9f1239; }
+.insight-badge.social-badge { background: rgba(186, 230, 253, 0.4); color: #0369a1; }
+.insight-badge.discovery-badge { background: rgba(254, 243, 199, 0.4); color: #a16207; }
+.insight-badge.impact-badge { background: rgba(187, 247, 208, 0.4); color: #166534; }
+
+/* Responsive Affinity Board */
+@media (max-width: 900px) {
+    .affinity-board-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        min-height: auto;
+    }
+    
+    .affinity-cluster {
+        border-right: none !important;
+        border-bottom: 1px dashed var(--neutral-300) !important;
+    }
+    
+    .affinity-cluster:last-child {
+        border-bottom: none !important;
+    }
+    
+    .sticky-notes-container {
+        min-height: 280px;
+    }
+    
+    .sticky-note {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .sticky-note p {
+        font-size: 14px;
+    }
+    
+    .cluster-bg-label {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .affinity-board-header {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+    }
+    
+    .sticky-note {
+        width: 85px;
+        height: 85px;
+        padding: var(--space-sm);
+    }
+    
+    .sticky-note p {
+        font-size: 12px;
+    }
+    
+    .sticky-notes-container {
+        min-height: 240px;
+    }
 }
 
 /* ===== Enhanced Persona Photos ===== */

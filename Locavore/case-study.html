@@ -6,7 +6,7 @@
     <title>Locavore Case Study | Hamza Galbete</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="case-study.css">
 </head>
 <body>
@@ -1392,50 +1392,214 @@
             <h2 class="section-title animate-on-scroll">Affinity Mapping Insights</h2>
             <p class="section-subtitle animate-on-scroll">Clustering 40+ research insights into actionable themes</p>
 
-            <div class="affinity-visual animate-on-scroll">
-                <div class="affinity-placeholder">
-                    <div class="affinity-sticky-grid">
-                        <div class="affinity-sticky yellow" style="--rotation: -3deg"></div>
-                        <div class="affinity-sticky pink" style="--rotation: 2deg"></div>
-                        <div class="affinity-sticky blue" style="--rotation: -1deg"></div>
-                        <div class="affinity-sticky green" style="--rotation: 4deg"></div>
-                        <div class="affinity-sticky pink" style="--rotation: -2deg"></div>
-                        <div class="affinity-sticky yellow" style="--rotation: 1deg"></div>
-                        <div class="affinity-sticky green" style="--rotation: -4deg"></div>
-                        <div class="affinity-sticky blue" style="--rotation: 3deg"></div>
-                        <div class="affinity-sticky blue" style="--rotation: -1deg"></div>
-                        <div class="affinity-sticky green" style="--rotation: 2deg"></div>
-                        <div class="affinity-sticky yellow" style="--rotation: -3deg"></div>
-                        <div class="affinity-sticky pink" style="--rotation: 1deg"></div>
+            <!-- Full Affinity Board Visualization -->
+            <div class="affinity-board animate-on-scroll">
+                <!-- Board Header -->
+                <div class="affinity-board-header">
+                    <span class="board-label">UX Research Artifact</span>
+                    <span class="board-meta">Project: Locavore • 8 Participants • 40+ Insights</span>
+                </div>
+
+                <!-- The Board Grid -->
+                <div class="affinity-board-grid">
+                    <!-- Cluster 1: Scheduling & Memory (Top Left) -->
+                    <div class="affinity-cluster scheduling-cluster">
+                        <div class="cluster-bg-label">Scheduling</div>
+                        <div class="cluster-header">
+                            <span class="cluster-icon">📅</span>
+                            <span class="cluster-title">Scheduling & Memory</span>
+                        </div>
+                        <div class="sticky-notes-container">
+                            <div class="sticky-note rose" style="--rotation: -2deg; --x: 5%; --y: 20%;">
+                                <span class="tape"></span>
+                                <p>I always forget if it's open</p>
+                            </div>
+                            <div class="sticky-note rose" style="--rotation: 3deg; --x: 55%; --y: 15%;">
+                                <span class="tape"></span>
+                                <p>Is it Tuesday or Thursday?</p>
+                            </div>
+                            <div class="sticky-note rose" style="--rotation: -1deg; --x: 15%; --y: 50%;">
+                                <span class="tape"></span>
+                                <p>Wish I had a notification</p>
+                            </div>
+                            <div class="sticky-note rose" style="--rotation: 2deg; --x: 60%; --y: 48%;">
+                                <span class="tape"></span>
+                                <p>Winter hours are confusing</p>
+                            </div>
+                            <div class="sticky-note rose" style="--rotation: -3deg; --x: 8%; --y: 78%;">
+                                <span class="tape"></span>
+                                <p>Add to GCal</p>
+                            </div>
+                            <div class="sticky-note rose" style="--rotation: 1deg; --x: 45%; --y: 75%;">
+                                <span class="tape"></span>
+                                <p>Missed it again!</p>
+                            </div>
+                            <div class="sticky-note rose" style="--rotation: -2deg; --x: 75%; --y: 80%;">
+                                <span class="tape"></span>
+                                <p>Is the corn guy there?</p>
+                            </div>
+                        </div>
+                        <div class="cluster-stat">17 insights (43%)</div>
                     </div>
-                    <span class="affinity-label">Affinity Diagram Visualization</span>
+
+                    <!-- Cluster 2: Social Coordination (Top Right) -->
+                    <div class="affinity-cluster social-cluster">
+                        <div class="cluster-bg-label">Social</div>
+                        <div class="cluster-header">
+                            <span class="cluster-icon">👥</span>
+                            <span class="cluster-title">Social Coordination</span>
+                        </div>
+                        <div class="sticky-notes-container">
+                            <div class="sticky-note sky" style="--rotation: 2deg; --x: 10%; --y: 22%;">
+                                <span class="tape"></span>
+                                <p>Meeting mom there</p>
+                            </div>
+                            <div class="sticky-note sky" style="--rotation: -2deg; --x: 58%; --y: 18%;">
+                                <span class="tape"></span>
+                                <p>Coffee with friends</p>
+                            </div>
+                            <div class="sticky-note sky" style="--rotation: 1deg; --x: 20%; --y: 55%;">
+                                <span class="tape"></span>
+                                <p>Who is going?</p>
+                            </div>
+                            <div class="sticky-note sky" style="--rotation: -1deg; --x: 62%; --y: 52%;">
+                                <span class="tape"></span>
+                                <p>Community vibe</p>
+                            </div>
+                            <div class="sticky-note sky" style="--rotation: 3deg; --x: 35%; --y: 78%;">
+                                <span class="tape"></span>
+                                <p>Great date spot</p>
+                            </div>
+                        </div>
+                        <div class="cluster-stat">9 insights (22%)</div>
+                    </div>
+
+                    <!-- Cluster 3: Vendor Discovery (Bottom Left) -->
+                    <div class="affinity-cluster discovery-cluster">
+                        <div class="cluster-bg-label">Discovery</div>
+                        <div class="cluster-header">
+                            <span class="cluster-icon">🔍</span>
+                            <span class="cluster-title">Vendor Discovery</span>
+                        </div>
+                        <div class="sticky-notes-container">
+                            <div class="sticky-note amber" style="--rotation: -1deg; --x: 8%; --y: 20%;">
+                                <span class="tape"></span>
+                                <p>Who sells the best honey?</p>
+                            </div>
+                            <div class="sticky-note amber" style="--rotation: 2deg; --x: 55%; --y: 18%;">
+                                <span class="tape"></span>
+                                <p>Any new vendors?</p>
+                            </div>
+                            <div class="sticky-note amber" style="--rotation: -2deg; --x: 15%; --y: 52%;">
+                                <span class="tape"></span>
+                                <p>Where is the cheese stand?</p>
+                            </div>
+                            <div class="sticky-note amber" style="--rotation: 1deg; --x: 60%; --y: 55%;">
+                                <span class="tape"></span>
+                                <p>Need a map!</p>
+                            </div>
+                            <div class="sticky-note amber" style="--rotation: -3deg; --x: 35%; --y: 80%;">
+                                <span class="tape"></span>
+                                <p>Sold out by 10am</p>
+                            </div>
+                        </div>
+                        <div class="cluster-stat">8 insights (20%)</div>
+                    </div>
+
+                    <!-- Cluster 4: Impact & Values (Bottom Right) -->
+                    <div class="affinity-cluster impact-cluster">
+                        <div class="cluster-bg-label">Impact</div>
+                        <div class="cluster-header">
+                            <span class="cluster-icon">🌱</span>
+                            <span class="cluster-title">Impact & Values</span>
+                        </div>
+                        <div class="sticky-notes-container">
+                            <div class="sticky-note emerald" style="--rotation: 1deg; --x: 10%; --y: 22%;">
+                                <span class="tape"></span>
+                                <p>Support local business</p>
+                            </div>
+                            <div class="sticky-note emerald" style="--rotation: -2deg; --x: 55%; --y: 18%;">
+                                <span class="tape"></span>
+                                <p>Reduce plastic waste</p>
+                            </div>
+                            <div class="sticky-note emerald" style="--rotation: 2deg; --x: 18%; --y: 55%;">
+                                <span class="tape"></span>
+                                <p>Low food miles</p>
+                            </div>
+                            <div class="sticky-note emerald" style="--rotation: -1deg; --x: 58%; --y: 52%;">
+                                <span class="tape"></span>
+                                <p>Sustainable choice</p>
+                            </div>
+                            <div class="sticky-note emerald" style="--rotation: 3deg; --x: 35%; --y: 80%;">
+                                <span class="tape"></span>
+                                <p>Know my farmer</p>
+                            </div>
+                        </div>
+                        <div class="cluster-stat">6 insights (15%)</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="affinity-themes">
-                <div class="affinity-theme animate-on-scroll">
-                    <div class="theme-icon">📅</div>
-                    <h4>Scheduling & Memory</h4>
-                    <p>"I forget when markets are open" was the most common pain point across all interviews.</p>
-                    <span class="theme-count">17 insights (42%)</span>
+            <!-- Insight Summary Cards -->
+            <div class="affinity-insights-grid animate-on-scroll">
+                <div class="affinity-insight-card scheduling-card">
+                    <div class="insight-card-accent"></div>
+                    <div class="insight-card-header">
+                        <div class="insight-icon-wrap scheduling-bg">
+                            <span class="insight-icon">📅</span>
+                        </div>
+                        <h4>Scheduling & Memory</h4>
+                    </div>
+                    <p class="insight-description">Participants rely on mental calendars but often 'forget' the exact market hours.</p>
+                    <div class="insight-card-footer">
+                        <span class="insight-source">Source Data</span>
+                        <span class="insight-badge scheduling-badge">17 Insights (43%)</span>
+                    </div>
                 </div>
-                <div class="affinity-theme animate-on-scroll" style="--delay: 0.1s">
-                    <div class="theme-icon">👥</div>
-                    <h4>Social Coordination</h4>
-                    <p>Users want to go with friends but coordinating via texts is cumbersome and often fails.</p>
-                    <span class="theme-count">11 insights (28%)</span>
+
+                <div class="affinity-insight-card social-card">
+                    <div class="insight-card-accent"></div>
+                    <div class="insight-card-header">
+                        <div class="insight-icon-wrap social-bg">
+                            <span class="insight-icon">👥</span>
+                        </div>
+                        <h4>Social Coordination</h4>
+                    </div>
+                    <p class="insight-description">Going to the market is a social activity; coordination happens off-platform.</p>
+                    <div class="insight-card-footer">
+                        <span class="insight-source">Source Data</span>
+                        <span class="insight-badge social-badge">9 Insights (22%)</span>
+                    </div>
                 </div>
-                <div class="affinity-theme animate-on-scroll" style="--delay: 0.2s">
-                    <div class="theme-icon">🧑‍🌾</div>
-                    <h4>Vendor Discovery</h4>
-                    <p>"I found this amazing honey vendor but I don't know where else they sell."</p>
-                    <span class="theme-count">7 insights (18%)</span>
+
+                <div class="affinity-insight-card discovery-card">
+                    <div class="insight-card-accent"></div>
+                    <div class="insight-card-header">
+                        <div class="insight-icon-wrap discovery-bg">
+                            <span class="insight-icon">🔍</span>
+                        </div>
+                        <h4>Vendor Discovery</h4>
+                    </div>
+                    <p class="insight-description">Users have favorite vendors but don't know where else they sell.</p>
+                    <div class="insight-card-footer">
+                        <span class="insight-source">Source Data</span>
+                        <span class="insight-badge discovery-badge">8 Insights (20%)</span>
+                    </div>
                 </div>
-                <div class="affinity-theme animate-on-scroll" style="--delay: 0.3s">
-                    <div class="theme-icon">🌱</div>
-                    <h4>Impact & Values</h4>
-                    <p>Users care about supporting local but want to see tangible evidence of their impact.</p>
-                    <span class="theme-count">5 insights (12%)</span>
+
+                <div class="affinity-insight-card impact-card">
+                    <div class="insight-card-accent"></div>
+                    <div class="insight-card-header">
+                        <div class="insight-icon-wrap impact-bg">
+                            <span class="insight-icon">🌱</span>
+                        </div>
+                        <h4>Impact & Values</h4>
+                    </div>
+                    <p class="insight-description">Users care about supporting local but want to see tangible evidence of their impact.</p>
+                    <div class="insight-card-footer">
+                        <span class="insight-source">Source Data</span>
+                        <span class="insight-badge impact-badge">6 Insights (15%)</span>
+                    </div>
                 </div>
             </div>
         </div>
