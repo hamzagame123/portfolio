@@ -8,6 +8,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <style>
+        /* Phosphor Icon Styling for Locavore */
+        .ph, .ph-fill, .ph-duotone {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Duotone color customization */
+        .ph-duotone {
+            --ph-duotone-primary: #4A7C59;
+            --ph-duotone-secondary: #7ab18a;
+        }
+        .icon-terracotta { color: #c76f51; }
+        .icon-amber { color: #e6a756; }
+        .icon-forest { color: #4A7C59; }
+        .icon-leaf { color: #7ab18a; }
+        .icon-white { color: white; }
+        .icon-sm { font-size: 16px; }
+        .icon-md { font-size: 20px; }
+        .icon-lg { font-size: 24px; }
+        .icon-xl { font-size: 32px; }
+        .icon-2xl { font-size: 40px; }
+    </style>
 </head>
 <body>
     <div class="iphone-frame">
@@ -60,10 +85,10 @@
                         <div class="onboarding-illustration">
                             <div class="illustration-seasonal">
                                 <div class="seasonal-items">
-                                    <div class="seasonal-item tomato">🍅</div>
-                                    <div class="seasonal-item carrot">🥕</div>
-                                    <div class="seasonal-item lettuce">🥬</div>
-                                    <div class="seasonal-item apple">🍎</div>
+                                    <div class="seasonal-item tomato"><i class="ph-duotone ph-orange icon-terracotta icon-2xl"></i></div>
+                                    <div class="seasonal-item carrot"><i class="ph-duotone ph-carrot icon-amber icon-2xl"></i></div>
+                                    <div class="seasonal-item lettuce"><i class="ph-duotone ph-leaf icon-forest icon-2xl"></i></div>
+                                    <div class="seasonal-item apple"><i class="ph-duotone ph-apple-logo icon-terracotta icon-2xl"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -76,10 +101,10 @@
                         <div class="onboarding-illustration">
                             <div class="illustration-community">
                                 <div class="community-circle">
-                                    <div class="community-person" style="--delay: 0">👨‍🌾</div>
-                                    <div class="community-person" style="--delay: 1">👩‍🍳</div>
-                                    <div class="community-person" style="--delay: 2">👨‍👩‍👧</div>
-                                    <div class="community-person" style="--delay: 3">🌱</div>
+                                    <div class="community-person" style="--delay: 0"><i class="ph-duotone ph-user icon-forest icon-2xl"></i></div>
+                                    <div class="community-person" style="--delay: 1"><i class="ph-duotone ph-cooking-pot icon-amber icon-2xl"></i></div>
+                                    <div class="community-person" style="--delay: 2"><i class="ph-duotone ph-users-three icon-forest icon-2xl"></i></div>
+                                    <div class="community-person" style="--delay: 3"><i class="ph-duotone ph-plant icon-leaf icon-2xl"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +138,7 @@
                     <h2>Find Local Farms Near You</h2>
                     <p>Enable location to discover fresh produce from farmers in your area</p>
                     <div class="location-preview">
-                        <span class="location-pin">📍</span>
+                        <span class="location-pin"><i class="ph-duotone ph-map-pin icon-terracotta icon-lg"></i></span>
                         <span>Toronto, Ontario</span>
                     </div>
                     <button class="btn-primary" onclick="showScreen('home')">Enable Location</button>
@@ -125,7 +150,7 @@
             <div class="screen home-screen" id="home">
                 <div class="home-header">
                     <div class="header-location">
-                        <span class="location-icon-small">📍</span>
+                        <span class="location-icon-small"><i class="ph-fill ph-map-pin icon-forest icon-sm"></i></span>
                         <span class="location-text">Toronto, Ontario</span>
                         <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
@@ -139,7 +164,7 @@
                 
                 <div class="home-content">
                     <div class="greeting-section">
-                        <h1>Good Morning, <span class="user-name">Hamza</span> 👋</h1>
+                        <h1>Good Morning, <span class="user-name">Hamza</span> <i class="ph-duotone ph-hand-waving icon-amber"></i></h1>
                         <p class="greeting-subtitle">What fresh goodness are you looking for today?</p>
                     </div>
 
@@ -154,7 +179,7 @@
                             <h3>Fall Harvest Festival</h3>
                             <p>Fresh apples, squash & root vegetables</p>
                         </div>
-                        <div class="banner-illustration">🎃🍂🍎</div>
+                        <div class="banner-illustration"><i class="ph-duotone ph-pumpkin icon-amber icon-xl"></i><i class="ph-duotone ph-leaf icon-terracotta icon-xl"></i><i class="ph-duotone ph-apple-logo icon-terracotta icon-xl"></i></div>
                     </div>
 
                     <section class="categories-section">
@@ -163,27 +188,27 @@
                         </div>
                         <div class="categories-scroll">
                             <div class="category-item" onclick="filterCategory('vegetables')">
-                                <div class="category-icon">🥬</div>
+                                <div class="category-icon"><i class="ph-duotone ph-leaf icon-forest icon-xl"></i></div>
                                 <span>Vegetables</span>
                             </div>
                             <div class="category-item" onclick="filterCategory('fruits')">
-                                <div class="category-icon">🍎</div>
+                                <div class="category-icon"><i class="ph-duotone ph-apple-logo icon-terracotta icon-xl"></i></div>
                                 <span>Fruits</span>
                             </div>
                             <div class="category-item" onclick="filterCategory('dairy')">
-                                <div class="category-icon">🥛</div>
+                                <div class="category-icon"><i class="ph-duotone ph-drop icon-amber icon-xl"></i></div>
                                 <span>Dairy</span>
                             </div>
                             <div class="category-item" onclick="filterCategory('eggs')">
-                                <div class="category-icon">🥚</div>
+                                <div class="category-icon"><i class="ph-duotone ph-egg icon-amber icon-xl"></i></div>
                                 <span>Eggs</span>
                             </div>
                             <div class="category-item" onclick="filterCategory('honey')">
-                                <div class="category-icon">🍯</div>
+                                <div class="category-icon"><i class="ph-duotone ph-jar icon-amber icon-xl"></i></div>
                                 <span>Honey</span>
                             </div>
                             <div class="category-item" onclick="filterCategory('meat')">
-                                <div class="category-icon">🥩</div>
+                                <div class="category-icon"><i class="ph-duotone ph-knife icon-terracotta icon-xl"></i></div>
                                 <span>Meat</span>
                             </div>
                         </div>
@@ -198,13 +223,13 @@
                             <div class="farm-card" onclick="showScreen('farmer-profile')">
                                 <div class="farm-image">
                                     <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=300&h=200&fit=crop" alt="Green Acres Farm">
-                                    <span class="farm-badge verified">✓ Verified</span>
+                                    <span class="farm-badge verified"><i class="ph-fill ph-seal-check"></i> Verified</span>
                                 </div>
                                 <div class="farm-info">
                                     <h3>Green Acres Farm</h3>
                                     <p class="farm-distance">2.4 km away</p>
                                     <div class="farm-meta">
-                                        <span class="farm-rating">⭐ 4.9</span>
+                                        <span class="farm-rating"><i class="ph-fill ph-star icon-amber"></i> 4.9</span>
                                         <span class="farm-type">Organic</span>
                                     </div>
                                 </div>
@@ -212,13 +237,13 @@
                             <div class="farm-card">
                                 <div class="farm-image">
                                     <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=300&h=200&fit=crop" alt="Sunny Vale">
-                                    <span class="farm-badge organic">🌿 Organic</span>
+                                    <span class="farm-badge organic"><i class="ph-duotone ph-leaf icon-forest"></i> Organic</span>
                                 </div>
                                 <div class="farm-info">
                                     <h3>Sunny Vale Organics</h3>
                                     <p class="farm-distance">3.8 km away</p>
                                     <div class="farm-meta">
-                                        <span class="farm-rating">⭐ 4.7</span>
+                                        <span class="farm-rating"><i class="ph-fill ph-star icon-amber"></i> 4.7</span>
                                         <span class="farm-type">Vegetables</span>
                                     </div>
                                 </div>
@@ -231,7 +256,7 @@
                                     <h3>Heritage Homestead</h3>
                                     <p class="farm-distance">5.2 km away</p>
                                     <div class="farm-meta">
-                                        <span class="farm-rating">⭐ 4.8</span>
+                                        <span class="farm-rating"><i class="ph-fill ph-star icon-amber"></i> 4.8</span>
                                         <span class="farm-type">Mixed</span>
                                     </div>
                                 </div>
@@ -248,7 +273,7 @@
                             <div class="product-card" onclick="showScreen('product-detail')">
                                 <div class="product-image">
                                     <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=200&h=200&fit=crop" alt="Fresh Tomatoes">
-                                    <button class="favorite-btn">♡</button>
+                                    <button class="favorite-btn"><i class="ph ph-heart"></i></button>
                                     <span class="product-tag seasonal">Seasonal</span>
                                 </div>
                                 <div class="product-info">
@@ -263,7 +288,7 @@
                             <div class="product-card">
                                 <div class="product-image">
                                     <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=200&h=200&fit=crop" alt="Fresh Eggs">
-                                    <button class="favorite-btn">♡</button>
+                                    <button class="favorite-btn"><i class="ph ph-heart"></i></button>
                                     <span class="product-tag organic">Organic</span>
                                 </div>
                                 <div class="product-info">
@@ -278,7 +303,7 @@
                             <div class="product-card">
                                 <div class="product-image">
                                     <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=200&h=200&fit=crop" alt="Honey">
-                                    <button class="favorite-btn">♡</button>
+                                    <button class="favorite-btn"><i class="ph ph-heart"></i></button>
                                 </div>
                                 <div class="product-info">
                                     <h4>Raw Wildflower Honey</h4>
@@ -292,7 +317,7 @@
                             <div class="product-card">
                                 <div class="product-image">
                                     <img src="https://images.unsplash.com/photo-1590868309235-ea34bed7bd7f?w=200&h=200&fit=crop" alt="Lettuce">
-                                    <button class="favorite-btn">♡</button>
+                                    <button class="favorite-btn"><i class="ph ph-heart"></i></button>
                                     <span class="product-tag seasonal">Seasonal</span>
                                 </div>
                                 <div class="product-info">
@@ -449,19 +474,19 @@
                         <h3>Trending Now</h3>
                         <div class="trending-grid">
                             <div class="trending-item">
-                                <span class="trending-icon">🎃</span>
+                                <span class="trending-icon"><i class="ph-duotone ph-pumpkin icon-amber"></i></span>
                                 <span>Pumpkins</span>
                             </div>
                             <div class="trending-item">
-                                <span class="trending-icon">🍎</span>
+                                <span class="trending-icon"><i class="ph-duotone ph-apple-logo icon-terracotta"></i></span>
                                 <span>Apples</span>
                             </div>
                             <div class="trending-item">
-                                <span class="trending-icon">🥕</span>
+                                <span class="trending-icon"><i class="ph-duotone ph-carrot icon-amber"></i></span>
                                 <span>Carrots</span>
                             </div>
                             <div class="trending-item">
-                                <span class="trending-icon">🧅</span>
+                                <span class="trending-icon"><i class="ph-duotone ph-circles-three icon-amber"></i></span>
                                 <span>Onions</span>
                             </div>
                         </div>
@@ -530,7 +555,7 @@
             <div class="screen markets-screen" id="markets">
                 <div class="markets-header">
                     <div class="header-location">
-                        <span class="location-icon-small">📍</span>
+                        <span class="location-icon-small"><i class="ph-fill ph-map-pin icon-forest icon-sm"></i></span>
                         <span class="location-text">Toronto, Ontario</span>
                     </div>
                     <h1>Farmers Markets</h1>
@@ -590,7 +615,7 @@
                                     <span class="date">7</span>
                                 </div>
                                 <div class="market-going-badge">
-                                    <span>👥 24 going</span>
+                                    <span><i class="ph-fill ph-users icon-white"></i> 24 going</span>
                                 </div>
                             </div>
                             <div class="market-info">
@@ -600,8 +625,8 @@
                                 </div>
                                 <p class="market-address">93 Front St E, Toronto</p>
                                 <div class="market-meta">
-                                    <span class="market-time">🕐 5:00 AM - 3:00 PM</span>
-                                    <span class="market-vendors">🏪 120+ vendors</span>
+                                    <span class="market-time"><i class="ph-duotone ph-clock icon-forest"></i> 5:00 AM - 3:00 PM</span>
+                                    <span class="market-vendors"><i class="ph-duotone ph-storefront icon-forest"></i> 120+ vendors</span>
                                 </div>
                                 <div class="market-friends-preview">
                                     <div class="mini-avatars">
@@ -613,7 +638,7 @@
                                 </div>
                                 <button class="btn-going" onclick="event.stopPropagation(); toggleGoing(this)">
                                     <span class="going-text">I'm Going</span>
-                                    <span class="check-icon">✓</span>
+                                    <span class="check-icon"><i class="ph-fill ph-check"></i></span>
                                 </button>
                             </div>
                         </div>
@@ -630,8 +655,8 @@
                                 <h3>Evergreen Brick Works</h3>
                                 <p class="market-address">550 Bayview Ave</p>
                                 <div class="market-meta">
-                                    <span class="market-time">🕐 8AM - 1PM</span>
-                                    <span class="market-going-count">👥 18 going</span>
+                                    <span class="market-time"><i class="ph-duotone ph-clock icon-forest"></i> 8AM - 1PM</span>
+                                    <span class="market-going-count"><i class="ph-fill ph-users"></i> 18 going</span>
                                 </div>
                                 <button class="btn-going small" onclick="event.stopPropagation(); toggleGoing(this)">
                                     <span class="going-text">Going?</span>
@@ -651,8 +676,8 @@
                                 <h3>Wychwood Barns Market</h3>
                                 <p class="market-address">601 Christie St</p>
                                 <div class="market-meta">
-                                    <span class="market-time">🕐 8AM - 12PM</span>
-                                    <span class="market-going-count">👥 12 going</span>
+                                    <span class="market-time"><i class="ph-duotone ph-clock icon-forest"></i> 8AM - 12PM</span>
+                                    <span class="market-going-count"><i class="ph-fill ph-users"></i> 12 going</span>
                                 </div>
                                 <button class="btn-going small" onclick="event.stopPropagation(); toggleGoing(this)">
                                     <span class="going-text">Going?</span>
@@ -672,8 +697,8 @@
                                 <h3>Trinity Bellwoods Market</h3>
                                 <p class="market-address">790 Queen St W</p>
                                 <div class="market-meta">
-                                    <span class="market-time">🕐 3PM - 7PM</span>
-                                    <span class="market-going-count">👥 8 going</span>
+                                    <span class="market-time"><i class="ph-duotone ph-clock icon-forest"></i> 3PM - 7PM</span>
+                                    <span class="market-going-count"><i class="ph-fill ph-users"></i> 8 going</span>
                                 </div>
                                 <button class="btn-going small" onclick="event.stopPropagation(); toggleGoing(this)">
                                     <span class="going-text">Going?</span>
@@ -688,20 +713,20 @@
                             <h2>Your Favorites</h2>
                         </div>
                         <div class="favorite-market-item">
-                            <span class="fav-icon">⭐</span>
+                            <span class="fav-icon"><i class="ph-fill ph-star icon-amber"></i></span>
                             <div class="fav-info">
                                 <h4>Leslieville Farmers Market</h4>
                                 <p>Sundays, 9AM - 2PM</p>
                             </div>
-                            <span class="fav-notify">🔔</span>
+                            <span class="fav-notify"><i class="ph-fill ph-bell icon-forest"></i></span>
                         </div>
                         <div class="favorite-market-item">
-                            <span class="fav-icon">⭐</span>
+                            <span class="fav-icon"><i class="ph-fill ph-star icon-amber"></i></span>
                             <div class="fav-info">
                                 <h4>Dufferin Grove Market</h4>
                                 <p>Thursdays, 3PM - 7PM</p>
                             </div>
-                            <span class="fav-notify">🔔</span>
+                            <span class="fav-notify"><i class="ph-fill ph-bell icon-forest"></i></span>
                         </div>
                     </section>
                 </div>
@@ -764,7 +789,7 @@
 
                     <div class="market-time-card">
                         <div class="time-info">
-                            <span class="time-icon">🕐</span>
+                            <span class="time-icon"><i class="ph-duotone ph-clock icon-forest icon-lg"></i></span>
                             <div>
                                 <h4>Saturday Market</h4>
                                 <p>5:00 AM - 3:00 PM</p>
@@ -820,25 +845,25 @@
                                 <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=100&h=100&fit=crop" alt="Green Acres">
                                 <h4>Green Acres Farm</h4>
                                 <p>Organic Vegetables</p>
-                                <span class="vendor-badge">⭐ 4.9</span>
+                                <span class="vendor-badge"><i class="ph-fill ph-star icon-amber"></i> 4.9</span>
                             </div>
                             <div class="vendor-card">
                                 <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=100&h=100&fit=crop" alt="Sunny Vale">
                                 <h4>Sunny Vale</h4>
                                 <p>Dairy & Eggs</p>
-                                <span class="vendor-badge">⭐ 4.7</span>
+                                <span class="vendor-badge"><i class="ph-fill ph-star icon-amber"></i> 4.7</span>
                             </div>
                             <div class="vendor-card">
                                 <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=100&h=100&fit=crop" alt="Heritage">
                                 <h4>Heritage Honey</h4>
                                 <p>Honey & Preserves</p>
-                                <span class="vendor-badge">⭐ 4.8</span>
+                                <span class="vendor-badge"><i class="ph-fill ph-star icon-amber"></i> 4.8</span>
                             </div>
                             <div class="vendor-card">
                                 <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=100&h=100&fit=crop" alt="Bakery">
                                 <h4>Artisan Bakery</h4>
                                 <p>Fresh Bread</p>
-                                <span class="vendor-badge">⭐ 4.9</span>
+                                <span class="vendor-badge"><i class="ph-fill ph-star icon-amber"></i> 4.9</span>
                             </div>
                         </div>
                     </section>
@@ -848,27 +873,27 @@
                         <h3>What to Expect</h3>
                         <div class="expect-grid">
                             <div class="expect-item">
-                                <span class="expect-icon">🥬</span>
+                                <span class="expect-icon"><i class="ph-duotone ph-leaf icon-forest icon-lg"></i></span>
                                 <span>Fresh Produce</span>
                             </div>
                             <div class="expect-item">
-                                <span class="expect-icon">🧀</span>
+                                <span class="expect-icon"><i class="ph-duotone ph-bowl-food icon-amber icon-lg"></i></span>
                                 <span>Artisan Cheese</span>
                             </div>
                             <div class="expect-item">
-                                <span class="expect-icon">🥖</span>
+                                <span class="expect-icon"><i class="ph-duotone ph-bread icon-amber icon-lg"></i></span>
                                 <span>Fresh Baked</span>
                             </div>
                             <div class="expect-item">
-                                <span class="expect-icon">🌸</span>
+                                <span class="expect-icon"><i class="ph-duotone ph-flower-tulip icon-terracotta icon-lg"></i></span>
                                 <span>Fresh Flowers</span>
                             </div>
                             <div class="expect-item">
-                                <span class="expect-icon">🥩</span>
+                                <span class="expect-icon"><i class="ph-duotone ph-knife icon-terracotta icon-lg"></i></span>
                                 <span>Local Meats</span>
                             </div>
                             <div class="expect-item">
-                                <span class="expect-icon">☕</span>
+                                <span class="expect-icon"><i class="ph-duotone ph-coffee icon-amber icon-lg"></i></span>
                                 <span>Coffee & Food</span>
                             </div>
                         </div>
@@ -878,15 +903,15 @@
                     <section class="market-tips">
                         <h3>Tips for Your Visit</h3>
                         <div class="tip-item">
-                            <span class="tip-icon">🌅</span>
+                            <span class="tip-icon"><i class="ph-duotone ph-sun-horizon icon-amber icon-lg"></i></span>
                             <p><strong>Arrive Early:</strong> Best selection is before 9AM</p>
                         </div>
                         <div class="tip-item">
-                            <span class="tip-icon">💰</span>
+                            <span class="tip-icon"><i class="ph-duotone ph-currency-dollar icon-forest icon-lg"></i></span>
                             <p><strong>Bring Cash:</strong> Some vendors don't accept cards</p>
                         </div>
                         <div class="tip-item">
-                            <span class="tip-icon">🛍️</span>
+                            <span class="tip-icon"><i class="ph-duotone ph-tote icon-forest icon-lg"></i></span>
                             <p><strong>Bring Bags:</strong> Help reduce plastic waste</p>
                         </div>
                     </section>
@@ -898,7 +923,7 @@
                         Directions
                     </button>
                     <button class="btn-primary going-btn" onclick="toggleGoingDetail(this)">
-                        I'm Going! 🎉
+                        I'm Going! <i class="ph-fill ph-confetti"></i>
                     </button>
                 </div>
             </div>
@@ -917,8 +942,8 @@
                 <div class="product-hero">
                     <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&h=400&fit=crop" alt="Heirloom Tomatoes">
                     <div class="product-hero-tags">
-                        <span class="hero-tag organic">🌿 Organic</span>
-                        <span class="hero-tag seasonal">📅 Seasonal</span>
+                        <span class="hero-tag organic"><i class="ph-duotone ph-leaf"></i> Organic</span>
+                        <span class="hero-tag seasonal"><i class="ph-duotone ph-calendar"></i> Seasonal</span>
                     </div>
                 </div>
 
@@ -926,12 +951,12 @@
                     <div class="product-title-section">
                         <div class="product-title-row">
                             <h1>Heirloom Tomatoes</h1>
-                            <button class="favorite-btn-large">♡</button>
+                            <button class="favorite-btn-large"><i class="ph ph-heart icon-lg"></i></button>
                         </div>
                         <div class="product-subtitle" onclick="showScreen('farmer-profile')">
                             <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=40&h=40&fit=crop" alt="Farm">
                             <span>Green Acres Farm</span>
-                            <span class="verified-badge">✓</span>
+                            <span class="verified-badge"><i class="ph-fill ph-seal-check icon-forest"></i></span>
                         </div>
                     </div>
 
@@ -949,17 +974,17 @@
 
                     <div class="product-info-cards">
                         <div class="info-card">
-                            <span class="info-icon">📍</span>
+                            <span class="info-icon"><i class="ph-duotone ph-map-pin icon-terracotta icon-lg"></i></span>
                             <span class="info-label">Distance</span>
                             <span class="info-value">2.4 km</span>
                         </div>
                         <div class="info-card">
-                            <span class="info-icon">⏱</span>
+                            <span class="info-icon"><i class="ph-duotone ph-timer icon-forest icon-lg"></i></span>
                             <span class="info-label">Harvested</span>
                             <span class="info-value">Today</span>
                         </div>
                         <div class="info-card">
-                            <span class="info-icon">⭐</span>
+                            <span class="info-icon"><i class="ph-fill ph-star icon-amber icon-lg"></i></span>
                             <span class="info-label">Rating</span>
                             <span class="info-value">4.9</span>
                         </div>
@@ -1002,7 +1027,7 @@
                                     <span class="review-date">2 days ago</span>
                                 </div>
                             </div>
-                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            <div class="review-stars"><i class="ph-fill ph-star icon-amber"></i><i class="ph-fill ph-star icon-amber"></i><i class="ph-fill ph-star icon-amber"></i><i class="ph-fill ph-star icon-amber"></i><i class="ph-fill ph-star icon-amber"></i></div>
                             <p class="review-text">The best tomatoes I've ever had! So fresh and flavorful. Will definitely order again.</p>
                         </div>
                     </div>
@@ -1034,7 +1059,7 @@
                     <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=400&h=250&fit=crop" alt="Green Acres Farm" class="farm-cover">
                     <div class="farmer-avatar-container">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="John Mitchell" class="farmer-avatar">
-                        <span class="verified-badge-large">✓</span>
+                        <span class="verified-badge-large"><i class="ph-fill ph-seal-check"></i></span>
                     </div>
                 </div>
 
@@ -1064,9 +1089,9 @@
                     </div>
 
                     <div class="farmer-badges">
-                        <span class="badge organic">🌿 Certified Organic</span>
-                        <span class="badge local">📍 Local Producer</span>
-                        <span class="badge sustainable">♻️ Sustainable</span>
+                        <span class="badge organic"><i class="ph-duotone ph-leaf"></i> Certified Organic</span>
+                        <span class="badge local"><i class="ph-duotone ph-map-pin"></i> Local Producer</span>
+                        <span class="badge sustainable"><i class="ph-duotone ph-recycle"></i> Sustainable</span>
                     </div>
 
                     <div class="farmer-actions">
@@ -1229,7 +1254,7 @@
                     </div>
 
                     <div class="eco-impact">
-                        <div class="eco-icon">🌱</div>
+                        <div class="eco-icon"><i class="ph-duotone ph-plant icon-forest icon-xl"></i></div>
                         <div class="eco-info">
                             <span class="eco-title">Your Eco Impact</span>
                             <span class="eco-detail">This order saves 2.3kg CO₂ vs. supermarket</span>
@@ -1282,7 +1307,7 @@
                                 <span class="thread-name">Green Acres Farm</span>
                                 <span class="thread-time">2m ago</span>
                             </div>
-                            <p class="thread-preview">Your order is ready for pickup! See you tomorrow 🍅</p>
+                            <p class="thread-preview">Your order is ready for pickup! See you tomorrow</p>
                         </div>
                         <span class="unread-badge">1</span>
                     </div>
@@ -1354,7 +1379,7 @@
                 <div class="chat-messages">
                     <div class="message-date">Today</div>
                     <div class="message received">
-                        <p>Hi! Thanks for your order. Just wanted to let you know the tomatoes are looking great today! 🍅</p>
+                        <p>Hi! Thanks for your order. Just wanted to let you know the tomatoes are looking great today!</p>
                         <span class="message-time">10:30 AM</span>
                     </div>
                     <div class="message sent">
@@ -1370,7 +1395,7 @@
                         <span class="message-time">10:35 AM</span>
                     </div>
                     <div class="message received">
-                        <p>Your order is ready for pickup! See you tomorrow 🍅</p>
+                        <p>Your order is ready for pickup! See you tomorrow</p>
                         <span class="message-time">2:15 PM</span>
                     </div>
                 </div>
@@ -1399,7 +1424,7 @@
                     <div class="profile-user">
                         <div class="profile-avatar">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Hamza">
-                            <button class="edit-avatar">📷</button>
+                            <button class="edit-avatar"><i class="ph-fill ph-camera"></i></button>
                         </div>
                         <h2>Hamza Galbete</h2>
                         <p>Toronto, Ontario</p>
@@ -1422,7 +1447,7 @@
 
                     <div class="profile-impact-card">
                         <div class="impact-header">
-                            <span class="impact-icon">🌍</span>
+                            <span class="impact-icon"><i class="ph-duotone ph-globe-hemisphere-west icon-forest icon-xl"></i></span>
                             <h3>Your Locavore Impact</h3>
                         </div>
                         <p>You're in the top 10% of eco-conscious shoppers in your area!</p>
@@ -1512,7 +1537,7 @@
                             <span>Order #LOC-2847</span>
                         </div>
                         <div class="pickup-info">
-                            <div class="pickup-icon">📍</div>
+                            <div class="pickup-icon"><i class="ph-duotone ph-map-pin icon-forest icon-xl"></i></div>
                             <div class="pickup-details">
                                 <h4>Pickup at Green Acres Farm</h4>
                                 <p>Tomorrow, 9AM - 5PM</p>
@@ -1522,7 +1547,7 @@
                     </div>
 
                     <div class="eco-celebration">
-                        <span class="eco-emoji">🌱</span>
+                        <span class="eco-emoji"><i class="ph-duotone ph-plant icon-forest icon-2xl"></i></span>
                         <p>You just saved <strong>2.3kg CO₂</strong> by shopping local!</p>
                     </div>
 

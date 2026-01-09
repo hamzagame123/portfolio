@@ -177,7 +177,7 @@ function addToCart() {
     // Show feedback animation
     const btn = document.querySelector('.add-to-cart-btn');
     if (btn) {
-        btn.textContent = 'Added! ✓';
+        btn.innerHTML = 'Added! <i class="ph-fill ph-check"></i>';
         btn.style.background = '#4caf50';
         
         setTimeout(() => {
@@ -288,15 +288,23 @@ function setupFavoriteButtons() {
     favBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const isFilled = btn.textContent === '♥';
-            btn.textContent = isFilled ? '♡' : '♥';
-            btn.style.color = isFilled ? '' : '#f44336';
+            const icon = btn.querySelector('i');
+            const isFilled = icon && icon.classList.contains('ph-fill');
             
-            if (!isFilled) {
-                btn.style.animation = 'successPop 0.3s ease';
-                setTimeout(() => {
-                    btn.style.animation = '';
-                }, 300);
+            if (icon) {
+                if (isFilled) {
+                    icon.classList.remove('ph-fill');
+                    icon.classList.add('ph');
+                    btn.style.color = '';
+                } else {
+                    icon.classList.remove('ph');
+                    icon.classList.add('ph-fill');
+                    btn.style.color = '#f44336';
+                    btn.style.animation = 'successPop 0.3s ease';
+                    setTimeout(() => {
+                        btn.style.animation = '';
+                    }, 300);
+                }
             }
         });
     });
@@ -402,7 +410,7 @@ document.addEventListener('click', (e) => {
         
         // Visual feedback
         const originalText = e.target.textContent;
-        e.target.textContent = '✓';
+        e.target.innerHTML = '<i class="ph-fill ph-check"></i>';
         e.target.style.background = '#4caf50';
         
         setTimeout(() => {
@@ -428,7 +436,7 @@ function updateGreeting() {
             greeting = 'Good Evening';
         }
         
-        greetingEl.innerHTML = `${greeting}, <span class="user-name">Hamza</span> 👋`;
+        greetingEl.innerHTML = `${greeting}, <span class="user-name">Hamza</span> <i class="ph-duotone ph-hand-waving icon-amber"></i>`;
     }
 }
 
@@ -494,7 +502,7 @@ function toggleGoing(btn) {
         if (goingText) {
             goingText.textContent = 'Going!';
         }
-        showToast("You're going! 🎉");
+        showToast("You're going!");
         
         // Update the going count on the card
         const card = btn.closest('.market-card');
@@ -502,7 +510,7 @@ function toggleGoing(btn) {
             const countEl = card.querySelector('.market-going-count, .market-going-badge span');
             if (countEl) {
                 const currentCount = parseInt(countEl.textContent.match(/\d+/)[0]) || 0;
-                countEl.textContent = `👥 ${currentCount + 1} going`;
+                countEl.innerHTML = `<i class="ph-fill ph-users"></i> ${currentCount + 1} going`;
             }
         }
     } else {
@@ -518,28 +526,28 @@ function toggleGoingDetail(btn) {
     btn.classList.toggle('active');
     
     if (btn.classList.contains('active')) {
-        btn.textContent = "I'm Going! ✓";
+        btn.innerHTML = "I'm Going! <i class='ph-fill ph-check'></i>";
         btn.style.background = 'var(--success)';
-        showToast("You're going! 🎉 Friends notified.");
+        showToast("You're going! Friends notified.");
     } else {
-        btn.textContent = "I'm Going! 🎉";
+        btn.innerHTML = "I'm Going! <i class='ph-fill ph-confetti'></i>";
         btn.style.background = '';
     }
 }
 
 // Open maps for directions
 function openMaps() {
-    showToast('Opening Maps... 🗺️');
+    showToast('Opening Maps...');
     // In a real app, this would open the device's maps app
 }
 
 // Console welcome message
 console.log(`
-🌿 Locavore - Sustainable Local Food Marketplace
-   Eat Local. Live Sustainable.
-   
-   Featuring: Farmers Markets Discovery & Social Features!
-   
-   App initialized successfully!
+Locavore - Sustainable Local Food Marketplace
+Eat Local. Live Sustainable.
+
+Featuring: Farmers Markets Discovery & Social Features!
+
+App initialized successfully!
 `);
 

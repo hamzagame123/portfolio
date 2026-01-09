@@ -7,7 +7,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="case-study.css?v=10">
+    <link rel="stylesheet" href="case-study.css?v=11">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <style>
+        /* Phosphor Icon Styling for Case Study */
+        .ph, .ph-fill, .ph-duotone {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-terracotta { color: #c76f51; }
+        .icon-amber { color: #e6a756; }
+        .icon-forest { color: #4A7C59; }
+        .icon-leaf { color: #7ab18a; }
+        .icon-white { color: white; }
+        .icon-sm { font-size: 16px; }
+        .icon-md { font-size: 20px; }
+        .icon-lg { font-size: 24px; }
+        .icon-xl { font-size: 32px; }
+        .icon-2xl { font-size: 40px; }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -80,32 +100,32 @@
                 </div>
                 <div class="tldr-grid">
                     <div class="tldr-item">
-                        <div class="tldr-icon">🎯</div>
+                        <div class="tldr-icon"><i class="ph-duotone ph-target icon-terracotta icon-xl"></i></div>
                         <div class="tldr-value">Market + Social</div>
                         <div class="tldr-label">Core Innovation</div>
                     </div>
                     <div class="tldr-item">
-                        <div class="tldr-icon">👥</div>
+                        <div class="tldr-icon"><i class="ph-duotone ph-users icon-forest icon-xl"></i></div>
                         <div class="tldr-value">3 + 5</div>
                         <div class="tldr-label">Interviews + Testers</div>
                     </div>
                     <div class="tldr-item">
-                        <div class="tldr-icon">📱</div>
+                        <div class="tldr-icon"><i class="ph-duotone ph-device-mobile icon-forest icon-xl"></i></div>
                         <div class="tldr-value">15 Screens</div>
                         <div class="tldr-label">Fully Designed</div>
                     </div>
                     <div class="tldr-item">
-                        <div class="tldr-icon">⏱️</div>
+                        <div class="tldr-icon"><i class="ph-duotone ph-timer icon-amber icon-xl"></i></div>
                         <div class="tldr-value">4 Weeks</div>
                         <div class="tldr-label">Sprint Duration</div>
                     </div>
                     <div class="tldr-item">
-                        <div class="tldr-icon">✅</div>
+                        <div class="tldr-icon"><i class="ph-duotone ph-check-circle icon-forest icon-xl"></i></div>
                         <div class="tldr-value">92%</div>
                         <div class="tldr-label">Task Completion Rate</div>
                     </div>
                     <div class="tldr-item">
-                        <div class="tldr-icon">🌍</div>
+                        <div class="tldr-icon"><i class="ph-duotone ph-globe-hemisphere-west icon-forest icon-xl"></i></div>
                         <div class="tldr-value">800+</div>
                         <div class="tldr-label">Canadian Farmers Markets</div>
                     </div>
@@ -125,17 +145,17 @@
                 </div>
                 <div class="brief-details">
                     <div class="brief-card animate-on-scroll" style="--delay: 0.1s">
-                        <div class="brief-card-icon">👥</div>
+                        <div class="brief-card-icon"><i class="ph-duotone ph-users icon-forest icon-xl"></i></div>
                         <h3>Target Users</h3>
                         <p>Farmers market enthusiasts, eco-conscious consumers, community-minded locals</p>
                     </div>
                     <div class="brief-card animate-on-scroll" style="--delay: 0.2s">
-                        <div class="brief-card-icon">🎯</div>
+                        <div class="brief-card-icon"><i class="ph-duotone ph-target icon-terracotta icon-xl"></i></div>
                         <h3>Core Challenge</h3>
                         <p>Turn farmers market visits into social experiences while helping users track multiple markets</p>
                     </div>
                     <div class="brief-card animate-on-scroll" style="--delay: 0.3s">
-                        <div class="brief-card-icon">🌍</div>
+                        <div class="brief-card-icon"><i class="ph-duotone ph-globe-hemisphere-west icon-forest icon-xl"></i></div>
                         <h3>Impact Goal</h3>
                         <p>Increase farmers market attendance, build community connections, support local vendors</p>
                     </div>
@@ -155,12 +175,12 @@
                 </div>
                 <div class="problem-quotes">
                     <blockquote class="quote-card farmer-quote animate-on-scroll">
-                        <div class="quote-icon">🌾</div>
+                        <div class="quote-icon"><i class="ph-duotone ph-plant icon-forest icon-xl"></i></div>
                         <p>"It is difficult sourcing a market for my product most of the time. I highly rely on middlemen who exploit us and buy at really low prices."</p>
                         <cite>Local Farmer, Interview</cite>
                     </blockquote>
                     <blockquote class="quote-card buyer-quote animate-on-scroll">
-                        <div class="quote-icon">🛒</div>
+                        <div class="quote-icon"><i class="ph-duotone ph-shopping-cart icon-amber icon-xl"></i></div>
                         <p>"I'm forced to rely on brokers to get products. They sell expensively and that affects my business as I'm forced to sell at higher prices."</p>
                         <cite>Small Business Owner, Interview</cite>
                     </blockquote>
@@ -426,67 +446,67 @@
                 </div>
                 <div class="competitive-row">
                     <div class="competitive-cell feature">Market Discovery</div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
-                    <div class="competitive-cell"><span class="partial">◐</span></div>
+                    <div class="competitive-cell"><span class="check"><i class="ph-fill ph-check"></i></span></div>
+                    <div class="competitive-cell"><span class="check"><i class="ph-fill ph-check"></i></span></div>
+                    <div class="competitive-cell"><span class="check"><i class="ph-fill ph-check"></i></span></div>
+                    <div class="competitive-cell"><span class="partial"><i class="ph-duotone ph-circle-half"></i></span></div>
                 </div>
                 <div class="competitive-row highlight">
                     <div class="competitive-cell feature">Social "Who's Going"</div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
+                    <div class="competitive-cell"><span class="check"><i class="ph-fill ph-check"></i></span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                 </div>
                 <div class="competitive-row highlight">
                     <div class="competitive-cell feature">Friend Coordination</div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
+                    <div class="competitive-cell"><span class="check"><i class="ph-fill ph-check"></i></span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                 </div>
                 <div class="competitive-row">
                     <div class="competitive-cell feature">Vendor Profiles</div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
-                    <div class="competitive-cell"><span class="partial">◐</span></div>
+                    <div class="competitive-cell"><span class="check"><i class="ph-fill ph-check"></i></span></div>
+                    <div class="competitive-cell"><span class="partial"><i class="ph-duotone ph-circle-half"></i></span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                 </div>
                 <div class="competitive-row highlight">
                     <div class="competitive-cell feature">Cross-Market Vendor Tracking</div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
+                    <div class="competitive-cell"><span class="check"><i class="ph-fill ph-check"></i></span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                 </div>
                 <div class="competitive-row">
                     <div class="competitive-cell feature">Schedule Reminders</div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
+                    <div class="competitive-cell"><span class="check"><i class="ph-fill ph-check"></i></span></div>
+                    <div class="competitive-cell"><span class="check"><i class="ph-fill ph-check"></i></span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
-                    <div class="competitive-cell"><span class="partial">◐</span></div>
+                    <div class="competitive-cell"><span class="partial"><i class="ph-duotone ph-circle-half"></i></span></div>
                 </div>
                 <div class="competitive-row">
                     <div class="competitive-cell feature">Canada Focus</div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
+                    <div class="competitive-cell"><span class="check"><i class="ph-fill ph-check"></i></span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
                     <div class="competitive-cell"><span class="cross">✗</span></div>
-                    <div class="competitive-cell"><span class="check">✓</span></div>
+                    <div class="competitive-cell"><span class="check"><i class="ph-fill ph-check"></i></span></div>
                 </div>
             </div>
 
             <!-- Key Insights -->
             <div class="competitive-insights">
                 <div class="competitive-insight animate-on-scroll">
-                    <h4>🎯 The Gap</h4>
+                    <h4><i class="ph-duotone ph-target icon-terracotta"></i> The Gap</h4>
                     <p>No existing app treats farmers markets as <strong>social experiences</strong>. Users juggle Google Maps + group texts + calendar reminders separately.</p>
                 </div>
                 <div class="competitive-insight animate-on-scroll" style="--delay: 0.1s">
-                    <h4>💡 Our Differentiator</h4>
+                    <h4><i class="ph-duotone ph-lightbulb icon-amber"></i> Our Differentiator</h4>
                     <p>Locavore is the only app with <strong>"Who's Going"</strong> social features—see friends attending, invite others, and track your favorite vendors across multiple markets.</p>
                 </div>
                 <div class="competitive-insight animate-on-scroll" style="--delay: 0.2s">
-                    <h4>📈 Market Opportunity</h4>
+                    <h4><i class="ph-duotone ph-trend-up icon-forest"></i> Market Opportunity</h4>
                     <p>With 20,000+ vendors and $1.2B in annual sales in Canada, even capturing 5% of engaged market-goers represents significant impact potential.</p>
                 </div>
             </div>
@@ -533,7 +553,7 @@
             <div class="personas-grid">
                 <div class="persona-card animate-on-scroll">
                     <div class="persona-header farmer-persona">
-                        <div class="persona-photo-placeholder">👨‍🌾</div>
+                        <div class="persona-photo-placeholder"><i class="ph-duotone ph-user icon-forest icon-2xl"></i></div>
                         <div class="persona-info">
                             <h3>Marcus Thompson</h3>
                             <span>Multi-Market Vendor, 52</span>
@@ -587,7 +607,7 @@
 
                 <div class="persona-card animate-on-scroll" style="--delay: 0.2s">
                     <div class="persona-header buyer-persona">
-                        <div class="persona-photo-placeholder">👩‍💼</div>
+                        <div class="persona-photo-placeholder"><i class="ph-duotone ph-user icon-terracotta icon-2xl"></i></div>
                         <div class="persona-info">
                             <h3>Sarah Chen</h3>
                             <span>Market Enthusiast, 34</span>
@@ -655,7 +675,7 @@
             <div class="sketches-grid">
                 <div class="sketch-card animate-on-scroll">
                     <div class="sketch-placeholder">
-                        <span class="sketch-icon">✏️</span>
+                        <span class="sketch-icon"><i class="ph-duotone ph-pencil-simple icon-forest"></i></span>
                         <span class="sketch-label">Sketch Placeholder</span>
                     </div>
                     <div class="sketch-info">
@@ -666,7 +686,7 @@
 
                 <div class="sketch-card animate-on-scroll" style="--delay: 0.1s">
                     <div class="sketch-placeholder">
-                        <span class="sketch-icon">✏️</span>
+                        <span class="sketch-icon"><i class="ph-duotone ph-pencil-simple icon-forest"></i></span>
                         <span class="sketch-label">Sketch Placeholder</span>
                     </div>
                     <div class="sketch-info">
@@ -677,7 +697,7 @@
 
                 <div class="sketch-card animate-on-scroll" style="--delay: 0.2s">
                     <div class="sketch-placeholder">
-                        <span class="sketch-icon">✏️</span>
+                        <span class="sketch-icon"><i class="ph-duotone ph-pencil-simple icon-forest"></i></span>
                         <span class="sketch-label">Sketch Placeholder</span>
                     </div>
                     <div class="sketch-info">
@@ -688,7 +708,7 @@
 
                 <div class="sketch-card animate-on-scroll" style="--delay: 0.3s">
                     <div class="sketch-placeholder">
-                        <span class="sketch-icon">✏️</span>
+                        <span class="sketch-icon"><i class="ph-duotone ph-pencil-simple icon-forest"></i></span>
                         <span class="sketch-label">Sketch Placeholder</span>
                     </div>
                     <div class="sketch-info">
@@ -710,7 +730,7 @@
             <!-- Process Timeline -->
             <div class="ideation-timeline animate-on-scroll">
                 <div class="timeline-step">
-                    <div class="timeline-icon">✏️</div>
+                    <div class="timeline-icon"><i class="ph-duotone ph-pencil-simple icon-forest"></i></div>
                     <h4>Sketch</h4>
                     <p>Paper concepts</p>
                 </div>
@@ -722,13 +742,13 @@
                 </div>
                 <div class="timeline-connector"></div>
                 <div class="timeline-step">
-                    <div class="timeline-icon">🎨</div>
+                    <div class="timeline-icon"><i class="ph-duotone ph-palette icon-amber"></i></div>
                     <h4>Visual Design</h4>
                     <p>Color & typography</p>
                 </div>
                 <div class="timeline-connector"></div>
                 <div class="timeline-step active">
-                    <div class="timeline-icon">📱</div>
+                    <div class="timeline-icon"><i class="ph-duotone ph-device-mobile icon-forest"></i></div>
                     <h4>Prototype</h4>
                     <p>Interactive demo</p>
                 </div>
@@ -751,31 +771,31 @@
                                 <div class="wf-screen-content">
                                     <!-- Header -->
                                     <div class="wf-row spaced">
-                                        <div class="wf-chip">📍 Toronto, ON ▾</div>
-                                        <div class="wf-icon-btn">🔔</div>
+                                        <div class="wf-chip"><i class="ph-fill ph-map-pin"></i> Toronto, ON ▾</div>
+                                        <div class="wf-icon-btn"><i class="ph-fill ph-bell"></i></div>
                                     </div>
                                     <!-- Greeting -->
                                     <div class="wf-text-block">
-                                        <div class="wf-text large">Good Morning, Hamza 👋</div>
+                                        <div class="wf-text large">Good Morning, Hamza <i class="ph-duotone ph-hand-waving"></i></div>
                                         <div class="wf-text small muted">What fresh goodness today?</div>
                                     </div>
                                     <!-- Search -->
-                                    <div class="wf-search-bar">🔍 Search farms, products...</div>
+                                    <div class="wf-search-bar"><i class="ph ph-magnifying-glass"></i> Search farms, products...</div>
                                     <!-- Seasonal Banner -->
                                     <div class="wf-banner-card">
                                         <div class="wf-banner-text">
                                             <span class="wf-tag">IN SEASON</span>
                                             <div class="wf-text medium">Fall Harvest Festival</div>
                                         </div>
-                                        <div class="wf-banner-emoji">🎃🍂</div>
+                                        <div class="wf-banner-emoji"><i class="ph-duotone ph-pumpkin"></i><i class="ph-duotone ph-leaf"></i></div>
                                     </div>
                                     <!-- Categories -->
                                     <div class="wf-text small bold">Categories</div>
                                     <div class="wf-categories-row">
-                                        <div class="wf-cat-item"><span>🥬</span><small>Veggies</small></div>
-                                        <div class="wf-cat-item"><span>🍎</span><small>Fruits</small></div>
-                                        <div class="wf-cat-item"><span>🥛</span><small>Dairy</small></div>
-                                        <div class="wf-cat-item"><span>🥚</span><small>Eggs</small></div>
+                                        <div class="wf-cat-item"><span><i class="ph-duotone ph-leaf"></i></span><small>Veggies</small></div>
+                                        <div class="wf-cat-item"><span><i class="ph-duotone ph-apple-logo"></i></span><small>Fruits</small></div>
+                                        <div class="wf-cat-item"><span><i class="ph-duotone ph-drop"></i></span><small>Dairy</small></div>
+                                        <div class="wf-cat-item"><span><i class="ph-duotone ph-egg"></i></span><small>Eggs</small></div>
                                     </div>
                                     <!-- Nearby Farms -->
                                     <div class="wf-row spaced">
@@ -784,14 +804,14 @@
                                     </div>
                                     <div class="wf-farms-scroll">
                                         <div class="wf-farm-card">
-                                            <div class="wf-farm-img">✓</div>
+                                            <div class="wf-farm-img"><i class="ph-fill ph-seal-check"></i></div>
                                             <div class="wf-text tiny">Green Acres</div>
-                                            <div class="wf-text tiny muted">⭐ 4.9</div>
+                                            <div class="wf-text tiny muted"><i class="ph-fill ph-star"></i> 4.9</div>
                                         </div>
                                         <div class="wf-farm-card">
-                                            <div class="wf-farm-img">🌿</div>
+                                            <div class="wf-farm-img"><i class="ph-duotone ph-leaf"></i></div>
                                             <div class="wf-text tiny">Sunny Vale</div>
-                                            <div class="wf-text tiny muted">⭐ 4.7</div>
+                                            <div class="wf-text tiny muted"><i class="ph-fill ph-star"></i> 4.7</div>
                                         </div>
                                     </div>
                                     <!-- Fresh Today -->
@@ -801,12 +821,12 @@
                                     </div>
                                     <div class="wf-products-grid">
                                         <div class="wf-product-card">
-                                            <div class="wf-product-img">🍅</div>
+                                            <div class="wf-product-img"><i class="ph-duotone ph-orange icon-terracotta"></i></div>
                                             <div class="wf-text tiny">Tomatoes</div>
                                             <div class="wf-text tiny bold">$4.99</div>
                                         </div>
                                         <div class="wf-product-card">
-                                            <div class="wf-product-img">🥚</div>
+                                            <div class="wf-product-img"><i class="ph-duotone ph-egg icon-amber"></i></div>
                                             <div class="wf-text tiny">Eggs</div>
                                             <div class="wf-text tiny bold">$6.50</div>
                                         </div>
@@ -814,11 +834,11 @@
                                 </div>
                                 <!-- Nav -->
                                 <div class="wf-nav-bar">
-                                    <div class="wf-nav-item active">🏠</div>
-                                    <div class="wf-nav-item">🏪</div>
-                                    <div class="wf-nav-item">🛒</div>
-                                    <div class="wf-nav-item">💬</div>
-                                    <div class="wf-nav-item">👤</div>
+                                    <div class="wf-nav-item active"><i class="ph-fill ph-house"></i></div>
+                                    <div class="wf-nav-item"><i class="ph ph-storefront"></i></div>
+                                    <div class="wf-nav-item"><i class="ph ph-shopping-cart"></i></div>
+                                    <div class="wf-nav-item"><i class="ph ph-chat-teardrop"></i></div>
+                                    <div class="wf-nav-item"><i class="ph ph-user"></i></div>
                                 </div>
                             </div>
                             <div class="wireframe-label-large">Home Screen</div>
@@ -836,7 +856,7 @@
                                 <div class="wf-notch-large"></div>
                                 <div class="wf-screen-content">
                                     <!-- Header -->
-                                    <div class="wf-chip">📍 Toronto, ON</div>
+                                    <div class="wf-chip"><i class="ph-fill ph-map-pin"></i> Toronto, ON</div>
                                     <div class="wf-text large bold">Farmers Markets</div>
                                     <!-- This Week Banner -->
                                     <div class="wf-banner-card green">
@@ -867,12 +887,12 @@
                                     <div class="wf-market-featured">
                                         <div class="wf-market-img-large">
                                             <div class="wf-date-badge-large">SAT<br><strong>7</strong></div>
-                                            <div class="wf-going-badge">👥 24 going</div>
+                                            <div class="wf-going-badge"><i class="ph-fill ph-users"></i> 24 going</div>
                                         </div>
                                         <div class="wf-market-details">
                                             <div class="wf-text small bold">St. Lawrence Market</div>
                                             <div class="wf-text tiny muted">93 Front St E • 1.2 km</div>
-                                            <div class="wf-text tiny">🕐 5AM-3PM • 🏪 120+ vendors</div>
+                                            <div class="wf-text tiny"><i class="ph ph-clock"></i> 5AM-3PM • <i class="ph ph-storefront"></i> 120+ vendors</div>
                                             <div class="wf-row">
                                                 <div class="wf-mini-avatars">👤👤👤</div>
                                                 <div class="wf-text tiny muted">Sarah & 2 friends going</div>
@@ -887,18 +907,18 @@
                                         </div>
                                         <div class="wf-market-info-small">
                                             <div class="wf-text tiny bold">Evergreen Brick Works</div>
-                                            <div class="wf-text tiny muted">8AM-1PM • 👥 18</div>
+                                            <div class="wf-text tiny muted">8AM-1PM • <i class="ph-fill ph-users"></i> 18</div>
                                         </div>
                                         <div class="wf-btn-small">Going?</div>
                                     </div>
                                 </div>
                                 <!-- Nav -->
                                 <div class="wf-nav-bar">
-                                    <div class="wf-nav-item">🏠</div>
-                                    <div class="wf-nav-item active">🏪</div>
-                                    <div class="wf-nav-item">🛒</div>
-                                    <div class="wf-nav-item">💬</div>
-                                    <div class="wf-nav-item">👤</div>
+                                    <div class="wf-nav-item"><i class="ph ph-house"></i></div>
+                                    <div class="wf-nav-item active"><i class="ph-fill ph-storefront"></i></div>
+                                    <div class="wf-nav-item"><i class="ph ph-shopping-cart"></i></div>
+                                    <div class="wf-nav-item"><i class="ph ph-chat-teardrop"></i></div>
+                                    <div class="wf-nav-item"><i class="ph ph-user"></i></div>
                                 </div>
                             </div>
                             <div class="wireframe-label-large">Markets Screen</div>
@@ -922,21 +942,21 @@
                                     </div>
                                     <!-- Product Image -->
                                     <div class="wf-product-hero">
-                                        🍅
+                                        <i class="ph-duotone ph-orange icon-terracotta icon-2xl"></i>
                                         <div class="wf-hero-tags">
-                                            <span class="wf-tag green">🌿 Organic</span>
-                                            <span class="wf-tag orange">📅 Seasonal</span>
+                                            <span class="wf-tag green"><i class="ph-duotone ph-leaf"></i> Organic</span>
+                                            <span class="wf-tag orange"><i class="ph-duotone ph-calendar"></i> Seasonal</span>
                                         </div>
                                     </div>
                                     <!-- Title & Farm -->
                                     <div class="wf-row spaced">
                                         <div class="wf-text large bold">Heirloom Tomatoes</div>
-                                        <div class="wf-icon-btn">♡</div>
+                                        <div class="wf-icon-btn"><i class="ph ph-heart"></i></div>
                                     </div>
                                     <div class="wf-farm-link">
-                                        <div class="wf-farm-avatar">🌾</div>
+                                        <div class="wf-farm-avatar"><i class="ph-duotone ph-plant icon-forest"></i></div>
                                         <div class="wf-text small">Green Acres Farm</div>
-                                        <div class="wf-text tiny green">✓</div>
+                                        <div class="wf-text tiny green"><i class="ph-fill ph-seal-check"></i></div>
                                     </div>
                                     <!-- Price & Qty -->
                                     <div class="wf-row spaced">
@@ -976,7 +996,7 @@
                                 </div>
                                 <!-- Footer -->
                                 <div class="wf-footer-btns">
-                                    <div class="wf-btn-secondary">💬 Message</div>
+                                    <div class="wf-btn-secondary"><i class="ph ph-chat-teardrop"></i> Message</div>
                                     <div class="wf-btn-primary">Add to Cart - $4.99</div>
                                 </div>
                             </div>
@@ -1021,12 +1041,12 @@
                                     </div>
                                     <!-- Badges -->
                                     <div class="wf-badges-row-large">
-                                        <span class="wf-badge green">🌿 Certified Organic</span>
-                                        <span class="wf-badge">📍 Local</span>
+                                        <span class="wf-badge green"><i class="ph-duotone ph-leaf"></i> Certified Organic</span>
+                                        <span class="wf-badge"><i class="ph-fill ph-map-pin"></i> Local</span>
                                     </div>
                                     <!-- Actions -->
                                     <div class="wf-actions-row">
-                                        <div class="wf-btn-primary-small">💬 Message</div>
+                                        <div class="wf-btn-primary-small"><i class="ph ph-chat-teardrop"></i> Message</div>
                                         <div class="wf-btn-secondary-small">📞 Call</div>
                                     </div>
                                     <!-- About -->
@@ -1039,12 +1059,12 @@
                                     </div>
                                     <div class="wf-products-grid">
                                         <div class="wf-product-card">
-                                            <div class="wf-product-img">🍅</div>
+                                            <div class="wf-product-img"><i class="ph-duotone ph-orange icon-terracotta"></i></div>
                                             <div class="wf-text tiny">Tomatoes</div>
                                             <div class="wf-text tiny bold">$4.99</div>
                                         </div>
                                         <div class="wf-product-card">
-                                            <div class="wf-product-img">🥬</div>
+                                            <div class="wf-product-img"><i class="ph-duotone ph-leaf icon-forest"></i></div>
                                             <div class="wf-text tiny">Lettuce</div>
                                             <div class="wf-text tiny bold">$3.25</div>
                                         </div>
@@ -1079,7 +1099,7 @@
                                         </div>
                                         <!-- Cart Item -->
                                         <div class="wf-cart-item">
-                                            <div class="wf-cart-img">🍅</div>
+                                            <div class="wf-cart-img"><i class="ph-duotone ph-orange icon-terracotta"></i></div>
                                             <div class="wf-cart-info">
                                                 <div class="wf-text tiny bold">Heirloom Tomatoes</div>
                                                 <div class="wf-text tiny muted">$4.99/lb</div>
@@ -1087,7 +1107,7 @@
                                             <div class="wf-qty-mini">− 2 +</div>
                                         </div>
                                         <div class="wf-cart-item">
-                                            <div class="wf-cart-img">🥬</div>
+                                            <div class="wf-cart-img"><i class="ph-duotone ph-leaf icon-forest"></i></div>
                                             <div class="wf-cart-info">
                                                 <div class="wf-text tiny bold">Butter Lettuce</div>
                                                 <div class="wf-text tiny muted">$3.25/head</div>
@@ -1123,7 +1143,7 @@
                                     </div>
                                     <!-- Eco Impact -->
                                     <div class="wf-eco-banner">
-                                        🌱 This order saves 2.3kg CO₂
+                                        <i class="ph-duotone ph-plant icon-forest"></i> This order saves 2.3kg CO₂
                                     </div>
                                 </div>
                                 <!-- Footer -->
@@ -1203,7 +1223,7 @@
             
             <div class="principles-grid">
                 <div class="principle-card animate-on-scroll" style="--delay: 0.1s">
-                    <div class="principle-icon">👥</div>
+                    <div class="principle-icon"><i class="ph-duotone ph-users icon-forest icon-2xl"></i></div>
                     <h3>Community First</h3>
                     <p>Farmers markets are social experiences, and the app should amplify human connection.</p>
                     <div class="principle-applications">
@@ -1218,7 +1238,7 @@
                 </div>
 
                 <div class="principle-card animate-on-scroll" style="--delay: 0.2s">
-                    <div class="principle-icon">📅</div>
+                    <div class="principle-icon"><i class="ph-duotone ph-calendar icon-amber icon-2xl"></i></div>
                     <h3>Never Miss a Market</h3>
                     <p>Tracking multiple markets with different schedules should be effortless.</p>
                     <div class="principle-applications">
@@ -1233,7 +1253,7 @@
                 </div>
 
                 <div class="principle-card animate-on-scroll" style="--delay: 0.3s">
-                    <div class="principle-icon">🔍</div>
+                    <div class="principle-icon"><i class="ph-duotone ph-magnifying-glass icon-terracotta icon-2xl"></i></div>
                     <h3>Vendor Continuity</h3>
                     <p>Help users find their favorite vendors across different markets.</p>
                     <div class="principle-applications">
@@ -1351,27 +1371,27 @@
                     </div>
                     <ul class="comparison-list">
                         <li>
-                            <span class="icon">❌</span>
+                            <span class="icon"><i class="ph-fill ph-x-circle" style="color: #dc2626;"></i></span>
                             <span>Forget market schedules and miss favorites</span>
                         </li>
                         <li>
-                            <span class="icon">❌</span>
+                            <span class="icon"><i class="ph-fill ph-x-circle" style="color: #dc2626;"></i></span>
                             <span>Don't know which friends are going</span>
                         </li>
                         <li>
-                            <span class="icon">❌</span>
+                            <span class="icon"><i class="ph-fill ph-x-circle" style="color: #dc2626;"></i></span>
                             <span>Hard to coordinate meetups at markets</span>
                         </li>
                         <li>
-                            <span class="icon">❌</span>
+                            <span class="icon"><i class="ph-fill ph-x-circle" style="color: #dc2626;"></i></span>
                             <span>Lose track of favorite vendors</span>
                         </li>
                         <li>
-                            <span class="icon">❌</span>
+                            <span class="icon"><i class="ph-fill ph-x-circle" style="color: #dc2626;"></i></span>
                             <span>Don't know which markets have what</span>
                         </li>
                         <li>
-                            <span class="icon">❌</span>
+                            <span class="icon"><i class="ph-fill ph-x-circle" style="color: #dc2626;"></i></span>
                             <span>Solo shopping experience</span>
                         </li>
                     </ul>
@@ -1384,27 +1404,27 @@
                     </div>
                     <ul class="comparison-list">
                         <li>
-                            <span class="icon">✅</span>
+                            <span class="icon"><i class="ph-fill ph-check-circle" style="color: #16a34a;"></i></span>
                             <span>All markets at a glance with reminders</span>
                         </li>
                         <li>
-                            <span class="icon">✅</span>
+                            <span class="icon"><i class="ph-fill ph-check-circle" style="color: #16a34a;"></i></span>
                             <span>See who's going before you commit</span>
                         </li>
                         <li>
-                            <span class="icon">✅</span>
+                            <span class="icon"><i class="ph-fill ph-check-circle" style="color: #16a34a;"></i></span>
                             <span>Invite friends and plan together</span>
                         </li>
                         <li>
-                            <span class="icon">✅</span>
+                            <span class="icon"><i class="ph-fill ph-check-circle" style="color: #16a34a;"></i></span>
                             <span>Follow vendors across markets</span>
                         </li>
                         <li>
-                            <span class="icon">✅</span>
+                            <span class="icon"><i class="ph-fill ph-check-circle" style="color: #16a34a;"></i></span>
                             <span>Browse vendors and products in advance</span>
                         </li>
                         <li>
-                            <span class="icon">✅</span>
+                            <span class="icon"><i class="ph-fill ph-check-circle" style="color: #16a34a;"></i></span>
                             <span>Community-driven social experience</span>
                         </li>
                     </ul>
@@ -1422,32 +1442,32 @@
 
             <div class="features-grid">
                 <div class="feature-card animate-on-scroll" style="--delay: 0.1s">
-                    <div class="feature-icon">🏪</div>
+                    <div class="feature-icon"><i class="ph-duotone ph-storefront icon-forest icon-xl"></i></div>
                     <h3>Market Discovery</h3>
                     <p>Find all farmers markets in your city with schedules, locations, and what vendors to expect</p>
                 </div>
                 <div class="feature-card animate-on-scroll" style="--delay: 0.15s">
-                    <div class="feature-icon">👥</div>
+                    <div class="feature-icon"><i class="ph-duotone ph-users icon-forest icon-xl"></i></div>
                     <h3>Social Going</h3>
                     <p>See which friends are attending a market, mark yourself as "going," and coordinate meetups</p>
                 </div>
                 <div class="feature-card animate-on-scroll" style="--delay: 0.2s">
-                    <div class="feature-icon">🔔</div>
+                    <div class="feature-icon"><i class="ph-duotone ph-bell icon-amber icon-xl"></i></div>
                     <h3>Market Reminders</h3>
                     <p>Never miss your favorite market with personalized notifications and calendar integration</p>
                 </div>
                 <div class="feature-card animate-on-scroll" style="--delay: 0.25s">
-                    <div class="feature-icon">🧑‍🌾</div>
+                    <div class="feature-icon"><i class="ph-duotone ph-user icon-forest icon-xl"></i></div>
                     <h3>Vendor Tracking</h3>
                     <p>Follow your favorite vendors and see which markets they'll be at each week</p>
                 </div>
                 <div class="feature-card animate-on-scroll" style="--delay: 0.3s">
-                    <div class="feature-icon">💬</div>
+                    <div class="feature-icon"><i class="ph-duotone ph-chat-teardrop icon-terracotta icon-xl"></i></div>
                     <h3>Direct Messaging</h3>
                     <p>Chat with farmers and friends, coordinate plans, and ask about products in advance</p>
                 </div>
                 <div class="feature-card animate-on-scroll" style="--delay: 0.35s">
-                    <div class="feature-icon">🌱</div>
+                    <div class="feature-icon"><i class="ph-duotone ph-plant icon-forest icon-xl"></i></div>
                     <h3>Impact Tracking</h3>
                     <p>See your local impact: markets attended, farmers supported, and CO₂ saved</p>
                 </div>
@@ -1466,7 +1486,7 @@
                 <div class="prototype-link-glow"></div>
                 <div class="prototype-link-content">
                     <div class="prototype-link-icon">
-                        <span class="phone-icon">📱</span>
+                        <span class="phone-icon"><i class="ph-duotone ph-device-mobile icon-white icon-2xl"></i></span>
                         <div class="pulse-ring"></div>
                     </div>
                     <div class="prototype-link-text">
@@ -1496,7 +1516,7 @@
 
             <div class="prototype-features animate-on-scroll">
                 <div class="prototype-feature">
-                    <span class="feature-icon">🎯</span>
+                    <span class="feature-icon"><i class="ph-duotone ph-target icon-terracotta"></i></span>
                     <span>15+ Interactive Screens</span>
                 </div>
                 <div class="prototype-feature">
@@ -1567,11 +1587,11 @@
                     <h3>Key Components</h3>
                     <div class="component-list">
                         <div class="component-item">
-                            <span class="component-icon">🏷️</span>
+                            <span class="component-icon"><i class="ph-duotone ph-tag icon-forest"></i></span>
                             <span>Trust Badges</span>
                         </div>
                         <div class="component-item">
-                            <span class="component-icon">📊</span>
+                            <span class="component-icon"><i class="ph-duotone ph-chart-bar icon-amber"></i></span>
                             <span>Impact Cards</span>
                         </div>
                         <div class="component-item">
@@ -1681,7 +1701,7 @@
                     <div class="affinity-cluster scheduling-cluster">
                         <div class="cluster-bg-label">Scheduling</div>
                         <div class="cluster-header">
-                            <span class="cluster-icon">📅</span>
+                            <span class="cluster-icon"><i class="ph-duotone ph-calendar icon-forest"></i></span>
                             <span class="cluster-title">Scheduling & Memory</span>
                         </div>
                         <div class="sticky-notes-grid">
