@@ -3,7 +3,7 @@ import { Hero } from './components/Hero';
 import { Overview } from './components/Overview';
 import { UserResearch } from './components/UserResearch';
 import { DesignPrinciples } from './components/DesignPrinciples';
-import { UserJourney } from './components/UserJourney';
+
 import { BeforeAfter } from './components/BeforeAfter';
 import { Features } from './components/Features';
 import { TechPivot } from './components/TechPivot';
@@ -30,7 +30,7 @@ export default function App() {
       </section>
       <section id="design">
         <DesignPrinciples />
-        <UserJourney />
+
         <BeforeAfter />
         <TechPivot />
         <DesignJourney />
