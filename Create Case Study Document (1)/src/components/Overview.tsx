@@ -119,15 +119,15 @@ export function Overview() {
           </div>
 
         </div>
+      </div>
 
-        {/* Design Goal Callout - spans full width of grid */}
-        <div className="md:col-span-2 mt-16 bg-slate-50 rounded-xl p-8 border border-slate-200 max-w-3xl mx-auto text-center">
-          <div className="text-slate-900 mb-3 text-lg font-medium">Design Goal</div>
-          <p className="text-slate-600 text-lg leading-relaxed">
-            Make AI-powered file management feel <span className="text-slate-900 font-semibold">trustworthy,
-              transparent, and effortless</span>, transforming a tedious task into a seamless experience.
-          </p>
-        </div>
+      {/* Design Goal Callout */}
+      <div className="mt-16 bg-slate-50 rounded-xl p-8 border border-slate-200 max-w-3xl mx-auto text-center">
+        <div className="text-slate-900 mb-3 text-lg font-medium">Design Goal</div>
+        <p className="text-slate-600 text-lg leading-relaxed">
+          Make AI-powered file management feel <span className="text-slate-900 font-semibold">trustworthy,
+            transparent, and effortless</span>, transforming a tedious task into a seamless experience.
+        </p>
       </div>
     </section>
   );
