@@ -44,7 +44,7 @@ const userNeeds = [
 
 export function UserResearch() {
   return (
-    <section className="bg-slate-50 pt-10 pb-20">
+    <section className="bg-slate-50 py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
