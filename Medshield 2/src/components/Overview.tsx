@@ -1,4 +1,4 @@
-import { FileQuestion, Sparkles, CheckCircle2, Users, Target } from 'lucide-react';
+import { AlertCircle, Shield, CheckCircle2, Users, Target } from 'lucide-react';
 
 export function Overview() {
   return (
@@ -7,16 +7,15 @@ export function Overview() {
       <div className="mb-16 bg-slate-100 border-l-4 border-slate-700 rounded-r-xl p-8">
         <h3 className="mb-3">The Brief</h3>
         <p className="text-slate-700 mb-4">
-          Design and develop a cross-platform desktop application that uses AI to automatically rename
-          image files with descriptive, human-readable names, eliminating the chaos of cryptic filenames
-          while maintaining user control and file organization.
+          Design and develop a web application that helps chiropractic clinics manage patient records efficiently,
+          schedule appointments seamlessly, and provide a professional, trustworthy experience for clinic staff.
         </p>
         <div className="flex flex-wrap gap-6 mt-6">
           <div className="flex items-start gap-3">
             <Users className="w-5 h-5 text-slate-600 mt-0.5" />
             <div>
               <div className="text-slate-900">Target Users</div>
-              <div className="text-slate-600">Photographers, designers, content creators</div>
+              <div className="text-slate-600">Chiropractors, clinic staff, receptionists</div>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -34,17 +33,15 @@ export function Overview() {
           <h2 className="mb-6">The Problem</h2>
           <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg mb-6">
             <div className="flex items-start gap-3">
-              <FileQuestion className="w-6 h-6 text-red-600 mt-1 flex-shrink-0" />
+              <AlertCircle className="w-6 h-6 text-red-600 mt-1 flex-shrink-0" />
               <div>
                 <p className="text-slate-700 mb-3">
-                  <span className="text-red-700">A wedding photographer returns from a shoot with 847 images</span>
-                  , all named variations of <code className="px-2 py-1 bg-slate-200 rounded">DSC_8472.jpg</code>.
-                  Three months later, finding "the shot with the sunset" becomes a 20-minute search.
+                  <span className="text-red-700">A chiropractor with 12 years of experience spends more time navigating software than with patients.</span>
+                  Finding patient history takes forever, and booking an appointment shouldn't take 7 minutes.
                 </p>
                 <p className="text-slate-700">
-                  This scenario repeats daily for creative professionals managing thousands of images. Manual
-                  renaming is tedious and inconsistent. Existing tools either lack intelligence or require
-                  complex batch renaming rules.
+                  Chiropractic clinics struggle with outdated, complex systems that waste valuable time
+                  and create frustration for both staff and patients. Fragmented tools create inefficiency.
                 </p>
               </div>
             </div>
@@ -54,22 +51,19 @@ export function Overview() {
             <div className="flex gap-3">
               <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
               <div>
-                <span className="text-slate-900">73% of creative professionals</span> report spending
-                significant time organizing files
+                <span className="text-slate-900">Complex interfaces</span> slow down workflow and increase cognitive load
               </div>
             </div>
             <div className="flex gap-3">
               <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
               <div>
-                Manual renaming is <span className="text-slate-900">time-consuming,
-                  inconsistent, and error-prone</span>
+                <span className="text-slate-900">Scattered patient information</span> makes data retrieval time-consuming
               </div>
             </div>
             <div className="flex gap-3">
               <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
               <div>
-                Poor file naming makes <span className="text-slate-900">searching and retrieving
-                  images difficult</span> months later
+                <span className="text-slate-900">Manual booking processes</span> lead to scheduling conflicts and errors
               </div>
             </div>
           </div>
@@ -77,18 +71,17 @@ export function Overview() {
 
         <div>
           <h2 className="mb-6">My Solution</h2>
-          <div className="bg-lime-50 border-l-4 border-lime-500 p-6 rounded-r-lg mb-6">
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-6">
             <div className="flex items-start gap-3">
-              <Sparkles className="w-6 h-6 text-lime-600 mt-1 flex-shrink-0" />
+              <Shield className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
               <div>
                 <p className="text-slate-700 mb-3">
-                  <span className="text-lime-700">Smart Image Renamer analyzes image content using Google's Gemini AI</span>,
-                  automatically generating descriptive filenames like <code className="px-2 py-1 bg-slate-200 rounded">sunset-beach-wedding-ceremony.jpg</code>.
+                  <span className="text-blue-700">Medshield provides a modern, intuitive dashboard</span> with at-a-glance
+                  overview of appointments, quick patient lookup, and streamlined scheduling.
                 </p>
                 <p className="text-slate-700">
-                  The application <span className="text-lime-700">intelligently detects gibberish filenames</span> and
-                  only renames those, preserving already-meaningful names. Users maintain full control with preview
-                  mode, undo functionality, and complete rename history.
+                  The application features <span className="text-blue-700">comprehensive patient management</span> with
+                  search, filtering, and detailed profiles, plus visual calendar views with color-coded status badges.
                 </p>
               </div>
             </div>
@@ -96,24 +89,21 @@ export function Overview() {
 
           <div className="space-y-4 text-slate-600">
             <div className="flex gap-3">
-              <CheckCircle2 className="w-5 h-5 text-lime-600 mt-0.5 flex-shrink-0" />
+              <CheckCircle2 className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
               <div>
-                <span className="text-slate-900">Instant AI-powered analysis</span> understands image
-                content and context
+                <span className="text-slate-900">Patient lookup under 5 seconds</span> with instant search and filtering
               </div>
             </div>
             <div className="flex gap-3">
-              <CheckCircle2 className="w-5 h-5 text-lime-600 mt-0.5 flex-shrink-0" />
+              <CheckCircle2 className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
               <div>
-                <span className="text-slate-900">Automatic folder watching</span> renames new files
-                as they appear
+                <span className="text-slate-900">Appointment booking under 2 minutes</span> with visual time slots
               </div>
             </div>
             <div className="flex gap-3">
-              <CheckCircle2 className="w-5 h-5 text-lime-600 mt-0.5 flex-shrink-0" />
+              <CheckCircle2 className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
               <div>
-                <span className="text-slate-900">Complete control</span> with preview, undo, and
-                customization options
+                <span className="text-slate-900">Minimal training required</span> with intuitive, familiar patterns
               </div>
             </div>
           </div>
@@ -122,8 +112,8 @@ export function Overview() {
           <div className="mt-8 bg-slate-50 rounded-xl p-8 border border-slate-200">
             <div className="text-slate-900 mb-3 text-lg font-medium">Design Goal</div>
             <p className="text-slate-600 text-lg leading-relaxed">
-              Make AI-powered file management feel <span className="text-slate-900 font-semibold">trustworthy,
-                transparent, and effortless</span>, transforming a tedious task into a seamless experience.
+              Create a <span className="text-slate-900 font-semibold">professional, trustworthy interface</span> that
+              requires minimal training while handling complex medical data efficiently and securely.
             </p>
           </div>
         </div>

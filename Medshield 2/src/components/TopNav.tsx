@@ -72,13 +72,13 @@ export function TopNav() {
             width: '40px',
             height: '40px',
             borderRadius: '50%',
-            background: 'linear-gradient(135deg, #84cc16 0%, #10b981 100%)',
+            background: 'linear-gradient(135deg, #0066CC 0%, #0ea5e9 100%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '14px',
             fontWeight: 700,
-            color: '#0c0c0c',
+            color: '#ffffff',
           }}
         >
           HG
@@ -133,7 +133,7 @@ export function TopNav() {
                     right: 0,
                     bottom: 0,
                     height: '2px',
-                    background: '#84cc16',
+                    background: '#0066CC',
                     borderRadius: '2px',
                   }}
                 />
@@ -145,12 +145,3 @@ export function TopNav() {
     </nav>
   );
 }
-
-
-
-
-
-
-
-
-
