@@ -2,7 +2,7 @@ import { FileQuestion, Sparkles, CheckCircle2, Users, Target } from 'lucide-reac
 
 export function Overview() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20">
+    <section className="max-w-7xl mx-auto px-6 pt-20 pb-10">
       {/* Project Brief */}
       <div className="mb-16 bg-slate-100 border-l-4 border-slate-700 rounded-r-xl p-8">
         <h3 className="mb-3">The Brief</h3>
@@ -122,7 +122,7 @@ export function Overview() {
       </div>
 
       {/* Design Goal Callout */}
-      <div className="mt-16 bg-slate-50 rounded-xl p-8 border border-slate-200 max-w-3xl mx-auto text-center">
+      <div className="mt-24 bg-slate-50 rounded-xl p-8 border border-slate-200 max-w-3xl mx-auto text-center">
         <div className="text-slate-900 mb-3 text-lg font-medium">Design Goal</div>
         <p className="text-slate-600 text-lg leading-relaxed">
           Make AI-powered file management feel <span className="text-slate-900 font-semibold">trustworthy,
