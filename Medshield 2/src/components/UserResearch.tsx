@@ -2,18 +2,18 @@ import { Users, Target, TrendingUp, Quote } from 'lucide-react';
 
 const userInsights = [
   {
-    stat: '73%',
-    label: 'of creative professionals spend significant time organizing files',
-    source: 'Self-reported data'
-  },
-  {
-    stat: '15-20 min',
-    label: 'average time spent searching for a specific photo from months ago',
+    stat: '7 min',
+    label: 'average time to book a single appointment with existing systems',
     source: 'User interviews'
   },
   {
-    stat: '1000+',
-    label: 'images accumulated per project for photographers and designers',
+    stat: '95%',
+    label: 'of clinic tasks happen on desktop computers during work hours',
+    source: 'Usage research'
+  },
+  {
+    stat: '20+',
+    label: 'patients managed daily by a single receptionist at peak hours',
     source: 'Industry research'
   }
 ];
@@ -22,21 +22,21 @@ const userNeeds = [
   {
     icon: Target,
     need: 'Speed',
-    description: 'Manual renaming is too slow for large batches',
+    description: 'Patient lookup and booking must be instant during phone calls',
     color: 'text-blue-600',
     bgColor: 'bg-blue-50'
   },
   {
     icon: Users,
-    need: 'Consistency',
-    description: 'Human naming is inconsistent across sessions',
+    need: 'Clarity',
+    description: 'Complex medical data needs clear visual hierarchy',
     color: 'text-purple-600',
     bgColor: 'bg-purple-50'
   },
   {
     icon: TrendingUp,
     need: 'Trust',
-    description: 'Users fear automated tools breaking their files',
+    description: 'Healthcare software must feel secure and professional',
     color: 'text-orange-600',
     bgColor: 'bg-orange-50'
   }
@@ -58,21 +58,20 @@ export function UserResearch() {
         </div>
 
         {/* User Quote */}
-        <div className="bg-white border-l-4 border-lime-500 rounded-r-xl p-8 mb-12 shadow-sm">
-          <Quote className="w-8 h-8 text-lime-600 mb-4" />
+        <div className="bg-white border-l-4 border-blue-500 rounded-r-xl p-8 mb-12 shadow-sm">
+          <Quote className="w-8 h-8 text-blue-600 mb-4" />
           <p className="text-xl text-slate-700 mb-4">
-            "I love my DSLR, but I hate that it names everything DSC_8472.jpg. By the time I'm ready
-            to share photos with a client, I've completely forgotten which file is which. I waste so
-            much time just finding the right shots."
+            "I spend more time navigating the software than I do with my patients. Finding patient
+            history takes forever, and booking an appointment shouldn't take 7 minutes."
           </p>
-          <div className="text-slate-500">- Wedding Photographer, 8 years experience</div>
+          <div className="text-slate-500">- Chiropractor, 12 years experience</div>
         </div>
 
         {/* Key Insights */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {userInsights.map((insight, index) => (
             <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 text-center">
-              <div className="text-4xl text-lime-600 mb-2">{insight.stat}</div>
+              <div className="text-4xl text-blue-600 mb-2">{insight.stat}</div>
               <p className="text-slate-700 mb-2">{insight.label}</p>
               <p className="text-slate-500">{insight.source}</p>
             </div>
@@ -99,8 +98,8 @@ export function UserResearch() {
         <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-8 text-white">
           <h3 className="text-white mb-4">The Design Challenge</h3>
           <p className="text-slate-300">
-            How might we <span className="text-lime-400">automate file naming without sacrificing user control</span>,
-            ensuring the tool feels trustworthy and transparent rather than unpredictable or risky?
+            How might we <span className="text-blue-400">create an intuitive interface that requires minimal training</span>,
+            while handling complex medical data efficiently and building trust through professional aesthetics?
           </p>
         </div>
       </div>

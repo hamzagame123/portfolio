@@ -1,77 +1,85 @@
-interface ScreenshotsProps {
-  mainScreenshot: string;
-  settingsScreenshot: string;
-}
-
-export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsProps) {
+export function Screenshots() {
   return (
     <section className="bg-slate-50 py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="mb-4">Future Vision: Electron UI Design</h2>
+          <h2 className="mb-4">Design System in Action</h2>
           <p className="max-w-2xl mx-auto text-slate-600">
-            Proposed interface design for the next iteration: a cross-platform Electron app with enhanced features
+            The Medshield design system ensures consistency across all screens and interactions
           </p>
         </div>
-        
+
         <div className="space-y-12">
-          <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-8 shadow-2xl">
-            <div className="mb-4">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg border border-blue-200">
+            <div className="mb-6">
               <div className="flex items-center justify-between mb-2">
-                <h3>Main Interface Design</h3>
-                <span className="px-3 py-1 bg-slate-700 text-white rounded-full">Design Mockup</span>
+                <h3>Color System</h3>
+                <span className="px-3 py-1 bg-blue-600 text-white rounded-full text-sm">Brand Cohesion</span>
               </div>
               <p className="text-slate-600">
-                Enhanced three-panel layout with visual queue management, improved preview, and integrated settings
+                Primary blue (#0066CC) derived from the Medshield logo creates instant brand recognition
               </p>
             </div>
-            <div className="bg-slate-900 rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src={mainScreenshot} 
-                alt="Future Electron interface design showing enhanced UI with queue panel and improved styling" 
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="mt-4 grid md:grid-cols-3 gap-4 text-slate-600">
-              <div className="bg-white rounded-lg p-4">
-                <div className="text-slate-900 mb-1">New Features</div>
-                <div>Queue panel, tag presets, advanced filtering</div>
+            <div className="grid md:grid-cols-5 gap-4">
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="w-full h-16 rounded-lg mb-3" style={{ backgroundColor: '#0066CC' }}></div>
+                <div className="text-slate-900 text-sm font-medium">Primary</div>
+                <div className="text-slate-500 text-sm">#0066CC</div>
               </div>
-              <div className="bg-white rounded-lg p-4">
-                <div className="text-slate-900 mb-1">Enhanced UX</div>
-                <div>Folder watching, batch operations, custom instructions</div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="w-full h-16 rounded-lg mb-3" style={{ backgroundColor: '#f3f3f5' }}></div>
+                <div className="text-slate-900 text-sm font-medium">Background</div>
+                <div className="text-slate-500 text-sm">#f3f3f5</div>
               </div>
-              <div className="bg-white rounded-lg p-4">
-                <div className="text-slate-900 mb-1">Technology</div>
-                <div>Electron + React + Tailwind CSS</div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="w-full h-16 rounded-lg mb-3" style={{ backgroundColor: '#22c55e' }}></div>
+                <div className="text-slate-900 text-sm font-medium">Success</div>
+                <div className="text-slate-500 text-sm">#22c55e</div>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="w-full h-16 rounded-lg mb-3" style={{ backgroundColor: '#d4183d' }}></div>
+                <div className="text-slate-900 text-sm font-medium">Destructive</div>
+                <div className="text-slate-500 text-sm">#d4183d</div>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="w-full h-16 rounded-lg mb-3" style={{ backgroundColor: '#717182' }}></div>
+                <div className="text-slate-900 text-sm font-medium">Muted</div>
+                <div className="text-slate-500 text-sm">#717182</div>
               </div>
             </div>
           </div>
-          
-          <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-8 shadow-2xl">
-            <div className="mb-4">
+
+          <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-8 shadow-lg">
+            <div className="mb-6">
               <div className="flex items-center justify-between mb-2">
-                <h3>Settings & Configuration Design</h3>
-                <span className="px-3 py-1 bg-slate-700 text-white rounded-full">Design Mockup</span>
+                <h3>Component Library</h3>
+                <span className="px-3 py-1 bg-slate-700 text-white rounded-full text-sm">40+ Components</span>
               </div>
               <p className="text-slate-600">
-                Comprehensive settings for folder watching, naming conventions, custom AI instructions, and tag management
+                Reusable UI components ensure consistency and speed up development
               </p>
             </div>
-            <div className="bg-slate-900 rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src={settingsScreenshot} 
-                alt="Future settings interface with advanced configuration options" 
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="mt-4 bg-white rounded-lg p-4">
-              <div className="text-slate-900 mb-2">Migration Path</div>
-              <p className="text-slate-600">
-                With the working Python prototype validating the core logic and user flow, these designs represent 
-                the natural evolution, adding power user features while maintaining the simple, focused experience 
-                that makes the tool trustworthy.
-              </p>
+            <div className="grid md:grid-cols-4 gap-4">
+              <div className="bg-white rounded-lg p-4">
+                <div className="text-2xl mb-2">🃏</div>
+                <div className="text-slate-900 font-medium">Cards & Panels</div>
+                <div className="text-slate-500 text-sm">Content organization</div>
+              </div>
+              <div className="bg-white rounded-lg p-4">
+                <div className="text-2xl mb-2">📊</div>
+                <div className="text-slate-900 font-medium">Data Tables</div>
+                <div className="text-slate-500 text-sm">Patient listings</div>
+              </div>
+              <div className="bg-white rounded-lg p-4">
+                <div className="text-2xl mb-2">📅</div>
+                <div className="text-slate-900 font-medium">Calendar Views</div>
+                <div className="text-slate-500 text-sm">Appointment scheduling</div>
+              </div>
+              <div className="bg-white rounded-lg p-4">
+                <div className="text-2xl mb-2">🏷️</div>
+                <div className="text-slate-900 font-medium">Status Badges</div>
+                <div className="text-slate-500 text-sm">Visual indicators</div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,33 +1,33 @@
-import { AlertTriangle, CheckCircle2, Shield, Brain, Users, Zap } from 'lucide-react';
+import { AlertTriangle, CheckCircle2, Shield, Calendar, Users, Search } from 'lucide-react';
 
 const challenges = [
   {
     icon: Shield,
-    title: 'Building Trust in Automation',
-    challenge: 'Users fear AI tools will break their files or make irreversible mistakes',
-    solution: 'Designed preview-before-action workflow, complete undo system, and persistent history to build confidence through transparency',
-    color: 'text-teal-600'
+    title: 'Building Trust in Healthcare Software',
+    challenge: 'Healthcare software must feel secure and professional. Users need to trust the system with sensitive patient data.',
+    solution: 'Designed a clean, modern interface with professional blue color scheme derived from the logo. Consistent patterns and clear visual hierarchy signal quality and reliability.',
+    color: 'text-blue-600'
   },
   {
-    icon: Brain,
-    title: 'Communicating AI Behavior',
-    challenge: 'AI responses are unpredictable. How do you show users what the AI "thinks" without technical jargon?',
-    solution: 'Focused on showing results, not process. Display suggested filename with visual preview so users can verify accuracy instantly',
+    icon: Calendar,
+    title: 'Scheduling Complexity',
+    challenge: 'Multiple chiropractors, various appointment types, and time conflicts create booking complexity.',
+    solution: 'Visual time slot grid with color-coded status badges, chiropractor filters, and clear "available" indicators make scheduling intuitive at a glance.',
     color: 'text-purple-600'
   },
   {
     icon: Users,
-    title: 'Balancing Control vs. Automation',
-    challenge: 'Too much automation feels risky; too much manual work defeats the purpose',
-    solution: 'Designed hybrid approach: AI suggests, user approves. Made approval effortless with single-click actions and batch support',
+    title: 'Information Overload',
+    challenge: 'Medical data is complex. Too much information on screen creates cognitive overload for busy staff.',
+    solution: 'Card-based layout with clear hierarchy, progressive disclosure of details, and generous whitespace. Dashboard shows only what\'s needed for immediate tasks.',
     color: 'text-orange-600'
   },
   {
-    icon: Zap,
-    title: 'Managing Cognitive Load',
-    challenge: 'Users need to verify AI accuracy while processing hundreds of files, and mental fatigue is real',
-    solution: 'Three-panel layout separates concerns: history (what happened), preview (what\'s next), image (context for verification)',
-    color: 'text-blue-600'
+    icon: Search,
+    title: 'Speed Under Pressure',
+    challenge: 'Staff handle phone calls and walk-ins simultaneously. Patient lookup must be instant.',
+    solution: 'Global search with instant results, recent patients list on dashboard, and minimal clicks to access full patient profiles.',
+    color: 'text-teal-600'
   }
 ];
 
@@ -44,17 +44,17 @@ export function Challenges() {
           Key design challenges and how I addressed them through interaction patterns
         </p>
       </div>
-      
+
       <div className="grid md:grid-cols-2 gap-6">
         {challenges.map((item, index) => (
-          <div key={index} className="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-lime-300 transition-colors">
+          <div key={index} className="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-300 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className={`w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center`}>
                 <item.icon className={`w-5 h-5 ${item.color}`} />
               </div>
               <h3>{item.title}</h3>
             </div>
-            
+
             <div className="space-y-3">
               <div className="flex gap-3">
                 <AlertTriangle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
@@ -64,9 +64,9 @@ export function Challenges() {
                 </div>
               </div>
               <div className="flex gap-3">
-                <CheckCircle2 className="w-5 h-5 text-lime-600 mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-lime-700 mb-1">Design Solution</div>
+                  <div className="text-blue-700 mb-1">Design Solution</div>
                   <p className="text-slate-700">{item.solution}</p>
                 </div>
               </div>

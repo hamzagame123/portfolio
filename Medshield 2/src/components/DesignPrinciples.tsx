@@ -3,39 +3,39 @@ import { Shield, Eye, Sliders, Zap } from 'lucide-react';
 const principles = [
   {
     icon: Shield,
-    title: 'Safety First',
-    description: 'Every action must be reversible. Users need confidence that they can experiment without risk.',
+    title: 'Trust & Security',
+    description: 'Healthcare software must feel secure and professional. Every element should communicate reliability.',
     designDecisions: [
-      'Full undo/redo system',
-      'Persistent rename history',
-      'File validation before operations',
-      'Clear error messages'
-    ],
-    color: 'text-teal-600',
-    bgColor: 'bg-teal-50'
-  },
-  {
-    icon: Eye,
-    title: 'Transparency',
-    description: 'Show users what the AI is doing and why. No black boxes.',
-    designDecisions: [
-      'Preview names before applying',
-      'Show original and new names side-by-side',
-      'Visual feedback during processing',
-      'History log with timestamps'
+      'Clean, professional visual design',
+      'Consistent UI patterns',
+      'Clear data validation feedback',
+      'Secure authentication flow'
     ],
     color: 'text-blue-600',
     bgColor: 'bg-blue-50'
   },
   {
-    icon: Sliders,
-    title: 'User Control',
-    description: 'AI suggests, but users decide. Never force automated actions.',
+    icon: Eye,
+    title: 'Clarity',
+    description: 'Medical data is complex. Present information with clear hierarchy and immediate comprehension.',
     designDecisions: [
-      'Manual approval for each rename',
-      'Ability to edit AI suggestions',
-      'Option to skip certain files',
-      'Customizable AI instructions'
+      'Cards for content organization',
+      'Progressive disclosure of details',
+      'Visual separation of sections',
+      'Scannable data tables'
+    ],
+    color: 'text-teal-600',
+    bgColor: 'bg-teal-50'
+  },
+  {
+    icon: Sliders,
+    title: 'Efficiency',
+    description: 'Staff work under time pressure. Every interaction should be optimized for speed.',
+    designDecisions: [
+      'Instant search functionality',
+      'Minimal clicks to complete tasks',
+      'Quick action buttons',
+      'Keyboard shortcuts support'
     ],
     color: 'text-purple-600',
     bgColor: 'bg-purple-50'
@@ -43,15 +43,15 @@ const principles = [
   {
     icon: Zap,
     title: 'Simplicity',
-    description: 'Complex operations should feel effortless through thoughtful design.',
+    description: 'Reduce cognitive load through thoughtful design. Complex operations should feel effortless.',
     designDecisions: [
-      'Drag-and-drop interface',
+      'Intuitive navigation structure',
       'Minimal learning curve',
-      'Clear visual hierarchy',
-      'Focus on core workflow'
+      'Consistent visual language',
+      'Focus on core workflows'
     ],
-    color: 'text-lime-600',
-    bgColor: 'bg-lime-50'
+    color: 'text-orange-600',
+    bgColor: 'bg-orange-50'
   }
 ];
 
@@ -75,9 +75,9 @@ export function DesignPrinciples() {
                 </div>
                 <h3>{principle.title}</h3>
               </div>
-              
+
               <p className="text-slate-700 mb-6">{principle.description}</p>
-              
+
               <div>
                 <div className="text-slate-900 mb-3">How this informed design:</div>
                 <ul className="space-y-2">

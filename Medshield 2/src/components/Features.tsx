@@ -1,45 +1,45 @@
-import { Brain, History, Shield, Zap, Settings2, FileCheck } from 'lucide-react';
+import { LayoutDashboard, Users, Calendar, Settings, Shield, BarChart3 } from 'lucide-react';
 
 const features = [
   {
-    icon: Brain,
-    title: 'AI-Powered Naming',
-    description: 'Google Gemini analyzes images and generates descriptive filenames automatically',
-    color: 'text-purple-600',
-    bgColor: 'bg-purple-50'
-  },
-  {
-    icon: Zap,
-    title: 'Drag & Drop',
-    description: 'Simple interface: just drag files or folders in to start processing',
+    icon: LayoutDashboard,
+    title: 'Dashboard Overview',
+    description: 'At-a-glance view of today\'s appointments, recent patients, and weekly statistics',
     color: 'text-blue-600',
     bgColor: 'bg-blue-50'
   },
   {
-    icon: History,
-    title: 'Full History',
-    description: 'Every rename is logged with timestamps for complete audit trail',
+    icon: Users,
+    title: 'Patient Management',
+    description: 'Comprehensive patient records with instant search, filtering, and detailed profiles',
+    color: 'text-purple-600',
+    bgColor: 'bg-purple-50'
+  },
+  {
+    icon: Calendar,
+    title: 'Appointment Scheduling',
+    description: 'Visual calendar with time slots, status tracking, and chiropractor filtering',
     color: 'text-orange-600',
     bgColor: 'bg-orange-50'
   },
   {
     icon: Shield,
-    title: 'Safe Operations',
-    description: 'File validation, collision detection, and graceful error handling',
+    title: 'Secure Authentication',
+    description: 'Protected login flow with session management and secure routing',
     color: 'text-teal-600',
     bgColor: 'bg-teal-50'
   },
   {
-    icon: Settings2,
-    title: 'Undo/Redo',
-    description: 'Instantly revert any rename with full undo/redo stack support',
+    icon: Settings,
+    title: 'Settings & Preferences',
+    description: 'Clinic info, user preferences, team management, and security settings',
     color: 'text-pink-600',
     bgColor: 'bg-pink-50'
   },
   {
-    icon: FileCheck,
-    title: 'Smart Detection',
-    description: 'Only renames gibberish files while preserving meaningful names',
+    icon: BarChart3,
+    title: 'Analytics & Insights',
+    description: 'Weekly appointment trends, patient acquisition stats, and visual charts',
     color: 'text-indigo-600',
     bgColor: 'bg-indigo-50'
   }
@@ -52,10 +52,10 @@ export function Features() {
         <div className="text-center mb-16">
           <h2 className="mb-4">Core Features</h2>
           <p className="max-w-2xl mx-auto text-slate-600">
-            Essential functionality that makes file management effortless
+            Essential functionality designed to solve real clinic workflow problems
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature) => (
             <div key={feature.title} className="group">

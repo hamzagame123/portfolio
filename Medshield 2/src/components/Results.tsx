@@ -11,25 +11,25 @@ const outcomes = [
   },
   {
     icon: Award,
-    metric: '100%',
-    label: 'Reversible Actions',
-    description: 'Every rename can be undone. Trust built through design',
+    metric: '40+',
+    label: 'UI Components',
+    description: 'Complete design system with reusable components',
     color: 'text-purple-600',
     bgColor: 'bg-purple-50'
   },
   {
     icon: TrendingUp,
-    metric: '3 Panels',
-    label: 'Information Hierarchy',
-    description: 'Clear separation reduces cognitive load when processing files',
-    color: 'text-lime-600',
-    bgColor: 'bg-lime-50'
+    metric: '5',
+    label: 'Core Features',
+    description: 'Dashboard, Patients, Appointments, Settings, Auth',
+    color: 'text-teal-600',
+    bgColor: 'bg-teal-50'
   },
   {
     icon: Palette,
     metric: 'MVP',
-    label: 'Validated Core Flow',
-    description: 'Proven interaction model ready for future iterations',
+    label: 'Complete',
+    description: 'Validated patterns ready for production',
     color: 'text-orange-600',
     bgColor: 'bg-orange-50'
   }
@@ -37,46 +37,46 @@ const outcomes = [
 
 const designLearnings = [
   {
-    title: 'Trust Isn\'t Just a Feature',
-    insight: 'Preview mode, undo functionality, and history tracking aren\'t optional. They\'re trust-building mechanisms that make users comfortable with AI automation. Without them, the tool is unusable regardless of technical capability.'
+    title: 'Logo-Driven Design Works',
+    insight: 'Deriving colors from the existing logo created instant brand cohesion and gave the project strong visual identity from day one. The primary blue (#0066CC) became the foundation of the entire design system.'
   },
   {
-    title: 'Design for Skepticism',
-    insight: 'Users don\'t trust AI by default. Every design decision had to answer: "How does this prove the tool is safe?" Showing exactly what will change before it happens is more important than speed or convenience.'
+    title: 'Desktop-First Can Be Valid',
+    insight: 'For B2B applications with known usage patterns, desktop-first is appropriate. Research showed 95% of tasks happen on desktop, so we prioritized that experience instead of forcing mobile-first.'
   },
   {
-    title: 'MVP Means Validated Patterns, Not Feature Count',
-    insight: 'I learned it\'s better to perfect one workflow (drag → preview → rename → undo) than to half-build ten features. The validated UX patterns now provide a foundation for any future additions.'
+    title: 'Scope Discipline is Critical',
+    insight: 'Intentionally excluding billing and clinical notes allowed focus on core functionality. Better to do less, well, than to build ten half-finished features that frustrate users.'
   },
   {
-    title: 'Visual Design Signals Quality',
-    insight: 'Users judge reliability by aesthetics. The same functionality in a polished dark interface was perceived as more trustworthy than in basic UI. Professional visuals aren\'t vanity; they communicate competence.'
+    title: 'Professional Aesthetics Signal Quality',
+    insight: 'In healthcare, trust is paramount. The same functionality in a polished interface is perceived as more trustworthy than in basic UI. Visual design directly impacts perceived reliability.'
   },
   {
-    title: 'Simplicity Requires Deep Understanding',
-    insight: 'The "simple" drag-and-drop workflow only feels effortless because of invisible complexity: file validation, error handling, state management, visual feedback. True simplicity comes from hiding necessary complexity, not removing it.'
+    title: 'Mock Data Quality Matters',
+    insight: 'Realistic mock data made the app feel complete, improved testing, and helped identify edge cases early. Real-looking patient names and appointments revealed UX issues that placeholder data would have hidden.'
   }
 ];
 
 const futureEnhancements = [
   {
     title: 'User Testing',
-    description: 'Validate assumptions with real photographers and designers to identify pain points I missed',
+    description: 'Validate assumptions with real clinic staff to identify pain points I missed',
     priority: 'High'
   },
   {
-    title: 'Batch Operations UI',
-    description: 'Design queue management interface for processing large directories with progress tracking',
+    title: 'Billing Integration',
+    description: 'Design billing workflows that integrate seamlessly with appointment completion',
     priority: 'High'
   },
   {
-    title: 'Customization Options',
-    description: 'Allow users to define naming styles, filename patterns, and AI instruction templates',
+    title: 'Clinical Notes',
+    description: 'Add treatment notes and medical history tracking with proper data security',
     priority: 'Medium'
   },
   {
-    title: 'Folder Watching',
-    description: 'Design passive monitoring mode for automatic renaming of new files as they appear',
+    title: 'Multi-Location Support',
+    description: 'Design patterns for clinics with multiple branches and shared patient records',
     priority: 'Medium'
   }
 ];
@@ -91,7 +91,7 @@ export function Results() {
             What I accomplished and what I learned as a designer
           </p>
         </div>
-        
+
         {/* Outcomes */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {outcomes.map((outcome) => (
@@ -100,12 +100,12 @@ export function Results() {
                 <outcome.icon className={`w-6 h-6 ${outcome.color}`} />
               </div>
               <div className="text-3xl mb-2 print:text-slate-900">{outcome.metric}</div>
-              <div className="text-lime-400 mb-2 print:text-lime-700">{outcome.label}</div>
+              <div className="text-blue-400 mb-2 print:text-blue-700">{outcome.label}</div>
               <p className="text-slate-300 print:text-slate-600">{outcome.description}</p>
             </div>
           ))}
         </div>
-        
+
         {/* Design Learnings */}
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-8">
@@ -115,7 +115,7 @@ export function Results() {
           <div className="grid md:grid-cols-2 gap-6">
             {designLearnings.map((learning, index) => (
               <div key={index} className="bg-slate-800 border border-slate-700 rounded-lg p-6 print:bg-slate-50 print:border-slate-300">
-                <h4 className="text-lime-400 mb-3 print:text-lime-700">{learning.title}</h4>
+                <h4 className="text-blue-400 mb-3 print:text-blue-700">{learning.title}</h4>
                 <p className="text-slate-300 print:text-slate-700">{learning.insight}</p>
               </div>
             ))}
@@ -127,19 +127,19 @@ export function Results() {
           <h3 className="mb-4 text-white print:text-slate-900">Reflection</h3>
           <div className="space-y-4 text-slate-300 print:text-slate-700">
             <p>
-              <span className="text-white print:text-slate-900">This project taught me that great UX design is about building trust, not just solving problems.</span> When 
-              users hand over control of their files to an AI, they need constant reassurance. Every design decision, from the 
-              preview panel to the undo button to the rename history, serves to build that trust.
+              <span className="text-white print:text-slate-900">This project taught me that great healthcare design is about building trust through every detail.</span> From
+              the professional blue color palette to the clean card-based layouts, every element signals reliability
+              and competence to users handling sensitive patient data.
             </p>
             <p>
-              The most surprising insight was how much <span className="text-white print:text-slate-900">visual design impacts perceived reliability</span>. The 
-              exact same functionality presented with professional aesthetics was perceived as more trustworthy. This taught me 
-              that polish isn't superficial. It's a signal of quality and care.
+              The most surprising insight was how much <span className="text-white print:text-slate-900">scope discipline improved the final product</span>. By
+              intentionally excluding complex features like billing and clinical notes, I could focus 100% on making
+              patient management and scheduling exceptional. The result is a focused tool that does its core job brilliantly.
             </p>
             <p>
-              If I were to start over, I would <span className="text-white print:text-slate-900">involve users earlier in the design process</span>. While I 
-              iterated based on research and design principles, formal user testing with photographers and designers would have 
-              revealed pain points faster and validated design decisions with real evidence instead of assumptions.
+              If I were to start over, I would <span className="text-white print:text-slate-900">involve users earlier in the design process</span>. While I
+              iterated based on research and design principles, formal usability testing with actual clinic staff would have
+              validated decisions with real evidence instead of assumptions.
             </p>
           </div>
         </div>
@@ -147,25 +147,25 @@ export function Results() {
         {/* Next Steps */}
         <div>
           <div className="flex items-center gap-2 mb-8">
-            <ArrowUpRight className="w-6 h-6 text-lime-400 print:text-lime-600" />
+            <ArrowUpRight className="w-6 h-6 text-blue-400 print:text-blue-600" />
             <h3 className="text-white print:text-slate-900">Next Design Iterations</h3>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {futureEnhancements.map((step, index) => (
-              <div key={index} className="bg-lime-900/30 border border-lime-500/30 rounded-lg p-6 print:bg-lime-50 print:border-lime-300">
+              <div key={index} className="bg-blue-900/30 border border-blue-500/30 rounded-lg p-6 print:bg-blue-50 print:border-blue-300">
                 <div className="flex items-center justify-between mb-3">
-                  <h4 className="text-lime-400 print:text-lime-700">{step.title}</h4>
-                  <span className="px-2 py-1 bg-lime-500/20 text-lime-300 rounded text-sm print:bg-lime-200 print:text-lime-800">{step.priority}</span>
+                  <h4 className="text-blue-400 print:text-blue-700">{step.title}</h4>
+                  <span className="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-sm print:bg-blue-200 print:text-blue-800">{step.priority}</span>
                 </div>
                 <p className="text-slate-300 print:text-slate-700">{step.description}</p>
               </div>
             ))}
           </div>
-          
+
           <div className="mt-8 text-center">
             <p className="text-slate-400 print:text-slate-600">
-              The validated MVP provides a foundation for these enhancements. Each addition would be designed 
-              with the same principles: trust, transparency, control, and simplicity.
+              The validated MVP provides a foundation for these enhancements. Each addition would be designed
+              with the same principles: trust, clarity, efficiency, and simplicity.
             </p>
           </div>
         </div>
