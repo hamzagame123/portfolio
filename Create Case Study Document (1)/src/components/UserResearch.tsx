@@ -44,7 +44,7 @@ const userNeeds = [
 
 export function UserResearch() {
   return (
-    <section className="bg-slate-50 py-20">
+    <section className="bg-slate-50 pt-10 pb-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -61,8 +61,8 @@ export function UserResearch() {
         <div className="bg-white border-l-4 border-lime-500 rounded-r-xl p-8 mb-12 shadow-sm">
           <Quote className="w-8 h-8 text-lime-600 mb-4" />
           <p className="text-xl text-slate-700 mb-4">
-            "I love my DSLR, but I hate that it names everything DSC_8472.jpg. By the time I'm ready 
-            to share photos with a client, I've completely forgotten which file is which. I waste so 
+            "I love my DSLR, but I hate that it names everything DSC_8472.jpg. By the time I'm ready
+            to share photos with a client, I've completely forgotten which file is which. I waste so
             much time just finding the right shots."
           </p>
           <div className="text-slate-500">- Wedding Photographer, 8 years experience</div>
@@ -99,7 +99,7 @@ export function UserResearch() {
         <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-8 text-white">
           <h3 className="text-white mb-4">The Design Challenge</h3>
           <p className="text-slate-300">
-            How might we <span className="text-lime-400">automate file naming without sacrificing user control</span>, 
+            How might we <span className="text-lime-400">automate file naming without sacrificing user control</span>,
             ensuring the tool feels trustworthy and transparent rather than unpredictable or risky?
           </p>
         </div>
