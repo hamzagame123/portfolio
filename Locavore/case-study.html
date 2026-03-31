@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="case-study.css?v=11">
+    <link rel="stylesheet" href="case-study.css?v=12">
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <style>
@@ -90,9 +90,9 @@
             <span class="title-accent">Farmers Market & Local Food Community</span>
         </h1>
         <p class="hero-subtitle animate-on-scroll">
-            Designing a mobile app that connects conscious consumers with local farmers markets, tracks market
-            schedules, and builds community through social features. Discover who's going, invite friends, and never
-            miss a market again.
+            I redesigned the farmers market experience from a simple lookup task into a social planning flow: help
+            people find nearby markets, see who is attending, and turn a once-forgotten weekend errand into a shared
+            community ritual.
         </p>
 
         <div class="hero-meta animate-on-scroll">
@@ -122,6 +122,11 @@
             <span class="tag">Prototyping</span>
         </div>
 
+        <div class="hero-actions animate-on-scroll">
+            <a href="#research" class="hero-action primary">See Research Insights</a>
+            <a href="#prototype" class="hero-action secondary">Jump to Prototype</a>
+        </div>
+
         <div class="hero-scroll-indicator">
             <span>Scroll to explore</span>
             <div class="scroll-arrow"></div>
@@ -136,37 +141,58 @@
                     <span class="tldr-badge">⚡ TL;DR</span>
                     <h3 class="tldr-title">Project at a Glance</h3>
                 </div>
+                <p class="tldr-intro">
+                    A fast-read summary for recruiters: what problem I tackled, what I designed, and what evidence
+                    shows the concept is working.
+                </p>
+                <div class="tldr-story-grid">
+                    <div class="tldr-story-card">
+                        <div class="tldr-story-label">Problem</div>
+                        <p>People want to shop local, but they forget market schedules, struggle to compare options,
+                            and rarely know if friends are going.</p>
+                    </div>
+                    <div class="tldr-story-card">
+                        <div class="tldr-story-label">Solution</div>
+                        <p>Locavore combines market discovery, social coordination, vendor continuity, and reminders in
+                            one mobile flow.</p>
+                    </div>
+                    <div class="tldr-story-card">
+                        <div class="tldr-story-label">Outcome</div>
+                        <p>Early testing showed 92% task completion and strong understanding of the core "I'm Going"
+                            commitment pattern.</p>
+                    </div>
+                </div>
                 <div class="tldr-grid">
                     <div class="tldr-item">
                         <div class="tldr-icon"><i class="ph-duotone ph-target icon-terracotta icon-xl"></i></div>
-                        <div class="tldr-value">Market + Social</div>
-                        <div class="tldr-label">Core Innovation</div>
+                        <div class="tldr-value">UX/Product Designer</div>
+                        <div class="tldr-label">Role</div>
                     </div>
                     <div class="tldr-item">
                         <div class="tldr-icon"><i class="ph-duotone ph-users icon-forest icon-xl"></i></div>
-                        <div class="tldr-value">3 + 5</div>
-                        <div class="tldr-label">Interviews + Testers</div>
+                        <div class="tldr-value">4-week solo sprint</div>
+                        <div class="tldr-label">Timeline</div>
                     </div>
                     <div class="tldr-item">
                         <div class="tldr-icon"><i class="ph-duotone ph-device-mobile icon-forest icon-xl"></i></div>
-                        <div class="tldr-value">15 Screens</div>
-                        <div class="tldr-label">Fully Designed</div>
+                        <div class="tldr-value">Figma, FigJam, HTML/CSS/JS</div>
+                        <div class="tldr-label">Tools</div>
                     </div>
                     <div class="tldr-item">
                         <div class="tldr-icon"><i class="ph-duotone ph-timer icon-amber icon-xl"></i></div>
-                        <div class="tldr-value">4 Weeks</div>
-                        <div class="tldr-label">Sprint Duration</div>
+                        <div class="tldr-value">3 interviews + 5 tests</div>
+                        <div class="tldr-label">Research</div>
                     </div>
                     <div class="tldr-item">
                         <div class="tldr-icon"><i class="ph-duotone ph-check-circle icon-forest icon-xl"></i></div>
-                        <div class="tldr-value">92%</div>
-                        <div class="tldr-label">Task Completion Rate</div>
+                        <div class="tldr-value">15-screen prototype</div>
+                        <div class="tldr-label">Deliverable</div>
                     </div>
                     <div class="tldr-item">
                         <div class="tldr-icon"><i class="ph-duotone ph-globe-hemisphere-west icon-forest icon-xl"></i>
                         </div>
-                        <div class="tldr-value">800+</div>
-                        <div class="tldr-label">Canadian Farmers Markets</div>
+                        <div class="tldr-value">92% task success</div>
+                        <div class="tldr-label">Outcome</div>
                     </div>
                 </div>
             </div>
@@ -273,23 +299,45 @@
         <div class="container">
             <div class="section-label animate-on-scroll">RESEARCH METHODOLOGY</div>
             <h2 class="section-title animate-on-scroll">How I Uncovered User Needs</h2>
-            <p class="section-subtitle animate-on-scroll">A structured 4-phase approach to understanding the problem
-                space</p>
+            <p class="section-subtitle animate-on-scroll">Four lightweight research steps helped me move from a generic
+                market directory idea to a social planning experience with a clear behavior change goal.</p>
+
+            <div class="research-highlight-grid">
+                <div class="research-highlight-card animate-on-scroll">
+                    <span class="research-highlight-label">Most urgent behavior</span>
+                    <p>People do not just need nearby markets. They need a reason to remember, commit, and show up.</p>
+                </div>
+                <div class="research-highlight-card animate-on-scroll" style="--delay: 0.1s">
+                    <span class="research-highlight-label">Strongest insight</span>
+                    <p>Social proof mattered more than expected. Seeing who is going reduced hesitation and increased
+                        intent.</p>
+                </div>
+                <div class="research-highlight-card animate-on-scroll" style="--delay: 0.2s">
+                    <span class="research-highlight-label">Design shift</span>
+                    <p>The concept evolved from "find a market" to "plan a market day" with reminders, invites, and
+                        vendor continuity.</p>
+                </div>
+            </div>
 
             <div class="methodology-timeline">
                 <div class="methodology-phase animate-on-scroll">
                     <div class="phase-header">
-                        <span class="phase-number">Phase 1</span>
+                        <span class="phase-number">01 Discover</span>
                         <h3 class="phase-title">Secondary Research</h3>
+                    </div>
+                    <div class="phase-meta">
+                        <span>Desk research</span>
+                        <span>Canada market data</span>
+                        <span>Opportunity sizing</span>
                     </div>
                     <div class="phase-content">
                         <div class="phase-details">
                             <h4>Methods Used</h4>
                             <ul>
-                                <li>Agriculture and Agri-Food Canada data analysis</li>
-                                <li>Academic papers on local food systems</li>
-                                <li>Competitive landscape mapping</li>
-                                <li>Industry reports on food miles</li>
+                                <li>Reviewed national market and food-mile data</li>
+                                <li>Mapped current farmers market discovery options</li>
+                                <li>Collected signals around trust and convenience gaps</li>
+                                <li>Used findings to frame the core opportunity</li>
                             </ul>
                         </div>
                         <div class="phase-findings">
@@ -303,8 +351,13 @@
 
                 <div class="methodology-phase animate-on-scroll" style="--delay: 0.1s">
                     <div class="phase-header">
-                        <span class="phase-number">Phase 2</span>
+                        <span class="phase-number">02 Listen</span>
                         <h3 class="phase-title">User Interviews</h3>
+                    </div>
+                    <div class="phase-meta">
+                        <span>3 participants</span>
+                        <span>15-20 min sessions</span>
+                        <span>Behavioral questions</span>
                     </div>
                     <div class="phase-content">
                         <div class="phase-details">
@@ -326,8 +379,13 @@
 
                 <div class="methodology-phase animate-on-scroll" style="--delay: 0.2s">
                     <div class="phase-header">
-                        <span class="phase-number">Phase 3</span>
+                        <span class="phase-number">03 Synthesize</span>
                         <h3 class="phase-title">Affinity Mapping</h3>
+                    </div>
+                    <div class="phase-meta">
+                        <span>25 observations</span>
+                        <span>4 themes</span>
+                        <span>Feature prioritization</span>
                     </div>
                     <div class="phase-content">
                         <div class="phase-details">
@@ -342,15 +400,21 @@
                         <div class="phase-findings">
                             <h4>Key Finding</h4>
                             <p>Four themes emerged: scheduling/remembering (32%), social coordination (28%), vendor
-                                discovery (24%), and impact/values (16%). These became the core feature pillars.</p>
+                                discovery (24%), and impact/values (16%). These clusters became the backbone of the
+                                product scope.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="methodology-phase animate-on-scroll" style="--delay: 0.3s">
                     <div class="phase-header">
-                        <span class="phase-number">Phase 4</span>
+                        <span class="phase-number">04 Validate</span>
                         <h3 class="phase-title">Usability Testing</h3>
+                    </div>
+                    <div class="phase-meta">
+                        <span>5 testers</span>
+                        <span>Task-based study</span>
+                        <span>Iteration-ready feedback</span>
                     </div>
                     <div class="phase-content">
                         <div class="phase-details">
@@ -1530,8 +1594,32 @@
         <div class="container">
             <div class="section-label animate-on-scroll">INTERACTIVE PROTOTYPE</div>
             <h2 class="section-title animate-on-scroll">Experience the App</h2>
-            <p class="section-subtitle animate-on-scroll">Explore the fully functional prototype with all screens and
-                interactions</p>
+            <p class="section-subtitle animate-on-scroll">A focused click-through prototype that proves users can find
+                a market, commit to attending, and coordinate with others in one flow.</p>
+
+            <div class="prototype-spotlight animate-on-scroll">
+                <div class="prototype-spotlight-copy">
+                    <span class="prototype-spotlight-label">What this prototype proves</span>
+                    <h3>Locavore turns discovery into commitment.</h3>
+                    <p>Instead of stopping at market information, the prototype carries users through the moments that
+                        actually drive attendance: deciding, signaling intent, inviting others, and preparing for the
+                        day.</p>
+                </div>
+                <div class="prototype-proof-grid">
+                    <div class="prototype-proof-card">
+                        <strong>15+</strong>
+                        <span>Screens connected in a complete mobile flow</span>
+                    </div>
+                    <div class="prototype-proof-card">
+                        <strong>92%</strong>
+                        <span>Task completion during early usability testing</span>
+                    </div>
+                    <div class="prototype-proof-card">
+                        <strong>Core flow</strong>
+                        <span>Discover market -> I'm Going -> invite friends</span>
+                    </div>
+                </div>
+            </div>
 
             <a href="https://hamzagame123.github.io/portfolio/Locavore/" target="_blank"
                 class="prototype-link-card animate-on-scroll">
@@ -1543,7 +1631,8 @@
                     </div>
                     <div class="prototype-link-text">
                         <h3>Launch Interactive Prototype</h3>
-                        <p>Click to open the full app experience in a new tab</p>
+                        <p>Open the full mobile experience and follow the high-priority path from discovery to social
+                            commitment.</p>
                     </div>
                     <div class="prototype-link-arrow">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1569,15 +1658,15 @@
             <div class="prototype-features animate-on-scroll">
                 <div class="prototype-feature">
                     <span class="feature-icon"><i class="ph-duotone ph-target icon-terracotta"></i></span>
-                    <span>15+ Interactive Screens</span>
+                    <span>15+ linked screens</span>
                 </div>
                 <div class="prototype-feature">
                     <span class="feature-icon">👆</span>
-                    <span>Full Click-Through Flow</span>
+                    <span>High-priority click-through path</span>
                 </div>
                 <div class="prototype-feature">
                     <span class="feature-icon">📲</span>
-                    <span>Mobile-First Design</span>
+                    <span>Mobile-first interaction patterns</span>
                 </div>
             </div>
         </div>
@@ -2086,27 +2175,43 @@
         <div class="container">
             <div class="section-label animate-on-scroll">RESULTS & LEARNINGS</div>
             <h2 class="section-title animate-on-scroll">What I Accomplished & Learned</h2>
+            <p class="section-subtitle animate-on-scroll">The final concept is stronger because the outcomes are tied
+                back to user behavior, not just polished screens.</p>
+
+            <div class="results-summary animate-on-scroll">
+                <div class="results-summary-copy">
+                    <span class="results-summary-badge">Outcome Snapshot</span>
+                    <p>Locavore evolved from a market-finder concept into a social planning product. The biggest win
+                        was clarifying the value of commitment and coordination, then validating that flow with early
+                        users.</p>
+                </div>
+                <div class="results-summary-points">
+                    <span>Clearer product story</span>
+                    <span>Behavior-backed priorities</span>
+                    <span>Prototype validated with users</span>
+                </div>
+            </div>
 
             <div class="results-grid">
                 <div class="result-card animate-on-scroll" style="--delay: 0.1s">
                     <div class="result-number">15</div>
                     <div class="result-label">Screens Designed</div>
-                    <p>Complete flow including markets discovery and social features</p>
+                    <p>Complete mobile flow spanning discovery, commitment, and coordination</p>
                 </div>
                 <div class="result-card animate-on-scroll" style="--delay: 0.2s">
-                    <div class="result-number">3</div>
-                    <div class="result-label">Core Features</div>
-                    <p>Markets discovery, social going, vendor tracking</p>
+                    <div class="result-number">4</div>
+                    <div class="result-label">Validated Pillars</div>
+                    <p>Discovery, reminders, social proof, and vendor continuity</p>
                 </div>
                 <div class="result-card animate-on-scroll" style="--delay: 0.3s">
-                    <div class="result-number">5</div>
-                    <div class="result-label">Social Mechanisms</div>
-                    <p>Who's going, friend activity, invites, coordination</p>
+                    <div class="result-number">92%</div>
+                    <div class="result-label">Task Success</div>
+                    <p>Users could complete the core market-planning tasks during testing</p>
                 </div>
                 <div class="result-card animate-on-scroll" style="--delay: 0.4s">
                     <div class="result-number">1</div>
-                    <div class="result-label">Working Prototype</div>
-                    <p>Fully interactive HTML/CSS/JS simulation</p>
+                    <div class="result-label">Interactive Prototype</div>
+                    <p>Clickable HTML/CSS/JS simulation ready for portfolio review</p>
                 </div>
             </div>
 
