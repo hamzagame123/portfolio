@@ -64,7 +64,7 @@ export function CallToAction() {
         
         {/* CTA Button */}
         <a
-          href="../smartrenamer-web/dist/"
+          href="https://portfolio-sigma-woad-23.vercel.app/Create%20Case%20Study%20Document%20(1)/smartrenamer-web/dist/"
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-3 px-10 py-5 font-bold text-lg rounded-2xl transition-all duration-300 hover:scale-105"
