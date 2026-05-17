@@ -25,11 +25,6 @@ export interface AppSettings {
   apiKey: string;
 }
 
-const bundledGeminiKey =
-  typeof process !== 'undefined' && process.env?.GEMINI_API_KEY
-    ? process.env.GEMINI_API_KEY
-    : '';
-
 export const DEFAULT_SETTINGS: AppSettings = {
   autoProcess: true,
   skipNormalNames: false,
@@ -38,5 +33,5 @@ export const DEFAULT_SETTINGS: AppSettings = {
   casing: 'lowercase',
   customInstructions: '',
   folders: ['Downloads', 'Pictures/Screenshots'],
-  apiKey: bundledGeminiKey
+  apiKey: ''
 };
