@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbie Storybook | Hamza Galbete</title>
+    <link rel="icon" href="data:,">
+    <meta name="description"
+        content="Barbie Storybook by Hamza Galbete: a mobile AR scene builder where users place a Barbie stage, add worlds and props, use Glimmer for ideas, then save the moment as a storybook memory.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --brand-ink: #2a1020;
+            --brand-ink-soft: rgba(42, 16, 32, 0.72);
+            --brand-paper: #fff7fb;
+            --brand-paper-strong: rgba(255, 247, 251, 0.92);
+            --brand-line: rgba(120, 44, 89, 0.16);
+            --brand-line-strong: rgba(173, 68, 118, 0.32);
+            --brand-blush: #f7bed6;
+            --brand-rose: #cf4d86;
+            --brand-rose-deep: #8f2f5b;
+            --brand-gold: #f1c87d;
+            --brand-mint: #8fd8bb;
+            --font-display: "Outfit", "Segoe UI", sans-serif;
+            --font-ui: "Space Grotesk", "Segoe UI", sans-serif;
+            --shadow-soft: 0 28px 60px rgba(74, 24, 52, 0.16);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--brand-ink);
+            font-family: var(--font-ui);
+            background:
+                radial-gradient(circle at top left, rgba(249, 194, 218, 0.32), transparent 34%),
+                radial-gradient(circle at top right, rgba(255, 235, 183, 0.18), transparent 30%),
+                linear-gradient(180deg, #ffeef6 0%, #fce6f1 26%, #f6d8e8 56%, #ecc3d8 100%);
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        body::before {
+            background:
+                radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.88), transparent 0 14%),
+                radial-gradient(circle at 84% 16%, rgba(255, 241, 205, 0.48), transparent 0 12%),
+                radial-gradient(circle at 76% 78%, rgba(223, 149, 183, 0.14), transparent 0 18%);
+            opacity: 0.8;
+        }
+
+        body::after {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.11) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.11) 1px, transparent 1px);
+            background-size: 28px 28px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.26), transparent 76%);
+            opacity: 0.16;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .shell {
+            position: relative;
+            z-index: 1;
+            width: min(calc(100% - 32px), 1320px);
+            margin: 16px auto 0;
+            padding-bottom: 32px;
+        }
+
+        .nav {
+            position: sticky;
+            top: 16px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 18px;
+            border: 1px solid rgba(173, 68, 118, 0.12);
+            border-radius: 28px;
+            background: rgba(255, 247, 251, 0.76);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            min-height: 46px;
+            color: var(--brand-ink);
+            font: 700 12px/1 var(--font-ui);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            border: 1px solid rgba(173, 68, 118, 0.18);
+            background: linear-gradient(135deg, rgba(247, 190, 214, 0.62), rgba(255, 247, 251, 0.92));
+            color: var(--brand-rose-deep);
+            font: 800 20px/1 var(--font-display);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .nav-link {
+            min-height: 42px;
+            padding: 0 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            border: 1px solid rgba(173, 68, 118, 0.14);
+            background: rgba(255,255,255,0.56);
+            color: var(--brand-ink);
+            font: 700 12px/1 var(--font-ui);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.78);
+            border-color: rgba(173, 68, 118, 0.24);
+        }
+
+        .hero,
+        .panel,
+        .metric,
+        .proof-card {
+            border: 1px solid rgba(173, 68, 118, 0.12);
+            background:
+                radial-gradient(circle at top left, rgba(255,255,255,0.56), transparent 30%),
+                linear-gradient(180deg, rgba(255, 249, 252, 0.94), rgba(252, 238, 245, 0.92));
+            box-shadow: var(--shadow-soft);
+        }
+
+        .hero {
+            margin-top: 18px;
+            padding: clamp(22px, 4vw, 42px);
+            border-radius: 34px;
+            display: grid;
+            grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+            gap: 24px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: var(--brand-rose-deep);
+            font: 700 11px/1 var(--font-ui);
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            font-family: var(--font-display);
+            color: var(--brand-ink);
+        }
+
+        h1 {
+            font-size: clamp(42px, 5.2vw, 78px);
+            line-height: 0.98;
+            letter-spacing: -0.06em;
+            max-width: 12ch;
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            font-size: clamp(34px, 4vw, 56px);
+            line-height: 1;
+            letter-spacing: -0.05em;
+            max-width: 13ch;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 24px;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 10px;
+        }
+
+        .hero p,
+        .panel p,
+        .metric p,
+        .proof-card p {
+            color: var(--brand-ink-soft);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .hero-note {
+            margin-bottom: 22px;
+            max-width: 58ch;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .chip {
+            min-height: 38px;
+            padding: 0 14px;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            border: 1px solid rgba(173, 68, 118, 0.14);
+            background: rgba(255,255,255,0.6);
+            color: var(--brand-ink);
+            font: 700 11px/1 var(--font-ui);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .hero-media {
+            overflow: hidden;
+            border-radius: 30px;
+            border: 1px solid rgba(173, 68, 118, 0.12);
+            background: rgba(255,255,255,0.6);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.74);
+        }
+
+        .hero-media img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+        }
+
+        .hero-caption {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 14px 16px 16px;
+            color: var(--brand-rose-deep);
+            font: 700 11px/1.4 var(--font-ui);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .metrics {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .metric {
+            border-radius: 26px;
+            padding: 20px;
+        }
+
+        .metric strong {
+            display: block;
+            margin: 10px 0 8px;
+            color: var(--brand-ink);
+            font: 700 18px/1.25 var(--font-display);
+            letter-spacing: -0.03em;
+        }
+
+        .section {
+            margin-top: 18px;
+            padding: clamp(22px, 4vw, 34px);
+            border-radius: 30px;
+        }
+
+        .section-head {
+            margin-bottom: 20px;
+        }
+
+        .section-kicker {
+            max-width: 70ch;
+            color: var(--brand-ink-soft);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .screen-grid {
+            display: grid;
+            grid-template-columns: 1.24fr 0.76fr;
+            gap: 16px;
+        }
+
+        .frame {
+            overflow: hidden;
+            border-radius: 26px;
+            border: 1px solid rgba(173, 68, 118, 0.12);
+            background: rgba(255,255,255,0.58);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.78);
+        }
+
+        .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .frame.tall img {
+            aspect-ratio: 9 / 16;
+            object-fit: contain;
+            background: linear-gradient(180deg, rgba(255,255,255,0.42), rgba(255,255,255,0.18));
+        }
+
+        .frame figcaption {
+            padding: 14px 16px 16px;
+            color: var(--brand-rose-deep);
+            font: 700 11px/1.45 var(--font-ui);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .component-grid,
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .proof-card {
+            border-radius: 26px;
+            padding: 20px;
+        }
+
+        .proof-card img {
+            width: 100%;
+            border-radius: 18px;
+            margin-bottom: 14px;
+        }
+
+        .footer {
+            margin-top: 18px;
+            padding: 18px 20px 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            color: var(--brand-rose-deep);
+            font: 700 11px/1 var(--font-ui);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1100px) {
+            .hero,
+            .metrics,
+            .two-col,
+            .screen-grid,
+            .component-grid,
+            .proof-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .shell {
+                width: min(calc(100% - 18px), 1320px);
+            }
+
+            .nav,
+            .footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links,
+            .metrics,
+            .two-col,
+            .screen-grid,
+            .component-grid,
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shell">
+        <header class="nav">
+            <a class="brand" href="../index.html#work" aria-label="Back to portfolio work section">
+                <span class="brand-mark" aria-hidden="true">B</span>
+                <span>Barbie Storybook</span>
+                <span>|</span>
+                <span>AR Storytelling Prototype</span>
+            </a>
+            <nav class="nav-links" aria-label="Project links">
+                <a class="nav-link" href="#snapshot">Snapshot</a>
+                <a class="nav-link" href="#journey">Journey</a>
+                <a class="nav-link" href="#system">System</a>
+                <a class="nav-link" href="#build">Build</a>
+            </nav>
+        </header>
+
+        <section class="hero panel reveal" id="snapshot">
+            <div>
+                <span class="eyebrow">Project Snapshot</span>
+                <h1>Every memory deserves a storybook ending.</h1>
+                <p class="hero-note">Barbie Storybook is a mobile AR scene builder where users place a Barbie stage,
+                    add worlds and props, use Glimmer for ideas, then save the moment as a storybook memory. The
+                    project moves from idea, to prototype, to deployment-ready build through a playful UI system that
+                    treats AR as a narrative surface instead of a one-off demo.</p>
+                <div class="meta">
+                    <span class="chip">WebXR + Needle Go</span>
+                    <span class="chip">AR Scene Builder</span>
+                    <span class="chip">Glimmer Helper</span>
+                    <span class="chip">Storybook Save Flow</span>
+                </div>
+            </div>
+            <figure class="hero-media">
+                <img src="../assets/project-previews/barbie-storybook-capsule.png"
+                    alt="Barbie Storybook style closet interface showing scene sets and pastel dreamhouse cards">
+                <figcaption class="hero-caption">
+                    <span>Interface System</span>
+                    <span>Same visual language as the app</span>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="metrics">
+            <article class="metric reveal">
+                <span class="eyebrow">Make</span>
+                <strong>Choose worlds, dolls, props, and story ideas.</strong>
+                <p>The experience starts with a bright branded home and scene-building entry points that feel like a
+                    toy library, not a technical setup panel.</p>
+            </article>
+            <article class="metric reveal">
+                <span class="eyebrow">Place</span>
+                <strong>Anchor the stage onto a real surface with WebXR.</strong>
+                <p>The AR portion uses scan and placement states to move the child from setup into staging as quickly
+                    as possible.</p>
+            </article>
+            <article class="metric reveal">
+                <span class="eyebrow">Keep</span>
+                <strong>Capture the AR moment and save a storybook memory.</strong>
+                <p>The saved page gives the project a proper ending. The scene becomes an artifact the user can return
+                    to instead of disappearing after camera use.</p>
+            </article>
+            <article class="metric reveal">
+                <span class="eyebrow">Build</span>
+                <strong>Design system, AI workflows, and production polish.</strong>
+                <p>The final direction combines interface components, generated assets, 3D props, and storybook
+                    textures into one cohesive interactive prototype.</p>
+            </article>
+        </section>
+
+        <section class="panel section reveal" id="journey">
+            <div class="section-head">
+                <span class="eyebrow">User Journey</span>
+                <h2>From first tap to saved memory.</h2>
+                <p class="section-kicker">The journey is strongest when it feels like play, not like technical setup.
+                    The deck frames the interaction as a five-step loop: open, launch AR, scan, build, capture.</p>
+            </div>
+            <div class="two-col">
+                <article class="proof-card">
+                    <h3>Entry experience</h3>
+                    <p>The final home-screen direction puts brand first, action second. Large calls to action, fewer
+                        choices, and visible destinations make the product feel softer and clearer before scanning even
+                        begins.</p>
+                </article>
+                <article class="proof-card">
+                    <h3>AR proof</h3>
+                    <p>The progress build demonstrates a complete XR loop: home and onboarding, Needle Go AR launch,
+                        surface scan and anchor stage, world and props panels, Glimmer helper UI, and saved page flow.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel section reveal">
+            <div class="section-head">
+                <span class="eyebrow">XR Proof</span>
+                <h2>The app runs as a real AR experience.</h2>
+                <p class="section-kicker">These screens show the app HUD over the camera feed and the softer library
+                    system that supports scene composition.</p>
+            </div>
+            <div class="screen-grid">
+                <figure class="frame">
+                    <img src="../assets/barbie-storybook/barbie-library-ui.png"
+                        alt="Barbie Storybook style closet interface with dreamhouse, salon, and music room scene cards">
+                    <figcaption>Style closet: worlds, dolls, props, and saved-page logic</figcaption>
+                </figure>
+                <figure class="frame tall">
+                    <img src="../assets/barbie-storybook/barbie-mobile-hud.png"
+                        alt="Barbie Storybook mobile HUD with scan state, Glimmer button, and scene controls">
+                    <figcaption>Mobile HUD: scan, build, Glimmer, and capture states</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="panel section reveal" id="system">
+            <div class="section-head">
+                <span class="eyebrow">Interface System</span>
+                <h2>Codeable component language.</h2>
+                <p class="section-kicker">The UI polish comes from a reusable set of cards, chips, buttons, inputs,
+                    panels, and icons. This page mirrors the app’s own `Outfit` + `Space Grotesk` pairing and pink,
+                    blush, gold palette.</p>
+            </div>
+            <div class="component-grid">
+                <article class="proof-card">
+                    <img src="../assets/project-previews/barbie-storybook-capsule.png"
+                        alt="Barbie Storybook card system and scene library">
+                    <h3>Cards and panels</h3>
+                    <p>The library uses large rounded cards, soft highlights, light borders, and clear action buttons
+                        so the interface reads like a premium toy catalog.</p>
+                </article>
+                <article class="proof-card">
+                    <img src="../assets/barbie-storybook/barbie-mobile-hud.png"
+                        alt="Barbie Storybook HUD with Glimmer and scan controls">
+                    <h3>HUD controls</h3>
+                    <p>The HUD keeps scan, book, narrator, and capture actions in one compact surface. It is built to
+                        feel codeable and reusable rather than one-off ornamental chrome.</p>
+                </article>
+                <article class="proof-card">
+                    <img src="../assets/barbie-storybook/glimmer-concept.jpg"
+                        alt="Glimmer concept character used in Barbie Storybook">
+                    <h3>Glimmer helper</h3>
+                    <p>Glimmer gives ideas and narration inside the flow. The helper layer is what turns a scene
+                        builder into a story-making product.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel section reveal" id="build">
+            <div class="section-head">
+                <span class="eyebrow">Asset System</span>
+                <h2>High-fidelity assets support the build.</h2>
+                <p class="section-kicker">The final visual polish comes from combining UI assets, 3D props, book
+                    textures, and generated world backdrops in a reusable production pipeline.</p>
+            </div>
+            <div class="two-col">
+                <article class="proof-card">
+                    <h3>What is working</h3>
+                    <p>Home and onboarding, Needle Go AR launch, surface scan and anchor stage, world and props
+                        panels, Glimmer helper UI, book cover, and saved page flow are all established in the progress
+                        build.</p>
+                </article>
+                <article class="proof-card">
+                    <h3>What this project shows</h3>
+                    <p>The case study demonstrates a full interaction loop, a coherent visual system, and AI-assisted
+                        asset workflows that support a real product direction rather than just a slide concept.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="proof-grid">
+            <article class="proof-card reveal">
+                <span class="eyebrow">Process</span>
+                <h3>Idea to deployed experience</h3>
+                <p>The deck’s structure centers on concept, feasibility, interaction journey, visual identity, AR
+                    proof, asset library, technical pipeline, and reflection. The page follows that same logic.</p>
+            </article>
+            <article class="proof-card reveal">
+                <span class="eyebrow">Visual language</span>
+                <h3>App-first portfolio styling</h3>
+                <p>This case-study page intentionally uses the same fonts, component softness, surface treatment, and
+                    palette direction as the app so the portfolio entry feels like part of the product world.</p>
+            </article>
+            <article class="proof-card reveal">
+                <span class="eyebrow">Range</span>
+                <h3>Design, prototyping, and AI tooling</h3>
+                <p>Barbie Storybook is a strong portfolio piece because it combines interaction design, real AR
+                    implementation, visual-system thinking, and rapid asset pipeline experimentation.</p>
+            </article>
+        </section>
+
+        <footer class="footer">
+            <span>Barbie Storybook case study</span>
+            <a class="nav-link" href="../index.html#work">Back to Portfolio</a>
+        </footer>
+    </div>
+
+    <script>
+        const panels = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+
+        panels.forEach((panel, index) => {
+            panel.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 45}ms`);
+            observer.observe(panel);
+        });
+    </script>
+</body>
+
+</html>

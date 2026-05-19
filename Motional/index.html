@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motional | Hamza Galbete</title>
+  <link rel="icon" href="data:,">
+  <meta name="description"
+    content="Motional project story by Hamza Galbete: an AI-assisted route intelligence concept extended into a physical driving simulator to explore novel human-AI interaction.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../assets/project-page.css">
+</head>
+
+<body class="motional-page">
+  <div class="page-shell motional-shell">
+    <header class="project-nav motional-nav">
+      <a class="brand-link motional-brand" href="../index.html#work" aria-label="Back to portfolio work section">
+        <span class="motional-mark" aria-hidden="true"></span>
+        <span>MOTIONAL</span>
+        <span class="nav-divider">|</span>
+        <span>AI INTERACTION SYSTEM</span>
+      </a>
+      <nav class="nav-links" aria-label="Project links">
+        <a class="nav-action" href="#stack">Stack</a>
+        <a class="nav-action" href="#wireframes">Wireframes</a>
+        <a class="nav-action" href="#prototype">Prototype</a>
+        <a class="nav-action" href="https://motional-one.vercel.app/" target="_blank" rel="noopener">Live Onboarding</a>
+        <a class="nav-action" href="https://motional-one.vercel.app/simulator/" target="_blank" rel="noopener">Live
+          Simulator</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero motional-hero">
+        <div class="hero-copy reveal-panel">
+          <span class="eyebrow">01 - Project Thesis</span>
+          <p class="motional-wordmark"><span></span>Motional</p>
+          <h1>AI as a partner for <em>new human experiences.</em></h1>
+          <p class="lead">Motional is not just a route app. It is a project about using AI to create novel
+            interactions between people, cities, and machines. I started with an intent-based mobile
+            routing concept, then built a future driving simulator where visitors could feel the idea with
+            a wheel, pedals, a screen, and an AI-guided route.</p>
+          <div class="project-meta" aria-label="Project summary">
+            <span>Human-AI interaction</span>
+            <span>Agentic design process</span>
+            <span>Map and route intelligence</span>
+            <span>Physical simulator demo</span>
+          </div>
+        </div>
+        <figure class="hero-media motional-hero-media reveal-panel">
+          <img src="../assets/project-previews/motional-capsule.png"
+            alt="Motional simulator surface showing a white car, glowing route ribbon, city road view, and assistant panel">
+          <figcaption class="screen-caption">
+            <span>Product system</span>
+            <span>Intent, context, confidence</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="metric-strip motional-brief" aria-label="Motional project summary">
+        <article class="metric-card reveal-panel">
+          <span class="stat-label">Original Concept</span>
+          <strong>Route by how it feels</strong>
+          <p>A mobile app where a person chooses Direct, Calm, Scenic, or Discover instead of only accepting
+            the fastest ETA.</p>
+        </article>
+        <article class="metric-card reveal-panel">
+          <span class="stat-label">Exhibit Pivot</span>
+          <strong>Manual driving archive</strong>
+          <p>The app became a future installation where people who grew up with automation try driving
+            manually for the first time.</p>
+        </article>
+        <article class="metric-card reveal-panel">
+          <span class="stat-label">AI Role</span>
+          <strong>Contextual co-driver</strong>
+          <p>The assistant explains why a route fits the driver's mood, what changed, and what the city is
+            offering along the way.</p>
+        </article>
+        <article class="metric-card reveal-panel">
+          <span class="stat-label">My Role</span>
+          <strong>Design, build, prompt, ship</strong>
+          <p>I used Codex as a coding partner to build the UI, session handoff, simulator controls, visual
+            system, and final production polish.</p>
+        </article>
+      </section>
+
+      <section class="section outside-split">
+        <div class="section-heading reveal-panel">
+          <span class="eyebrow">02 - Why It Exists</span>
+          <h2>The simulator turns an AI idea into an embodied interaction.</h2>
+          <p class="section-kicker">The point was not to automate the user away. The point was to let AI
+            support a richer human decision: how do you want this journey to feel?</p>
+        </div>
+        <div class="split-section">
+          <article class="text-panel reveal-panel">
+            <h3>Mobile product thesis</h3>
+            <p class="body-copy">Most navigation products optimize around time. Motional adds another
+              layer: intent. It asks whether the user wants calm, speed, discovery, or scenery, then makes
+              route tradeoffs visible instead of hiding them behind a single blue line.</p>
+          </article>
+          <article class="text-panel reveal-panel">
+            <h3>Installation thesis</h3>
+            <p class="body-copy">The simulator makes the interaction physical. A visitor gives the system a
+              name, destination, and vibe on the onboarding screen. Inside, the wheel and pedals turn those
+              choices into a route they can actually perform.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section mobile-gallery-section">
+        <div class="section-heading reveal-panel">
+          <span class="eyebrow">03 - Product Interface</span>
+          <h2>The app explored AI routing as a consumer product.</h2>
+        </div>
+        <div class="phone-gallery">
+          <figure class="phone-shot tall reveal-panel">
+            <img src="../assets/motional/motional-mobile-home.png"
+              alt="Motional mobile home screen with destination search, route intent chips, recent places, and live traffic map">
+            <figcaption>Search and intent selection</figcaption>
+          </figure>
+          <figure class="phone-shot tall reveal-panel">
+            <img src="../assets/motional/motional-mobile-route-comparison.png"
+              alt="Motional mobile route comparison screen with direct, calm, scenic, and discover options">
+            <figcaption>Route comparison by mood</figcaption>
+          </figure>
+          <figure class="phone-shot tall reveal-panel">
+            <img src="../assets/motional/motional-mobile-place-detail.png"
+              alt="Motional place detail screen for the Distillery District with map, stop information, and add stop controls">
+            <figcaption>Place context and stops</figcaption>
+          </figure>
+          <figure class="phone-shot tall reveal-panel">
+            <img src="../assets/motional/motional-mobile-live-companion.png"
+              alt="Motional active navigation screen with live route update, coffee stops, ETA, traffic, and talk controls">
+            <figcaption>Live route adaptation</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section wireframe-lab" id="wireframes">
+        <div class="section-heading reveal-panel">
+          <span class="eyebrow">04 - Wireframes</span>
+          <h2>From route app to installation flow.</h2>
+          <p class="section-kicker">Like Locavore, this needed structure before polish. The wireframes focused
+            on what each screen had to decide, not just what it looked like.</p>
+        </div>
+        <div class="wireframe-flow reveal-panel" aria-label="Wireframe process">
+          <div><span>01</span><strong>Intent</strong>
+            <p>Pick how the route should feel.</p>
+          </div>
+          <i></i>
+          <div><span>02</span><strong>Context</strong>
+            <p>Explain route differences clearly.</p>
+          </div>
+          <i></i>
+          <div><span>03</span><strong>Handoff</strong>
+            <p>Send name, vibe, and destination to the simulator.</p>
+          </div>
+          <i></i>
+          <div><span>04</span><strong>Drive</strong>
+            <p>Keep guidance visible without taking control.</p>
+          </div>
+        </div>
+        <div class="motional-wireframes">
+          <article class="wireframe-card-motional reveal-panel">
+            <div class="wire-phone">
+              <div class="wire-top"></div>
+              <div class="wire-title"></div>
+              <div class="wire-search"></div>
+              <div class="wire-chip-row">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <div class="wire-map"></div>
+              <div class="wire-list"><span></span><span></span><span></span></div>
+            </div>
+            <h3>Mobile route setup</h3>
+            <p>Destination search, route intent, recent places, and a map preview live on one screen.</p>
+          </article>
+          <article class="wireframe-card-motional reveal-panel">
+            <div class="wire-phone">
+              <div class="wire-top"></div>
+              <div class="wire-map route"></div>
+              <div class="wire-option active"></div>
+              <div class="wire-option"></div>
+              <div class="wire-option"></div>
+              <div class="wire-button"></div>
+            </div>
+            <h3>Route comparison</h3>
+            <p>The user sees time, distance, stress, and experience tradeoffs before starting.</p>
+          </article>
+          <article class="wireframe-card-motional reveal-panel">
+            <div class="wire-desktop">
+              <div class="wire-col wide"></div>
+              <div class="wire-col stack"></div>
+              <div class="wire-col form"></div>
+            </div>
+            <h3>Onboarding screen handoff</h3>
+            <p>Name, destination, and vibe choices become a shared session the simulator can read live.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section prototype-section-motional" id="prototype">
+        <div class="section-heading reveal-panel">
+          <span class="eyebrow">05 - Prototype</span>
+          <h2>The prototype became a live two-screen system.</h2>
+        </div>
+        <div class="prototype-grid">
+          <a class="prototype-tile reveal-panel" href="https://motional-one.vercel.app/" target="_blank" rel="noopener">
+            <img src="../assets/project-previews/motional-onboarding-screen.png"
+              alt="Motional onboarding screen with future archive layout, stack panel, and driver intake">
+            <div>
+              <span>Onboarding screen</span>
+              <h3>Public intake and queue</h3>
+              <p>Visitors enter name, destination, and vibe before moving to the wheel.</p>
+            </div>
+          </a>
+          <a class="prototype-tile reveal-panel" href="https://motional-one.vercel.app/simulator/" target="_blank"
+            rel="noopener">
+            <img src="../assets/project-previews/motional-capsule.png"
+              alt="Motional simulator with route ribbon and assistant panel">
+            <div>
+              <span>Simulator</span>
+              <h3>Driving surface</h3>
+              <p>The route, car, wheel input, speed, and assistant become the embodied part of the demo.</p>
+            </div>
+          </a>
+          <figure class="prototype-tile reveal-panel">
+            <img src="../assets/motional/motional-mobile-place-detail.png"
+              alt="Motional place detail mobile screen with a Toronto stop, map, route timing, and add stop controls">
+            <div>
+              <span>Mobile prototype</span>
+              <h3>Original app behavior</h3>
+              <p>The mobile product language still drives the simulator: intent, places, routes, and stops.</p>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="stack">
+        <div class="section-heading reveal-panel">
+          <span class="eyebrow">06 - Stack</span>
+          <h2>The stack was built around context, not chat.</h2>
+        </div>
+        <div class="system-diagram ai-stack-diagram reveal-panel" aria-label="Motional AI stack diagram">
+          <div>
+            <span>Input layer</span>
+            <strong>Onboarding screen captures name, destination, and reflective vibe answers.</strong>
+          </div>
+          <div>
+            <span>Route layer</span>
+            <strong>Google Routes style logic and map geometry create the baseline journey.</strong>
+          </div>
+          <div>
+            <span>Context layer</span>
+            <strong>Gemini and maps-grounding experiments shaped place-aware guidance and route language.</strong>
+          </div>
+          <div>
+            <span>Build layer</span>
+            <strong>Codex helped rapidly implement, debug, tune, and deploy the working interaction.</strong>
+          </div>
+        </div>
+        <div class="stack-grid codex-grid">
+          <article class="stack-card reveal-panel">
+            <span class="stack-label">Mapbox GL / WebGL</span>
+            <h3>Real city surface</h3>
+            <p>Toronto roads, buildings, route lines, minimap context, and a stylized night-driving
+              interface gave the AI interaction a real place to act on.</p>
+          </article>
+          <article class="stack-card reveal-panel">
+            <span class="stack-label">Google Routes + Maps Context</span>
+            <h3>Grounded route choices</h3>
+            <p>The project used route logic, destinations, nearby places, and map-grounded explanations as
+              the input material for the AI guide.</p>
+          </article>
+          <article class="stack-card reveal-panel">
+            <span class="stack-label">Gemini / GPT Experiments</span>
+            <h3>Agent as route host</h3>
+            <p>Voice and live-agent ideas were tested, then the public demo shipped with reliable text
+              guidance that still uses structured context.</p>
+          </article>
+          <article class="stack-card reveal-panel">
+            <span class="stack-label">Codex</span>
+            <h3>AI as build partner</h3>
+            <p>I used Codex to inspect code, generate UI, wire APIs, debug wheel input, tune camera feel,
+              iterate from screenshots, and push deploys under time pressure.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section codex-section">
+        <div class="section-heading reveal-panel">
+          <span class="eyebrow">07 - How I Used Codex</span>
+          <h2>Codex was part of the creative process, not just autocomplete.</h2>
+        </div>
+        <div class="timeline-list codex-timeline">
+          <article class="timeline-card reveal-panel">
+            <span class="timeline-index">01</span>
+            <div>
+              <h3>Explored interaction options fast</h3>
+              <p>I used Codex to turn rough ideas into working UI experiments: route vibes, traffic
+                signals, camera angles, route ribbons, onboarding handoff, and assistant panels.</p>
+            </div>
+          </article>
+          <article class="timeline-card reveal-panel">
+            <span class="timeline-index">02</span>
+            <div>
+              <h3>Debugged across hardware and software</h3>
+              <p>The project involved a Thrustmaster wheel, pedals, browser APIs, Mapbox rendering,
+                Vercel routes, and local Windows setup. Codex helped trace each layer instead of
+                treating the product as only a webpage.</p>
+            </div>
+          </article>
+          <article class="timeline-card reveal-panel">
+            <span class="timeline-index">03</span>
+            <div>
+              <h3>Made reliability decisions</h3>
+              <p>When live voice became risky for presentation, I used Codex to remove it from the main
+                path and replace it with grounded AI route text that could actually ship.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section simulator-section">
+        <div class="section-heading reveal-panel">
+          <span class="eyebrow">08 - Physical Demo</span>
+          <h2>The AI interaction was tested with an actual wheel and exhibit screen.</h2>
+        </div>
+        <div class="photo-grid">
+          <figure class="media-card reveal-panel">
+            <img src="../assets/motional/motional-simulator-wheel-photo-03.png"
+              alt="Physical Motional simulator setup with racing chair, wheel, pedals, simulator monitor, and onboarding screen">
+            <figcaption class="media-caption"><span>Installation setup</span><span>Wheel, pedals, onboarding
+                screen</span></figcaption>
+          </figure>
+          <figure class="media-card reveal-panel">
+            <img src="../assets/motional/motional-simulator-monitor-photo-01.png"
+              alt="Motional simulator monitor showing a route line and car view with the wheel in the foreground">
+            <figcaption class="media-caption"><span>Simulator station</span><span>Route ribbon and car view</span>
+            </figcaption>
+          </figure>
+          <figure class="media-card reveal-panel">
+            <img src="../assets/motional/motional-simulator-setup-photo-02.png"
+              alt="Motional simulator monitor in a dark presentation space with the steering wheel visible">
+            <figcaption class="media-caption"><span>Presentation pass</span><span>Dark-room exhibit context</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section image-board-section">
+        <div class="section-heading reveal-panel">
+          <span class="eyebrow">09 - Visual System</span>
+          <h2>The interface language came from the onboarding screen: dark, precise, cinematic.</h2>
+        </div>
+        <div class="image-board">
+          <figure class="board-wide reveal-panel">
+            <img src="../assets/project-previews/motional-onboarding-screen.png"
+              alt="Motional onboarding screen with dark future archive layout, middle stack panel, and driver intake">
+            <figcaption>Onboarding screen visual system</figcaption>
+          </figure>
+          <figure class="board-card reveal-panel">
+            <img src="../assets/motional/motional-mobile-live-companion.png"
+              alt="Motional mobile live companion screen showing a route update and traffic-aware coffee stops">
+            <figcaption>Agent companion concept</figcaption>
+          </figure>
+          <figure class="board-card reveal-panel">
+            <img src="../assets/motional/motional-mobile-route-comparison.png"
+              alt="Motional mobile route comparison screen with four route options over a Toronto map">
+            <figcaption>Route comparison concept</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section proof-section">
+        <div class="section-heading reveal-panel">
+          <span class="eyebrow">10 - What This Shows</span>
+          <h2>A strong AI project is a full interaction, not a prompt demo.</h2>
+        </div>
+        <div class="proof-grid">
+          <article class="reveal-panel">
+            <span>Novel interaction design</span>
+            <p>The project asks what AI can do when it becomes part of a physical experience: guiding,
+              contextualizing, and adapting without removing the human from the action.</p>
+          </article>
+          <article class="reveal-panel">
+            <span>Agent design judgment</span>
+            <p>The assistant had to know when to speak, what context to use, how to stay grounded, and when
+              reliability mattered more than novelty.</p>
+          </article>
+          <article class="reveal-panel">
+            <span>Maker range</span>
+            <p>Motional combines product concepting, visual design, code, APIs, AI workflow, hardware
+              debugging, deployment, and presentation storytelling.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Motional project story</span>
+      <a class="small-link" href="../index.html#work">Back to Portfolio</a>
+    </footer>
+  </div>
+
+  <script>
+    const panels = document.querySelectorAll(".reveal-panel");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16, rootMargin: "0px 0px -8% 0px" });
+
+    panels.forEach((panel, index) => {
+      panel.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
+      observer.observe(panel);
+    });
+  </script>
+</body>
+
+</html>
