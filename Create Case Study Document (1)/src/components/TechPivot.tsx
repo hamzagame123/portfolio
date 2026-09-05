@@ -10,7 +10,7 @@ export function TechPivot() {
         </div>
         <h2 className="mb-4">Choosing the Right Tool for the MVP</h2>
         <p className="max-w-2xl mx-auto text-slate-600">
-          A critical design decision: prioritizing speed-to-validation over long-term scalability
+          A critical design decision: prioritizing iteration speed over long-term scalability
         </p>
       </div>
 
@@ -47,7 +47,7 @@ export function TechPivot() {
           <div className="mb-4">
             <div className="text-red-900 mb-2">Wrong Tool for MVP Goals</div>
             <p className="text-slate-700">
-              I needed to validate the concept and user flow, not build for distribution
+              I needed to explore the concept and user flow, not build for distribution
             </p>
           </div>
           <div className="space-y-2 text-slate-700">
@@ -68,7 +68,7 @@ export function TechPivot() {
           <div className="mb-4">
             <div className="text-lime-900 mb-2">Python + CustomTkinter</div>
             <p className="text-slate-700">
-              Fast prototyping to test UX hypothesis and validate AI integration
+              Fast prototyping to explore the workflow and connect AI naming
             </p>
           </div>
           <div className="space-y-2 text-slate-700">
@@ -89,14 +89,12 @@ export function TechPivot() {
               As a designer, I had to ask: <span className="text-white print:text-slate-900">"What am I trying to learn from this MVP?"</span>
             </p>
             <p className="text-slate-300 mb-4 print:text-slate-700">
-              The answer wasn't "Can I build a distributable app?" It was <span className="text-white print:text-slate-900">"Will users 
+              The answer wasn't "Can I build a distributable app?" It was <span className="text-white print:text-slate-900">"Will users
               trust an AI to rename their files, and what UX patterns build that trust?"</span>
             </p>
             <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 print:bg-white print:border-slate-300">
               <p className="text-slate-200 print:text-slate-700">
-                <span className="text-lime-400 print:text-lime-700">Choosing Python let me spend 80% of my time on UX design and validation, 
-                not tooling.</span> I could iterate on the interaction model, test different layouts, and refine the 
-                trust-building mechanisms. Once those design patterns are validated, they can be implemented in any framework.
+                Choosing Python let me focus on the interaction model and AI integration. I could try layouts and recovery states before investing in distribution. Whether those choices help users still needs testing.
               </p>
             </div>
           </div>

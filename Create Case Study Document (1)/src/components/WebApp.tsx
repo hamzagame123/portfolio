@@ -11,8 +11,8 @@ export function WebApp() {
       <div className="mb-12">
         <h2 className="text-emerald-600 mb-4">Web App: Designing for Browser Constraints</h2>
         <p className="text-neutral-600 max-w-3xl">
-          To make the tool accessible without installation barriers, I created a web version that maintains the core 
-          renaming workflow while adapting to browser security limitations. This required rethinking the file handling 
+          To make the tool accessible without installation barriers, I created a web version that maintains the core
+          renaming workflow while adapting to browser security limitations. This required rethinking the file handling
           paradigm from direct filesystem access to a download-based model.
         </p>
       </div>
@@ -22,7 +22,7 @@ export function WebApp() {
           <div>
             <h3 className="text-neutral-900 mb-3">Platform Adaptation Strategy</h3>
             <p className="text-neutral-600 mb-4">
-              Browser security models prevent direct filesystem manipulation, so the web app uses a different approach:
+              This web demo uses a download-based workflow rather than requesting permission to edit files on disk:
             </p>
             <ul className="space-y-3 text-neutral-700">
               <li className="flex items-start gap-3">
@@ -43,15 +43,14 @@ export function WebApp() {
           <div className="bg-amber-50 border border-amber-200 rounded-lg p-5">
             <h4 className="text-amber-900 mb-2">Key Constraint</h4>
             <p className="text-neutral-700 text-sm">
-              <strong>No Filesystem Access:</strong> The web app cannot modify files in place or watch folders for changes. 
-              Features like "Watched Folders" and bash script generation are desktop-only capabilities.
+              <strong>Copies, not in-place edits:</strong> This demo downloads renamed copies. Folder watching is not implemented in this web demo and remains a planned desktop enhancement.
             </p>
           </div>
         </div>
 
         <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
-          <img 
-            src={webAppMain} 
+          <img
+            src={webAppMain}
             alt="Web app main interface showing history panel, preview area, and drag-and-drop queue"
             className="w-full h-auto rounded cursor-pointer hover:opacity-90 transition-opacity"
             onClick={() => setFullscreenImage(webAppMain)}
@@ -64,14 +63,14 @@ export function WebApp() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
         <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200 order-2 lg:order-1">
-          <img 
-            src={webAppSettings} 
+          <img
+            src={webAppSettings}
             alt="Settings modal showing API configuration, naming conventions, and automation options"
             className="w-full h-auto rounded cursor-pointer hover:opacity-90 transition-opacity"
             onClick={() => setFullscreenImage(webAppSettings)}
           />
           <p className="text-neutral-500 text-sm mt-3 text-center">
-            Settings panel maintaining parity with desktop features (except filesystem-dependent options)
+            Settings interface concept; some pictured controls are not implemented in the web demo
           </p>
         </div>
 
@@ -81,7 +80,7 @@ export function WebApp() {
             <ul className="space-y-3 text-neutral-700">
               <li className="flex items-start gap-3">
                 <span className="text-emerald-600 mt-1">•</span>
-                <span><strong>Graceful Degradation:</strong> Disabled "Watched Folders" with clear "Desktop App Only" label rather than hiding it entirely</span>
+                <span><strong>Feature scope:</strong> Folder watching is outside this demo. A desktop-only label in the settings concept describes the intended platform, not a completed feature.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-emerald-600 mt-1">•</span>
@@ -101,14 +100,14 @@ export function WebApp() {
       </div>
 
       <div className="bg-white rounded-lg p-8 border border-neutral-200">
-        <h3 className="text-neutral-900 mb-6">Desktop vs Web: Design Trade-offs</h3>
+        <h3 className="text-neutral-900 mb-6">Prototype scope by platform</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-neutral-200">
                 <th className="text-left py-3 pr-6 text-neutral-600">Feature</th>
-                <th className="text-left py-3 px-6 text-neutral-600">Desktop App</th>
-                <th className="text-left py-3 pl-6 text-neutral-600">Web App</th>
+                <th className="text-left py-3 px-6 text-neutral-600">Desktop prototype</th>
+                <th className="text-left py-3 pl-6 text-neutral-600">Web demo</th>
               </tr>
             </thead>
             <tbody className="text-neutral-700">
@@ -119,27 +118,27 @@ export function WebApp() {
               </tr>
               <tr className="border-b border-neutral-100">
                 <td className="py-4 pr-6">Folder Watching</td>
-                <td className="py-4 px-6">✓ Automated background processing</td>
-                <td className="py-4 pl-6">✗ Not possible (browser security)</td>
+                <td className="py-4 px-6">Planned enhancement</td>
+                <td className="py-4 pl-6">Not implemented in this demo</td>
               </tr>
               <tr className="border-b border-neutral-100">
                 <td className="py-4 pr-6">Installation</td>
                 <td className="py-4 px-6">○ Requires download & setup</td>
-                <td className="py-4 pl-6">✓ Instant access via browser</td>
+                <td className="py-4 pl-6">Browser demo, AI service required</td>
               </tr>
               <tr className="border-b border-neutral-100">
                 <td className="py-4 pr-6">AI Renaming</td>
-                <td className="py-4 px-6">✓ Full feature parity</td>
-                <td className="py-4 pl-6">✓ Full feature parity</td>
+                <td className="py-4 px-6">AI naming workflow</td>
+                <td className="py-4 pl-6">AI naming workflow</td>
               </tr>
               <tr className="border-b border-neutral-100">
                 <td className="py-4 pr-6">Settings & Config</td>
-                <td className="py-4 px-6">✓ All options available</td>
-                <td className="py-4 pl-6">✓ All except filesystem features</td>
+                <td className="py-4 px-6">Core prototype controls</td>
+                <td className="py-4 pl-6">Naming and API settings</td>
               </tr>
               <tr>
                 <td className="py-4 pr-6">Batch Processing</td>
-                <td className="py-4 px-6">✓ Unlimited local files</td>
+                <td className="py-4 px-6">Capacity not benchmarked</td>
                 <td className="py-4 pl-6">○ Limited by browser memory</td>
               </tr>
             </tbody>
@@ -150,16 +149,16 @@ export function WebApp() {
       <div className="mt-8 bg-emerald-50 border border-emerald-200 rounded-lg p-6">
         <h4 className="text-emerald-900 mb-3">Design Philosophy</h4>
         <p className="text-neutral-700">
-          Rather than creating two completely different experiences, the web version maintains visual and interaction 
-          consistency with the desktop app. This allows users to move between platforms without relearning the interface, 
-          while clearly communicating platform-specific limitations through contextual UI (like the "Desktop App Only" badge). 
+          Rather than creating two completely different experiences, the web version maintains visual and interaction
+          consistency with the desktop app. The intent is to make moving between platforms feel familiar,
+          while explaining the difference between a renamed download and an in-place file operation.
           The goal was <strong>cross-platform familiarity with honest constraint communication</strong>.
         </p>
       </div>
 
       {/* Fullscreen Modal */}
       {fullscreenImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
           onClick={() => setFullscreenImage(null)}
         >
@@ -170,8 +169,8 @@ export function WebApp() {
           >
             <X size={32} />
           </button>
-          <img 
-            src={fullscreenImage} 
+          <img
+            src={fullscreenImage}
             alt="Fullscreen view"
             className="max-w-full max-h-full object-contain"
             onClick={(e) => e.stopPropagation()}

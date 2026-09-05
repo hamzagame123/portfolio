@@ -37,14 +37,11 @@ export function Overview() {
               <FileQuestion className="w-6 h-6 text-red-600 mt-1 flex-shrink-0" />
               <div>
                 <p className="text-slate-700 mb-3">
-                  <span className="text-red-700">A wedding photographer returns from a shoot with 847 images</span>
-                  , all named variations of <code className="px-2 py-1 bg-slate-200 rounded">DSC_8472.jpg</code>.
-                  Three months later, finding "the shot with the sunset" becomes a 20-minute search.
+                  Imagine a folder of photos named <code className="px-2 py-1 bg-slate-200 rounded">DSC_8472.jpg</code>. The filename tells you little about the image. This illustrative scenario motivated the prototype.
                 </p>
                 <p className="text-slate-700">
-                  This scenario repeats daily for creative professionals managing thousands of images. Manual
-                  renaming is tedious and inconsistent. Existing tools either lack intelligence or require
-                  complex batch renaming rules.
+                  I explored whether AI-generated descriptions could make files easier to recognize while
+                  keeping the person in control of the final name.
                 </p>
               </div>
             </div>
@@ -54,8 +51,7 @@ export function Overview() {
             <div className="flex gap-3">
               <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
               <div>
-                <span className="text-slate-900">73% of creative professionals</span> report spending
-                significant time organizing files
+                <span className="text-slate-900">The starting assumption:</span> descriptive names may help people identify images
               </div>
             </div>
             <div className="flex gap-3">
@@ -98,15 +94,15 @@ export function Overview() {
             <div className="flex gap-3">
               <CheckCircle2 className="w-5 h-5 text-lime-600 mt-0.5 flex-shrink-0" />
               <div>
-                <span className="text-slate-900">Instant AI-powered analysis</span> understands image
+                <span className="text-slate-900">AI-powered naming</span> understands image
                 content and context
               </div>
             </div>
             <div className="flex gap-3">
               <CheckCircle2 className="w-5 h-5 text-lime-600 mt-0.5 flex-shrink-0" />
               <div>
-                <span className="text-slate-900">Automatic folder watching</span> renames new files
-                as they appear
+                <span className="text-slate-900">Image preview</span> lets people compare the suggestion
+                with the source image
               </div>
             </div>
             <div className="flex gap-3">
