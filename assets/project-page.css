@@ -825,7 +825,7 @@ h3 {
 
 .motional-hero {
     min-height: 760px;
-    grid-template-columns: minmax(430px, 0.78fr) minmax(660px, 1.22fr);
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     background:
         radial-gradient(circle at 25% 20%, rgba(0, 245, 212, 0.13), transparent 24%),
         linear-gradient(90deg, rgba(0, 245, 212, 0.08), transparent 34%);
@@ -848,10 +848,17 @@ h3 {
 }
 
 .motional-hero h1 {
-    font-size: clamp(58px, 5.9vw, 104px);
+    font-size: clamp(40px, 4.5vw, 76px);
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+}
+
+.motional-hero .hero-copy {
+    min-width: 0;
 }
 
 .motional-hero-media {
+    min-width: 0;
     border-color: rgba(0, 245, 212, 0.26);
     box-shadow: 0 0 0 1px rgba(0, 245, 212, 0.08), 0 26px 110px rgba(0, 0, 0, 0.48);
 }
