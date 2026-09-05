@@ -8,24 +8,24 @@ export function Footer() {
           <div className="text-slate-400">
             <p>&copy; 2025 Smart Image Renamer Case Study</p>
           </div>
-          
+
           <div className="flex gap-6">
-            <a 
-              href="#" 
+            <a
+              href="https://github.com/hamzagame123/image-renamer-pro"
               className="text-slate-400 hover:text-white transition-colors"
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
             </a>
-            <a 
-              href="#" 
+            <a
+              href="https://www.linkedin.com/in/hamza-galbete-123924241"
               className="text-slate-400 hover:text-white transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
             </a>
-            <a 
-              href="#" 
+            <a
+              href="mailto:Hamzagalbete99@gmail.com"
               className="text-slate-400 hover:text-white transition-colors"
               aria-label="Email"
             >
@@ -33,9 +33,9 @@ export function Footer() {
             </a>
           </div>
         </div>
-        
+
         <div className="mt-8 pt-8 border-t border-slate-800 text-center text-slate-500">
-          <p>This case study demonstrates full-stack development capabilities including desktop application development, AI integration, and modern UI/UX design.</p>
+          <p>Designed and built by Hamza Galbete. Explore the prototype, read the implementation, or get in touch.</p>
         </div>
       </div>
     </footer>

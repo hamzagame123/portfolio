@@ -13,7 +13,7 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
             Proposed interface design for the next iteration: a cross-platform Electron app with enhanced features
           </p>
         </div>
-        
+
         <div className="space-y-12">
           <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-8 shadow-2xl">
             <div className="mb-4">
@@ -26,9 +26,9 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
               </p>
             </div>
             <div className="bg-slate-900 rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src={mainScreenshot} 
-                alt="Future Electron interface design showing enhanced UI with queue panel and improved styling" 
+              <img
+                src={mainScreenshot}
+                alt="Future Electron interface design showing enhanced UI with queue panel and improved styling"
                 className="w-full h-auto"
               />
             </div>
@@ -47,7 +47,7 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
               </div>
             </div>
           </div>
-          
+
           <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-8 shadow-2xl">
             <div className="mb-4">
               <div className="flex items-center justify-between mb-2">
@@ -59,17 +59,17 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
               </p>
             </div>
             <div className="bg-slate-900 rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src={settingsScreenshot} 
-                alt="Future settings interface with advanced configuration options" 
+              <img
+                src={settingsScreenshot}
+                alt="Future settings interface with advanced configuration options"
                 className="w-full h-auto"
               />
             </div>
             <div className="mt-4 bg-white rounded-lg p-4">
               <div className="text-slate-900 mb-2">Migration Path</div>
               <p className="text-slate-600">
-                With the working Python prototype validating the core logic and user flow, these designs represent 
-                the natural evolution, adding power user features while maintaining the simple, focused experience 
+                With the working Python prototype demonstrating the core logic and user flow, these designs represent
+                the natural evolution, adding power user features while maintaining the simple, focused experience
                 that makes the tool trustworthy.
               </p>
             </div>

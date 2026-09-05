@@ -19,7 +19,7 @@ import settingsScreenshot from 'figma:asset/7776b2e3d5c09fa5c797f97d8effe7a1e481
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-neutral-50" style={{ paddingTop: '64px' }}>
+    <div className="min-h-screen bg-neutral-50">
       <TopNav />
       <section id="overview">
         <Hero />

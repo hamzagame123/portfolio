@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 const navLinks = [
   { label: 'Overview', href: '#overview', id: 'overview' },
-  { label: 'Research', href: '#research', id: 'research' },
+  { label: 'Assumptions', href: '#research', id: 'research' },
   { label: 'Design', href: '#design', id: 'design' },
   { label: 'Features', href: '#features', id: 'features' },
   { label: 'Results', href: '#results', id: 'results' },
@@ -43,7 +43,7 @@ export function TopNav() {
   return (
     <nav
       style={{
-        position: 'fixed',
+        position: 'sticky',
         top: 0,
         left: 0,
         right: 0,
@@ -51,6 +51,8 @@ export function TopNav() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '12px',
         padding: '20px 24px',
         background: 'rgba(15, 23, 42, 0.95)',
         backdropFilter: 'blur(20px)',
@@ -99,7 +101,8 @@ export function TopNav() {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '40px',
+          gap: 'clamp(12px, 3vw, 40px)',
+          flexWrap: 'wrap',
         }}
       >
         {navLinks.map((link) => {

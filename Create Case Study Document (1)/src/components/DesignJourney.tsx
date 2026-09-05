@@ -18,7 +18,7 @@ const designDecisions = [
   {
     decision: 'Preview Before Commit',
     rationale: 'Users fear automated tools breaking their files',
-    impact: 'Builds trust by showing exactly what will change before any action occurs'
+    impact: 'Shows what will change so the person can review it before acting'
   },
   {
     decision: 'Persistent History',
@@ -33,7 +33,7 @@ const designDecisions = [
   {
     decision: 'Dark Theme',
     rationale: 'Photographers work long hours editing and organizing files',
-    impact: 'Reduces eye strain and signals professional tool quality'
+    impact: 'Provides a subdued canvas around the image preview'
   }
 ];
 
@@ -74,8 +74,8 @@ export function DesignJourney() {
         <div className="mb-16 bg-slate-50 rounded-xl p-8 border-2 border-slate-200">
           <h3 className="mb-6">Design Goals for the MVP</h3>
           <p className="text-slate-700 mb-6">
-            I deliberately scoped the MVP to <span className="text-slate-900">validate core UX patterns</span> rather than 
-            build comprehensive features. The goal was to answer: "Can I design an interface that makes AI file management 
+            I deliberately scoped the MVP to <span className="text-slate-900">explore core UX patterns</span> rather than
+            build comprehensive features. The goal was to answer: "Can I design an interface that makes AI file management
             feel safe and effortless?"
           </p>
           <div className="grid md:grid-cols-2 gap-3">
@@ -100,14 +100,14 @@ export function DesignJourney() {
                   <h3>Final MVP Design</h3>
                   <span className="px-3 py-1 bg-lime-500 text-white rounded-full">Functional</span>
                 </div>
-                <p className="text-slate-700">A working prototype that validates core interaction patterns</p>
+                <p className="text-slate-700">A working prototype that demonstrates core interaction patterns</p>
               </div>
             </div>
-            
+
             <div className="bg-white rounded-lg overflow-hidden shadow-lg mb-6 border-2 border-lime-300">
-              <img 
-                src={prototypeImage} 
-                alt="MVP interface showing three-panel layout with rename history, file controls, and image preview" 
+              <img
+                src={prototypeImage}
+                alt="MVP interface showing three-panel layout with rename history, file controls, and image preview"
                 className="w-full h-auto"
               />
             </div>
@@ -134,7 +134,7 @@ export function DesignJourney() {
                   </li>
                 </ul>
               </div>
-              
+
               <div>
                 <h4 className="text-blue-700 mb-3">Design Patterns</h4>
                 <ul className="space-y-2 text-slate-700">
@@ -156,7 +156,7 @@ export function DesignJourney() {
                   </li>
                 </ul>
               </div>
-              
+
               <div>
                 <h4 className="text-purple-700 mb-3">Scope Decisions</h4>
                 <ul className="space-y-2 text-slate-700">
@@ -174,7 +174,7 @@ export function DesignJourney() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-lime-600">✓</span>
-                    <span className="text-lime-700">Core workflow validated</span>
+                    <span className="text-lime-700">Core workflow implemented</span>
                   </li>
                 </ul>
               </div>
@@ -195,7 +195,7 @@ export function DesignJourney() {
                     <p className="text-slate-700">{item.rationale}</p>
                   </div>
                   <div className="bg-lime-50 border-l-4 border-lime-400 rounded-r p-3">
-                    <div className="text-lime-900 mb-1">Impact on users</div>
+                    <div className="text-lime-900 mb-1">Intended effect</div>
                     <p className="text-slate-700">{item.impact}</p>
                   </div>
                 </div>
@@ -228,7 +228,7 @@ export function DesignJourney() {
         <div className="bg-slate-900 border-2 border-slate-800 rounded-xl p-8 text-white print:bg-slate-50 print:border-slate-300 print:text-slate-900">
           <h3 className="text-white mb-6 print:text-slate-900">The Core User Flow</h3>
           <p className="text-slate-300 mb-6 print:text-slate-700">
-            The MVP focuses on validating this simple, safe workflow:
+            The MVP focuses on exploring this simple, safe workflow:
           </p>
           <div className="flex flex-wrap items-center gap-4 justify-center py-6">
             <div className="bg-slate-800 border border-slate-700 px-6 py-3 rounded-lg print:bg-white print:border-slate-300">
@@ -252,7 +252,7 @@ export function DesignJourney() {
             </div>
           </div>
           <p className="text-slate-300 print:text-slate-700">
-            <span className="text-lime-400 print:text-lime-700">Every design decision supports this flow.</span> Rather than building 
+            <span className="text-lime-400 print:text-lime-700">Every design decision supports this flow.</span> Rather than building
             10 half-finished features, I focused on making these four steps feel natural, safe, and trustworthy.
           </p>
         </div>
