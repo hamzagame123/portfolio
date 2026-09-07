@@ -1,7 +1,7 @@
 const assumptions = [
-  { title: 'Finding images', text: 'Descriptive filenames may make an image easier to identify without opening it. This needs testing against thumbnail browsing and existing search tools.' },
-  { title: 'Reviewing suggestions', text: 'Showing the image beside the proposed name gives people a way to catch an inaccurate AI description before using it.' },
-  { title: 'Recovering from mistakes', text: 'The desktop design includes rename history and undo. The web demo downloads a renamed copy, leaving the original untouched.' },
+  { title: 'Finding images', text: 'Descriptive names add searchable words. I still need to test whether the words generated match what people remember, using retrieval tasks alongside thumbnail browsing and existing search tools.' },
+  { title: 'Reviewing suggestions', text: 'I put the image beside the proposal so it could be checked. Whether people notice a plausible but incorrect description before applying it remains a design hypothesis.' },
+  { title: 'Recovering from mistakes', text: 'I built history and undo/redo into the desktop workflow. I still need to observe whether people discover and use recovery without instruction. The web demo instead preserves the source and downloads a copy.' },
 ];
 
 export function UserResearch() {
@@ -10,7 +10,7 @@ export function UserResearch() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <span className="text-blue-600 uppercase tracking-wider">Problem framing</span>
-          <h2 className="mb-4">Assumptions behind the prototype</h2>
+          <h2 className="mb-4">What I still needed to understand</h2>
           <p className="max-w-2xl mx-auto text-slate-600">
             This is a self-directed design and build project. These are hypotheses that guided the interface,
             not findings from a completed user study. Usability testing with photographers and designers remains a next step.

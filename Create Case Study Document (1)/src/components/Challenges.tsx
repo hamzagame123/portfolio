@@ -3,30 +3,30 @@ import { AlertTriangle, CheckCircle2, Shield, Brain, Users, Zap } from 'lucide-r
 const challenges = [
   {
     icon: Shield,
-    title: 'Review Effort',
-    challenge: 'Checking every suggestion adds work to a task meant to become less repetitive',
-    solution: 'Keep review before application, then test when individual approval helps and when batch review is more appropriate',
+    title: 'Filename collisions',
+    challenge: 'Two suggestions can target the same name, or the destination may already exist.',
+    solution: 'NEEDS HARDENING — Check destinations at commit time, preserve originals, and show a conflict choice. I cannot claim robust collision protection in the MVP.',
     color: 'text-teal-600'
   },
   {
     icon: Brain,
-    title: 'Incorrect Suggestions',
-    challenge: 'A confident-sounding filename can misdescribe the image',
-    solution: 'Show the image and proposed name together; test whether someone catches an inaccurate description and regenerates it',
+    title: 'Wrong or unusable suggestions',
+    challenge: 'The model may misidentify a subject, return invalid characters, or fail because of an API or network error.',
+    solution: 'I used image preview and filename sanitization. Later regeneration offers an alternative; inline editing and clearer per-file failure/retry states are next steps.',
     color: 'text-purple-600'
   },
   {
     icon: Users,
-    title: 'Settings Discoverability',
-    challenge: 'Moving naming rules out of the main view makes them less visible',
-    solution: 'Keep the review view focused, then test whether people can find separator, casing, and instruction controls',
+    title: 'Unnecessary automation',
+    challenge: 'A client ID or SKU may look random while being essential to the existing filing system.',
+    solution: 'LATER ITERATION — Skip-normal-name rules reduce unnecessary changes in principle. I would test them on real conventions and keep a manual override.',
     color: 'text-orange-600'
   },
   {
     icon: Zap,
-    title: 'Growing Beyond One File',
-    challenge: 'The queue suggests a batch workflow, but performance and review effort at scale are unmeasured',
-    solution: 'Test the core sequence with a small set of files before expanding watched folders or making throughput claims',
+    title: 'Recovery after files change',
+    challenge: 'A file can be moved or deleted after renaming, or its original name can be reused.',
+    solution: 'History retains the old and new paths. Undo/redo need an available source and destination; I would harden these checks and report failed reversals clearly.',
     color: 'text-blue-600'
   }
 ];
@@ -39,9 +39,9 @@ export function Challenges() {
           <AlertTriangle className="w-6 h-6 text-amber-600" />
           <span className="text-amber-600 uppercase tracking-wider">Design Challenges</span>
         </div>
-        <h2 className="mb-4">Tradeoffs I Still Need to Test</h2>
+        <h2 className="mb-4">Failure modes and remaining work</h2>
         <p className="max-w-2xl mx-auto text-slate-600">
-          These are open design questions, not issues that the prototype has already proven it solves.
+          I designed around these risks; the prototype does not yet resolve every edge case.
         </p>
       </div>
       
@@ -66,7 +66,7 @@ export function Challenges() {
               <div className="flex gap-3">
                 <CheckCircle2 className="w-5 h-5 text-lime-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-lime-700 mb-1">Design Response / Next Test</div>
+                  <div className="text-lime-700 mb-1">Response / status</div>
                   <p className="text-slate-700">{item.solution}</p>
                 </div>
               </div>

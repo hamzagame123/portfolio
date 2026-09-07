@@ -1,9 +1,223 @@
-import webImage from 'figma:asset/8581fc19e4d378cabcb3f1ebd14ab4d2dd2fe929.png';
+import webAppMain from 'figma:asset/8581fc19e4d378cabcb3f1ebd14ab4d2dd2fe929.png';
+import webAppSettings from 'figma:asset/f66ef3aa6ca5bf9968379e7e5625153903e59d26.png';
+import { useEffect, useRef, useState } from 'react';
+import { X } from 'lucide-react';
 
 export function WebApp() {
-  return <section className="max-w-7xl mx-auto px-6 py-20">
-    <div className="grid md:grid-cols-2 gap-8 mb-8"><div><h2 className="mb-4">Taking it to the browser changed what “rename” meant.</h2><p className="text-slate-600">I carried the history, preview, and queue into a web version, using Gemini to analyze images. But the final action had a different outcome, so the interface needed to explain it.</p></div>
-    <div className="bg-white rounded-xl p-6 border border-slate-200"><h3 className="mb-3">One workflow, two outcomes</h3><p className="text-slate-700 mb-4"><strong>Desktop:</strong> change the file in place, with its previous name available for recovery.</p><p className="text-slate-700"><strong>Browser:</strong> download a renamed copy and keep the original. Completion needs to make clear that a new file was created.</p></div></div>
-    <figure className="bg-slate-100 rounded-xl p-6 border border-slate-200"><img src={webImage} alt="Browser version showing History, image preview, and Queue in the empty state" className="w-full h-auto rounded-lg" loading="lazy"/><figcaption className="text-slate-600 mt-4">The browser version keeps the same organization while changing the final file action.</figcaption></figure>
-  </section>;
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+  const closeButton = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!fullscreenImage) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeButton.current?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setFullscreenImage(null);
+      if (event.key === 'Tab') {
+        event.preventDefault();
+        closeButton.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', onKeyDown);
+      previousFocus?.focus();
+    };
+  }, [fullscreenImage]);
+
+  return (
+    <section id="web-version" className="max-w-6xl mx-auto px-6 py-16 bg-neutral-100">
+      <div className="mb-12">
+        <h2 className="text-emerald-600 mb-4">Web App: Designing for Browser Constraints</h2>
+        <p className="text-neutral-600 max-w-3xl">
+          I adapted the workflow for the browser so it could be tried without installing the desktop tool. The web demo uses an upload/download model: it generates a proposed name and creates a renamed copy, leaving the original file in place.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-neutral-900 mb-3">Platform Adaptation Strategy</h3>
+            <p className="text-neutral-600 mb-4">
+              This web demo uses a download-based workflow rather than requesting permission to edit files on disk:
+            </p>
+            <ul className="space-y-3 text-neutral-700">
+              <li className="flex items-start gap-3">
+                <span className="text-emerald-600 mt-1">↓</span>
+                <span><strong>Upload & Process:</strong> Users drag and drop files into the browser interface</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-emerald-600 mt-1">✓</span>
+                <span><strong>AI Analysis:</strong> Files are processed with the same Gemini API integration</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-emerald-600 mt-1">↓</span>
+                <span><strong>Download Renamed:</strong> Users download a renamed copy rather than modifying originals in place</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-5">
+            <h4 className="text-amber-900 mb-2">Key Constraint</h4>
+            <p className="text-neutral-700 text-sm">
+              <strong>Different action, different promise:</strong> Download creates a copy; it does not rename the source. Some browsers support permission-based file access, but this demo does not request it. Folder watching remains future work.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+          <img
+            src={webAppMain}
+            alt="Web app main interface showing history panel, preview area, and drag-and-drop queue"
+            className="w-full h-auto rounded cursor-pointer hover:opacity-90 transition-opacity"
+            onClick={() => setFullscreenImage(webAppMain)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                setFullscreenImage(webAppMain);
+              }
+            }}
+          />
+          <p className="text-neutral-500 text-sm mt-3 text-center">
+            Browser interface: queue, image preview, and session history. Download creates a copy; this history is not the desktop’s persistent rename log.
+          </p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200 order-2 lg:order-1">
+          <img
+            src={webAppSettings}
+            alt="Settings modal showing API configuration, naming conventions, and automation options"
+            className="w-full h-auto rounded cursor-pointer hover:opacity-90 transition-opacity"
+            onClick={() => setFullscreenImage(webAppSettings)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                setFullscreenImage(webAppSettings);
+              }
+            }}
+          />
+          <p className="text-neutral-500 text-sm mt-3 text-center">
+            Settings interface concept; some pictured controls are not implemented in the web demo
+          </p>
+        </div>
+
+        <div className="space-y-6 order-1 lg:order-2">
+          <div>
+            <h3 className="text-neutral-900 mb-3">UX Decisions for Web</h3>
+            <ul className="space-y-3 text-neutral-700">
+              <li className="flex items-start gap-3">
+                <span className="text-emerald-600 mt-1">•</span>
+                <span><strong>Feature scope:</strong> Folder watching is outside this demo. A desktop-only label in the settings concept describes the intended platform, not a completed feature.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-emerald-600 mt-1">•</span>
+                <span><strong>Maintained Mental Model:</strong> Same three-panel layout (History, Preview, Queue) to preserve familiarity across platforms</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-emerald-600 mt-1">•</span>
+                <span><strong>No desktop installation:</strong> The demo still needs API configuration and an available AI service to generate names.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-emerald-600 mt-1">•</span>
+                <span><strong>Explain data flow:</strong> Settings are stored in the browser, but image analysis sends image data to the AI service. Local key storage does not mean local inference.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg p-8 border border-neutral-200">
+        <h3 className="text-neutral-900 mb-6">Prototype scope by platform</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-neutral-200">
+                <th className="text-left py-3 pr-6 text-neutral-600">Feature</th>
+                <th className="text-left py-3 px-6 text-neutral-600">Desktop prototype</th>
+                <th className="text-left py-3 pl-6 text-neutral-600">Web demo</th>
+              </tr>
+            </thead>
+            <tbody className="text-neutral-700">
+              <tr className="border-b border-neutral-100">
+                <td className="py-4 pr-6">File Modification</td>
+                <td className="py-4 px-6">✓ Direct in-place renaming</td>
+                <td className="py-4 pl-6">○ Download renamed copies</td>
+              </tr>
+              <tr className="border-b border-neutral-100">
+                <td className="py-4 pr-6">Folder Watching</td>
+                <td className="py-4 px-6">Planned enhancement</td>
+                <td className="py-4 pl-6">Not implemented in this demo</td>
+              </tr>
+              <tr className="border-b border-neutral-100">
+                <td className="py-4 pr-6">Installation</td>
+                <td className="py-4 px-6">○ Requires download & setup</td>
+                <td className="py-4 pl-6">Browser demo, AI service required</td>
+              </tr>
+              <tr className="border-b border-neutral-100">
+                <td className="py-4 pr-6">AI Renaming</td>
+                <td className="py-4 px-6">AI naming workflow</td>
+                <td className="py-4 pl-6">AI naming workflow</td>
+              </tr>
+              <tr className="border-b border-neutral-100">
+                <td className="py-4 pr-6">Settings & Config</td>
+                <td className="py-4 px-6">Preview and rename recovery</td>
+                <td className="py-4 pl-6">Naming/API settings; session history</td>
+              </tr>
+              <tr>
+                <td className="py-4 pr-6">Batch Processing</td>
+                <td className="py-4 px-6">Capacity not benchmarked</td>
+                <td className="py-4 pl-6">Capacity not benchmarked</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="mt-8 bg-emerald-50 border border-emerald-200 rounded-lg p-6">
+        <h4 className="text-emerald-900 mb-3">Design Philosophy</h4>
+        <p className="text-neutral-700">
+          Rather than creating two completely different experiences, the web version maintains visual and interaction
+          consistency with the desktop app. The intent is to make moving between platforms feel familiar,
+          while explaining the difference between a renamed download and an in-place file operation.
+          The goal was <strong>cross-platform familiarity with honest constraint communication</strong>.
+        </p>
+      </div>
+
+      {/* Fullscreen Modal */}
+      {fullscreenImage && (
+        <div
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          style={{ zIndex: 1100 }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Screenshot preview"
+          onClick={() => setFullscreenImage(null)}
+        >
+          <button
+            ref={closeButton}
+            className="absolute top-4 right-4 text-white hover:text-neutral-300 transition-colors"
+            onClick={() => setFullscreenImage(null)}
+            aria-label="Close fullscreen"
+          >
+            <X size={32} />
+          </button>
+          <img
+            src={fullscreenImage}
+            alt="Fullscreen view"
+            className="max-w-full max-h-full object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+    </section>
+  );
 }

@@ -6,11 +6,11 @@ export function TechPivot() {
       <div className="text-center mb-12">
         <div className="flex items-center justify-center gap-2 mb-4">
           <Lightbulb className="w-6 h-6 text-amber-500" />
-          <span className="text-amber-600 uppercase tracking-wider">Project Evolution</span>
+          <span className="text-amber-600 uppercase tracking-wider">Design Constraint</span>
         </div>
-        <h2 className="mb-4">From Naming an Image to Managing a Change</h2>
+        <h2 className="mb-4">Choosing the Right Tool for the MVP</h2>
         <p className="max-w-2xl mx-auto text-slate-600">
-          What began as an image-to-name experiment developed into a review workflow, then a browser adaptation.
+          I needed to work with real files, preview states, and recovery before investing in an application shell.
         </p>
       </div>
 
@@ -21,18 +21,18 @@ export function TechPivot() {
             <div className="w-10 h-10 bg-slate-200 rounded-lg flex items-center justify-center">
               <Code2 className="w-5 h-5 text-slate-600" />
             </div>
-            <h3>Earliest Known Stage</h3>
+            <h3>Initial Vision</h3>
           </div>
           <div className="mb-4">
-            <div className="text-slate-900 mb-2">March 2025 · Python tool</div>
+            <div className="text-slate-900 mb-2">Electron + React + Tailwind</div>
             <p className="text-slate-600">
-              The earliest recovered material points to a functional Python renamer: test whether an image could produce a useful name.
+              My initial plan for a polished desktop shell using web technologies
             </p>
           </div>
           <div className="space-y-2 text-slate-600">
-            <div>Image-to-name experiment</div>
-            <div>Personal file workflow</div>
-            <div>Date partly reconstructed</div>
+            <div>• Production packaging to solve</div>
+            <div>• Flexible UI components</div>
+            <div>• Distribution still requires work</div>
           </div>
         </div>
 
@@ -42,18 +42,18 @@ export function TechPivot() {
             <div className="w-10 h-10 bg-red-200 rounded-lg flex items-center justify-center">
               <AlertTriangle className="w-5 h-5 text-red-600" />
             </div>
-            <h3>Later Interface Snapshot</h3>
+            <h3>The Realization</h3>
           </div>
           <div className="mb-4">
-            <div className="text-red-900 mb-2">September 2025 · Next.js artifact</div>
+            <div className="text-red-900 mb-2">Interaction questions came first</div>
             <p className="text-slate-700">
-              A preserved interface brings review, history, and settings together. That structure existed before the recorded Codex session to make it run.
+              I needed to explore the concept and user flow, not build for distribution
             </p>
           </div>
           <div className="space-y-2 text-slate-700">
-            <div>Preview before application</div>
-            <div>Original and proposed names</div>
-            <div>History and recovery controls</div>
+            <div>• When should a rename happen?</div>
+            <div>• What needs review?</div>
+            <div>• How does recovery work?</div>
           </div>
         </div>
 
@@ -63,18 +63,18 @@ export function TechPivot() {
             <div className="w-10 h-10 bg-lime-200 rounded-lg flex items-center justify-center">
               <TrendingUp className="w-5 h-5 text-lime-600" />
             </div>
-            <h3>Browser Adaptation</h3>
+            <h3>The Pivot</h3>
           </div>
           <div className="mb-4">
-            <div className="text-lime-900 mb-2">Later web version · Gemini</div>
+            <div className="text-lime-900 mb-2">Python + CustomTkinter + TkinterDnD2</div>
             <p className="text-slate-700">
-              The workflow moves into a browser, where the result is a renamed download rather than an in-place file change.
+              Fast prototyping to explore the workflow and connect AI naming
             </p>
           </div>
           <div className="space-y-2 text-slate-700">
-            <div>Image analysis with Gemini</div>
-            <div>History, preview, and queue</div>
-            <div>Downloads renamed copies</div>
+            <div>✓ Rapid iteration</div>
+            <div>✓ Focus on UX</div>
+            <div>✓ Real model and filesystem calls</div>
           </div>
         </div>
       </div>
@@ -84,16 +84,17 @@ export function TechPivot() {
         <div className="flex items-start gap-4">
           <Lightbulb className="w-8 h-8 text-amber-400 mt-1 flex-shrink-0 print:text-amber-600" />
           <div>
-            <h3 className="text-white mb-3 print:text-slate-900">The Question Changed</h3>
+            <h3 className="text-white mb-3 print:text-slate-900">Design Lesson: Match Tools to Goals</h3>
             <p className="text-slate-300 mb-4 print:text-slate-700">
-              I began by asking: <span className="text-white print:text-slate-900">"Can an image model suggest a useful filename?"</span>
+              As a designer, I had to ask: <span className="text-white print:text-slate-900">"What am I trying to learn from this MVP?"</span>
             </p>
             <p className="text-slate-300 mb-4 print:text-slate-700">
-              The product question became: <span className="text-white print:text-slate-900">"How can AI act on real files while keeping the person in control?"</span>
+              The answer wasn't "Can I build a distributable app?" It was <span className="text-white print:text-slate-900">"Will users
+              trust an AI to rename their files, and what UX patterns build that trust?"</span>
             </p>
             <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 print:bg-white print:border-slate-300">
               <p className="text-slate-200 print:text-slate-700">
-                The chronology is reconstructed from project files and editor history. The exact March UI source and original coding model were not recovered. The later snapshots document the interaction model; Gemini’s role in image analysis is separate from authorship of that model.
+                Choosing Python let me focus on the interaction model and AI integration. I could try layouts and recovery states before investing in distribution. Whether those choices help users still needs testing.
               </p>
             </div>
           </div>

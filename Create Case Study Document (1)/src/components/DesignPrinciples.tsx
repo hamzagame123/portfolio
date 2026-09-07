@@ -3,25 +3,25 @@ import { Shield, Eye, Sliders, Zap } from 'lucide-react';
 const principles = [
   {
     icon: Shield,
-    title: 'Safety First',
-    description: 'Preserve the previous state and make recovery visible when a rename changes a file.',
+    title: 'Recovery is part of the workflow',
+    description: 'I kept previous names available so a bad suggestion would not have to become a permanent decision. Recovery still depends on the files being available.',
     designDecisions: [
-      'Visible undo/redo controls',
+      'Desktop MVP: undo and redo',
       'Persistent rename history',
-      'Original names retained for reference',
-      'A distinct Apply Changes action'
+      'Original and new paths retained',
+      'Collision and missing-file handling need hardening'
     ],
     color: 'text-teal-600',
     bgColor: 'bg-teal-50'
   },
   {
     icon: Eye,
-    title: 'Transparency',
-    description: 'Show the proposed result in context so a person can judge it.',
+    title: 'Review before action',
+    description: 'The image and proposed name belong together. Preview provides a chance to inspect the result before a real rename.',
     designDecisions: [
       'Preview names before applying',
       'Show original and new names side-by-side',
-      'Image beside the proposed name',
+      'Visual feedback during processing',
       'History log with timestamps'
     ],
     color: 'text-blue-600',
@@ -29,26 +29,26 @@ const principles = [
   },
   {
     icon: Sliders,
-    title: 'User Control',
-    description: 'AI suggests, but users decide. Never force automated actions.',
+    title: 'Selective automation',
+    description: 'Later interaction work asked whether AI should intervene at all. A useful existing name should be left alone.',
     designDecisions: [
-      'Manual approval for each rename',
-      'Accept or regenerate suggestions',
-      'Option to skip certain files',
-      'Customizable AI instructions'
+      'Later iteration: skip-normal-names setting',
+      'Later iteration: Accept / Regenerate controls',
+      'Prototype filename-pattern heuristic',
+      'Heuristic accuracy remains untested'
     ],
     color: 'text-purple-600',
     bgColor: 'bg-purple-50'
   },
   {
     icon: Zap,
-    title: 'Simplicity',
-    description: 'Keep the main view focused on the naming decision; put advanced rules in Settings.',
+    title: 'Fit existing naming habits',
+    description: 'Later settings explored formatting the same description to fit a person’s filing system. These controls are not all part of the desktop MVP.',
     designDecisions: [
-      'Drag-and-drop interface',
-      'Naming conventions in Settings',
-      'Clear visual hierarchy',
-      'Focus on core workflow'
+      'Separator and casing choices',
+      'Custom naming instructions',
+      'Optional tags and presets',
+      'Folder watching remains a future direction'
     ],
     color: 'text-lime-600',
     bgColor: 'bg-lime-50'
@@ -62,7 +62,7 @@ export function DesignPrinciples() {
         <div className="text-center mb-16">
           <h2 className="mb-4">Design Principles</h2>
           <p className="max-w-2xl mx-auto text-slate-600">
-            The priorities I used to shape the review workflow.
+            How the working MVP and later interface explorations approached control
           </p>
         </div>
 

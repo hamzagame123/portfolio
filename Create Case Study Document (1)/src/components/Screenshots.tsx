@@ -8,9 +8,9 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
     <section className="bg-slate-50 py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="mb-4">Later Interface Exploration</h2>
+          <h2 className="mb-4">Later interaction exploration</h2>
           <p className="max-w-2xl mx-auto text-slate-600">
-            These existing screens show how the review workflow expanded into history, preview, queue, and settings. Entries and image placeholders illustrate the design.
+            DESIGN EXPLORATION — A more resolved workspace for review, selective automation, and naming conventions. These images do not establish a completed Electron application.
           </p>
         </div>
 
@@ -19,31 +19,31 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
             <div className="mb-4">
               <div className="flex items-center justify-between mb-2">
                 <h3>Main Interface Design</h3>
-                <span className="px-3 py-1 bg-slate-700 text-white rounded-full">Design Mockup</span>
+                <span className="px-3 py-1 bg-slate-700 text-white rounded-full">Design exploration</span>
               </div>
               <p className="text-slate-600">
-                History keeps original and proposed names together. The preview supports inspection, while the queue separates incoming work.
+                Enhanced three-panel layout with visual queue management, improved preview, and integrated settings
               </p>
             </div>
             <div className="bg-slate-900 rounded-lg overflow-hidden shadow-xl">
               <img
                 src={mainScreenshot}
-                alt="Later interface exploration showing history, image preview, queue, Preview Mode and Apply Changes"
+                alt="Future Electron interface design showing enhanced UI with queue panel and improved styling"
                 className="w-full h-auto"
               />
             </div>
             <div className="mt-4 grid md:grid-cols-3 gap-4 text-slate-600">
               <div className="bg-white rounded-lg p-4">
-                <div className="text-slate-900 mb-1">History & Queue</div>
-                <div>Previous changes stay separate from incoming files</div>
+                <div className="text-slate-900 mb-1">Explored controls</div>
+                <div>Queue panel, tag presets, advanced filtering</div>
               </div>
               <div className="bg-white rounded-lg p-4">
-                <div className="text-slate-900 mb-1">Review Controls</div>
-                <div>Preview and Apply Changes are distinct actions</div>
+                <div className="text-slate-900 mb-1">Future direction</div>
+                <div>Folder watching, batch operations, custom instructions</div>
               </div>
               <div className="bg-white rounded-lg p-4">
-                <div className="text-slate-900 mb-1">Artifact Context</div>
-                <div>Later interface exploration; not the original March UI</div>
+                <div className="text-slate-900 mb-1">Proposed shell</div>
+                <div>Electron + React + Tailwind CSS</div>
               </div>
             </div>
           </div>
@@ -52,10 +52,10 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
             <div className="mb-4">
               <div className="flex items-center justify-between mb-2">
                 <h3>Settings & Configuration Design</h3>
-                <span className="px-3 py-1 bg-slate-700 text-white rounded-full">Design Mockup</span>
+                <span className="px-3 py-1 bg-slate-700 text-white rounded-full">Design exploration</span>
               </div>
               <p className="text-slate-600">
-                Separators, casing, custom instructions, and tags let names fit an existing filing convention. Folder watching is an explored direction.
+                Comprehensive settings for folder watching, naming conventions, custom AI instructions, and tag management
               </p>
             </div>
             <div className="bg-slate-900 rounded-lg overflow-hidden shadow-xl">
@@ -66,9 +66,9 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
               />
             </div>
             <div className="mt-4 bg-white rounded-lg p-4">
-              <div className="text-slate-900 mb-2">Why Settings Is Separate</div>
+              <div className="text-slate-900 mb-2">Migration Path</div>
               <p className="text-slate-600">
-                I kept naming rules and automation away from the main review step. The tradeoff is discoverability: settings may be harder to find. Pictured controls show design intent, not proof that every feature was implemented or validated.
+                These settings explore separators, casing, custom instructions, and tags so a description can fit an existing filing system. Folder watching remains future work. I would establish clear review and recovery before making the workflow more autonomous.
               </p>
             </div>
           </div>

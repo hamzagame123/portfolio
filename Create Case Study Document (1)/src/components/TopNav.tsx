@@ -2,8 +2,10 @@ import { useEffect, useMemo, useState } from 'react';
 
 const navLinks = [
   { label: 'Overview', href: '#overview', id: 'overview' },
+  { label: 'Problem', href: '#problem', id: 'problem' },
   { label: 'Decisions', href: '#design', id: 'design' },
-  { label: 'Web Version', href: '#features', id: 'features' },
+  { label: 'Build', href: '#build', id: 'build' },
+  { label: 'Web Version', href: '#web-version', id: 'web-version' },
   { label: 'Reflection', href: '#results', id: 'results' },
 ];
 

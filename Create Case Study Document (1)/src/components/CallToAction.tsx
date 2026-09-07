@@ -58,7 +58,7 @@ export function CallToAction() {
           className="text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed"
           style={{ color: '#94a3b8' }}
         >
-          Explore the browser adaptation: select images, inspect the suggested names, and download renamed copies. The originals stay unchanged. AI naming requires the demo’s service to be available.
+          Select an image, review a generated filename, and download a renamed copy. The browser adaptation requires API configuration; future controls pictured above are not all implemented in the demo.
         </p>
         
         {/* CTA Button */}

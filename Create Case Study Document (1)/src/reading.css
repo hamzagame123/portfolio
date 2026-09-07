@@ -1,8 +1,0 @@
-.case-study h1 { font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 650; line-height: 1.15; }
-.case-study h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 600; line-height: 1.25; }
-.case-study h3 { font-size: 1.2rem; font-weight: 600; line-height: 1.35; }
-.case-study p { line-height: 1.65; }
-.case-study figcaption { font-size: .875rem; line-height: 1.5; }
-.case-study > section[id] { scroll-margin-top: 100px; }
-@media (max-width: 640px) { .case-study > section[id] { scroll-margin-top: 150px; } }
-.case-study p.border-l-4 { padding-left: 1rem; }
