@@ -2,10 +2,9 @@ import { useEffect, useMemo, useState } from 'react';
 
 const navLinks = [
   { label: 'Overview', href: '#overview', id: 'overview' },
-  { label: 'Assumptions', href: '#research', id: 'research' },
-  { label: 'Design', href: '#design', id: 'design' },
-  { label: 'Features', href: '#features', id: 'features' },
-  { label: 'Results', href: '#results', id: 'results' },
+  { label: 'Decisions', href: '#design', id: 'design' },
+  { label: 'Web Version', href: '#features', id: 'features' },
+  { label: 'Reflection', href: '#results', id: 'results' },
 ];
 
 export function TopNav() {
