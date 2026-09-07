@@ -58,8 +58,7 @@ export function CallToAction() {
           className="text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed"
           style={{ color: '#94a3b8' }}
         >
-          See the AI-powered renaming in action. Try the web version directly in your browser, 
-          no installation required. Just drag and drop your images and watch the magic happen.
+          Explore the browser adaptation: select images, inspect the suggested names, and download renamed copies. The originals stay unchanged. AI naming requires the demo’s service to be available.
         </p>
         
         {/* CTA Button */}

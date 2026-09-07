@@ -7,23 +7,21 @@ export function Overview() {
       <div className="mb-16 bg-slate-100 border-l-4 border-slate-700 rounded-r-xl p-8">
         <h3 className="mb-3">The Brief</h3>
         <p className="text-slate-700 mb-4">
-          Design and develop a cross-platform desktop application that uses AI to automatically rename
-          image files with descriptive, human-readable names, eliminating the chaos of cryptic filenames
-          while maintaining user control and file organization.
+          Explore whether image recognition could make renaming less repetitive, then design the steps between receiving a suggestion and changing a file. My contribution was shaping the workflow, interface, and naming controls, with AI-assisted implementation.
         </p>
         <div className="flex flex-wrap gap-6 mt-6">
           <div className="flex items-start gap-3">
             <Users className="w-5 h-5 text-slate-600 mt-0.5" />
             <div>
-              <div className="text-slate-900">Target Users</div>
+              <div className="text-slate-900">Intended Audience</div>
               <div className="text-slate-600">Photographers, designers, content creators</div>
             </div>
           </div>
           <div className="flex items-start gap-3">
             <Target className="w-5 h-5 text-slate-600 mt-0.5" />
             <div>
-              <div className="text-slate-900">Timeline</div>
-              <div className="text-slate-600">4 weeks (Solo project)</div>
+              <div className="text-slate-900">Project Status</div>
+              <div className="text-slate-600">Prototype; user testing remains to be done</div>
             </div>
           </div>
         </div>
@@ -37,7 +35,7 @@ export function Overview() {
               <FileQuestion className="w-6 h-6 text-red-600 mt-1 flex-shrink-0" />
               <div>
                 <p className="text-slate-700 mb-3">
-                  Imagine a folder of photos named <code className="px-2 py-1 bg-slate-200 rounded">DSC_8472.jpg</code>. The filename tells you little about the image. This illustrative scenario motivated the prototype.
+                  The task started with files named <code className="px-2 py-1 bg-slate-200 rounded">DSC_8472.jpg</code>. The filename tells you little about the image. Opening images one by one to decide on a name was the repetitive task I wanted to improve.
                 </p>
                 <p className="text-slate-700">
                   I explored whether AI-generated descriptions could make files easier to recognize while
@@ -57,15 +55,13 @@ export function Overview() {
             <div className="flex gap-3">
               <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
               <div>
-                Manual renaming is <span className="text-slate-900">time-consuming,
-                  inconsistent, and error-prone</span>
+                The repeated work: <span className="text-slate-900">open an image, describe it, and rename the file</span>
               </div>
             </div>
             <div className="flex gap-3">
               <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
               <div>
-                Poor file naming makes <span className="text-slate-900">searching and retrieving
-                  images difficult</span> months later
+                The question to test: <span className="text-slate-900">are descriptive names more useful than thumbnails or existing search?</span>
               </div>
             </div>
           </div>
@@ -78,13 +74,11 @@ export function Overview() {
               <Sparkles className="w-6 h-6 text-lime-600 mt-1 flex-shrink-0" />
               <div>
                 <p className="text-slate-700 mb-3">
-                  <span className="text-lime-700">Smart Image Renamer analyzes image content using Google's Gemini AI</span>,
-                  automatically generating descriptive filenames like <code className="px-2 py-1 bg-slate-200 rounded">sunset-beach-wedding-ceremony.jpg</code>.
+                  <span className="text-lime-700">The later web version uses Gemini to suggest names from image content</span>,
+                  with a result such as <code className="px-2 py-1 bg-slate-200 rounded">sunset-beach-wedding-ceremony.jpg</code>.
                 </p>
                 <p className="text-slate-700">
-                  The application <span className="text-lime-700">intelligently detects gibberish filenames</span> and
-                  only renames those, preserving already-meaningful names. Users maintain full control with preview
-                  mode, undo functionality, and complete rename history.
+                  The recovered interface separates <span className="text-lime-700">suggestion from application</span>. Preview, approval, and history make the proposed change visible. A filename heuristic explores skipping already-useful names; its reliability still needs testing.
                 </p>
               </div>
             </div>
@@ -94,8 +88,7 @@ export function Overview() {
             <div className="flex gap-3">
               <CheckCircle2 className="w-5 h-5 text-lime-600 mt-0.5 flex-shrink-0" />
               <div>
-                <span className="text-slate-900">AI-powered naming</span> understands image
-                content and context
+                <span className="text-slate-900">AI-powered naming</span> proposes a description for review
               </div>
             </div>
             <div className="flex gap-3">
@@ -108,8 +101,7 @@ export function Overview() {
             <div className="flex gap-3">
               <CheckCircle2 className="w-5 h-5 text-lime-600 mt-0.5 flex-shrink-0" />
               <div>
-                <span className="text-slate-900">Complete control</span> with preview, undo, and
-                customization options
+                <span className="text-slate-900">Controls for review and recovery</span> through preview, undo, and naming settings
               </div>
             </div>
           </div>
@@ -118,8 +110,7 @@ export function Overview() {
           <div className="mt-8 bg-slate-50 rounded-xl p-8 border border-slate-200">
             <div className="text-slate-900 mb-3 text-lg font-medium">Design Goal</div>
             <p className="text-slate-600 text-lg leading-relaxed">
-              Make AI-powered file management feel <span className="text-slate-900 font-semibold">trustworthy,
-                transparent, and effortless</span>, transforming a tedious task into a seamless experience.
+              Make the suggestion <span className="text-slate-900 font-semibold">inspectable, controllable, and reversible</span> before it acts on a person’s files.
             </p>
           </div>
         </div>

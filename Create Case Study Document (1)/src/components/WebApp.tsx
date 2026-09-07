@@ -11,9 +11,7 @@ export function WebApp() {
       <div className="mb-12">
         <h2 className="text-emerald-600 mb-4">Web App: Designing for Browser Constraints</h2>
         <p className="text-neutral-600 max-w-3xl">
-          To make the tool accessible without installation barriers, I created a web version that maintains the core
-          renaming workflow while adapting to browser security limitations. This required rethinking the file handling
-          paradigm from direct filesystem access to a download-based model.
+          The desktop work established the review model. I carried it into a browser with history, preview, and queue, but changed the file outcome: the web version downloads a renamed copy instead of changing the original.
         </p>
       </div>
 
@@ -31,7 +29,7 @@ export function WebApp() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-emerald-600 mt-1">✓</span>
-                <span><strong>AI Analysis:</strong> Files are processed with the same Gemini API integration</span>
+                <span><strong>AI Analysis:</strong> Gemini analyzes the image and proposes a filename</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-emerald-600 mt-1">↓</span>
@@ -88,11 +86,11 @@ export function WebApp() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-emerald-600 mt-1">•</span>
-                <span><strong>Zero Installation Friction:</strong> No download required, users can try the tool immediately in their browser</span>
+                <span><strong>Browser Access:</strong> No app installation; AI naming still depends on an available service</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-emerald-600 mt-1">•</span>
-                <span><strong>API Key Transparency:</strong> Clear labeling that keys are "stored locally" to address privacy concerns</span>
+                <span><strong>Settings Clarity:</strong> The settings concept explains API configuration separately from naming rules</span>
               </li>
             </ul>
           </div>
@@ -139,7 +137,7 @@ export function WebApp() {
               <tr>
                 <td className="py-4 pr-6">Batch Processing</td>
                 <td className="py-4 px-6">Capacity not benchmarked</td>
-                <td className="py-4 pl-6">○ Limited by browser memory</td>
+                <td className="py-4 pl-6">Capacity not benchmarked</td>
               </tr>
             </tbody>
           </table>

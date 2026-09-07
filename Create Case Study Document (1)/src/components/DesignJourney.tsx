@@ -2,38 +2,48 @@ import { Lightbulb, ArrowRight, Layers, Palette, Layout } from 'lucide-react';
 import prototypeImage from 'figma:asset/4847f92f944cb602fcc7dbf2d6b475bc5074778c.png';
 
 const designGoals = [
-  'Make AI automation feel trustworthy, not unpredictable',
-  'Provide complete control while minimizing manual effort',
-  'Create immediate value with minimal learning curve',
-  'Build safety into every interaction',
-  'Design for real user workflows, not hypothetical ones'
+  'Make a suggestion inspectable before it changes a file',
+  'Keep approval and recovery visible in the main workflow',
+  'Use AI selectively, where a filename gives little information',
+  'Let naming output fit an existing filing convention',
+  'Keep advanced rules outside the main review step'
 ];
 
 const designDecisions = [
   {
     decision: 'Three-Panel Layout',
-    rationale: 'Separates past actions (history), current state (preview), and context (image)',
-    impact: 'Users can see what happened, what will happen, and verify accuracy, all at once'
+    rationale: 'The desktop capture separates history, file input, and the image. The later exploration refines this into history, preview, and queue.',
+    impact: 'Keeps the current naming decision visible without losing the surrounding file workflow'
   },
   {
     decision: 'Preview Before Commit',
-    rationale: 'Users fear automated tools breaking their files',
-    impact: 'Shows what will change so the person can review it before acting'
+    rationale: 'A generated description can be plausible and still be wrong. I separated Preview Mode and Apply Changes, with Accept / Regenerate controls in the later source.',
+    impact: 'A model’s suggestion becomes something to approve, rather than permission to change a file'
   },
   {
     decision: 'Persistent History',
-    rationale: 'Users need to track what changed and when, especially days later',
-    impact: 'Creates accountability and enables learning from AI suggestions over time'
+    rationale: 'Once a filename changes, the old name can disappear from view. I kept original and proposed names together and designed history with Undo / Redo.',
+    impact: 'Makes a change inspectable after the action and provides a visible route toward reversal'
   },
   {
     decision: 'Visual File Preview',
-    rationale: 'Filenames are meaningless without seeing the actual image',
-    impact: 'Users can verify AI accuracy instantly: "Is this actually a sunset beach photo?"'
+    rationale: 'Judging a filename in isolation means opening the image again. I placed the preview beside the naming information.',
+    impact: 'The image, original name, proposal, and tags can be checked in the same context'
   },
   {
-    decision: 'Dark Theme',
-    rationale: 'Photographers work long hours editing and organizing files',
-    impact: 'Provides a subdued canvas around the image preview'
+    decision: 'Skip Names That Already Work',
+    rationale: 'Running every file through AI creates unnecessary changes. I added a setting to skip normal names and a heuristic for likely camera-code or unhelpful filenames.',
+    impact: 'Targets the files most likely to need a new name. The heuristic still needs testing for false matches.'
+  },
+  {
+    decision: 'Separate Meaning from Formatting',
+    rationale: 'An image can have the same meaning but need a different filename in another filing system. I exposed separators, casing, custom instructions, and tag presets.',
+    impact: 'The proposed description can fit an existing convention instead of imposing a new one.'
+  },
+  {
+    decision: 'Move Advanced Rules into Settings',
+    rationale: 'Naming rules and watched-folder options matter beyond a single rename, but compete with the immediate decision. I moved them into Settings.',
+    impact: 'The main view stays focused on input, history, preview, and approval. Folder watching remains an explored direction.'
   }
 ];
 
@@ -51,7 +61,7 @@ const visualDesign = [
   {
     element: 'Spacing',
     purpose: 'Generous padding, clear panel separation',
-    why: 'Reduces cognitive load when scanning rename history'
+    why: 'Groups related controls and separates records for scanning'
   }
 ];
 
@@ -64,19 +74,17 @@ export function DesignJourney() {
             <Palette className="w-6 h-6 text-purple-600" />
             <span className="text-purple-600 uppercase tracking-wider">Design Process</span>
           </div>
-          <h2 className="mb-4">From Concept to MVP</h2>
+          <h2 className="mb-4">How I Shaped the Review Workflow</h2>
           <p className="max-w-2xl mx-auto text-slate-600">
-            How I translated user needs and design principles into a working interface
+            The interface decisions that turned a generated filename into something a person could inspect and act on
           </p>
         </div>
 
         {/* Design Goals */}
         <div className="mb-16 bg-slate-50 rounded-xl p-8 border-2 border-slate-200">
-          <h3 className="mb-6">Design Goals for the MVP</h3>
+          <h3 className="mb-6">From the Task to the Interface</h3>
           <p className="text-slate-700 mb-6">
-            I deliberately scoped the MVP to <span className="text-slate-900">explore core UX patterns</span> rather than
-            build comprehensive features. The goal was to answer: "Can I design an interface that makes AI file management
-            feel safe and effortless?"
+            The tool began with a practical sequence: look at an image, decide on a name, and change the file. I used those <span className="text-slate-900">decisions inside the task</span> to shape the interface. Generating a name became one step within a workflow, with inspection before it and a record after it.
           </p>
           <div className="grid md:grid-cols-2 gap-3">
             {designGoals.map((goal) => (
@@ -97,10 +105,10 @@ export function DesignJourney() {
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h3>Final MVP Design</h3>
+                  <h3>Desktop Prototype</h3>
                   <span className="px-3 py-1 bg-lime-500 text-white rounded-full">Functional</span>
                 </div>
-                <p className="text-slate-700">A working prototype that demonstrates core interaction patterns</p>
+                <p className="text-slate-700">Existing desktop capture, with a November 2025 history entry; not a screenshot of the original March version</p>
               </div>
             </div>
 
@@ -152,7 +160,7 @@ export function DesignJourney() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-blue-600">→</span>
-                    <span>Dark UI for long sessions</span>
+                    <span>Subdued canvas around images</span>
                   </li>
                 </ul>
               </div>
@@ -174,7 +182,7 @@ export function DesignJourney() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-lime-600">✓</span>
-                    <span className="text-lime-700">Core workflow implemented</span>
+                    <span className="text-lime-700">Core workflow prototyped</span>
                   </li>
                 </ul>
               </div>
@@ -184,7 +192,8 @@ export function DesignJourney() {
 
         {/* Key Design Decisions */}
         <div className="mb-16">
-          <h3 className="mb-8">Key Design Decisions & Rationale</h3>
+          <h3 className="mb-8">The Decisions Behind the Controls</h3>
+          <p className="text-slate-600 mb-6">These explanations connect the recovered controls to the workflow I was shaping. They are a retrospective account of design decisions, not user-research findings.</p>
           <div className="space-y-6">
             {designDecisions.map((item, index) => (
               <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
@@ -228,32 +237,31 @@ export function DesignJourney() {
         <div className="bg-slate-900 border-2 border-slate-800 rounded-xl p-8 text-white print:bg-slate-50 print:border-slate-300 print:text-slate-900">
           <h3 className="text-white mb-6 print:text-slate-900">The Core User Flow</h3>
           <p className="text-slate-300 mb-6 print:text-slate-700">
-            The MVP focuses on exploring this simple, safe workflow:
+            The intended review sequence connects selection, generation, approval, and recovery:
           </p>
           <div className="flex flex-wrap items-center gap-4 justify-center py-6">
             <div className="bg-slate-800 border border-slate-700 px-6 py-3 rounded-lg print:bg-white print:border-slate-300">
               <div className="text-lime-400 mb-1 print:text-lime-700">1. Input</div>
-              <div className="print:text-slate-900">Drag files in</div>
+              <div className="print:text-slate-900">Select files</div>
             </div>
             <ArrowRight className="text-lime-400 print:text-lime-600" />
             <div className="bg-slate-800 border border-slate-700 px-6 py-3 rounded-lg print:bg-white print:border-slate-300">
               <div className="text-lime-400 mb-1 print:text-lime-700">2. Review</div>
-              <div className="print:text-slate-900">Preview AI suggestions</div>
+              <div className="print:text-slate-900">Generate, inspect, accept / regenerate</div>
             </div>
             <ArrowRight className="text-lime-400 print:text-lime-600" />
             <div className="bg-slate-800 border border-slate-700 px-6 py-3 rounded-lg print:bg-white print:border-slate-300">
               <div className="text-lime-400 mb-1 print:text-lime-700">3. Act</div>
-              <div className="print:text-slate-900">Apply renames safely</div>
+              <div className="print:text-slate-900">Apply reviewed changes</div>
             </div>
             <ArrowRight className="text-lime-400 print:text-lime-600" />
             <div className="bg-slate-800 border border-slate-700 px-6 py-3 rounded-lg print:bg-white print:border-slate-300">
               <div className="text-lime-400 mb-1 print:text-lime-700">4. Verify</div>
-              <div className="print:text-slate-900">Undo if needed</div>
+              <div className="print:text-slate-900">Retain history; undo if needed</div>
             </div>
           </div>
           <p className="text-slate-300 print:text-slate-700">
-            <span className="text-lime-400 print:text-lime-700">Every design decision supports this flow.</span> Rather than building
-            10 half-finished features, I focused on making these four steps feel natural, safe, and trustworthy.
+            <span className="text-lime-400 print:text-lime-700">Every design decision supports this flow.</span> The important handoffs stay explicit: a file enters the workflow, a suggestion is reviewed, a change is applied, and its previous state stays available.
           </p>
         </div>
       </div>

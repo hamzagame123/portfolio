@@ -4,42 +4,42 @@ const features = [
   {
     icon: Brain,
     title: 'AI-Powered Naming',
-    description: 'Google Gemini analyzes images and generates descriptive filenames automatically',
+    description: 'The web version uses Gemini to propose descriptive names for review',
     color: 'text-purple-600',
     bgColor: 'bg-purple-50'
   },
   {
     icon: Zap,
     title: 'Drag & Drop',
-    description: 'Simple interface: just drag files or folders in to start processing',
+    description: 'File and folder selection explore one-off input and an ongoing folder workflow',
     color: 'text-blue-600',
     bgColor: 'bg-blue-50'
   },
   {
     icon: History,
     title: 'Full History',
-    description: 'Every rename is logged with timestamps for complete audit trail',
+    description: 'History shows original and proposed names, tags, and timestamps',
     color: 'text-orange-600',
     bgColor: 'bg-orange-50'
   },
   {
     icon: Shield,
-    title: 'Safe Operations',
-    description: 'File validation, collision detection, and graceful error handling',
+    title: 'Preview Before Applying',
+    description: 'Separate preview and apply controls make the proposed change explicit',
     color: 'text-teal-600',
     bgColor: 'bg-teal-50'
   },
   {
     icon: Settings2,
     title: 'Undo/Redo',
-    description: 'Instantly revert any rename with full undo/redo stack support',
+    description: 'Visible reversal controls make recoverability part of the desktop design',
     color: 'text-pink-600',
     bgColor: 'bg-pink-50'
   },
   {
     icon: FileCheck,
-    title: 'Smart Detection',
-    description: 'Only renames gibberish files while preserving meaningful names',
+    title: 'Selective Naming',
+    description: 'A heuristic targets unhelpful names; its reliability has not been validated',
     color: 'text-indigo-600',
     bgColor: 'bg-indigo-50'
   }
@@ -50,9 +50,9 @@ export function Features() {
     <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="mb-4">Core Features</h2>
+          <h2 className="mb-4">Controls That Support the Workflow</h2>
           <p className="max-w-2xl mx-auto text-slate-600">
-            Essential functionality that makes file management effortless
+            A summary of the prototype and interface direction; behavior and scope differ between desktop and web.
           </p>
         </div>
         

@@ -4,12 +4,12 @@ const principles = [
   {
     icon: Shield,
     title: 'Safety First',
-    description: 'Every action must be reversible. Users need confidence that they can experiment without risk.',
+    description: 'Preserve the previous state and make recovery visible when a rename changes a file.',
     designDecisions: [
-      'Full undo/redo system',
+      'Visible undo/redo controls',
       'Persistent rename history',
-      'File validation before operations',
-      'Clear error messages'
+      'Original names retained for reference',
+      'A distinct Apply Changes action'
     ],
     color: 'text-teal-600',
     bgColor: 'bg-teal-50'
@@ -17,11 +17,11 @@ const principles = [
   {
     icon: Eye,
     title: 'Transparency',
-    description: 'Show users what the AI is doing and why. No black boxes.',
+    description: 'Show the proposed result in context so a person can judge it.',
     designDecisions: [
       'Preview names before applying',
       'Show original and new names side-by-side',
-      'Visual feedback during processing',
+      'Image beside the proposed name',
       'History log with timestamps'
     ],
     color: 'text-blue-600',
@@ -33,7 +33,7 @@ const principles = [
     description: 'AI suggests, but users decide. Never force automated actions.',
     designDecisions: [
       'Manual approval for each rename',
-      'Ability to edit AI suggestions',
+      'Accept or regenerate suggestions',
       'Option to skip certain files',
       'Customizable AI instructions'
     ],
@@ -43,10 +43,10 @@ const principles = [
   {
     icon: Zap,
     title: 'Simplicity',
-    description: 'Complex operations should feel effortless through thoughtful design.',
+    description: 'Keep the main view focused on the naming decision; put advanced rules in Settings.',
     designDecisions: [
       'Drag-and-drop interface',
-      'Minimal learning curve',
+      'Naming conventions in Settings',
       'Clear visual hierarchy',
       'Focus on core workflow'
     ],
@@ -62,7 +62,7 @@ export function DesignPrinciples() {
         <div className="text-center mb-16">
           <h2 className="mb-4">Design Principles</h2>
           <p className="max-w-2xl mx-auto text-slate-600">
-            Core principles that guided every design decision
+            The priorities I used to shape the review workflow.
           </p>
         </div>
 

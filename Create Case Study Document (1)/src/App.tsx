@@ -29,20 +29,20 @@ export default function App() {
         <UserResearch />
       </section>
       <section id="design">
-        <DesignPrinciples />
-
         <BeforeAfter />
         <TechPivot />
+        <DesignPrinciples />
         <DesignJourney />
+        <Screenshots
+          mainScreenshot={mainScreenshot}
+          settingsScreenshot={settingsScreenshot}
+        />
       </section>
       <section id="features">
         <Features />
         <WebApp />
         <Challenges />
-        <Screenshots
-          mainScreenshot={mainScreenshot}
-          settingsScreenshot={settingsScreenshot}
-        />
+
       </section>
       <section id="results">
         <Results />

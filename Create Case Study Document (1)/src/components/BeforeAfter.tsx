@@ -30,7 +30,7 @@ export function BeforeAfter() {
         <div className="text-center mb-16">
           <h2 className="mb-4 text-white print:text-slate-900">Before & After</h2>
           <p className="max-w-2xl mx-auto text-slate-300 print:text-slate-600">
-            See how AI transforms meaningless filenames into descriptive, searchable names
+            Illustrative naming examples: the goal is a useful proposal that a person can inspect, not a guaranteed description.
           </p>
         </div>
         
@@ -55,7 +55,7 @@ export function BeforeAfter() {
                     <span className="text-slate-400 print:text-slate-600">After</span>
                   </div>
                   <code className="text-lime-400 break-all print:text-lime-700">{example.after}</code>
-                  <div className="text-slate-500 mt-1 print:text-slate-600">(AI-generated)</div>
+                  <div className="text-slate-500 mt-1 print:text-slate-600">(Example proposal)</div>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ export function BeforeAfter() {
         <div className="mt-12 text-center">
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-lime-500/10 border border-lime-500/30 rounded-full print:bg-lime-50 print:border-lime-300">
             <Check className="w-5 h-5 text-lime-400 print:text-lime-600" />
-            <span className="text-lime-400 print:text-lime-700">All names are filename-safe, concise, and immediately understandable</span>
+            <span className="text-lime-400 print:text-lime-700">The goal: descriptive, concise names that can be reviewed before use</span>
           </div>
         </div>
       </div>

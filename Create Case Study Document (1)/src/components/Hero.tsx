@@ -19,31 +19,30 @@ export function Hero() {
         <div className="flex items-center gap-3 mb-8">
           <Zap className="w-6 h-6 text-lime-400 print:text-lime-600" />
           <p className="text-xl text-lime-400 print:text-lime-700">
-            Designing an AI-Powered Tool That Transforms File Chaos Into Organized Clarity
+            From a repetitive file task to a review workflow
           </p>
         </div>
 
         <p className="max-w-2xl text-slate-300 mb-8 print:text-slate-700">
-          How I designed and built an MVP desktop application that uses AI to automatically rename image files
-          with descriptive names, solving a daily frustration for creative professionals managing thousands of files.
+          I started with images whose filenames told me very little. I shaped a tool around the decisions that followed: inspect a suggested name, choose what changes, and keep a way back.
         </p>
 
         <div className="flex flex-wrap gap-6 mb-12">
           <div>
             <div className="text-slate-400 mb-1 print:text-slate-600">Role</div>
-            <div className="print:text-slate-900">UX/Product Designer</div>
+            <div className="print:text-slate-900">Workflow, UI & AI-assisted build</div>
           </div>
           <div>
             <div className="text-slate-400 mb-1 print:text-slate-600">Timeline</div>
-            <div className="print:text-slate-900">4 weeks (Solo project)</div>
+            <div className="print:text-slate-900">2025 · Self-directed iterations</div>
           </div>
           <div>
             <div className="text-slate-400 mb-1 print:text-slate-600">Deliverable</div>
-            <div className="print:text-slate-900">Functional MVP</div>
+            <div className="print:text-slate-900">Desktop prototype + web adaptation</div>
           </div>
           <div>
             <div className="text-slate-400 mb-1 print:text-slate-600">Focus</div>
-            <div className="text-lime-400 print:text-lime-700">Trust, Control, Simplicity</div>
+            <div className="text-lime-400 print:text-lime-700">Review, Control, Recovery</div>
           </div>
         </div>
 

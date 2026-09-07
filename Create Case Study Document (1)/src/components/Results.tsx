@@ -21,9 +21,9 @@ export function Results() {
           ))}
         </div>
         <div className="bg-slate-800 border border-slate-700 rounded-xl p-8 mb-12 print:bg-white">
-          <h3 className="text-white mb-4 print:text-slate-900">The design lesson</h3>
+          <h3 className="text-white mb-4 print:text-slate-900">What I Learned</h3>
           <p className="text-slate-300 mb-4 print:text-slate-600">Moving from desktop to web changed the meaning of a rename. On desktop, the action changes a file in place and needs a recovery path. In the web demo, the action creates a download and preserves the source file. The interface needs to explain that difference.</p>
-          <p className="text-slate-300 print:text-slate-600">Building the interaction helped me work through those states. It does not tell me whether people find the tool easier or more trustworthy. That requires observing real use.</p>
+          <p className="text-slate-300 print:text-slate-600">I learned that generating a plausible answer was only the starting point. The design work was making that answer inspectable, controllable, convention-aware, and reversible. Testing still needs to establish whether the workflow helps people organize and find their images.</p>
         </div>
         <h3 className="text-white mb-4 print:text-slate-900">Next steps</h3>
         <ul className="space-y-4 text-slate-300 print:text-slate-600">

@@ -8,9 +8,9 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
     <section className="bg-slate-50 py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="mb-4">Future Vision: Electron UI Design</h2>
+          <h2 className="mb-4">Later Interface Exploration</h2>
           <p className="max-w-2xl mx-auto text-slate-600">
-            Proposed interface design for the next iteration: a cross-platform Electron app with enhanced features
+            These existing screens show how the review workflow expanded into history, preview, queue, and settings. Entries and image placeholders illustrate the design.
           </p>
         </div>
 
@@ -22,28 +22,28 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
                 <span className="px-3 py-1 bg-slate-700 text-white rounded-full">Design Mockup</span>
               </div>
               <p className="text-slate-600">
-                Enhanced three-panel layout with visual queue management, improved preview, and integrated settings
+                History keeps original and proposed names together. The preview supports inspection, while the queue separates incoming work.
               </p>
             </div>
             <div className="bg-slate-900 rounded-lg overflow-hidden shadow-xl">
               <img
                 src={mainScreenshot}
-                alt="Future Electron interface design showing enhanced UI with queue panel and improved styling"
+                alt="Later interface exploration showing history, image preview, queue, Preview Mode and Apply Changes"
                 className="w-full h-auto"
               />
             </div>
             <div className="mt-4 grid md:grid-cols-3 gap-4 text-slate-600">
               <div className="bg-white rounded-lg p-4">
-                <div className="text-slate-900 mb-1">New Features</div>
-                <div>Queue panel, tag presets, advanced filtering</div>
+                <div className="text-slate-900 mb-1">History & Queue</div>
+                <div>Previous changes stay separate from incoming files</div>
               </div>
               <div className="bg-white rounded-lg p-4">
-                <div className="text-slate-900 mb-1">Enhanced UX</div>
-                <div>Folder watching, batch operations, custom instructions</div>
+                <div className="text-slate-900 mb-1">Review Controls</div>
+                <div>Preview and Apply Changes are distinct actions</div>
               </div>
               <div className="bg-white rounded-lg p-4">
-                <div className="text-slate-900 mb-1">Technology</div>
-                <div>Electron + React + Tailwind CSS</div>
+                <div className="text-slate-900 mb-1">Artifact Context</div>
+                <div>Later interface exploration; not the original March UI</div>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
                 <span className="px-3 py-1 bg-slate-700 text-white rounded-full">Design Mockup</span>
               </div>
               <p className="text-slate-600">
-                Comprehensive settings for folder watching, naming conventions, custom AI instructions, and tag management
+                Separators, casing, custom instructions, and tags let names fit an existing filing convention. Folder watching is an explored direction.
               </p>
             </div>
             <div className="bg-slate-900 rounded-lg overflow-hidden shadow-xl">
@@ -66,11 +66,9 @@ export function Screenshots({ mainScreenshot, settingsScreenshot }: ScreenshotsP
               />
             </div>
             <div className="mt-4 bg-white rounded-lg p-4">
-              <div className="text-slate-900 mb-2">Migration Path</div>
+              <div className="text-slate-900 mb-2">Why Settings Is Separate</div>
               <p className="text-slate-600">
-                With the working Python prototype demonstrating the core logic and user flow, these designs represent
-                the natural evolution, adding power user features while maintaining the simple, focused experience
-                that makes the tool trustworthy.
+                I kept naming rules and automation away from the main review step. The tradeoff is discoverability: settings may be harder to find. Pictured controls show design intent, not proof that every feature was implemented or validated.
               </p>
             </div>
           </div>

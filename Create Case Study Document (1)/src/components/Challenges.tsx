@@ -3,30 +3,30 @@ import { AlertTriangle, CheckCircle2, Shield, Brain, Users, Zap } from 'lucide-r
 const challenges = [
   {
     icon: Shield,
-    title: 'Building Trust in Automation',
-    challenge: 'Users fear AI tools will break their files or make irreversible mistakes',
-    solution: 'Designed preview-before-action workflow, complete undo system, and persistent history to build confidence through transparency',
+    title: 'Review Effort',
+    challenge: 'Checking every suggestion adds work to a task meant to become less repetitive',
+    solution: 'Keep review before application, then test when individual approval helps and when batch review is more appropriate',
     color: 'text-teal-600'
   },
   {
     icon: Brain,
-    title: 'Communicating AI Behavior',
-    challenge: 'AI responses are unpredictable. How do you show users what the AI "thinks" without technical jargon?',
-    solution: 'Focused on showing results, not process. Display suggested filename with visual preview so users can verify accuracy instantly',
+    title: 'Incorrect Suggestions',
+    challenge: 'A confident-sounding filename can misdescribe the image',
+    solution: 'Show the image and proposed name together; test whether someone catches an inaccurate description and regenerates it',
     color: 'text-purple-600'
   },
   {
     icon: Users,
-    title: 'Balancing Control vs. Automation',
-    challenge: 'Too much automation feels risky; too much manual work defeats the purpose',
-    solution: 'Designed hybrid approach: AI suggests, user approves. Made approval effortless with single-click actions and batch support',
+    title: 'Settings Discoverability',
+    challenge: 'Moving naming rules out of the main view makes them less visible',
+    solution: 'Keep the review view focused, then test whether people can find separator, casing, and instruction controls',
     color: 'text-orange-600'
   },
   {
     icon: Zap,
-    title: 'Managing Cognitive Load',
-    challenge: 'Users need to verify AI accuracy while processing hundreds of files, and mental fatigue is real',
-    solution: 'Three-panel layout separates concerns: history (what happened), preview (what\'s next), image (context for verification)',
+    title: 'Growing Beyond One File',
+    challenge: 'The queue suggests a batch workflow, but performance and review effort at scale are unmeasured',
+    solution: 'Test the core sequence with a small set of files before expanding watched folders or making throughput claims',
     color: 'text-blue-600'
   }
 ];
@@ -39,9 +39,9 @@ export function Challenges() {
           <AlertTriangle className="w-6 h-6 text-amber-600" />
           <span className="text-amber-600 uppercase tracking-wider">Design Challenges</span>
         </div>
-        <h2 className="mb-4">UX Obstacles & Solutions</h2>
+        <h2 className="mb-4">Tradeoffs I Still Need to Test</h2>
         <p className="max-w-2xl mx-auto text-slate-600">
-          Key design challenges and how I addressed them through interaction patterns
+          These are open design questions, not issues that the prototype has already proven it solves.
         </p>
       </div>
       
@@ -66,7 +66,7 @@ export function Challenges() {
               <div className="flex gap-3">
                 <CheckCircle2 className="w-5 h-5 text-lime-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-lime-700 mb-1">Design Solution</div>
+                  <div className="text-lime-700 mb-1">Design Response / Next Test</div>
                   <p className="text-slate-700">{item.solution}</p>
                 </div>
               </div>
