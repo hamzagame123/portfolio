@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locavore — Mobile Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="mobile-polish.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <style>
+        /* Phosphor Icon Styling for Locavore */
+        .ph, .ph-fill, .ph-duotone {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Duotone color customization */
+        .ph-duotone {
+            --ph-duotone-primary: #4A7C59;
+            --ph-duotone-secondary: #7ab18a;
+        }
+        .icon-terracotta { color: #c76f51; }
+        .icon-amber { color: #e6a756; }
+        .icon-forest { color: #4A7C59; }
+        .icon-leaf { color: #7ab18a; }
+        .icon-white { color: white; }
+        .icon-sm { font-size: 16px; }
+        .icon-md { font-size: 20px; }
+        .icon-lg { font-size: 24px; }
+        .icon-xl { font-size: 32px; }
+        .icon-2xl { font-size: 40px; }
+    </style>
+</head>
+<body>
+    <div class="iphone-frame">
+        <div class="iphone-notch"></div>
+        <div class="iphone-screen">
+            <!-- Splash Screen -->
+            <div class="screen splash-screen active" id="splash">
+                <div class="splash-content">
+                    <div class="splash-logo">
+                        <h1 class="splash-title">Locavore</h1>
+                        <p class="splash-tagline">Good food. Familiar faces.</p>
+                    </div>
+                    <div class="splash-loader">
+                        <div class="loader-dot"></div>
+                        <div class="loader-dot"></div>
+                        <div class="loader-dot"></div>
+                    </div>
+                </div>
+                <div class="splash-bg-pattern"></div>
+            </div>
+
+            <!-- Onboarding Screens -->
+            <div class="screen onboarding-screen" id="onboarding">
+                <div class="onboarding-slides">
+                    <div class="onboarding-slide active" data-slide="0">
+                        <div class="onboarding-photo">
+                            <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&h=900&fit=crop" alt="Fresh produce piled high at a farmers market">
+                            <span class="photo-wordmark">Locavore</span>
+                        </div>
+                        <div class="onboarding-content">
+                            <h2>Your weekend,<br>a little more local.</h2>
+                            <p>Find a market worth getting up for. Fresh food, local growers, and a good reason to get together.</p>
+                        </div>
+                    </div>
+                    <div class="onboarding-slide" data-slide="1">
+                        <div class="onboarding-photo">
+                            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=800&h=900&fit=crop" alt="Ripe tomatoes on the vine">
+                            <span class="photo-wordmark">Picked with care.</span>
+                        </div>
+                        <div class="onboarding-content">
+                            <h2>Meet the people<br>behind your food.</h2>
+                            <p>Get to know a farm, browse what’s in season, and find your favorite growers again.</p>
+                        </div>
+                    </div>
+                    <div class="onboarding-slide" data-slide="2">
+                        <div class="onboarding-photo">
+                            <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=800&h=900&fit=crop" alt="An outdoor market with stalls to explore">
+                            <span class="photo-wordmark">Better together.</span>
+                        </div>
+                        <div class="onboarding-content">
+                            <h2>Make market day<br>a shared ritual.</h2>
+                            <p>See who’s going, invite a friend, and turn a quick shop into a morning together.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="onboarding-footer">
+                    <div class="onboarding-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="btn-primary onboarding-next">Continue</button>
+                    <button class="btn-text onboarding-skip">Skip</button>
+                </div>
+            </div>
+
+            <!-- Location Permission Screen -->
+            <div class="screen location-screen" id="location">
+                <div class="location-content">
+                    <div class="location-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="35" stroke="currentColor" stroke-width="3" stroke-dasharray="8 4"/>
+                            <circle cx="40" cy="35" r="12" fill="currentColor"/>
+                            <path d="M40 47L50 65H30L40 47Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h2>Find Local Farms Near You</h2>
+                    <p>Enable location to discover fresh produce from farmers in your area</p>
+                    <div class="location-preview">
+                        <span class="location-pin"><i class="ph-duotone ph-map-pin icon-terracotta icon-lg"></i></span>
+                        <span>Toronto, Ontario</span>
+                    </div>
+                    <button class="btn-primary" onclick="showScreen('home')">Enable Location</button>
+                    <button class="btn-text" onclick="showScreen('home')">Enter Manually</button>
+                </div>
+            </div>
+
+            <!-- Home Screen -->
+            <div class="screen home-screen" id="home">
+                <div class="home-header">
+                    <div class="header-location">
+                        <span class="location-icon-small"><i class="ph-fill ph-map-pin icon-forest icon-sm"></i></span>
+                        <span class="location-text">Toronto, Ontario</span>
+                        <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="header-actions">
+                        <button class="icon-btn notification-btn">
+                            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                            <span class="notification-badge">3</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="home-content">
+                    <div class="greeting-section">
+                        <h1>Good Morning, <span class="user-name">Hamza</span> <i class="ph-duotone ph-hand-waving icon-amber"></i></h1>
+                        <p class="greeting-subtitle">What fresh goodness are you looking for today?</p>
+                    </div>
+
+                    <div class="search-bar" onclick="showScreen('search')">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        <span>Search farms, products...</span>
+                    </div>
+
+                    <div class="seasonal-banner">
+                        <div class="banner-content">
+                            <span class="banner-tag">In Season Now</span>
+                            <h3>The autumn table.</h3>
+                            <p>Apples, squash &amp; something fresh for dinner.</p>
+                        </div>
+                        <img class="harvest-photo" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=360&h=500&fit=crop" alt="Seasonal produce">
+                    </div>
+
+                    <section class="categories-section">
+                        <div class="section-header">
+                            <h2>Categories</h2>
+                        </div>
+                        <div class="categories-scroll">
+                            <div class="category-item" onclick="filterCategory('vegetables')">
+                                <div class="category-icon"><i class="ph-duotone ph-leaf icon-forest icon-xl"></i></div>
+                                <span>Vegetables</span>
+                            </div>
+                            <div class="category-item" onclick="filterCategory('fruits')">
+                                <div class="category-icon"><i class="ph-duotone ph-apple-logo icon-terracotta icon-xl"></i></div>
+                                <span>Fruits</span>
+                            </div>
+                            <div class="category-item" onclick="filterCategory('dairy')">
+                                <div class="category-icon"><i class="ph-duotone ph-drop icon-amber icon-xl"></i></div>
+                                <span>Dairy</span>
+                            </div>
+                            <div class="category-item" onclick="filterCategory('eggs')">
+                                <div class="category-icon"><i class="ph-duotone ph-egg icon-amber icon-xl"></i></div>
+                                <span>Eggs</span>
+                            </div>
+                            <div class="category-item" onclick="filterCategory('honey')">
+                                <div class="category-icon"><i class="ph-duotone ph-jar icon-amber icon-xl"></i></div>
+                                <span>Honey</span>
+                            </div>
+                            <div class="category-item" onclick="filterCategory('meat')">
+                                <div class="category-icon"><i class="ph-duotone ph-knife icon-terracotta icon-xl"></i></div>
+                                <span>Meat</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="farms-section">
+                        <div class="section-header">
+                            <h2>Nearby Farms</h2>
+                            <a href="#" class="see-all">See all</a>
+                        </div>
+                        <div class="farms-scroll">
+                            <div class="farm-card" onclick="showScreen('farmer-profile')">
+                                <div class="farm-image">
+                                    <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=300&h=200&fit=crop" alt="Green Acres Farm">
+                                    <span class="farm-badge verified"><i class="ph-fill ph-seal-check"></i> Verified</span>
+                                </div>
+                                <div class="farm-info">
+                                    <h3>Green Acres Farm</h3>
+                                    <p class="farm-distance">2.4 km away</p>
+                                    <div class="farm-meta">
+                                        <span class="farm-rating"><i class="ph-fill ph-star icon-amber"></i> 4.9</span>
+                                        <span class="farm-type">Organic</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="farm-card">
+                                <div class="farm-image">
+                                    <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=300&h=200&fit=crop" alt="Sunny Vale">
+                                    <span class="farm-badge organic"><i class="ph-duotone ph-leaf icon-forest"></i> Organic</span>
+                                </div>
+                                <div class="farm-info">
+                                    <h3>Sunny Vale Organics</h3>
+                                    <p class="farm-distance">3.8 km away</p>
+                                    <div class="farm-meta">
+                                        <span class="farm-rating"><i class="ph-fill ph-star icon-amber"></i> 4.7</span>
+                                        <span class="farm-type">Vegetables</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="farm-card">
+                                <div class="farm-image">
+                                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=300&h=200&fit=crop" alt="Heritage Farm">
+                                </div>
+                                <div class="farm-info">
+                                    <h3>Heritage Homestead</h3>
+                                    <p class="farm-distance">5.2 km away</p>
+                                    <div class="farm-meta">
+                                        <span class="farm-rating"><i class="ph-fill ph-star icon-amber"></i> 4.8</span>
+                                        <span class="farm-type">Mixed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="products-section">
+                        <div class="section-header">
+                            <h2>Fresh Today</h2>
+                            <a href="#" class="see-all">See all</a>
+                        </div>
+                        <div class="products-grid">
+                            <div class="product-card" onclick="showScreen('product-detail')">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=200&h=200&fit=crop" alt="Fresh Tomatoes">
+                                    <button class="favorite-btn"><i class="ph ph-heart"></i></button>
+                                    <span class="product-tag seasonal">Seasonal</span>
+                                </div>
+                                <div class="product-info">
+                                    <h4>Heirloom Tomatoes</h4>
+                                    <p class="product-farm">Green Acres Farm</p>
+                                    <div class="product-footer">
+                                        <span class="product-price">$4.99<small>/lb</small></span>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=200&h=200&fit=crop" alt="Fresh Eggs">
+                                    <button class="favorite-btn"><i class="ph ph-heart"></i></button>
+                                    <span class="product-tag organic">Organic</span>
+                                </div>
+                                <div class="product-info">
+                                    <h4>Free-Range Eggs</h4>
+                                    <p class="product-farm">Sunny Vale Organics</p>
+                                    <div class="product-footer">
+                                        <span class="product-price">$6.50<small>/dozen</small></span>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=200&h=200&fit=crop" alt="Honey">
+                                    <button class="favorite-btn"><i class="ph ph-heart"></i></button>
+                                </div>
+                                <div class="product-info">
+                                    <h4>Raw Wildflower Honey</h4>
+                                    <p class="product-farm">Heritage Homestead</p>
+                                    <div class="product-footer">
+                                        <span class="product-price">$12.00<small>/jar</small></span>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1590868309235-ea34bed7bd7f?w=200&h=200&fit=crop" alt="Lettuce">
+                                    <button class="favorite-btn"><i class="ph ph-heart"></i></button>
+                                    <span class="product-tag seasonal">Seasonal</span>
+                                </div>
+                                <div class="product-info">
+                                    <h4>Butter Lettuce</h4>
+                                    <p class="product-farm">Green Acres Farm</p>
+                                    <div class="product-footer">
+                                        <span class="product-price">$3.25<small>/head</small></span>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Upcoming Markets Section -->
+                    <section class="home-markets-section">
+                        <div class="section-header">
+                            <h2>Nearby Markets</h2>
+                            <a href="#" class="see-all" onclick="event.preventDefault(); showScreen('markets')">See all</a>
+                        </div>
+                        <div class="home-market-card" onclick="showScreen('market-detail')">
+                            <div class="home-market-image">
+                                <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=120&h=80&fit=crop" alt="St. Lawrence Market">
+                                <div class="home-market-date">
+                                    <span class="day">SAT</span>
+                                    <span class="num">7</span>
+                                </div>
+                            </div>
+                            <div class="home-market-info">
+                                <h4>St. Lawrence Market</h4>
+                                <p class="home-market-time">Saturday, 5AM - 3PM</p>
+                                <div class="home-market-social">
+                                    <div class="mini-avatars">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=20&h=20&fit=crop" alt="">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=20&h=20&fit=crop" alt="">
+                                    </div>
+                                    <span>Sarah & Mike going</span>
+                                </div>
+                            </div>
+                            <span class="home-market-distance">1.2 km</span>
+                        </div>
+                        <div class="home-market-card" onclick="showScreen('market-detail')">
+                            <div class="home-market-image">
+                                <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=120&h=80&fit=crop" alt="Evergreen">
+                                <div class="home-market-date">
+                                    <span class="day">SUN</span>
+                                    <span class="num">8</span>
+                                </div>
+                            </div>
+                            <div class="home-market-info">
+                                <h4>Evergreen Brick Works</h4>
+                                <p class="home-market-time">Sunday, 8AM - 1PM</p>
+                                <div class="home-market-social">
+                                    <div class="mini-avatars">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=20&h=20&fit=crop" alt="">
+                                    </div>
+                                    <span>Emma going</span>
+                                </div>
+                            </div>
+                            <span class="home-market-distance">3.5 km</span>
+                        </div>
+                    </section>
+
+                    <section class="impact-section">
+                        <div class="impact-card">
+                            <h3>Your Impact This Month</h3>
+                            <div class="impact-stats">
+                                <div class="impact-stat">
+                                    <span class="stat-value">12</span>
+                                    <span class="stat-label">Local Farmers Supported</span>
+                                </div>
+                                <div class="impact-stat">
+                                    <span class="stat-value">45kg</span>
+                                    <span class="stat-label">CO₂ Saved</span>
+                                </div>
+                                <div class="impact-stat">
+                                    <span class="stat-value">$240</span>
+                                    <span class="stat-label">Spent Locally</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Bottom Navigation -->
+                <nav class="bottom-nav">
+                    <button class="nav-item active" onclick="showScreen('home')">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Home</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('cart')">
+                        <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span>Cart</span>
+                        <span class="cart-badge">2</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('messages')">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span>Messages</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('profile')">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Profile</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Search Screen -->
+            <div class="screen search-screen" id="search">
+                <div class="search-header">
+                    <button class="back-btn" onclick="showScreen('home')">
+                        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <div class="search-input-container">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        <input type="text" placeholder="Search farms, products..." autofocus>
+                    </div>
+                    <button class="filter-btn">
+                        <svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/></svg>
+                    </button>
+                </div>
+
+                <div class="search-content">
+                    <div class="search-filters">
+                        <button class="filter-chip active">All</button>
+                        <button class="filter-chip">Organic</button>
+                        <button class="filter-chip">< 5km</button>
+                        <button class="filter-chip">Seasonal</button>
+                        <button class="filter-chip">Verified</button>
+                    </div>
+
+                    <section class="recent-searches">
+                        <h3>Recent Searches</h3>
+                        <div class="recent-list">
+                            <div class="recent-item">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>Organic tomatoes</span>
+                            </div>
+                            <div class="recent-item">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>Free-range eggs</span>
+                            </div>
+                            <div class="recent-item">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>Local honey</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="trending-section">
+                        <h3>Trending Now</h3>
+                        <div class="trending-grid">
+                            <div class="trending-item">
+                                <span class="trending-icon"><i class="ph-duotone ph-pumpkin icon-amber"></i></span>
+                                <span>Pumpkins</span>
+                            </div>
+                            <div class="trending-item">
+                                <span class="trending-icon"><i class="ph-duotone ph-apple-logo icon-terracotta"></i></span>
+                                <span>Apples</span>
+                            </div>
+                            <div class="trending-item">
+                                <span class="trending-icon"><i class="ph-duotone ph-carrot icon-amber"></i></span>
+                                <span>Carrots</span>
+                            </div>
+                            <div class="trending-item">
+                                <span class="trending-icon"><i class="ph-duotone ph-circles-three icon-amber"></i></span>
+                                <span>Onions</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="search-results">
+                        <h3>Popular Products</h3>
+                        <div class="results-list">
+                            <div class="result-item" onclick="showScreen('product-detail')">
+                                <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=80&h=80&fit=crop" alt="Tomatoes">
+                                <div class="result-info">
+                                    <h4>Heirloom Tomatoes</h4>
+                                    <p>Green Acres Farm • 2.4 km</p>
+                                    <span class="result-price">$4.99/lb</span>
+                                </div>
+                                <button class="add-btn-small">+</button>
+                            </div>
+                            <div class="result-item">
+                                <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=80&h=80&fit=crop" alt="Eggs">
+                                <div class="result-info">
+                                    <h4>Free-Range Eggs</h4>
+                                    <p>Sunny Vale Organics • 3.8 km</p>
+                                    <span class="result-price">$6.50/dozen</span>
+                                </div>
+                                <button class="add-btn-small">+</button>
+                            </div>
+                            <div class="result-item">
+                                <img src="https://images.unsplash.com/photo-1619546813926-a78fa6372cd2?w=80&h=80&fit=crop" alt="Apples">
+                                <div class="result-info">
+                                    <h4>Honeycrisp Apples</h4>
+                                    <p>Heritage Homestead • 5.2 km</p>
+                                    <span class="result-price">$5.99/lb</span>
+                                </div>
+                                <button class="add-btn-small">+</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <nav class="bottom-nav">
+                    <button class="nav-item" onclick="showScreen('home')">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Home</span>
+                    </button>
+                    <button class="nav-item active" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('cart')">
+                        <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span>Cart</span>
+                        <span class="cart-badge">2</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('messages')">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span>Messages</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('profile')">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Profile</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Markets Screen -->
+            <div class="screen markets-screen" id="markets">
+                <div class="markets-header">
+                    <div class="header-location">
+                        <span class="location-icon-small"><i class="ph-fill ph-map-pin icon-forest icon-sm"></i></span>
+                        <span class="location-text">Toronto, Ontario</span>
+                    </div>
+                    <h1>Farmers Markets</h1>
+                </div>
+
+                <div class="markets-content">
+                    <!-- This Week Banner -->
+                    <div class="markets-week-banner">
+                        <span class="week-label">This Week</span>
+                        <h3>5 Markets Near You</h3>
+                        <p>Find fresh produce & connect with your community</p>
+                    </div>
+
+                    <!-- Friends Going Section -->
+                    <section class="friends-going-section">
+                        <div class="section-header">
+                            <h2>Friends Going This Week</h2>
+                        </div>
+                        <div class="friends-going-scroll">
+                            <div class="friend-going-card" onclick="showScreen('market-detail')">
+                                <div class="friend-avatars">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="Sarah">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="Mike" class="overlap">
+                                    <span class="more-friends">+3</span>
+                                </div>
+                                <div class="friend-going-info">
+                                    <h4>St. Lawrence Market</h4>
+                                    <p>Sarah, Mike & 3 others going</p>
+                                    <span class="friend-going-time">Saturday, 8AM</span>
+                                </div>
+                            </div>
+                            <div class="friend-going-card">
+                                <div class="friend-avatars">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt="Emma">
+                                </div>
+                                <div class="friend-going-info">
+                                    <h4>Evergreen Brick Works</h4>
+                                    <p>Emma is going</p>
+                                    <span class="friend-going-time">Sunday, 10AM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Upcoming Markets -->
+                    <section class="upcoming-markets-section">
+                        <div class="section-header">
+                            <h2>Upcoming Markets</h2>
+                            <a href="#" class="see-all">See all</a>
+                        </div>
+                        
+                        <div class="market-card featured" onclick="showScreen('market-detail')">
+                            <div class="market-image">
+                                <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&h=200&fit=crop" alt="St. Lawrence Market">
+                                <div class="market-date-badge">
+                                    <span class="day">SAT</span>
+                                    <span class="date">7</span>
+                                </div>
+                                <div class="market-going-badge">
+                                    <span><i class="ph-fill ph-users icon-white"></i> 24 going</span>
+                                </div>
+                            </div>
+                            <div class="market-info">
+                                <div class="market-header-row">
+                                    <h3>St. Lawrence Market</h3>
+                                    <span class="market-distance">1.2 km</span>
+                                </div>
+                                <p class="market-address">93 Front St E, Toronto</p>
+                                <div class="market-meta">
+                                    <span class="market-time"><i class="ph-duotone ph-clock icon-forest"></i> 5:00 AM - 3:00 PM</span>
+                                    <span class="market-vendors"><i class="ph-duotone ph-storefront icon-forest"></i> 120+ vendors</span>
+                                </div>
+                                <div class="market-friends-preview">
+                                    <div class="mini-avatars">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=24&h=24&fit=crop" alt="">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=24&h=24&fit=crop" alt="">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=24&h=24&fit=crop" alt="">
+                                    </div>
+                                    <span>Sarah & 2 friends going</span>
+                                </div>
+                                <button class="btn-going" onclick="event.stopPropagation(); toggleGoing(this)">
+                                    <span class="going-text">I'm Going</span>
+                                    <span class="check-icon"><i class="ph-fill ph-check"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="market-card" onclick="showScreen('market-detail')">
+                            <div class="market-image small">
+                                <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=150&h=150&fit=crop" alt="Evergreen Brick Works">
+                                <div class="market-date-badge small">
+                                    <span class="day">SUN</span>
+                                    <span class="date">8</span>
+                                </div>
+                            </div>
+                            <div class="market-info">
+                                <h3>Evergreen Brick Works</h3>
+                                <p class="market-address">550 Bayview Ave</p>
+                                <div class="market-meta">
+                                    <span class="market-time"><i class="ph-duotone ph-clock icon-forest"></i> 8AM - 1PM</span>
+                                    <span class="market-going-count"><i class="ph-fill ph-users"></i> 18 going</span>
+                                </div>
+                                <button class="btn-going small" onclick="event.stopPropagation(); toggleGoing(this)">
+                                    <span class="going-text">Going?</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="market-card" onclick="showScreen('market-detail')">
+                            <div class="market-image small">
+                                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=150&h=150&fit=crop" alt="Wychwood Barns">
+                                <div class="market-date-badge small">
+                                    <span class="day">SAT</span>
+                                    <span class="date">7</span>
+                                </div>
+                            </div>
+                            <div class="market-info">
+                                <h3>Wychwood Barns Market</h3>
+                                <p class="market-address">601 Christie St</p>
+                                <div class="market-meta">
+                                    <span class="market-time"><i class="ph-duotone ph-clock icon-forest"></i> 8AM - 12PM</span>
+                                    <span class="market-going-count"><i class="ph-fill ph-users"></i> 12 going</span>
+                                </div>
+                                <button class="btn-going small" onclick="event.stopPropagation(); toggleGoing(this)">
+                                    <span class="going-text">Going?</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="market-card" onclick="showScreen('market-detail')">
+                            <div class="market-image small">
+                                <img src="https://images.unsplash.com/photo-1464454709131-ffd692591ee5?w=150&h=150&fit=crop" alt="Trinity Bellwoods">
+                                <div class="market-date-badge small">
+                                    <span class="day">TUE</span>
+                                    <span class="date">10</span>
+                                </div>
+                            </div>
+                            <div class="market-info">
+                                <h3>Trinity Bellwoods Market</h3>
+                                <p class="market-address">790 Queen St W</p>
+                                <div class="market-meta">
+                                    <span class="market-time"><i class="ph-duotone ph-clock icon-forest"></i> 3PM - 7PM</span>
+                                    <span class="market-going-count"><i class="ph-fill ph-users"></i> 8 going</span>
+                                </div>
+                                <button class="btn-going small" onclick="event.stopPropagation(); toggleGoing(this)">
+                                    <span class="going-text">Going?</span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Your Favorite Markets -->
+                    <section class="favorite-markets-section">
+                        <div class="section-header">
+                            <h2>Your Favorites</h2>
+                        </div>
+                        <div class="favorite-market-item">
+                            <span class="fav-icon"><i class="ph-fill ph-star icon-amber"></i></span>
+                            <div class="fav-info">
+                                <h4>Leslieville Farmers Market</h4>
+                                <p>Sundays, 9AM - 2PM</p>
+                            </div>
+                            <span class="fav-notify"><i class="ph-fill ph-bell icon-forest"></i></span>
+                        </div>
+                        <div class="favorite-market-item">
+                            <span class="fav-icon"><i class="ph-fill ph-star icon-amber"></i></span>
+                            <div class="fav-info">
+                                <h4>Dufferin Grove Market</h4>
+                                <p>Thursdays, 3PM - 7PM</p>
+                            </div>
+                            <span class="fav-notify"><i class="ph-fill ph-bell icon-forest"></i></span>
+                        </div>
+                    </section>
+                </div>
+
+                <nav class="bottom-nav">
+                    <button class="nav-item" onclick="showScreen('home')">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Home</span>
+                    </button>
+                    <button class="nav-item active" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('cart')">
+                        <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span>Cart</span>
+                        <span class="cart-badge">2</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('messages')">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span>Messages</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('profile')">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Profile</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Market Detail Screen -->
+            <div class="screen market-detail-screen" id="market-detail">
+                <div class="market-detail-header">
+                    <button class="back-btn light" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="share-btn light">
+                        <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    </button>
+                </div>
+
+                <div class="market-hero">
+                    <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&h=300&fit=crop" alt="St. Lawrence Market">
+                    <div class="market-hero-overlay">
+                        <div class="market-hero-badge">
+                            <span class="day">SATURDAY</span>
+                            <span class="date">December 7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="market-detail-content">
+                    <div class="market-title-section">
+                        <h1>St. Lawrence Market</h1>
+                        <p class="market-tagline">Toronto's Premier Farmers Market Since 1803</p>
+                        <div class="market-location-row">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>93 Front St E, Toronto • 1.2 km away</span>
+                        </div>
+                    </div>
+
+                    <div class="market-time-card">
+                        <div class="time-info">
+                            <span class="time-icon"><i class="ph-duotone ph-clock icon-forest icon-lg"></i></span>
+                            <div>
+                                <h4>Saturday Market</h4>
+                                <p>5:00 AM - 3:00 PM</p>
+                            </div>
+                        </div>
+                        <button class="btn-reminder">
+                            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                            Remind Me
+                        </button>
+                    </div>
+
+                    <!-- Who's Going Section -->
+                    <div class="whos-going-section">
+                        <div class="section-header">
+                            <h3>Who's Going</h3>
+                            <span class="going-count">24 people</span>
+                        </div>
+                        <div class="going-avatars-large">
+                            <div class="going-person">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop" alt="Sarah">
+                                <span class="going-name">Sarah</span>
+                                <span class="friend-badge">Friend</span>
+                            </div>
+                            <div class="going-person">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop" alt="Mike">
+                                <span class="going-name">Mike</span>
+                                <span class="friend-badge">Friend</span>
+                            </div>
+                            <div class="going-person">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop" alt="Emma">
+                                <span class="going-name">Emma</span>
+                                <span class="friend-badge">Friend</span>
+                            </div>
+                            <div class="going-person more">
+                                <span class="more-count">+21</span>
+                                <span class="going-name">Others</span>
+                            </div>
+                        </div>
+                        <button class="btn-invite">
+                            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                            Invite Friends
+                        </button>
+                    </div>
+
+                    <!-- Featured Vendors -->
+                    <section class="featured-vendors-section">
+                        <div class="section-header">
+                            <h3>Featured Vendors</h3>
+                            <span class="vendor-count">120+ vendors</span>
+                        </div>
+                        <div class="vendors-scroll">
+                            <div class="vendor-card" onclick="showScreen('farmer-profile')">
+                                <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=100&h=100&fit=crop" alt="Green Acres">
+                                <h4>Green Acres Farm</h4>
+                                <p>Organic Vegetables</p>
+                                <span class="vendor-badge"><i class="ph-fill ph-star icon-amber"></i> 4.9</span>
+                            </div>
+                            <div class="vendor-card">
+                                <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=100&h=100&fit=crop" alt="Sunny Vale">
+                                <h4>Sunny Vale</h4>
+                                <p>Dairy & Eggs</p>
+                                <span class="vendor-badge"><i class="ph-fill ph-star icon-amber"></i> 4.7</span>
+                            </div>
+                            <div class="vendor-card">
+                                <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=100&h=100&fit=crop" alt="Heritage">
+                                <h4>Heritage Honey</h4>
+                                <p>Honey & Preserves</p>
+                                <span class="vendor-badge"><i class="ph-fill ph-star icon-amber"></i> 4.8</span>
+                            </div>
+                            <div class="vendor-card">
+                                <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=100&h=100&fit=crop" alt="Bakery">
+                                <h4>Artisan Bakery</h4>
+                                <p>Fresh Bread</p>
+                                <span class="vendor-badge"><i class="ph-fill ph-star icon-amber"></i> 4.9</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- What to Expect -->
+                    <section class="what-to-expect">
+                        <h3>What to Expect</h3>
+                        <div class="expect-grid">
+                            <div class="expect-item">
+                                <span class="expect-icon"><i class="ph-duotone ph-leaf icon-forest icon-lg"></i></span>
+                                <span>Fresh Produce</span>
+                            </div>
+                            <div class="expect-item">
+                                <span class="expect-icon"><i class="ph-duotone ph-bowl-food icon-amber icon-lg"></i></span>
+                                <span>Artisan Cheese</span>
+                            </div>
+                            <div class="expect-item">
+                                <span class="expect-icon"><i class="ph-duotone ph-bread icon-amber icon-lg"></i></span>
+                                <span>Fresh Baked</span>
+                            </div>
+                            <div class="expect-item">
+                                <span class="expect-icon"><i class="ph-duotone ph-flower-tulip icon-terracotta icon-lg"></i></span>
+                                <span>Fresh Flowers</span>
+                            </div>
+                            <div class="expect-item">
+                                <span class="expect-icon"><i class="ph-duotone ph-knife icon-terracotta icon-lg"></i></span>
+                                <span>Local Meats</span>
+                            </div>
+                            <div class="expect-item">
+                                <span class="expect-icon"><i class="ph-duotone ph-coffee icon-amber icon-lg"></i></span>
+                                <span>Coffee & Food</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Market Tips -->
+                    <section class="market-tips">
+                        <h3>Tips for Your Visit</h3>
+                        <div class="tip-item">
+                            <span class="tip-icon"><i class="ph-duotone ph-sun-horizon icon-amber icon-lg"></i></span>
+                            <p><strong>Arrive Early:</strong> Best selection is before 9AM</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon"><i class="ph-duotone ph-currency-dollar icon-forest icon-lg"></i></span>
+                            <p><strong>Bring Cash:</strong> Some vendors don't accept cards</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon"><i class="ph-duotone ph-tote icon-forest icon-lg"></i></span>
+                            <p><strong>Bring Bags:</strong> Help reduce plastic waste</p>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="market-detail-footer">
+                    <button class="btn-secondary" onclick="openMaps()">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Directions
+                    </button>
+                    <button class="btn-primary going-btn" onclick="toggleGoingDetail(this)">
+                        I'm Going! <i class="ph-fill ph-confetti"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Detail Screen -->
+            <div class="screen product-detail-screen" id="product-detail">
+                <div class="product-detail-header">
+                    <button class="back-btn light" onclick="showScreen('home')">
+                        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="share-btn light">
+                        <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    </button>
+                </div>
+
+                <div class="product-hero">
+                    <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&h=400&fit=crop" alt="Heirloom Tomatoes">
+                    <div class="product-hero-tags">
+                        <span class="hero-tag organic"><i class="ph-duotone ph-leaf"></i> Organic</span>
+                        <span class="hero-tag seasonal"><i class="ph-duotone ph-calendar"></i> Seasonal</span>
+                    </div>
+                </div>
+
+                <div class="product-detail-content">
+                    <div class="product-title-section">
+                        <div class="product-title-row">
+                            <h1>Heirloom Tomatoes</h1>
+                            <button class="favorite-btn-large"><i class="ph ph-heart icon-lg"></i></button>
+                        </div>
+                        <div class="product-subtitle" onclick="showScreen('farmer-profile')">
+                            <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=40&h=40&fit=crop" alt="Farm">
+                            <span>Green Acres Farm</span>
+                            <span class="verified-badge"><i class="ph-fill ph-seal-check icon-forest"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="product-price-section">
+                        <div class="price-display">
+                            <span class="current-price">$4.99</span>
+                            <span class="price-unit">per lb</span>
+                        </div>
+                        <div class="quantity-selector">
+                            <button class="qty-btn">-</button>
+                            <span class="qty-value">1</span>
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+
+                    <div class="product-info-cards">
+                        <div class="info-card">
+                            <span class="info-icon"><i class="ph-duotone ph-map-pin icon-terracotta icon-lg"></i></span>
+                            <span class="info-label">Distance</span>
+                            <span class="info-value">2.4 km</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-icon"><i class="ph-duotone ph-timer icon-forest icon-lg"></i></span>
+                            <span class="info-label">Harvested</span>
+                            <span class="info-value">Today</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-icon"><i class="ph-fill ph-star icon-amber icon-lg"></i></span>
+                            <span class="info-label">Rating</span>
+                            <span class="info-value">4.9</span>
+                        </div>
+                    </div>
+
+                    <div class="product-description">
+                        <h3>About This Product</h3>
+                        <p>Our heirloom tomatoes are grown using traditional methods passed down through generations. Vine-ripened for maximum flavor and picked fresh each morning. Perfect for salads, sandwiches, or enjoying on their own.</p>
+                        <div class="description-tags">
+                            <span class="desc-tag">Non-GMO</span>
+                            <span class="desc-tag">Pesticide-Free</span>
+                            <span class="desc-tag">Hand-Picked</span>
+                        </div>
+                    </div>
+
+                    <div class="farmer-preview" onclick="showScreen('farmer-profile')">
+                        <div class="farmer-preview-header">
+                            <h3>Meet the Farmer</h3>
+                            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                        <div class="farmer-preview-content">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop" alt="John">
+                            <div class="farmer-preview-info">
+                                <h4>John Mitchell</h4>
+                                <p>3rd generation farmer, growing organic produce for 25 years</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-reviews">
+                        <div class="reviews-header">
+                            <h3>Reviews</h3>
+                            <span class="review-count">128 reviews</span>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-user">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="Sarah">
+                                <div>
+                                    <span class="review-name">Sarah K.</span>
+                                    <span class="review-date">2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="review-stars"><i class="ph-fill ph-star icon-amber"></i><i class="ph-fill ph-star icon-amber"></i><i class="ph-fill ph-star icon-amber"></i><i class="ph-fill ph-star icon-amber"></i><i class="ph-fill ph-star icon-amber"></i></div>
+                            <p class="review-text">The best tomatoes I've ever had! So fresh and flavorful. Will definitely order again.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-detail-footer">
+                    <button class="btn-secondary" onclick="showScreen('messages')">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        Message
+                    </button>
+                    <button class="btn-primary add-to-cart-btn" onclick="addToCart()">
+                        Add to Cart - $4.99
+                    </button>
+                </div>
+            </div>
+
+            <!-- Farmer Profile Screen -->
+            <div class="screen farmer-profile-screen" id="farmer-profile">
+                <div class="farmer-profile-header">
+                    <button class="back-btn light" onclick="showScreen('home')">
+                        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="more-btn light">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                    </button>
+                </div>
+
+                <div class="farmer-hero">
+                    <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=400&h=250&fit=crop" alt="Green Acres Farm" class="farm-cover">
+                    <div class="farmer-avatar-container">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="John Mitchell" class="farmer-avatar">
+                        <span class="verified-badge-large"><i class="ph-fill ph-seal-check"></i></span>
+                    </div>
+                </div>
+
+                <div class="farmer-profile-content">
+                    <div class="farmer-info-section">
+                        <h1>Green Acres Farm</h1>
+                        <p class="farmer-tagline">Family-owned organic farm since 1998</p>
+                        <div class="farmer-location">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>2.4 km away • Toronto, ON</span>
+                        </div>
+                    </div>
+
+                    <div class="farmer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">4.9</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Orders</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">25</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                    </div>
+
+                    <div class="farmer-badges">
+                        <span class="badge organic"><i class="ph-duotone ph-leaf"></i> Certified Organic</span>
+                        <span class="badge local"><i class="ph-duotone ph-map-pin"></i> Local Producer</span>
+                        <span class="badge sustainable"><i class="ph-duotone ph-recycle"></i> Sustainable</span>
+                    </div>
+
+                    <div class="farmer-actions">
+                        <button class="btn-primary" onclick="showScreen('messages')">
+                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            Message
+                        </button>
+                        <button class="btn-secondary">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                            Call
+                        </button>
+                    </div>
+
+                    <div class="farmer-about">
+                        <h3>About the Farm</h3>
+                        <p>We're a third-generation family farm committed to sustainable agriculture. Our 50-acre property has been growing organic vegetables, fruits, and herbs for over 25 years. We believe in working with nature, not against it.</p>
+                    </div>
+
+                    <div class="farmer-products">
+                        <div class="section-header">
+                            <h3>Products</h3>
+                            <span class="product-count">24 items</span>
+                        </div>
+                        <div class="products-grid">
+                            <div class="product-card" onclick="showScreen('product-detail')">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=200&h=200&fit=crop" alt="Tomatoes">
+                                    <span class="product-tag seasonal">Seasonal</span>
+                                </div>
+                                <div class="product-info">
+                                    <h4>Heirloom Tomatoes</h4>
+                                    <div class="product-footer">
+                                        <span class="product-price">$4.99<small>/lb</small></span>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1590868309235-ea34bed7bd7f?w=200&h=200&fit=crop" alt="Lettuce">
+                                </div>
+                                <div class="product-info">
+                                    <h4>Butter Lettuce</h4>
+                                    <div class="product-footer">
+                                        <span class="product-price">$3.25<small>/head</small></span>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1447175008436-054170c2e979?w=200&h=200&fit=crop" alt="Carrots">
+                                </div>
+                                <div class="product-info">
+                                    <h4>Rainbow Carrots</h4>
+                                    <div class="product-footer">
+                                        <span class="product-price">$3.99<small>/bunch</small></span>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1574943320219-5a7e8f94c7b1?w=200&h=200&fit=crop" alt="Peppers">
+                                </div>
+                                <div class="product-info">
+                                    <h4>Bell Peppers</h4>
+                                    <div class="product-footer">
+                                        <span class="product-price">$5.50<small>/lb</small></span>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart Screen -->
+            <div class="screen cart-screen" id="cart">
+                <div class="cart-header">
+                    <button class="back-btn" onclick="showScreen('home')">
+                        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <h1>My Cart</h1>
+                    <span class="cart-count">2 items</span>
+                </div>
+
+                <div class="cart-content">
+                    <div class="cart-farm-group">
+                        <div class="farm-group-header">
+                            <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=40&h=40&fit=crop" alt="Farm">
+                            <span>Green Acres Farm</span>
+                        </div>
+                        <div class="cart-items">
+                            <div class="cart-item">
+                                <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=80&h=80&fit=crop" alt="Tomatoes">
+                                <div class="cart-item-info">
+                                    <h4>Heirloom Tomatoes</h4>
+                                    <span class="cart-item-price">$4.99/lb</span>
+                                </div>
+                                <div class="cart-item-controls">
+                                    <button class="qty-btn small">-</button>
+                                    <span>2</span>
+                                    <button class="qty-btn small">+</button>
+                                </div>
+                            </div>
+                            <div class="cart-item">
+                                <img src="https://images.unsplash.com/photo-1590868309235-ea34bed7bd7f?w=80&h=80&fit=crop" alt="Lettuce">
+                                <div class="cart-item-info">
+                                    <h4>Butter Lettuce</h4>
+                                    <span class="cart-item-price">$3.25/head</span>
+                                </div>
+                                <div class="cart-item-controls">
+                                    <button class="qty-btn small">-</button>
+                                    <span>1</span>
+                                    <button class="qty-btn small">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="delivery-options">
+                        <h3>Delivery Options</h3>
+                        <div class="delivery-option active">
+                            <div class="option-radio"></div>
+                            <div class="option-info">
+                                <span class="option-title">Pickup at Farm</span>
+                                <span class="option-detail">Tomorrow, 9AM - 5PM</span>
+                            </div>
+                            <span class="option-price">Free</span>
+                        </div>
+                        <div class="delivery-option">
+                            <div class="option-radio"></div>
+                            <div class="option-info">
+                                <span class="option-title">Home Delivery</span>
+                                <span class="option-detail">Tomorrow, 2PM - 6PM</span>
+                            </div>
+                            <span class="option-price">$5.99</span>
+                        </div>
+                    </div>
+
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>$13.23</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery</span>
+                            <span class="free">Free</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Service Fee</span>
+                            <span>$0.99</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span>$14.22</span>
+                        </div>
+                    </div>
+
+                    <div class="eco-impact">
+                        <div class="eco-icon"><i class="ph-duotone ph-plant icon-forest icon-xl"></i></div>
+                        <div class="eco-info">
+                            <span class="eco-title">Your Eco Impact</span>
+                            <span class="eco-detail">This order saves 2.3kg CO₂ vs. supermarket</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-footer">
+                    <button class="btn-primary checkout-btn" onclick="showScreen('checkout')">
+                        Proceed to Checkout - $14.22
+                    </button>
+                </div>
+
+                <nav class="bottom-nav">
+                    <button class="nav-item" onclick="showScreen('home')">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Home</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
+                    </button>
+                    <button class="nav-item active" onclick="showScreen('cart')">
+                        <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span>Cart</span>
+                        <span class="cart-badge">2</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('messages')">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span>Messages</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('profile')">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Profile</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Messages Screen -->
+            <div class="screen messages-screen" id="messages">
+                <div class="messages-header">
+                    <h1>Messages</h1>
+                </div>
+
+                <div class="messages-content">
+                    <div class="message-thread" onclick="showScreen('chat')">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop" alt="John">
+                        <div class="thread-info">
+                            <div class="thread-header">
+                                <span class="thread-name">Green Acres Farm</span>
+                                <span class="thread-time">2m ago</span>
+                            </div>
+                            <p class="thread-preview">Your order is ready for pickup! See you tomorrow</p>
+                        </div>
+                        <span class="unread-badge">1</span>
+                    </div>
+                    <div class="message-thread">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop" alt="Sarah">
+                        <div class="thread-info">
+                            <div class="thread-header">
+                                <span class="thread-name">Sunny Vale Organics</span>
+                                <span class="thread-time">1d ago</span>
+                            </div>
+                            <p class="thread-preview">Thanks for your order! The eggs are from this morning.</p>
+                        </div>
+                    </div>
+                    <div class="message-thread">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop" alt="Tom">
+                        <div class="thread-info">
+                            <div class="thread-header">
+                                <span class="thread-name">Heritage Homestead</span>
+                                <span class="thread-time">3d ago</span>
+                            </div>
+                            <p class="thread-preview">We have fresh honey available this week!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="bottom-nav">
+                    <button class="nav-item" onclick="showScreen('home')">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Home</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('cart')">
+                        <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span>Cart</span>
+                        <span class="cart-badge">2</span>
+                    </button>
+                    <button class="nav-item active" onclick="showScreen('messages')">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span>Messages</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('profile')">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Profile</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Chat Screen -->
+            <div class="screen chat-screen" id="chat">
+                <div class="chat-header">
+                    <button class="back-btn" onclick="showScreen('messages')">
+                        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <div class="chat-user">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="John">
+                        <div class="chat-user-info">
+                            <span class="chat-user-name">Green Acres Farm</span>
+                            <span class="chat-user-status">Online</span>
+                        </div>
+                    </div>
+                    <button class="call-btn">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                    </button>
+                </div>
+
+                <div class="chat-messages">
+                    <div class="message-date">Today</div>
+                    <div class="message received">
+                        <p>Hi! Thanks for your order. Just wanted to let you know the tomatoes are looking great today!</p>
+                        <span class="message-time">10:30 AM</span>
+                    </div>
+                    <div class="message sent">
+                        <p>That's great to hear! What time can I pick them up tomorrow?</p>
+                        <span class="message-time">10:32 AM</span>
+                    </div>
+                    <div class="message received">
+                        <p>We're open from 9AM to 5PM. Come anytime that works for you!</p>
+                        <span class="message-time">10:33 AM</span>
+                    </div>
+                    <div class="message sent">
+                        <p>Perfect, I'll come around noon. Thanks!</p>
+                        <span class="message-time">10:35 AM</span>
+                    </div>
+                    <div class="message received">
+                        <p>Your order is ready for pickup! See you tomorrow</p>
+                        <span class="message-time">2:15 PM</span>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <button class="attach-btn">
+                        <svg viewBox="0 0 24 24"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                    </button>
+                    <input type="text" placeholder="Type a message...">
+                    <button class="send-btn">
+                        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Profile Screen -->
+            <div class="screen profile-screen" id="profile">
+                <div class="profile-header">
+                    <h1>Profile</h1>
+                    <button class="settings-btn">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </button>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-user">
+                        <div class="profile-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Hamza">
+                            <button class="edit-avatar"><i class="ph-fill ph-camera"></i></button>
+                        </div>
+                        <h2>Hamza Galbete</h2>
+                        <p>Toronto, Ontario</p>
+                    </div>
+
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <span class="stat-value">24</span>
+                            <span class="stat-label">Orders</span>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-value">8</span>
+                            <span class="stat-label">Farms</span>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-value">156kg</span>
+                            <span class="stat-label">CO₂ Saved</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-impact-card">
+                        <div class="impact-header">
+                            <span class="impact-icon"><i class="ph-duotone ph-globe-hemisphere-west icon-forest icon-xl"></i></span>
+                            <h3>Your Locavore Impact</h3>
+                        </div>
+                        <p>You're in the top 10% of eco-conscious shoppers in your area!</p>
+                        <div class="impact-progress">
+                            <div class="progress-bar" style="width: 78%"></div>
+                        </div>
+                        <span class="impact-level">Level 4: Earth Guardian</span>
+                    </div>
+
+                    <div class="profile-menu">
+                        <div class="menu-item">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <span>Order History</span>
+                            <svg class="chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                        <div class="menu-item">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            <span>Favorite Farms</span>
+                            <svg class="chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                        <div class="menu-item">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Saved Addresses</span>
+                            <svg class="chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                        <div class="menu-item">
+                            <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                            <span>Payment Methods</span>
+                            <svg class="chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                        <div class="menu-item">
+                            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                            <span>Notifications</span>
+                            <svg class="chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                        <div class="menu-item">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            <span>Help & Support</span>
+                            <svg class="chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                    </div>
+
+                    <button class="logout-btn">
+                        <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                        Log Out
+                    </button>
+                </div>
+
+                <nav class="bottom-nav">
+                    <button class="nav-item" onclick="showScreen('home')">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Home</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('markets')">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM4 7v13a1 1 0 001 1h14a1 1 0 001-1V7"/><path d="M10 12h4"/><path d="M8 21V7M16 21V7"/></svg>
+                        <span>Markets</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('cart')">
+                        <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span>Cart</span>
+                        <span class="cart-badge">2</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('messages')">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span>Messages</span>
+                    </button>
+                    <button class="nav-item active" onclick="showScreen('profile')">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Profile</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Checkout Success Screen -->
+            <div class="screen checkout-screen" id="checkout">
+                <div class="checkout-success">
+                    <div class="success-animation">
+                        <div class="success-circle">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                    </div>
+                    <h1>Order Confirmed!</h1>
+                    <p class="success-subtitle">Your order has been placed successfully</p>
+                    
+                    <div class="order-summary-card">
+                        <div class="order-number">
+                            <span>Order #LOC-2847</span>
+                        </div>
+                        <div class="pickup-info">
+                            <div class="pickup-icon"><i class="ph-duotone ph-map-pin icon-forest icon-xl"></i></div>
+                            <div class="pickup-details">
+                                <h4>Pickup at Green Acres Farm</h4>
+                                <p>Tomorrow, 9AM - 5PM</p>
+                                <p class="address">123 Farm Road, Toronto, ON</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eco-celebration">
+                        <span class="eco-emoji"><i class="ph-duotone ph-plant icon-forest icon-2xl"></i></span>
+                        <p>You just saved <strong>2.3kg CO₂</strong> by shopping local!</p>
+                    </div>
+
+                    <div class="checkout-actions">
+                        <button class="btn-primary" onclick="showScreen('home')">Continue Shopping</button>
+                        <button class="btn-text" onclick="showScreen('messages')">Message Farmer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="iphone-home-indicator"></div>
+    </div>
+
+    <section class="ui-captures" aria-labelledby="ui-captures-title">
+        <div class="ui-captures-heading">
+            <p class="ui-captures-kicker">Interface tour</p>
+            <h2 id="ui-captures-title">Explore the Locavore experience</h2>
+            <p>Every screen, captured from the working prototype.</p>
+        </div>
+        <div class="ui-captures-grid">
+            <figure><img src="assets/ui-captures/onboarding.png" alt="Locavore onboarding screen" loading="lazy"><figcaption>Onboarding</figcaption></figure>
+            <figure><img src="assets/ui-captures/location.png" alt="Locavore location permission screen" loading="lazy"><figcaption>Location</figcaption></figure>
+            <figure><img src="assets/ui-captures/home.png" alt="Locavore home screen" loading="lazy"><figcaption>Home</figcaption></figure>
+            <figure><img src="assets/ui-captures/search.png" alt="Locavore search screen" loading="lazy"><figcaption>Search</figcaption></figure>
+            <figure><img src="assets/ui-captures/markets.png" alt="Locavore markets screen" loading="lazy"><figcaption>Markets</figcaption></figure>
+            <figure><img src="assets/ui-captures/market-detail.png" alt="Locavore market detail screen" loading="lazy"><figcaption>Market detail</figcaption></figure>
+            <figure><img src="assets/ui-captures/farmer-profile.png" alt="Locavore farmer profile screen" loading="lazy"><figcaption>Farmer profile</figcaption></figure>
+            <figure><img src="assets/ui-captures/product-detail.png" alt="Locavore product detail screen" loading="lazy"><figcaption>Product detail</figcaption></figure>
+            <figure><img src="assets/ui-captures/cart.png" alt="Locavore cart screen" loading="lazy"><figcaption>Cart</figcaption></figure>
+            <figure><img src="assets/ui-captures/checkout.png" alt="Locavore checkout confirmation screen" loading="lazy"><figcaption>Checkout</figcaption></figure>
+            <figure><img src="assets/ui-captures/messages.png" alt="Locavore messages screen" loading="lazy"><figcaption>Messages</figcaption></figure>
+            <figure><img src="assets/ui-captures/chat.png" alt="Locavore chat screen" loading="lazy"><figcaption>Chat</figcaption></figure>
+            <figure><img src="assets/ui-captures/profile.png" alt="Locavore profile screen" loading="lazy"><figcaption>Profile</figcaption></figure>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+    <script src="mobile-experience.js"></script>
+    <script src="accessibility.js"></script>
+</body>
+</html>
+
+
