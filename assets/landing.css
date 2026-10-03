@@ -24,9 +24,49 @@ h3,.skill-list dt,.tools dt,.contact-title{font-family:Fraunces,Georgia,serif;fo
 @media(max-width:540px){.local .locavore-link{width:100%}.locavore-title img{top:-75%}.portrait{width:76%}}
 
 /* Shared portfolio header structure. */
+/* One introduction: name and role beside the portrait and biography. */
+.hero{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(36px,5vw,90px);padding:70px 5% 80px;align-items:center}
+.hero-identity{min-width:0}.hero .name{max-width:100%;width:100%}.hero .intro{padding:12px 4% 0;font-size:clamp(18px,1.6vw,24px)}
+.hero-about{min-width:0;padding-left:clamp(24px,3vw,50px);border-left:1px solid #cbb0b6}
+.about-intro{display:flex;align-items:center;gap:24px;margin-bottom:28px}
+.hero-about .portrait{width:130px;flex:0 0 130px;padding:6px;margin:0}
+.hero-about .photo-window{border-width:4px}
+.hero-about h2{font-family:Fraunces,Georgia,serif;font-size:clamp(28px,3vw,44px);font-weight:650;line-height:1.1;letter-spacing:-.035em;margin:0}
+.hero-about .about-copy p{font-size:16px;line-height:1.65;margin:0 0 16px;max-width:48ch}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:40px 5% 50px;gap:36px}.hero-identity{max-width:620px}.hero-about{padding:30px 0 0;border-left:0;border-top:1px solid #cbb0b6}.hero-about .about-copy p{max-width:65ch}.hero .intro{padding-left:0}.about-intro{margin-bottom:24px}.hero-about .portrait{width:110px;flex-basis:110px}}
 nav{min-height:66px;padding:12px 4%;background:#500515;color:#fce7e9;border-bottom:1px solid rgba(252,231,233,.18)}
 nav .brand{display:flex;align-items:center;gap:12px;color:#fce7e9;font-weight:700}
 .brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fce7e9;color:#500515;font-size:13px;letter-spacing:-.02em}
 nav>div a{color:#fce7e9}
 nav>div a:after{background:#93b5ff;height:2px}
 @media(max-width:540px){nav{padding:10px 5%;flex-wrap:nowrap}.brand-mark{width:34px;height:34px;font-size:11px}nav .brand>span:last-child{display:none}nav>div{width:auto;flex:1}.hero{padding-top:32px}}
+
+/* The work is the evidence: retain the lettering while giving each product room. */
+#work{padding:35px 5% 80px}
+.project{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,5vw,90px);align-items:center;padding:45px 0 75px;border-bottom:1px solid #cbb0b6}
+.project:first-child{padding-top:0}
+.project.local{margin-top:0}
+.project-heading{min-width:0}
+.project .project-title,.sir .project-title,.local .locavore-link{width:100%;max-width:690px}
+.project .project-copy{max-width:46ch;margin:18px 0 0;font-size:clamp(18px,1.5vw,22px);line-height:1.5}
+.project-copy p{margin:0}
+.project-copy small{font-size:13px;line-height:1.5;margin:14px 0 19px;color:#713c48}
+.project-preview{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;min-height:360px;padding:clamp(16px,2.5vw,42px);background:#ead4d9;border:1px solid #cbb0b6;overflow:hidden;transition:background .2s ease,transform .2s ease}
+.project-preview:hover{background:#e4c9d0;transform:translateY(-3px)}
+.project-preview img{display:block;max-width:100%;height:auto;object-fit:contain}
+.project-preview span{align-self:flex-start;margin-top:18px;font-size:12px;line-height:1.4;color:#713c48}
+.renamer-preview{background:#111a2b;border-color:#27364d}
+.renamer-preview:hover{background:#17233a}
+.renamer-preview span{color:#dbe3ed}
+.renamer-preview img{width:100%;box-shadow:0 18px 32px #0008}
+.locavore-preview{background:#f6f4ed;border-color:#cbd7c9}
+.locavore-preview:hover{background:#e7ecdf}
+.locavore-preview span{color:#284a32}
+.locavore-preview img{width:min(220px,52%);max-height:465px;object-fit:contain;filter:drop-shadow(0 18px 20px #1a35233b)}
+.skills .caption,.skills .rating{display:none}
+.skills-title{max-width:610px}
+.skill-list dt{display:block}
+.hero .intro{max-width:42ch}
+@media(max-width:900px){.project{grid-template-columns:1fr;gap:26px}.project-preview{min-height:310px}.project .project-copy{max-width:55ch}}
+@media(max-width:540px){#work{padding:10px 5% 45px}.project{padding:30px 0 45px}.project-preview{min-height:240px;padding:18px}.locavore-preview img{width:min(200px,62%)}.project .project-copy{font-size:17px}.hero .intro{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.project-preview:hover{transform:none}}
